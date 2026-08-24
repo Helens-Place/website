@@ -70,9 +70,9 @@ faqs:
     answer: >-
       Contact time can be up to three or four hours or so, depending on whether
       we look at numeracy as well as literacy, and I leave a good day free.
-      Students invariably need breaks, because it is an intense process. I aim
-      to produce the written report as promptly as possible afterwards, and we
-      agree exact timescales at the initial consultation.
+      Students invariably need breaks, because it is an intense process. You
+      will then have your report, and for me that is two weeks maximum after the
+      assessment.
   - category: Assessments
     question: Where does the assessment take place?
     answer: >-

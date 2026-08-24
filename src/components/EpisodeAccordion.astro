@@ -1,0 +1,227 @@
+---
+/**
+ * The Elevator Series, as an accordion.
+ *
+ * Fourteen Vimeo iframes on one page would be punishing to load, so nothing is
+ * embedded up front. Each panel holds the thumbnail and a play button, and the
+ * iframe is only created when someone actually opens that episode. Once
+ * created it stays, so closing and reopening does not reload the video.
+ *
+ * Native details/summary means the whole thing is keyboard operable and
+ * announced correctly with no ARIA of our own, and the transcripts sit in the
+ * page as real text whether or not a panel is open.
+ */
+interface Episode {
+  number: number;
+  title: string;
+  description: string;
+  vimeoId: string;
+  vimeoHash?: string;
+  duration?: string;
+  uploadDate?: string;
+  thumbnail?: string;
+  transcript: string[];
+}
+interface Props { items: Episode[] }
+const { items } = Astro.props;
+
+/* dnt=1 asks Vimeo not to track the viewer. */
+const embedUrl = (e: Episode) =>
+  `https://player.vimeo.com/video/${e.vimeoId}?dnt=1${e.vimeoHash ? `&h=${e.vimeoHash}` : ''}`;
+
+const readable = (iso?: string) => {
+  if (!iso) return '';
+  const m = iso.match(/PT(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!m) return '';
+  const mins = Number(m[1] || 0), secs = Number(m[2] || 0);
+  return `${mins} min ${secs.toString().padStart(2, '0')} sec`;
+};
+---
+
+<div class="series">
+  {items.map((e) => (
+    <details class="ep" name="episode">
+      <summary class="ep__summary">
+        <span class="ep__num" aria-hidden="true">{e.number}</span>
+        <span class="ep__heading">
+          <h2 class="ep__title">{e.title}</h2>
+          <span class="ep__desc">{e.description}</span>
+        </span>
+        {e.duration && <span class="ep__time">{readable(e.duration)}</span>}
+      </summary>
+
+      <div class="ep__body">
+        <div
+          class="ep__player"
+          data-embed={embedUrl(e)}
+          data-title={`The Elevator Series, episode ${e.number}: ${e.title}`}
+        >
+          <button type="button" class="ep__play">
+            {e.thumbnail && <img src={e.thumbnail} alt="" loading="lazy" decoding="async" />}
+            <span class="ep__play-btn">
+              <span class="ep__play-icon" aria-hidden="true"></span>
+              Play episode {e.number}
+            </span>
+          </button>
+        </div>
+
+        {e.transcript.length > 0 && (
+          <details class="ep__transcript">
+            <summary>Read the transcript</summary>
+            <div class="ep__transcript-body">
+              <p class="ep__transcript-note">
+                Auto-generated from the video captions and lightly edited. A few
+                names may still be mis-transcribed.
+              </p>
+              {e.transcript.map((p) => <p>{p}</p>)}
+            </div>
+          </details>
+        )}
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .series { display: grid; gap: .75rem; }
+
+  .ep {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .ep[open] { border-color: var(--purple); box-shadow: var(--shadow-sm); }
+
+  .ep__summary {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.1rem 1.4rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .ep__summary::-webkit-details-marker { display: none; }
+  .ep__summary:hover { background: var(--bg-tint); }
+
+  .ep__num {
+    flex-shrink: 0;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    background: var(--bg-tint);
+    color: var(--purple-deep);
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: .95rem;
+  }
+  .ep[open] .ep__num { background: var(--purple); color: #fff; }
+
+  .ep__heading { flex: 1; display: flex; flex-direction: column; gap: .15rem; }
+  .ep__title { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--ink); margin: 0; line-height: 1.3; }
+  .ep__desc { font-size: .95rem; color: var(--ink-soft); }
+  .ep__time {
+    flex-shrink: 0;
+    font-size: .88rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ep__body { padding: 0 1.4rem 1.4rem; }
+
+  .ep__player { position: relative; }
+  .ep__player :global(iframe) {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: var(--radius);
+    display: block;
+  }
+
+  .ep__play {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--bg-tint);
+    display: block;
+  }
+  .ep__play img { width: 100%; height: 100%; object-fit: cover; }
+  .ep__play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .7rem;
+    background: rgba(42, 27, 61, .45);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .ep__play:hover .ep__play-btn { background: rgba(42, 27, 61, .6); }
+  .ep__play-icon {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    background: #fff;
+    display: grid;
+    place-items: center;
+  }
+  .ep__play-icon::after {
+    content: '';
+    border-left: 1.1rem solid var(--purple-deep);
+    border-top: .7rem solid transparent;
+    border-bottom: .7rem solid transparent;
+    margin-left: .3rem;
+  }
+
+  .ep__transcript { margin-top: 1.2rem; border-top: 1px solid var(--line); padding-top: .9rem; }
+  .ep__transcript > summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .97rem;
+    color: var(--purple-deep);
+    padding: .35rem 0;
+  }
+  .ep__transcript-body { padding-top: .8rem; max-width: 68ch; }
+  .ep__transcript-body p { color: var(--ink-soft); font-size: 1rem; }
+  .ep__transcript-note {
+    font-size: .9rem;
+    background: var(--pink-tint);
+    border-radius: var(--radius);
+    padding: .7rem 1rem;
+    color: var(--ink);
+  }
+
+  @media (max-width: 620px) {
+    .ep__summary { flex-wrap: wrap; gap: .7rem 1rem; padding: 1rem; }
+    .ep__heading { flex-basis: 100%; order: 3; }
+    .ep__body { padding: 0 1rem 1rem; }
+  }
+</style>
+
+<script>
+  /* Build the iframe on first open, so no video loads until it is asked for. */
+  document.querySelectorAll<HTMLElement>('.ep__player').forEach((holder) => {
+    const play = () => {
+      if (holder.querySelector('iframe')) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = holder.dataset.embed + '&autoplay=1';
+      iframe.title = holder.dataset.title || 'Video';
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+      iframe.setAttribute('allowfullscreen', '');
+      holder.replaceChildren(iframe);
+      iframe.focus();
+    };
+    holder.querySelector('.ep__play')?.addEventListener('click', play);
+  });
+</script>

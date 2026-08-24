@@ -105,6 +105,17 @@ const pages = defineCollection({
       body: z.string(),
       cta: link,
     })).optional(),
+    episodes: z.array(z.object({
+      number: z.number(),
+      title: z.string(),
+      description: z.string(),
+      vimeoId: z.string(),
+      vimeoHash: z.string().default(''),
+      duration: z.string().optional(),
+      uploadDate: z.string().optional(),
+      thumbnail: z.string().optional(),
+      transcript: z.array(z.string()).default([]),
+    })).optional(),
     faqs: z.array(z.object({
       category: z.string(),
       question: z.string(),

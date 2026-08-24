@@ -35,11 +35,15 @@ steps:
       your child would find one setting much easier than another.
   - title: The assessment itself
     body: >-
-      I leave a good day free for a full assessment. Contact time with me can be
-      up to three or four hours or so, depending on whether we look at numeracy
-      as well as literacy. We do various different tests: problem-solving,
-      reading speed and comprehension, writing speed, sometimes maths
-      calculation, and potentially other areas depending on the individual.
+      I leave a good day free for a full assessment. Contact time can be up to
+      three or four hours or so, depending on whether we look at numeracy as
+      well as literacy. I tend to do it over a day for an older student, and
+      maybe over two sessions for a younger one. I always chunk things down, and
+      I never lump all the reading tasks together, because doing two or three
+      reading activities back to back is simply too much if you find reading
+      hard. Writing tasks get split up in the same way. I will also ask the
+      person I am working with what they would prefer, because some people would
+      rather get all the writing done in one go.
   - title: Breaks, as many as are needed
     body: >-
       Students invariably need breaks and time out, because it is a very intense
@@ -48,9 +52,10 @@ steps:
       great deal for their wellbeing.
   - title: The report
     body: >-
-      You receive a full written report. I can send a sample report in advance
-      so you can see exactly the kind of document the process produces, before
-      you commit to anything.
+      You receive a full written report, and for me that is two weeks maximum
+      after the assessment. It is a long document, but an important one. I can
+      send a sample report in advance so you can see exactly the kind of thing
+      the process produces, before you commit to anything.
   - title: A conversation about what it means
     body: >-
       Assessments are an important thing, and families almost always have
@@ -58,11 +63,11 @@ steps:
       Sometimes a chat is worth a thousand emails.
 links:
   - label: 'Episode 9: who can help you understand you?'
-    href: https://helensplace.co.uk/support/the-elevator-series/
+    href: /elevator-series
   - label: 'Episode 10: how does assessment work?'
-    href: https://helensplace.co.uk/support/the-elevator-series/
-  - label: 'Episode 11: you have been assessed, what now?'
-    href: https://helensplace.co.uk/support/the-elevator-series/
+    href: /elevator-series
+  - label: 'Episode 11: you have been assessed'
+    href: /elevator-series
 finalCta:
   heading: Questions before you decide?
   body: >-
@@ -72,6 +77,27 @@ finalCta:
     label: Book a free call
     href: /contact
 ---
+
+## What we actually look at
+
+An assessment is not just a reading test. Across the day we look at:
+
+- **Reading skills**, including reading aloud, reading silently, speed and
+  comprehension
+- **Writing skills**, including writing speed
+- **Comprehension of spoken text**, which is a different skill from reading
+- **Underlying ability**, meaning the things you are really good at
+- **Visual processing**
+- **Problem solving**, both worded and visual
+- **Language**, how you manipulate it and how you understand different
+  definitions of words
+- **Phonological processing**, how you process sound. This is the one that
+  matters most, because sound processing is the thing that makes dyslexia what
+  it is
+- **Maths calculation**, where numeracy is part of what we are looking at
+
+Taken together, your profile across all of those areas is what informs whether
+you are dyslexic. No single test decides it.
 
 ## How long is the report valid for?
 

@@ -1,0 +1,87 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import EpisodeAccordion from '../components/EpisodeAccordion.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+
+const page = await getEntry('pages', 'elevator-series');
+const p = page!.data;
+const episodes = p.episodes ?? [];
+
+/* One VideoObject per episode, each carrying its transcript. The transcript is
+   also real text on the page, so nothing here is markup a reader cannot see. */
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'The Elevator Series',
+    description: p.description,
+    numberOfItems: episodes.length,
+    itemListElement: episodes.map((e) => ({
+      '@type': 'ListItem',
+      position: e.number,
+      item: {
+        '@type': 'VideoObject',
+        name: `The Elevator Series, episode ${e.number}: ${e.title}`,
+        description: e.description,
+        embedUrl: `https://player.vimeo.com/video/${e.vimeoId}`,
+        thumbnailUrl: e.thumbnail,
+        uploadDate: e.uploadDate,
+        duration: e.duration,
+        transcript: e.transcript.join(' '),
+        inLanguage: 'en-GB',
+        creator: { '@id': IDS.person },
+        publisher: { '@id': IDS.business },
+        isFamilyFriendly: true,
+        url: `${SITE}/elevator-series#episode-${e.number}`,
+      },
+    })),
+  },
+  breadcrumbs([{ name: 'The Elevator Series', path: '/elevator-series' }]),
+];
+---
+
+<BaseLayout
+  title={p.title}
+  description={p.description}
+  image="helen-contact.jpg"
+  schema={pageSchema}
+>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    audience="families"
+    primaryCta={p.primaryCta}
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <p class="note">
+        Videos load only when you open an episode, so the page stays quick even
+        on a slow connection.
+      </p>
+      <EpisodeAccordion items={episodes} />
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Questions the videos did not answer?"
+    body="Book a free 20-minute call and ask me directly. I reply within 48 hours."
+    cta={{ label: 'Book a free call', href: '/contact' }}
+  />
+</BaseLayout>
+
+<style>
+  .note {
+    font-size: .95rem;
+    color: var(--ink-soft);
+    background: var(--bg-tint);
+    border-radius: var(--radius);
+    padding: .8rem 1.1rem;
+    display: inline-block;
+    margin-bottom: 1.6rem;
+  }
+</style>
