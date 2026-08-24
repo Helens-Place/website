@@ -19,6 +19,7 @@ secondaryCta:
   label: Find the right service
   href: '#doors'
 authority:
+  - Churchill Fellow 2025
   - 13+ peer-reviewed publications
   - Author, Literacy Learning Journeys (Routledge)
   - Evidence given at the House of Commons

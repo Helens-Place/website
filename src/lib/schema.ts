@@ -43,6 +43,7 @@ export const person = {
     'Teacher professional development',
     'Qualitative research',
     'SEND expert witness work',
+    'Transition from school to adulthood for neurodivergent young people',
   ],
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'University of Bath' },
@@ -77,6 +78,7 @@ export const person = {
       name: 'Assessment Practising Certificate (23/APC05078)',
     },
   ],
+  award: "Churchill Fellowship 2025, supported by The Mercers' Company",
   memberOf: [
     { '@type': 'Organization', name: 'British Dyslexia Association' },
     { '@type': 'Organization', name: 'Wiltshire Dyslexia Association' },

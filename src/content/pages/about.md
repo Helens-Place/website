@@ -21,6 +21,7 @@ credentialGroups:
       - Assessment Practising Certificate 23/APC05078
   - heading: Roles
     items:
+      - Churchill Fellow 2025, supported by The Mercers' Company
       - Chair of the Wiltshire Dyslexia Association
       - Trustee of the British Dyslexia Association
   - heading: Memberships
@@ -38,6 +39,8 @@ credentialGroups:
       - PgCert Dyslexia and SpLD with AMBDA, Bath Spa
       - PgCert National Award for SEN Coordination, Bedfordshire
 links:
+  - label: My Churchill Fellowship
+    href: /churchill-fellowship
   - label: LinkedIn profile
     href: https://www.linkedin.com/in/helenlouiseross/
   - label: Full publications list

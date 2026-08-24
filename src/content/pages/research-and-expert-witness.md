@@ -43,6 +43,8 @@ clients:
     note: Dyslexia-friendly schools evaluation framework
   - name: The You and CO2 project
     note: Qualitative research
+  - name: The Churchill Fellowship
+    note: School and Beyond, supporting dyslexic and neurodivergent girls
 clientsFootnote:
   label: See the full publications list
   href: /publications

@@ -1,0 +1,141 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorityStrip from '../components/AuthorityStrip.astro';
+import TitledList from '../components/TitledList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+
+const page = await getEntry('pages', 'churchill-fellowship');
+const p = page!.data;
+const { Content } = await render(page!);
+
+const REPORT_URL =
+  'https://www.churchillfellowship.org/ideas-experts/ideas-library/supporting-dyslexic-and-neurodivergent-girls-next-moves/';
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Report',
+    name: "School & Beyond: Supporting Dyslexic & Neurodivergent Girls' Next Moves",
+    headline: "Supporting Dyslexic and Neurodivergent Girls' Next Moves",
+    description: p.description,
+    author: { '@id': IDS.person },
+    datePublished: '2026-08-11',
+    inLanguage: 'en-GB',
+    url: `${SITE}/churchill-fellowship`,
+    sameAs: REPORT_URL,
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Churchill Fellowship',
+      url: 'https://www.churchillfellowship.org/',
+    },
+    funder: [
+      { '@type': 'Organization', name: 'The Churchill Foundation' },
+      { '@type': 'Organization', name: "The Mercers' Company" },
+    ],
+    about: [
+      { '@type': 'Thing', name: 'Neurodiversity' },
+      { '@type': 'Thing', name: 'Dyslexia' },
+      { '@type': 'Thing', name: 'Transition from school to adulthood' },
+      { '@type': 'Thing', name: 'Special educational needs and disabilities' },
+    ],
+    spatialCoverage: [
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'United States' },
+    ],
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Educators, policymakers, employers and families',
+    },
+    isAccessibleForFree: true,
+  },
+  breadcrumbs([{ name: 'Churchill Fellowship', path: '/churchill-fellowship' }]),
+];
+---
+
+<BaseLayout
+  title={p.title}
+  description={p.description}
+  image="helen-desk-working.jpg"
+  schema={pageSchema}
+>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    audience="business"
+    primaryCta={p.primaryCta}
+    secondaryCta={p.secondaryCta}
+    ratio="3 / 2"
+  />
+
+  {p.authority && <AuthorityStrip items={p.authority} />}
+
+  {p.steps && (
+    <TitledList heading={p.stepsHeading} items={p.steps} background="tint" columns={2} />
+  )}
+
+  {p.sessions && (
+    <TitledList heading={p.sessionsHeading} items={p.sessions} columns={2} />
+  )}
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="prose"><Content /></div>
+    </div>
+  </section>
+
+  <section class="section section--pink">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>Read the report</h2>
+          <p>
+            The full report runs to 68 pages and is free to download from the
+            Churchill Fellowship, along with a slide deck and a video summary.
+          </p>
+          <ul class="download__links">
+            {p.links?.map((l) => (
+              <li><a href={l.href}>{l.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.6rem; }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(h3) {
+    margin-top: 1.9rem;
+    font-size: 1.15rem;
+    color: var(--purple-deep);
+  }
+  .prose :global(ul) { padding-left: 1.2rem; }
+  .prose :global(li) { margin-bottom: .5rem; }
+
+  .download { max-width: 62ch; }
+  .download__links { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .8rem; }
+  .download__links li { max-width: none; }
+  .download__links a {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .download__links a:hover { border-color: var(--purple); }
+</style>
