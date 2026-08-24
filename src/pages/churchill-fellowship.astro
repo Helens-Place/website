@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import AuthorityStrip from '../components/AuthorityStrip.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import Photo from '../components/Photo.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'churchill-fellowship');
@@ -104,6 +105,14 @@ const pageSchema = [
             ))}
           </ul>
         </div>
+        <div class="download__badge">
+          <Photo
+            src="churchill-fellow-logo.png"
+            alt="Churchill Fellow"
+            ratio="1 / 1"
+            audience="neutral"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -125,7 +134,18 @@ const pageSchema = [
   .prose :global(ul) { padding-left: 1.2rem; }
   .prose :global(li) { margin-bottom: .5rem; }
 
-  .download { max-width: 62ch; }
+  .download {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: center;
+  }
+  .download > div:first-child { max-width: 62ch; }
+  .download__badge :global(.photo) { object-fit: contain; background: none; }
+  @media (max-width: 720px) {
+    .download { grid-template-columns: 1fr; }
+    .download__badge { max-width: 150px; }
+  }
   .download__links { list-style: none; padding: 0; margin: 1.4rem 0 0; display: grid; gap: .8rem; }
   .download__links li { max-width: none; }
   .download__links a {

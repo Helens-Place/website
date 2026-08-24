@@ -1,8 +1,8 @@
 ---
 title: Safeguarding policy
 description: >-
-  The safeguarding and child protection policy of Helen's Place, including
-  reporting routes, conduct expectations and related legislation.
+  The safeguarding and child protection policy of Helen's Place, including how
+  to report a concern, conduct expectations and the legislation it works to.
 eyebrow: Legal
 heading: Safeguarding policy
 intro: >-
@@ -11,6 +11,14 @@ intro: >-
   safeguarding and protection of the young people and adults I work with are at
   the heart of everything I do.
 ---
+
+> **If a child or adult is in immediate danger, call 999.**
+>
+> To report a safeguarding concern about a child in Wiltshire, contact the
+> Integrated Front Door on **0300 456 0108**, which operates 24 hours a day,
+> every day of the year. Out of hours you can also call **0300 456 0100**, or
+> email
+> [Integratedfrontdoor@wiltshire.gov.uk](mailto:Integratedfrontdoor@wiltshire.gov.uk).
 
 ## Policy statement
 
@@ -42,10 +50,10 @@ Safeguarding is defined as:
 
 The term safeguarding children covers a range of measures including child
 protection procedures. It encompasses a preventative approach to keeping
-children and adults at risk safe, incorporating pupil health and safety, school
-behaviour and preventing bullying, supporting pupils with medical conditions,
-personal, health and social economic education, providing first aid, and site
-security.
+children and adults at risk safe, incorporating health and safety, behaviour and
+preventing bullying, supporting those with medical conditions, personal, health
+and social education, first aid, and the security of the settings in which I
+work.
 
 This policy applies to all workers at Helen's Place. For the purposes of this
 policy:
@@ -56,14 +64,14 @@ policy:
   time, unpaid, for Helen's Place, except for approved expenses.
 - **Parent** refers to birth parents and other adults who are in a parenting
   role, for example step-parents, foster carers and adoptive parents.
-- **Child** refers to any child under the age of 18 who comes into contact with
-  the setting. This includes unborn babies.
+- **Child** refers to anyone who has not yet reached their 18th birthday and who
+  comes into contact with Helen's Place. This includes unborn babies.
 - **Adults at risk** refers to any adult who has been identified as at risk of
   safeguarding issues.
 
-Any safeguarding concerns or disclosures of abuse relating to a child at school,
-or outside of work undertaken by Helen's Place, are within the scope of this
-policy.
+Any safeguarding concern or disclosure of abuse relating to a child, whether it
+arises during work undertaken by Helen's Place or outside it, is within the
+scope of this policy.
 
 It is expected that all workers are:
 
@@ -76,27 +84,28 @@ It is expected that all workers are:
   support plans, child in need plans and interagency child protection plans as
   required
 
-All workers have read and understood Part 1 of the latest version of Keeping
-Children Safe in Education. All workers working directly with children have also
-read Annex A.
+All workers have read and understood Part one of the current version of Keeping
+Children Safe in Education, the Department for Education's statutory guidance,
+which is updated each September.
 
 ## Conduct and behaviour
 
 Workers representing Helen's Place are expected to conduct themselves to the
 highest professional standards. They should adhere to the
-[Teachers' Standards](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/665520/Teachers__Standards.pdf)
+[Teachers' Standards](https://www.gov.uk/government/publications/teachers-standards)
 and the
-[ethical guidelines from BERA](https://www.bera.ac.uk/publication/ethical-guidelines-for-educational-research-2018-online)
-as outlined by central government, and maintain public confidence in their role
-as teachers, researchers and representatives of Helen's Place. Where this is not
-the case, complaints should be addressed to Dr Ross and an investigation will
-take place.
+[ethical guidelines from BERA](https://www.bera.ac.uk/publication/ethical-guidelines-for-educational-research-2018-online),
+and maintain public confidence in their role as teachers, researchers and
+representatives of Helen's Place. Where this is not the case, complaints should
+be addressed to Dr Ross and an investigation will take place.
 
-## Safeguarding and child protection procedures
+## How to report a concern
 
-While the organisation does not have a Designated Safeguarding Officer, I work
-within Wiltshire and adhere to Wiltshire procedures for supporting young people
-in my care and adults at risk.
+Helen's Place is a small practice and does not have a separate Designated
+Safeguarding Lead. I work within Wiltshire and follow the procedures of the
+[Wiltshire Safeguarding Vulnerable People Partnership](https://www.wiltshiresvpp.org.uk/),
+which is the partnership formerly known as the Wiltshire Safeguarding Children
+Board.
 
 In the event of concerns relating to the welfare of young people or adults at
 risk within the professional activities of Helen's Place, these should be
@@ -106,23 +115,27 @@ reported to:
 Telephone 07541 557827 or email
 [helen@helensplace.co.uk](mailto:helen@helensplace.co.uk).
 
-Where concerns relate to Dr Ross, they should be addressed to the Wiltshire
-Multi-Agency Safeguarding Hub (MASH) on **0300 456 0108**, open 08:45 to 17:00
-Monday to Thursday and 08:45 to 16:00 on Friday.
+Where concerns relate to Dr Ross, or where a concern needs to be raised
+independently, they should be addressed directly to Wiltshire's Integrated Front
+Door on **0300 456 0108**. This service operates 24 hours a day, 7 days a week,
+365 days a year, and is based at County Hall in Trowbridge. The out of hours
+number is **0300 456 0100** and the email address is
+[Integratedfrontdoor@wiltshire.gov.uk](mailto:Integratedfrontdoor@wiltshire.gov.uk).
 
-Where concerns relate to events or settings outside of Wiltshire, that area's
-Local Authority Designated Safeguarding Team should be contacted for advice.
+Where a concern relates to an event or setting outside Wiltshire, the relevant
+local authority's designated safeguarding team should be contacted for advice.
+
+**Reporting a concern does not require certainty.** If something does not feel
+right, report it and let the professionals assess it.
 
 ## Identifying signs of abuse
 
 All workers know how to recognise, and are alert to, the signs of neglect and
-abuse. Definitions of abuse, set out in What to do if you're worried a child is
-being abused: Advice for Practitioners, and Keeping Children Safe in Education,
-along with notes from safeguarding training, are important reference documents
-for all workers. Every worker is provided with a copy of Part 1 of Keeping
-Children Safe in Education, which they are required to read and which includes
-supporting guidance about several specific safeguarding issues. Those who work
-directly with children are also required to read Annex A.
+abuse. The Department for Education's advice, What to do if you're worried a
+child is being abused, and Keeping Children Safe in Education, along with notes
+from safeguarding training, are important reference documents for all workers.
+Every worker reads Part one of Keeping Children Safe in Education, which
+includes supporting guidance about specific safeguarding issues.
 
 ## Responding to concerns or disclosures of abuse
 
@@ -137,24 +150,26 @@ responding to a disclosure of abuse.
 - tell the child that you know how difficult it must have been to confide in you
 - listen carefully and tell the child what you are going to do next
 - use the tell me, explain, describe and mirroring strategy
-- tell only the Designated or Deputy Safeguarding Lead
+- report to Dr Ross, or directly to the Integrated Front Door where the concern
+  relates to Dr Ross
 - record in detail using the Welfare Concern Record without delay, using the
   child's own words where possible
 
 **Do not:**
 
 - take photographs of any injuries
-- postpone or delay the opportunity for the pupil to talk
-- take notes while the pupil is speaking, or ask the pupil to write an account
+- postpone or delay the opportunity for the child to talk
+- take notes while the child is speaking, or ask them to write an account
 - try to investigate the allegation yourself
 - promise confidentiality, for example by saying you will keep the secret
 - approach or inform the alleged abuser
 
 All reports of abuse or concerns are securely kept by Helen's Place and reported
-to the appropriate organisation. Where appropriate, the MASH will be contacted
-for advice on how to proceed. A record will be kept of any contact made.
+to the appropriate organisation. Where appropriate, the Integrated Front Door
+will be contacted for advice on how to proceed. A record will be kept of any
+contact made.
 
-The voice of the child is central to safeguarding practice, and pupils are
+The voice of the child is central to safeguarding practice, and children are
 encouraged to express their views and have them given due weight in all matters
 affecting them.
 
@@ -172,64 +187,80 @@ can be disproportionately affected by bullying.
 
 To address those additional challenges, I work with the individual's school,
 parents or carers, and those with caring responsibility, to identify those with
-additional communication needs, so that wherever possible these pupils are given
-the chance to express themselves to someone with appropriate communication
+additional communication needs, so that wherever possible these young people are
+given the chance to express themselves to someone with appropriate communication
 skills.
 
 ## Female genital mutilation
 
 FGM is illegal in the UK and a form of child abuse with long-lasting harmful
 consequences. I will inform the authorities immediately if I suspect a girl is
-at risk of FGM, and will report any known cases of FGM to the police as required
-by law.
+at risk of FGM. Teachers and other relevant professionals have a statutory duty
+to report known cases of FGM in under 18s to the police.
 
-## Peer on peer abuse
+## Child-on-child abuse
 
-All individuals have a right to live and learn in a safe environment. All peer
-on peer abuse is unacceptable and will be taken seriously. Peer on peer abuse is
-not tolerated, passed off as banter, or seen as part of growing up. It is likely
-to include, but is not limited to:
+All individuals have a right to live and learn in a safe environment. All
+child-on-child abuse is unacceptable and will be taken seriously. It is not
+tolerated, passed off as banter, or seen as part of growing up. It can affect
+children of any gender, and some forms disproportionately affect girls. It is
+likely to include, but is not limited to:
 
-- bullying, including cyber bullying
-- gender based violence and sexual assaults
-- sexting
-- upskirting, or any picture taken under a person's clothing without them
+- bullying, including cyberbullying, and prejudice-based and discriminatory
+  bullying
+- abuse within intimate personal relationships between children
+- physical abuse, including hitting, shaking, biting or otherwise causing
+  physical harm
+- sexual violence and sexual harassment
+- causing someone to engage in sexual activity without consent
+- consensual and non-consensual sharing of nude and semi-nude images or videos
+- upskirting, meaning taking a picture under a person's clothing without them
   knowing, to obtain sexual gratification or cause humiliation or distress
 - initiation or hazing type violence and rituals
 
-Peer on peer abuse is dealt with as a safeguarding issue and recorded as such. I
-liaise with other professionals where concerns or disclosures are recorded.
+Child-on-child abuse is dealt with as a safeguarding issue and recorded as such.
+I liaise with other professionals where concerns or disclosures are recorded.
 
 ## Preventing radicalisation
 
 Protecting children from the risk of radicalisation is part of wider
 safeguarding duties, and is similar in nature to protecting individuals from
 other forms of harm and abuse. I use my judgement in identifying individuals who
-might be at risk of radicalisation, and seek advice from the MASH where there is
-concern.
+might be at risk of radicalisation, and seek advice where there is concern. This
+is known as the Prevent duty.
 
 ## Serious violence
 
 At Helen's Place, I am trained to recognise both the early warning signs that
 individuals may be at risk of getting involved in gangs, and indicators that a
 young person is involved in serious violent crime. Where concerns are noted or a
-disclosure is made, a referral to the MASH will be made and subsequent
-recommendations adhered to.
+disclosure is made, a referral will be made and subsequent recommendations
+adhered to.
 
 ## Whistleblowing
 
 All workers can raise concerns about poor or unsafe practice and potential
-failures in the safeguarding regime. If a worker feels unable to raise an issue
-with the procedures relating to safeguarding or child protection at Helen's
-Place, or feels that their genuine concerns are not being addressed,
+failures in safeguarding arrangements. If a worker feels unable to raise an
+issue with the procedures relating to safeguarding or child protection at
+Helen's Place, or feels that their genuine concerns are not being addressed,
 whistleblowing channels are open to them:
 
-- The NSPCC whistleblowing helpline on **0800 028 0285**, 08:00 to 20:00 Monday
-  to Friday, or email [help@nspcc.org.uk](mailto:help@nspcc.org.uk).
-- The Wiltshire MASH on **0300 456 0108**, 08:45 to 17:00 Monday to Thursday and
-  08:45 to 16:00 on Friday.
+- The **NSPCC Whistleblowing Advice Line** on **0800 028 0285**, open 08:00 to
+  20:00 Monday to Friday and 09:00 to 18:00 at weekends, or email
+  [help@nspcc.org.uk](mailto:help@nspcc.org.uk). You can contact them
+  anonymously, and the law protects you from being treated unfairly for raising
+  a genuine concern.
+- **Wiltshire's Integrated Front Door** on **0300 456 0108**, 24 hours a day.
 
 ## Related legislation and key documents
+
+**Keeping Children Safe in Education.** Statutory guidance for schools and
+colleges, updated each September by the Department for Education. All workers
+read Part one.
+
+**Working Together to Safeguard Children.** Statutory guidance on multi-agency
+working to help, protect and promote the welfare of children, most recently
+updated in March 2026 alongside the Children's Social Care National Framework.
 
 **Children Act 1989**, and the 2004 update. The Children Act 1989 gives every
 child the right to protection from abuse and exploitation, and the right to have
@@ -246,19 +277,18 @@ the Secretary of State for Education.
 sexual or otherwise inappropriate relationship between an adult who is
 responsible for young people and a young person in their care.
 
-**Information Sharing, Department for Education advice for practitioners
-providing safeguarding services to children, young people, parents and carers.**
-This advice is for all frontline practitioners and senior managers working with
-children, young people, parents and carers who have to make decisions about
-sharing personal information on a case by case basis.
+**Information Sharing.** Department for Education advice for practitioners
+providing safeguarding services to children, young people, parents and carers,
+who have to make decisions about sharing personal information on a case by case
+basis.
 
-**Counter-Terrorism and Security Act 2015**, section 26, requires all schools,
-in the exercise of their functions, to have due regard to the need to prevent
-people from being drawn into terrorism. This duty is known as the Prevent duty.
+**Counter-Terrorism and Security Act 2015**, section 26, requires specified
+authorities, in the exercise of their functions, to have due regard to the need
+to prevent people from being drawn into terrorism. This duty is known as the
+Prevent duty.
 
-**The Safeguarding Vulnerable Groups Act 2006**, section 53(3) and (4), applies
-to schools if they broker student accommodation with host families for which the
-host family receives a payment from a third party, such as a language school.
+**The Safeguarding Vulnerable Groups Act 2006** governs the vetting and barring
+arrangements for those working with children and adults at risk.
 
 **The Teachers' Standards** set a clear baseline of expectations for the
 professional practice and conduct of teachers, and define the minimum level of
@@ -269,9 +299,11 @@ advice for other groups on helping children who are missing education get back
 into it.
 
 **Sexual violence and sexual harassment between children in schools and
-colleges.** Advice for schools and colleges on how to prevent and respond to
-reports of sexual violence and harassment between children.
+colleges.** Advice on how to prevent and respond to reports of sexual violence
+and harassment between children.
 
 ## Review
 
-Policy written by Dr Helen Ross, 13 November 2019.
+This policy is reviewed annually, and whenever statutory guidance changes.
+
+Last reviewed: August 2026. Next review due: August 2027.
