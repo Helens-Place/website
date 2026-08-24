@@ -48,3 +48,18 @@ backgrounds, but it is the one to reach for if a dark section is ever added.
 | `churchill-fellow-logo.png` | The round red **Churchill Fellow** badge, the one reading "Cf CHURCHILL FELLOW". Save it from the Churchill Fellowship SharePoint as a PNG with a transparent background. Note this is **not** the "the CHURCHILL fellowship" wordmark, which is the charity's own logo and says something different. |
 
 Until it is added, the Fellowship page shows a labelled placeholder in its place.
+
+## Favicons
+
+The browser tab and home screen icons are generated from Helen's monogram, the
+site icon taken from the previous WordPress site. They live in `public/`, not
+here, because they must sit at the site root.
+
+To regenerate them from a new source image:
+
+```bash
+node scripts/build-favicons.mjs <path to a square png>
+```
+
+That produces `favicon.ico`, `favicon-16.png`, `favicon-32.png`,
+`apple-touch-icon.png`, `icon-192.png`, `icon-512.png` and `site.webmanifest`.
