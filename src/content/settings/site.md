@@ -35,8 +35,6 @@ socials:
     href: https://www.instagram.com/drhelenlouiseross/
   - label: Facebook
     href: https://www.facebook.com/drhelenross
-  - label: X
-    href: https://twitter.com/drhelenross
 legal:
   - label: Privacy
     href: /privacy

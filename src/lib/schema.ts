@@ -90,7 +90,6 @@ export const person = {
     'https://www.linkedin.com/in/helenlouiseross/',
     'https://www.instagram.com/drhelenlouiseross/',
     'https://www.facebook.com/drhelenross',
-    'https://twitter.com/drhelenross',
   ],
 };
 
