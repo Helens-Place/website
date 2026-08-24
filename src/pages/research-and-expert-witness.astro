@@ -3,12 +3,28 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'research-and-expert-witness');
 const p = page!.data;
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Research, consultancy and SEND expert witness work',
+    serviceType: 'Research consultancy and expert witness',
+    description: p.intro,
+    provider: { '@id': IDS.person },
+    areaServed: { '@type': 'Country', name: 'United Kingdom' },
+    audience: { '@type': 'Audience', audienceType: 'Businesses, research teams and legal teams' },
+    url: `${SITE}/research-and-expert-witness`,
+  },
+  breadcrumbs([{ name: 'Research and expert witness', path: '/research-and-expert-witness' }]),
+];
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}

@@ -72,6 +72,9 @@ colour coded, and that coding is functional wayfinding rather than decoration:
 This is the practice's own field, so the baseline is non negotiable:
 
 - Body text 18px minimum, line height 1.65, measure capped at 64 characters.
+  The root font size is set to 112.5%, so `1rem` equals 18px. This matters: with
+  the browser default of 16px, every `rem`-sized paragraph silently lands under
+  the floor. Keep body copy at `1rem` or above.
 - Never pure white backgrounds, never pure black text.
 - Left aligned, never justified.
 - Visible keyboard focus on every interactive element.
@@ -94,6 +97,28 @@ Two palette notes, both deliberate:
 Photos go in `public/images/`. See `public/images/README.md` for the filenames
 the site expects. Any image not yet present renders as a labelled placeholder
 block in the brand colours, so the build never breaks.
+
+## Findability
+
+The site is built to be found by search engines and cited by AI assistants.
+Both reward the same thing: specific, verifiable, cross-linked facts.
+
+- `src/lib/schema.ts` holds the entity graph, stated once with stable `@id`
+  values, so every page references one consistent Helen rather than redefining
+  her. Pages add their own `Service`, `Book`, `Course`, `FAQPage`,
+  `BlogPosting` or `BreadcrumbList` on top.
+- `/faq` carries `FAQPage` markup. It is the page most likely to be quoted
+  directly in a search result or an assistant's answer.
+- `/publications` lists peer-reviewed work with DOIs, which is the strongest
+  credibility signal on the site.
+- `public/robots.txt` records a deliberate decision about AI crawlers, and
+  separates retrieval crawlers from training crawlers so either can be changed
+  independently.
+- `public/llms.txt` is a plain summary of the practice with the key facts and
+  prices. The convention is not yet widely honoured, but the file is cheap.
+
+After changing the schema, validate with Google's Rich Results Test and
+Schema.org's validator.
 
 ## Content rules
 

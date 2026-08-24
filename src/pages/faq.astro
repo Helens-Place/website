@@ -1,0 +1,43 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Faqs from '../components/Faqs.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { breadcrumbs, IDS } from '../lib/schema';
+
+const page = await getEntry('pages', 'faq');
+const p = page!.data;
+
+/* FAQPage is one of the few schema types Google still shows as a rich result,
+   and it is the format AI assistants find easiest to lift an answer from. */
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  about: { '@id': IDS.business },
+  mainEntity: (p.faqs ?? []).map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
+};
+---
+
+<BaseLayout
+  title={p.title}
+  description={p.description}
+  image="helen-dog-sofa.jpg"
+  schema={[faqSchema, breadcrumbs([{ name: 'Questions', path: '/faq' }])]}
+>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    audience="families"
+    primaryCta={p.primaryCta}
+  />
+  {p.faqs && <Faqs items={p.faqs} />}
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>

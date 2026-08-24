@@ -6,12 +6,38 @@ import ServiceList from '../components/ServiceList.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Photo from '../components/Photo.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'assessments');
 const p = page!.data;
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Diagnostic dyslexia assessment',
+    serviceType: 'Dyslexia diagnostic assessment',
+    description: p.intro,
+    provider: { '@id': IDS.business },
+    areaServed: [
+      { '@type': 'City', name: 'Trowbridge' },
+      { '@type': 'AdministrativeArea', name: 'Wiltshire' },
+      { '@type': 'Country', name: 'United Kingdom' },
+    ],
+    audience: { '@type': 'Audience', audienceType: 'Parents and families' },
+    url: `${SITE}/assessments`,
+    offers: (p.services ?? []).map((sv) => ({
+      '@type': 'Offer',
+      name: sv.name,
+      priceCurrency: 'GBP',
+      description: `${sv.name}, ${sv.price}`,
+    })),
+  },
+  breadcrumbs([{ name: 'Assessments', path: '/assessments' }]),
+];
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}

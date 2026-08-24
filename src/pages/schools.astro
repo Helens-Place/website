@@ -4,12 +4,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'schools');
 const p = page!.data;
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Dyslexia and SEND training for schools',
+    serviceType: 'Teacher professional development',
+    description: p.intro,
+    provider: { '@id': IDS.business },
+    areaServed: { '@type': 'Country', name: 'United Kingdom' },
+    audience: { '@type': 'Audience', audienceType: 'Schools and local authorities' },
+    url: `${SITE}/schools`,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Training sessions',
+      itemListElement: (p.sessions ?? []).map((sv) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: sv.title, description: sv.body },
+      })),
+    },
+  },
+  breadcrumbs([{ name: 'Schools and training', path: '/schools' }]),
+];
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}

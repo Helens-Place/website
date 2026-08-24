@@ -4,12 +4,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'book');
 const p = page!.data;
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    name: 'Literacy Learning Journeys: An Educator’s Guide to Dyslexia, Ages 0-18',
+    author: { '@id': IDS.person },
+    isbn: '9781032659046',
+    numberOfPages: 160,
+    inLanguage: 'en-GB',
+    bookFormat: 'https://schema.org/Paperback',
+    datePublished: '2025-02-24',
+    publisher: { '@type': 'Organization', name: 'Speechmark, Routledge' },
+    description: p.intro,
+    image: `${SITE}/images/book-cover.jpg`,
+    url: `${SITE}/book`,
+    sameAs: 'https://www.routledge.com/Literacy-Learning-Journeys-An-Educators-Guide-to-Dyslexia-Ages-0-18/Ross/p/book/9781032659046',
+  },
+  breadcrumbs([{ name: 'The book', path: '/book' }]),
+];
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} image="book-cover.jpg" schema={pageSchema}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}

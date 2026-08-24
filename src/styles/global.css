@@ -51,14 +51,20 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+/* 1rem must equal the body baseline. With the browser default of 16px, every
+   rem-sized paragraph silently lands under the 18px floor this practice needs. */
+html {
+  font-size: 112.5%;            /* 1rem = 18px */
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 18px;          /* accessibility baseline, never smaller for body copy */
+  font-size: 1rem;          /* 18px. Accessibility baseline, never smaller for body copy */
   line-height: 1.65;
   font-weight: 350;
   text-align: left;         /* never justified */
@@ -119,7 +125,7 @@ img { max-width: 100%; height: auto; display: block; }
 .stack > * + * { margin-top: 1rem; }
 .lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 60ch; }
 .eyebrow {
-  font-size: .82rem;
+  font-size: .88rem;
   font-weight: 600;
   letter-spacing: .09em;
   text-transform: uppercase;
@@ -174,7 +180,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* --- Reading comfort controls, toggled on <html> ------------------------ */
-html[data-reading="large"] body { font-size: 20px; }
+html[data-reading="large"] { font-size: 125%; }   /* 1rem = 20px */
 html[data-reading="large"] { --measure: 58ch; }
 html[data-spacing="roomy"] body { line-height: 1.95; letter-spacing: .015em; word-spacing: .09em; }
 html[data-tint="lilac"] body { background: var(--bg-tint); }

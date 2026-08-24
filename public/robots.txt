@@ -1,4 +1,82 @@
+# robots.txt for helensplace.co.uk
+#
+# Everything is open to everything. The goal is for families, schools and
+# organisations to find Helen, whether they search on Google or ask an AI
+# assistant.
+#
+# Note that anything not listed here is allowed by default. The named entries
+# below are therefore documentation as much as instruction: they record a
+# deliberate decision, and give you one place to change your mind.
+
 User-agent: *
 Allow: /
+
+# ---------------------------------------------------------------------------
+# Search engines
+# ---------------------------------------------------------------------------
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI assistants, retrieval and citation
+#
+# These fetch a page so an assistant can answer a question with it, usually
+# with a link back. This is the group that gets Helen cited in answers, so
+# these are the ones worth keeping open.
+# ---------------------------------------------------------------------------
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ---------------------------------------------------------------------------
+# AI model training
+#
+# These collect pages that may be used to train future models. Allowing them
+# means an assistant is more likely to know who Helen is without having to
+# search first. It also means the content is used for training, which is a
+# separate decision from the one above.
+#
+# To opt out of training while staying citable, change Allow to Disallow in
+# this block only, and leave the retrieval block above untouched.
+# ---------------------------------------------------------------------------
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# ---------------------------------------------------------------------------
 
 Sitemap: https://helensplace.co.uk/sitemap-index.xml

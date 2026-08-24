@@ -4,6 +4,7 @@ import type { GetStaticPaths } from 'astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CtaBand from '../../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../../lib/schema';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -15,9 +16,25 @@ const { Content } = await render(post);
 const dateFormat = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric', month: 'long', year: 'numeric',
 });
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.pubDate.toISOString(),
+    author: { '@id': IDS.person },
+    publisher: { '@id': IDS.business },
+    inLanguage: 'en-GB',
+    mainEntityOfPage: `${SITE}/blog/${post.id}`,
+    url: `${SITE}/blog/${post.id}`,
+  },
+  breadcrumbs([{ name: 'Blog', path: '/blog' }, { name: post.data.title, path: `/blog/${post.id}` }]),
+];
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout title={post.data.title} description={post.data.description} schema={pageSchema}>
   <PageHero
     eyebrow={dateFormat.format(post.data.pubDate)}
     heading={post.data.title}

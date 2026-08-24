@@ -1,0 +1,103 @@
+---
+/**
+ * Grouped questions using native <details>/<summary>: keyboard operable and
+ * screen reader friendly with no JavaScript, and the answers stay in the DOM
+ * so search engines and AI assistants can read them whether or not they are
+ * expanded.
+ */
+interface Faq { category: string; question: string; answer: string }
+interface Props { items: Faq[] }
+const { items } = Astro.props;
+
+const categories = [...new Set(items.map((f) => f.category))];
+const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+---
+
+<section class="section">
+  <div class="wrap faqs">
+    <nav class="faqs__nav" aria-label="Question categories">
+      <h2 class="faqs__nav-heading">Jump to</h2>
+      <ul>
+        {categories.map((c) => <li><a href={`#${slug(c)}`}>{c}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="faqs__body">
+      {categories.map((c) => (
+        <section class="faqs__group" id={slug(c)}>
+          <h2 class="faqs__group-heading">{c}</h2>
+          {items.filter((f) => f.category === c).map((f) => (
+            <details class="faq">
+              <summary class="faq__q">{f.question}</summary>
+              <div class="faq__a"><p>{f.answer}</p></div>
+            </details>
+          ))}
+        </section>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faqs { display: grid; grid-template-columns: 230px 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+  .faqs__nav {
+    position: sticky;
+    top: 6rem;
+    background: var(--bg-tint);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+  }
+  .faqs__nav-heading {
+    font-family: var(--font-body);
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--purple-deep);
+    margin-bottom: .9rem;
+  }
+  .faqs__nav ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+  .faqs__nav li { max-width: none; }
+  .faqs__nav a { font-size: .97rem; font-weight: 500; text-decoration: none; }
+  .faqs__nav a:hover { text-decoration: underline; }
+
+  .faqs__group { margin-bottom: 2.75rem; scroll-margin-top: 6rem; }
+  .faqs__group-heading { font-size: 1.5rem; margin-bottom: 1.2rem; }
+
+  .faq {
+    border-bottom: 1px solid var(--line);
+    padding: .3rem 0;
+  }
+  .faq__q {
+    cursor: pointer;
+    list-style: none;
+    padding: 1rem 2.2rem 1rem 0;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--ink);
+    position: relative;
+    max-width: 62ch;
+  }
+  .faq__q::-webkit-details-marker { display: none; }
+  .faq__q::after {
+    content: '';
+    position: absolute;
+    right: .4rem;
+    top: 1.45rem;
+    width: 9px;
+    height: 9px;
+    border-right: 2.5px solid var(--purple);
+    border-bottom: 2.5px solid var(--purple);
+    transform: rotate(45deg);
+    transition: transform .18s ease;
+  }
+  .faq[open] .faq__q::after { transform: rotate(-135deg); }
+  .faq__q:hover { color: var(--purple-deep); }
+  .faq__a { padding: 0 1rem 1.1rem 0; }
+  .faq__a p { color: var(--ink-soft); margin: 0; }
+
+  @media (max-width: 860px) {
+    .faqs { grid-template-columns: 1fr; }
+    .faqs__nav { position: static; }
+    .faqs__nav ul { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; }
+  }
+</style>

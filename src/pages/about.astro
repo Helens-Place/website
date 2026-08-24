@@ -4,13 +4,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Photo from '../components/Photo.astro';
+import { IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'about');
 const p = page!.data;
 const { Content } = await render(page!);
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: { '@id': IDS.person },
+  },
+  breadcrumbs([{ name: 'About', path: '/about' }]),
+];
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} image="helen-portrait.jpg" schema={pageSchema}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}
@@ -67,7 +77,7 @@ const { Content } = await render(page!);
   .story__links { list-style: none; padding: 0; margin: 1.8rem 0 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
   .story__links li { max-width: none; }
   .story__links a { font-weight: 600; }
-  .creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 1.5rem; }
   .creds__group {
     background: var(--paper);
     border: 1px solid var(--line);

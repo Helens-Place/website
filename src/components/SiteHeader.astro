@@ -47,7 +47,11 @@ const hasLogo = fs.existsSync(path.join(process.cwd(), 'public', 'images', 'logo
     top: 0;
     z-index: 50;
   }
+    /* The nav carries the brief's full labels, e.g. "Research and expert
+     witness", which do not fit the 1140px text measure. The header alone gets
+     a wider container. */
   .header__inner {
+    width: min(1320px, 100% - 2.5rem);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,18 +71,18 @@ const hasLogo = fs.existsSync(path.join(process.cwd(), 'public', 'images', 'logo
   }
   .brand__text span { padding-left: 1.1em; }
 
-  .nav { display: flex; align-items: center; gap: 1.75rem; }
+  .nav { display: flex; align-items: center; gap: 1.35rem; }
   .nav__list {
     display: flex;
     align-items: center;
-    gap: 1.35rem;
+    gap: 1.1rem;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   .nav__list li { max-width: none; }
   .nav__link {
-    font-size: .95rem;
+    font-size: .92rem;
     font-weight: 500;
     color: var(--ink);
     text-decoration: none;
@@ -115,7 +119,7 @@ const hasLogo = fs.existsSync(path.join(process.cwd(), 'public', 'images', 'logo
   .nav-toggle__bars::before { top: -6px; }
   .nav-toggle__bars::after { top: 6px; }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1200px) {
     .nav-toggle { display: grid; }
     .nav {
       position: absolute;
@@ -145,9 +149,27 @@ const hasLogo = fs.existsSync(path.join(process.cwd(), 'public', 'images', 'logo
 <script>
   const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
   const nav = document.querySelector<HTMLElement>('#primary-nav');
+
+  const setOpen = (open: boolean) => {
+    toggle?.setAttribute('aria-expanded', String(open));
+    nav?.setAttribute('data-open', String(open));
+  };
+
   toggle?.addEventListener('click', () => {
-    const open = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!open));
-    nav?.setAttribute('data-open', String(!open));
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  /* Escape closes the menu and puts focus back on the button, so a keyboard
+     user is never stranded inside an open menu. */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  /* Clicking a link closes the menu rather than leaving it hanging open. */
+  nav?.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement).closest('a')) setOpen(false);
   });
 </script>

@@ -4,34 +4,51 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingControls from '../components/ReadingControls.astro';
 import { getEntry } from 'astro:content';
+import { SITE, IDS, person, business } from '../lib/schema';
 
 interface Props {
   title: string;
   description: string;
+  /** Social sharing image, relative to /images. Falls back to the hero. */
+  image?: string;
+  /** Extra JSON-LD objects for this page, e.g. FAQPage or Service. */
+  schema?: Record<string, unknown>[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = 'helen-hero.jpg', schema = [] } = Astro.props;
 const site = await getEntry('settings', 'site');
 const s = site!.data;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://helensplace.co.uk');
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE);
 const fullTitle = title === s.siteName ? title : `${title} | ${s.siteName}`;
+const ogImage = new URL(`/images/${image.replace(/^\/?images\//, '')}`, SITE).href;
 
-const jsonLd = {
+/* The site-wide entity graph. Stated once, referenced by @id elsewhere, so
+   Google and AI assistants resolve one consistent Helen rather than several. */
+const siteGraph = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: s.siteName,
-  description: s.tagline,
-  founder: { '@type': 'Person', name: 'Dr Helen Ross' },
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Trowbridge',
-    addressRegion: 'Wiltshire',
-    addressCountry: 'GB',
-  },
-  telephone: s.phone.replace(/\s/g, ''),
-  email: s.email,
-  url: 'https://helensplace.co.uk',
-  sameAs: s.socials.map((l) => l.href),
+  '@graph': [
+    business,
+    person,
+    {
+      '@type': 'WebSite',
+      '@id': IDS.website,
+      url: SITE,
+      name: s.siteName,
+      description: s.tagline,
+      publisher: { '@id': IDS.business },
+      inLanguage: 'en-GB',
+    },
+    {
+      '@type': 'WebPage',
+      '@id': `${canonical.href}#webpage`,
+      url: canonical.href,
+      name: fullTitle,
+      description,
+      isPartOf: { '@id': IDS.website },
+      about: { '@id': IDS.business },
+      inLanguage: 'en-GB',
+    },
+  ],
 };
 ---
 
@@ -44,13 +61,22 @@ const jsonLd = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={s.siteName} />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Dr Helen Ross of Helen's Place" />
     <meta name="twitter:card" content="summary_large_image" />
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(siteGraph)} />
+    {schema.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>

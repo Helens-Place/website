@@ -3,13 +3,40 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Photo from '../components/Photo.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'courses');
 const p = page!.data;
 const c = p.featuredCourse;
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: c?.title,
+    description: c?.body,
+    provider: { '@id': IDS.business },
+    author: { '@id': IDS.person },
+    inLanguage: 'en-GB',
+    url: c?.cta.href,
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: 'P4W',
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '140',
+      priceCurrency: 'GBP',
+      category: 'Paid',
+      url: c?.cta.href,
+    },
+  },
+  breadcrumbs([{ name: 'Courses', path: '/courses' }]),
+];
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}

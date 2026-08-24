@@ -105,6 +105,11 @@ const pages = defineCollection({
       body: z.string(),
       cta: link,
     })).optional(),
+    faqs: z.array(z.object({
+      category: z.string(),
+      question: z.string(),
+      answer: z.string(),
+    })).optional(),
     links: z.array(link).optional(),
     finalCta: z.object({
       heading: z.string(),

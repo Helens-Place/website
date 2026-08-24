@@ -8,12 +8,20 @@ import Testimonials from '../components/Testimonials.astro';
 import BookBand from '../components/BookBand.astro';
 import TeaserCards from '../components/TeaserCards.astro';
 import CtaBand from '../components/CtaBand.astro';
+import { business, offerCatalog, IDS } from '../lib/schema';
 
 const page = await getEntry('pages', 'home');
 const p = page!.data;
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': IDS.business,
+  hasOfferCatalog: offerCatalog,
+};
 ---
 
-<BaseLayout title={p.title} description={p.description}>
+<BaseLayout title={p.title} description={p.description} schema={[homeSchema]}>
   <PageHero
     eyebrow={p.eyebrow}
     heading={p.heading}
