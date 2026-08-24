@@ -17,6 +17,7 @@ for the web and converts the logo to a transparent PNG.
 | `helen-garden-laptop.jpg`| On the decking with the laptop, leaves in the foreground           | Courses                     |
 | `helen-dog-bw.jpg`       | Black and white, with the labrador                                 | About, second image         |
 | `book-cover.jpg`         | Literacy Learning Journeys cover                                   | Homepage book band, book    |
+| `churchill-fellow-logo.png` | The round red Churchill Fellow badge                            | Churchill Fellowship page   |
 
 ## Replacing or adding a photo
 
@@ -40,14 +41,6 @@ edited in TinaCMS rather than in code.
 `white logo.png` from the original folder is the reversed version of the
 wordmark. It is not needed yet because the header and footer both sit on light
 backgrounds, but it is the one to reach for if a dark section is ever added.
-
-## Still needed
-
-| Filename | What it is |
-|---|---|
-| `churchill-fellow-logo.png` | The round red **Churchill Fellow** badge, the one reading "Cf CHURCHILL FELLOW". Save it from the Churchill Fellowship SharePoint as a PNG with a transparent background. Note this is **not** the "the CHURCHILL fellowship" wordmark, which is the charity's own logo and says something different. |
-
-Until it is added, the Fellowship page shows a labelled placeholder in its place.
 
 ## Favicons
 
