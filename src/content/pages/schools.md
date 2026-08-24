@@ -7,16 +7,16 @@ eyebrow: Schools and local authorities
 heading: Training that gives your staff something to use on Monday
 audience: schools
 intro: >-
-  Helen's Place delivers practical, research-grounded CPD to schools, colleges
-  and local authorities working with learners who have dyslexia, dyscalculia,
-  ADHD and other special educational needs. Sessions are delivered in your
-  setting and shaped around your staff and context, not a generic deck.
+  I deliver practical, research-grounded CPD to schools, colleges and local
+  authorities working with learners who have dyslexia, dyscalculia, ADHD and
+  other special educational needs. I deliver sessions in your setting and shape
+  them around your staff and your context, not a generic deck.
 image: helen-laptop-step.jpg
 imageAlt: Dr Helen Ross working on her laptop on the step of her garden office
 primaryCta:
   label: Request a quote
   href: /contact
-sessionsHeading: Sessions offered
+sessionsHeading: Sessions I offer
 sessions:
   - title: 'Dyslexia: what is it and what do we do about it?'
     body: >-
@@ -26,8 +26,8 @@ sessions:
   - title: '"Miss, I just don''t get numbers": understanding and supporting learners with dyscalculia'
     body: >-
       Why some learners find number so hard, how dyscalculia differs from maths
-      anxiety, and the practical strategies that help. Built from Helen's own
-      years teaching secondary Maths.
+      anxiety, and the practical strategies that help. Built from my own years
+      teaching secondary Maths.
   - title: Supporting learners with ADD and ADHD in a mainstream classroom
     body: >-
       What attention difficulties look like day to day, and how to structure
@@ -48,13 +48,13 @@ also:
       Developing evaluation frameworks and supporting settings towards the
       British Dyslexia Association Dyslexia Friendly Schools Kitemark.
 priceLine: >-
-  Half-day INSET sessions from £200. For a detailed quote, get in touch and
-  Helen will reply within 48 hours.
+  Half-day INSET sessions from £200. For a detailed quote, get in touch and I'll
+  reply within 48 hours.
 finalCta:
   heading: Talk about your setting
   body: >-
-    Tell Helen about your staff, your priorities and your budget, and she will
-    put together a proposal that fits.
+    Tell me about your staff, your priorities and your budget, and I'll put
+    together a proposal that fits.
   cta:
     label: Request a quote
     href: /contact

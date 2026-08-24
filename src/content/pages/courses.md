@@ -8,8 +8,8 @@ heading: Courses
 audience: schools
 intro: >-
   Self-paced online courses for teachers and support staff who want practical
-  strategies rather than theory. Courses are hosted on partner platforms, so the
-  buttons here take you across to sign up.
+  strategies rather than theory. The courses are hosted on partner platforms, so
+  the buttons here take you across to sign up.
 image: helen-garden-laptop.jpg
 imageAlt: Dr Helen Ross working on a laptop outside her garden office
 featuredCourse:
@@ -18,7 +18,7 @@ featuredCourse:
   body: >-
     A four-week, self-paced online course for teachers and support staff in
     mainstream, special and alternative settings, focused on removing barriers
-    to learning rather than chasing diagnostic labels. Made with Dr Sarah
+    to learning rather than chasing diagnostic labels. I made it with Dr Sarah
     Moseley.
   bullets:
     - Lifetime access
@@ -28,7 +28,7 @@ featuredCourse:
   price: All four weeks £140, individual weeks available separately
   cta:
     label: View the course
-    href: '#'
+    href: https://www.drsarahmoseley.com/supporting-send-in-mainstream-classrooms
   note: >-
     The course is hosted on Dr Sarah Moseley's platform. More courses are in
     development.

@@ -7,8 +7,8 @@ description: >-
 eyebrow: Dr Helen Ross · Dyslexia specialist and researcher
 heading: Serious expertise, with a genuinely warm welcome.
 intro: >-
-  Dyslexia assessments, teacher training and research, from a published academic
-  who explains things plainly. Based in Trowbridge, working with families,
+  I'm Helen. I do dyslexia assessments, teacher training and research, and I
+  explain things plainly. I'm based in Trowbridge, and I work with families,
   schools and organisations across the UK and beyond.
 image: helen-hero.jpg
 imageAlt: Dr Helen Ross smiling at her desk in her garden office
@@ -33,7 +33,7 @@ doors:
     body: >-
       Calm, thorough diagnostic assessments and specialist tutoring, in
       Trowbridge or online. You leave with a clear report your child's school
-      will act on, and a person who has answered every question.
+      will act on, and every one of your questions answered.
     price: Full diagnostic assessment from £450
     linkLabel: Explore assessments
     href: /assessments
@@ -52,12 +52,11 @@ doors:
     title: We need the evidence to be right
     body: >-
       Qualitative research, product and market consultancy, and SEND expert
-      witness work from a published researcher who turns complex findings into
-      decisions you can defend.
+      witness work. I turn complex findings into decisions you can defend.
     price: Research from £450 per day, expert witness work on enquiry
     linkLabel: Discuss a project
     href: /research-and-expert-witness
-testimonialsHeading: People remember how Helen made them feel.
+testimonialsHeading: What people say about working with me.
 testimonials:
   - quote: >-
       Her assessment was brilliant and she put my daughter at ease quickly. The
@@ -88,17 +87,17 @@ teasers:
   - label: Courses
     title: Supporting SEND in Mainstream Classrooms
     body: >-
-      A four-week, self-paced course made with Dr Sarah Moseley. Inclusive
+      A four-week, self-paced course I made with Dr Sarah Moseley. Inclusive
       strategies staff can use on Monday morning. More courses in development.
     audience: schools
     cta:
       label: See the course
       href: /courses
   - label: Speaking
-    title: Invite Helen to speak
+    title: Invite me to speak
     body: >-
       From keynotes for senior stakeholders to sessions that light up a school
-      hall. Warm, evidence-led, and pitched for the room she is in.
+      hall. Warm, evidence-led, and pitched for the room I'm in.
     audience: business
     cta:
       label: Discuss an event
@@ -106,8 +105,8 @@ teasers:
 finalCta:
   heading: Not sure which door is yours?
   body: >-
-    Start with a free 20-minute call. Helen will point you to the right next
-    step, whether that is an assessment, training, a research conversation or
+    Start with a free 20-minute call. I'll point you to the right next step,
+    whether that is an assessment, training, a research conversation or
     something else.
   cta:
     label: Book a free call

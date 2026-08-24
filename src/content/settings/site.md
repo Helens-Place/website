@@ -6,7 +6,7 @@ email: helen@helensplace.co.uk
 phone: 01225 766766
 mobile: 07541 557827
 location: Trowbridge, Wiltshire
-responseTime: Helen replies within 48 hours
+responseTime: I reply within 48 hours
 bookCallLabel: Book a call
 bookCallHref: /contact
 nav:
@@ -25,9 +25,9 @@ nav:
   - label: Contact
     href: /contact
 footerNote: >-
-  Helen's Place is the practice of Dr Helen Ross, a dyslexia and SEND specialist
-  based in Trowbridge, Wiltshire, working with families, schools and
-  organisations across the UK and beyond.
+  Helen's Place is my practice. I'm a dyslexia and SEND specialist based in
+  Trowbridge, Wiltshire, working with families, schools and organisations across
+  the UK and beyond.
 socials:
   - label: LinkedIn
     href: https://www.linkedin.com/in/helenlouiseross/

@@ -123,24 +123,41 @@ The domain is managed at Inios.
 
 ### Before you point the domain
 
-- [ ] Every page reviewed and approved
-- [ ] Real photos and the logo in place
-- [ ] Privacy, safeguarding and terms pages carry Helen's real wording
-- [ ] The course link points at Dr Sarah Moseley's platform
+- [x] Real photos and the logo in place
+- [x] Privacy, safeguarding and terms pages carry Helen's real wording
+- [x] The course link points at Dr Sarah Moseley's platform
+- [x] Redirects in place for the old WordPress URLs
+- [ ] Every page reviewed and approved by Helen
+- [ ] Safeguarding policy reviewed. It is dated 13 November 2019 and was due for
+      review in November 2020, so it is overdue and references an old edition of
+      Keeping Children Safe in Education
+- [ ] Privacy policy checked against how the new site actually works
 - [ ] Contact form tested end to end
-- [ ] Existing MX and TXT records recorded, so email survives
-- [ ] Redirects considered for any old URLs that people have bookmarked
+- [ ] Existing MX and TXT records recorded, so email survives the DNS change
 
 ### Old URLs
 
-The previous site used addresses like `/support/`, `/working-together/`,
-`/publications-and-media/` and `/books-publications-and-blog/`. Those will
-404 on the new site unless redirected. Add them to `netlify.toml` when the
-final URL map is agreed, for example:
+Redirects for the previous WordPress site are already configured in
+`netlify.toml`. They were taken from the live site's own navigation rather than
+guessed:
 
-```toml
-[[redirects]]
-  from = "/publications-and-media/"
-  to = "/publications"
-  status = 301
-```
+| Old URL | Goes to |
+|---|---|
+| `/helen/` | `/about` |
+| `/support/` and its children | `/assessments` |
+| `/working-together/` | `/schools` |
+| `/working-together/research/` | `/research-and-expert-witness` |
+| `/working-together/speaker-and-corporate/` | `/speaking` |
+| `/books-publications-and-blog/` | `/book` |
+| `/literacy-learning-journeys/` | `/book` |
+| `/publications-and-media/` | `/publications` |
+| `/privacy-policy/` | `/privacy` |
+| `/safeguarding-policy/` | `/safeguarding` |
+| `/ts-and-cs/` | `/terms` |
+| `/feed/` | `/blog` |
+
+`/contact/`, `/courses/` and `/blog/` keep the same addresses, so they need no
+redirect.
+
+Redirects only take effect once the site is live on Netlify. They cannot be
+tested with `npm run dev`.

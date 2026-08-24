@@ -4,11 +4,10 @@ description: >-
   Dyslexia specialist, AMBDA-qualified assessor, published researcher and
   Trustee of the British Dyslexia Association, based in Trowbridge, Wiltshire.
 eyebrow: About
-heading: About Helen
+heading: About me
 intro: >-
-  A dyslexia specialist who has advised government, published internationally
-  and written the book, and who still gets down on the floor to put a nervous
-  ten-year-old at ease.
+  I've advised government, published internationally and written the book. I
+  also still get down on the floor to put a nervous ten-year-old at ease.
 image: helen-portrait.jpg
 imageAlt: Portrait of Dr Helen Ross holding her book
 primaryCta:
@@ -45,18 +44,29 @@ links:
     href: /publications
 ---
 
-## Helen's story
+## My story
 
-Helen began her career teaching secondary Maths and French in Barnsley. What
-she found she loved was not the subject so much as the moment a young person
-unpicked a problem they had believed was beyond them.
+I'm a Special Educational Needs specialist and a dyslexia expert, and I'm on a
+mission to make the world a more inclusive place for dyslexic people. I founded
+Helen's Place to support young people to be their best self through holistic
+intervention, building positive working relationships with everyone involved in
+a child's education.
 
-That pulled her towards special educational needs. She qualified as a SENCo,
-moved into specialist teaching, and began the research that eventually became a
-PhD at the University of Bath. Today she combines all of it: assessment,
-tutoring, training and research, alongside roles with the Wiltshire Dyslexia
-Association and the British Dyslexia Association.
+I began my career teaching Maths and French in Barnsley, South Yorkshire. What I
+loved was not the subject so much as the moment a young person unpicked a
+problem they had believed was beyond them. That led me towards group work and
+confidence building, and eventually to qualifying as a Special Educational Needs
+Coordinator. Working part time as an SEN teacher in a mainstream school let me
+carry on with research and support professional bodies making systematic change
+in the education system.
 
-Helen is dyslexic herself, which shapes everything she does. She knows what it
-is to be the child in the room who is working twice as hard for half the credit,
-and she offers the inclusive, friendly support she wishes she had had.
+At a national level, my work has included advising the UK Government through the
+Council for Science and Technology on supporting young people with specific
+learning difficulties, and contributing to All-Party Parliamentary Group reports
+presented at the House of Commons. I'm Chair of the Wiltshire Dyslexia
+Association, and as a Trustee of the British Dyslexia Association I keep
+advocating to make the world a more inclusive place for dyslexic people.
+
+I'm dyslexic myself, so I don't just understand dyslexia academically. I live
+it. I know what it is to be the child in the room working twice as hard for half
+the credit, and I offer the inclusive, friendly support I wish I'd had.

@@ -33,6 +33,6 @@ sessions:
       Prompts to help you apply each chapter to the children you work with.
 whyHeading: The spirit of it
 whyBody: >-
-  Championing kindness, empathy and a positive view of dyslexia. A second book
-  is on the way.
+  I wrote it to champion kindness, empathy and a positive view of dyslexia. A
+  second book is on the way.
 ---

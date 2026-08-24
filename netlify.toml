@@ -8,6 +8,93 @@
 # Astro emits a 404.html which Netlify serves automatically for unmatched
 # routes, so no catch-all redirect is needed here.
 
+# ---------------------------------------------------------------------------
+# Redirects from the old WordPress site.
+#
+# These paths were taken from the live site's own navigation, not guessed, so
+# existing links, bookmarks and search results keep working. Netlify matches
+# rules in order, so the specific paths come before the section wildcards.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/helen/"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/support/dyslexia-support/"
+  to = "/assessments"
+  status = 301
+
+[[redirects]]
+  from = "/support/the-elevator-series/"
+  to = "/assessments"
+  status = 301
+
+[[redirects]]
+  from = "/working-together/research/"
+  to = "/research-and-expert-witness"
+  status = 301
+
+[[redirects]]
+  from = "/working-together/speaker-and-corporate/"
+  to = "/speaking"
+  status = 301
+
+[[redirects]]
+  from = "/literacy-learning-journeys/"
+  to = "/book"
+  status = 301
+
+[[redirects]]
+  from = "/books-publications-and-blog/"
+  to = "/book"
+  status = 301
+
+[[redirects]]
+  from = "/publications-and-media/"
+  to = "/publications"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy/"
+  to = "/privacy"
+  status = 301
+
+[[redirects]]
+  from = "/safeguarding-policy/"
+  to = "/safeguarding"
+  status = 301
+
+[[redirects]]
+  from = "/ts-and-cs/"
+  to = "/terms"
+  status = 301
+
+# WordPress feed. Anyone subscribed lands on the blog instead of an error.
+[[redirects]]
+  from = "/feed/"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/comments/feed/"
+  to = "/blog"
+  status = 301
+
+# Section wildcards, last, to catch any child page not listed above.
+[[redirects]]
+  from = "/support/*"
+  to = "/assessments"
+  status = 301
+
+[[redirects]]
+  from = "/working-together/*"
+  to = "/schools"
+  status = 301
+
+# ---------------------------------------------------------------------------
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -19,3 +106,8 @@
   for = "/_astro/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

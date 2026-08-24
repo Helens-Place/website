@@ -8,11 +8,11 @@ eyebrow: Business, research and legal
 heading: Research, consultancy and expert witness work you can stand behind
 audience: business
 intro: >-
-  Dr Helen Ross is a published qualitative researcher whose work on dyslexia and
-  SEND has reached peer-reviewed journals, the Council for Science and
-  Technology, and an All-Party Parliamentary Group at the House of Commons.
-  Organisations bring her in when the evidence has to be right and the findings
-  have to make sense to non-specialists.
+  I'm a published qualitative researcher. My work on dyslexia and SEND has
+  reached peer-reviewed journals, the Council for Science and Technology, and an
+  All-Party Parliamentary Group at the House of Commons. Organisations bring me
+  in when the evidence has to be right and the findings have to make sense to
+  non-specialists.
 image: helen-desk-working.jpg
 imageAlt: Dr Helen Ross working at her desk
 primaryCta:
@@ -21,11 +21,11 @@ primaryCta:
 expertWitness:
   heading: Expert witness work
   body: >-
-    Helen provides expert witness reports and opinion in SEND and dyslexia
-    matters, including EHCP and tribunal contexts. She writes clearly for
-    instructing solicitors, local authorities and families, and understands her
-    duty to the court. Get in touch to discuss instruction and availability.
-offerHeading: What Helen offers
+    I provide expert witness reports and opinion in SEND and dyslexia matters,
+    including EHCP and tribunal contexts. I write clearly for instructing
+    solicitors, local authorities and families, and understand my duty to the
+    court. Get in touch to discuss instruction and availability.
+offerHeading: What I offer
 offerBody: >-
   Research design and qualitative data analysis, methodology consultation,
   evidence review, product and market insight, and presentation of findings to
@@ -52,8 +52,8 @@ priceLine: >-
 finalCta:
   heading: Discuss a project
   body: >-
-    Tell Helen what you are trying to find out and she will tell you honestly
-    whether she is the right person for it. Helen replies within 48 hours.
+    Tell me what you are trying to find out and I'll tell you honestly whether
+    I'm the right person for it. I reply within 48 hours.
   cta:
     label: Start a conversation
     href: /contact
