@@ -22,11 +22,15 @@ imageAlt: Dr Helen Ross laughing with her dog at home
 primaryCta:
   label: Book a free 20-minute call
   href: /contact
+secondaryCta:
+  label: What happens in an assessment
+  href: /what-to-expect
 servicesHeading: Services and prices
 servicesNote: All prices include VAT.
 services:
   - name: Full diagnostic assessment
     price: from £450
+    note: £150 secures the booking
   - name: Exam access arrangements
     price: from £180
   - name: Other assessments
@@ -55,10 +59,11 @@ steps:
       costs. No pressure, and no jargon.
   - title: The assessment itself
     body: >-
-      A relaxed session of two to three hours, in Trowbridge or online. We work
-      through a series of activities covering reading, spelling, memory and
-      processing. Most children find it far friendlier than they expected, and
-      we take breaks whenever they are needed.
+      I leave a good day free. Contact time can be up to three or four hours or
+      so, depending on whether we look at numeracy as well as literacy. We work
+      through problem-solving, reading speed and comprehension, writing speed
+      and sometimes maths calculation. Breaks happen whenever they are needed,
+      because it is an intense process.
   - title: Your report
     body: >-
       You receive a full written report that says plainly whether your child is

@@ -16,12 +16,13 @@ faqs:
   - category: Assessments
     question: What is a dyslexia assessment and what does it involve?
     answer: >-
-      A full diagnostic assessment typically lasts two to three hours. I use
-      standardised, nationally recognised tests to assess reading, writing,
-      spelling, phonological processing, working memory and processing speed.
-      You receive a comprehensive written report, clearly written and suitable
-      for schools, universities and employers. Full assessments start from £450
-      including VAT.
+      A full diagnostic assessment takes up to three or four hours of contact
+      time, and I leave a good day free for it. We work through problem-solving,
+      reading speed and comprehension, writing speed, sometimes maths
+      calculation, and other areas depending on the individual. You receive a
+      comprehensive written report, clearly written and suitable for schools,
+      universities and employers. Full assessments start from £450 including
+      VAT.
   - category: Assessments
     question: How much does a dyslexia assessment cost?
     answer: >-
@@ -67,11 +68,41 @@ faqs:
   - category: Assessments
     question: How long does the assessment take, and how quickly will I get the report?
     answer: >-
-      A full diagnostic assessment typically lasts two to three hours. I aim to
-      produce the written report as promptly as possible afterwards, and we will
-      agree exact timescales at the initial consultation. Reports are thorough
-      and clearly written, so that parents, schools and learners can all
-      understand the findings.
+      Contact time can be up to three or four hours or so, depending on whether
+      we look at numeracy as well as literacy, and I leave a good day free.
+      Students invariably need breaks, because it is an intense process. I aim
+      to produce the written report as promptly as possible afterwards, and we
+      agree exact timescales at the initial consultation.
+  - category: Assessments
+    question: Where does the assessment take place?
+    answer: >-
+      I usually assess at my house in Trowbridge, in a garden office. I do also
+      sometimes work in children's schools or at their homes, depending on what
+      is best for them. If your child would find one setting much easier than
+      another, do say so when we are arranging the date.
+  - category: Assessments
+    question: Do you assess dyscalculia separately from dyslexia?
+    answer: >-
+      No. I do not split dyscalculia and dyslexia assessments, because the two
+      often co-occur. Looking at literacy and numeracy together gives a truer
+      picture of how a person actually learns. It does mean the assessment takes
+      longer when we cover both.
+  - category: Assessments
+    question: How long is the report valid for?
+    answer: >-
+      Under the current regulations the report is valid for life, because I hold
+      an Assessment Practising Certificate. That means it can be used later as
+      part of the evidence base for Disabled Students' Allowance at university,
+      Access to Work, or support in college, and should not need redoing. One
+      caveat: some universities and professional bodies are starting to
+      challenge that, and it varies by institution.
+  - category: The process
+    question: Is there a deposit, and can I see a sample report first?
+    answer: >-
+      A full assessment is £450, and I ask for £150 to secure the booking. I can
+      send you a sample report beforehand so you can see the kind of document
+      the process produces before committing to anything. I completely
+      understand that families want to have a think before confirming.
   - category: Tutoring and support
     question: What age groups do you tutor?
     answer: >-

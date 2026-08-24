@@ -1,0 +1,108 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import TitledList from '../components/TitledList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+
+const page = await getEntry('pages', 'what-to-expect');
+const p = page!.data;
+const { Content } = await render(page!);
+
+/* HowTo describes a process rather than a product, which is what this page is.
+   The step text is the same text a reader sees, so nothing is hidden markup. */
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'What happens in a dyslexia assessment',
+    description: p.description,
+    totalTime: 'PT4H',
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: 'GBP',
+      value: '450',
+    },
+    provider: { '@id': IDS.business },
+    step: (p.steps ?? []).map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.title,
+      text: s.body,
+      url: `${SITE}/what-to-expect#step-${i + 1}`,
+    })),
+  },
+  breadcrumbs([
+    { name: 'Assessments', path: '/assessments' },
+    { name: 'What to expect', path: '/what-to-expect' },
+  ]),
+];
+---
+
+<BaseLayout
+  title={p.title}
+  description={p.description}
+  image="helen-dog-sofa.jpg"
+  schema={pageSchema}
+>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    audience="families"
+    primaryCta={p.primaryCta}
+    secondaryCta={p.secondaryCta}
+  />
+
+  {p.steps && (
+    <TitledList heading={p.stepsHeading} items={p.steps} variant="steps" background="tint" />
+  )}
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose"><Content /></div>
+    </div>
+  </section>
+
+  {p.links && (
+    <section class="section section--pink">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Prefer to hear it from me?</h2>
+          <p class="lede">
+            The Elevator Series is a set of short videos, each about two minutes.
+            Three of them cover the assessment process directly.
+          </p>
+        </div>
+        <ul class="episodes">
+          {p.links.map((l) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.4rem; }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .episodes { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; max-width: 60ch; }
+  .episodes li { max-width: none; }
+  .episodes a {
+    display: block;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .episodes a:hover { border-color: var(--purple); }
+</style>
