@@ -1,0 +1,54 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ServiceList from '../components/ServiceList.astro';
+import TitledList from '../components/TitledList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Photo from '../components/Photo.astro';
+
+const page = await getEntry('pages', 'assessments');
+const p = page!.data;
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    trustLine={p.trustLine}
+    audience="families"
+    primaryCta={p.primaryCta}
+  />
+
+  {p.services && (
+    <ServiceList heading={p.servicesHeading!} note={p.servicesNote} items={p.services} />
+  )}
+
+  {p.whyBody && (
+    <section class="section">
+      <div class="wrap why">
+        <div>
+          <h2>{p.whyHeading}</h2>
+          <p>{p.whyBody}</p>
+        </div>
+        {p.image && (
+          <Photo src={p.image} alt={p.imageAlt ?? ''} ratio="3 / 2" audience="families" />
+        )}
+      </div>
+    </section>
+  )}
+
+  {p.steps && (
+    <TitledList heading={p.stepsHeading} items={p.steps} variant="steps" background="tint" />
+  )}
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .why { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+  @media (max-width: 850px) { .why { grid-template-columns: 1fr; } }
+</style>

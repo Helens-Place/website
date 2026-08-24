@@ -1,0 +1,42 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import TitledList from '../components/TitledList.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = await getEntry('pages', 'book');
+const p = page!.data;
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    primaryCta={p.primaryCta}
+    ratio="2 / 3"
+  />
+
+  {p.sessions && (
+    <TitledList heading={p.sessionsHeading} items={p.sessions} background="tint" columns={2} />
+  )}
+
+  {p.whyBody && (
+    <section class="section">
+      <div class="wrap">
+        <h2>{p.whyHeading}</h2>
+        <p class="lede">{p.whyBody}</p>
+      </div>
+    </section>
+  )}
+
+  <CtaBand
+    heading="Bringing it to your staffroom?"
+    body="Helen runs training that builds on the book, shaped around your setting and your staff."
+    cta={{ label: 'See training and support', href: '/schools' }}
+    tone="purple"
+  />
+</BaseLayout>

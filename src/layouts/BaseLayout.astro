@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ReadingControls from '../components/ReadingControls.astro';
+import { getEntry } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const site = await getEntry('settings', 'site');
+const s = site!.data;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://helensplace.co.uk');
+const fullTitle = title === s.siteName ? title : `${title} | ${s.siteName}`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: s.siteName,
+  description: s.tagline,
+  founder: { '@type': 'Person', name: 'Dr Helen Ross' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Trowbridge',
+    addressRegion: 'Wiltshire',
+    addressCountry: 'GB',
+  },
+  telephone: s.phone.replace(/\s/g, ''),
+  email: s.email,
+  url: 'https://helensplace.co.uk',
+  sameAs: s.socials.map((l) => l.href),
+};
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={s.siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <ReadingControls />
+    <SiteHeader />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+
+<style is:global>
+  html, body { min-height: 100%; }
+  body { display: flex; flex-direction: column; }
+  main { flex: 1; }
+  main:focus { outline: none; }
+</style>

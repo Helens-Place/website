@@ -1,0 +1,53 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import TitledList from '../components/TitledList.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = await getEntry('pages', 'schools');
+const p = page!.data;
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    audience="schools"
+    primaryCta={p.primaryCta}
+  />
+
+  {p.sessions && (
+    <TitledList heading={p.sessionsHeading} items={p.sessions} background="tint" columns={3} />
+  )}
+
+  {p.also && (
+    <TitledList heading={p.alsoHeading} items={p.also} columns={3} />
+  )}
+
+  {p.priceLine && (
+    <section class="section section--pink">
+      <div class="wrap">
+        <p class="price-line">{p.priceLine}</p>
+      </div>
+    </section>
+  )}
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} tone="purple" />
+  )}
+</BaseLayout>
+
+<style>
+  .price-line {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    font-weight: 600;
+    color: var(--purple-deep);
+    max-width: 46ch;
+    margin: 0;
+  }
+</style>

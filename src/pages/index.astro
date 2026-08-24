@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import AuthorityStrip from '../components/AuthorityStrip.astro';
+import ThreeDoors from '../components/ThreeDoors.astro';
+import Testimonials from '../components/Testimonials.astro';
+import BookBand from '../components/BookBand.astro';
+import TeaserCards from '../components/TeaserCards.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = await getEntry('pages', 'home');
+const p = page!.data;
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    primaryCta={p.primaryCta}
+    secondaryCta={p.secondaryCta}
+    ratio="1 / 1"
+  />
+  {p.authority && <AuthorityStrip items={p.authority} />}
+  {p.doors && (
+    <ThreeDoors heading={p.doorsHeading!} subheading={p.doorsSubheading} doors={p.doors} />
+  )}
+  {p.testimonials && (
+    <Testimonials heading={p.testimonialsHeading!} items={p.testimonials} />
+  )}
+  {p.bookBand && (
+    <BookBand
+      heading={p.bookBand.heading}
+      body={p.bookBand.body}
+      cta={p.bookBand.cta}
+      image={p.bookBand.image}
+      imageAlt={p.bookBand.imageAlt}
+    />
+  )}
+  {p.teasers && <TeaserCards items={p.teasers} />}
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>

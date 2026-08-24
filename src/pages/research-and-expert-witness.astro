@@ -1,0 +1,103 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const page = await getEntry('pages', 'research-and-expert-witness');
+const p = page!.data;
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    audience="business"
+    primaryCta={p.primaryCta}
+  />
+
+  {p.expertWitness && (
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="ew">
+          <h2>{p.expertWitness.heading}</h2>
+          <p>{p.expertWitness.body}</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {p.offerBody && (
+    <section class="section">
+      <div class="wrap">
+        <h2>{p.offerHeading}</h2>
+        <p class="lede">{p.offerBody}</p>
+      </div>
+    </section>
+  )}
+
+  {p.clients && (
+    <section class="section section--paper">
+      <div class="wrap">
+        <div class="section-head"><h2>{p.clientsHeading}</h2></div>
+        <ul class="clients">
+          {p.clients.map((c) => (
+            <li class="client">
+              <strong>{c.name}</strong>
+              {c.note && <span>{c.note}</span>}
+            </li>
+          ))}
+        </ul>
+        {p.clientsFootnote && (
+          <p class="clients__more">
+            <a href={p.clientsFootnote.href}>{p.clientsFootnote.label}</a>
+          </p>
+        )}
+      </div>
+    </section>
+  )}
+
+  {p.priceLine && (
+    <section class="section section--tint">
+      <div class="wrap">
+        <p class="price-line">{p.priceLine}</p>
+      </div>
+    </section>
+  )}
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .ew {
+    border-left: 6px solid var(--purple-deep);
+    padding-left: clamp(1.2rem, 3vw, 2.2rem);
+    max-width: 70ch;
+  }
+  .clients { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+  .client {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    background: var(--business-fill);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.4rem;
+    max-width: none;
+  }
+  .client strong { font-family: var(--font-display); font-size: 1.05rem; color: var(--purple-deep); }
+  .client span { font-size: .92rem; color: var(--ink-soft); }
+  .clients__more { margin-top: 1.4rem; font-weight: 600; }
+  .price-line {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+    font-weight: 600;
+    color: var(--purple-deep);
+    max-width: 48ch;
+    margin: 0;
+  }
+</style>

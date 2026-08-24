@@ -1,0 +1,89 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Photo from '../components/Photo.astro';
+
+const page = await getEntry('pages', 'about');
+const p = page!.data;
+const { Content } = await render(page!);
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    primaryCta={p.primaryCta}
+  />
+
+  <section class="section section--paper">
+    <div class="wrap story">
+      <div class="prose">
+        <Content />
+        {p.links && (
+          <ul class="story__links">
+            {p.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        )}
+      </div>
+      <div class="story__aside">
+        <Photo src="helen-dog-bw.jpg" alt="Dr Helen Ross at home with her dog" ratio="4 / 5" />
+      </div>
+    </div>
+  </section>
+
+  {p.credentialGroups && (
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section-head"><h2>Credentials</h2></div>
+        <div class="creds">
+          {p.credentialGroups.map((g) => (
+            <div class="creds__group">
+              <h3 class="creds__heading">{g.heading}</h3>
+              <ul class="creds__list">
+                {g.items.map((i) => <li>{i}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <CtaBand
+    heading="Work with Helen"
+    body="Whether you need an assessment, training or research support, start with a free 20-minute call."
+    cta={{ label: 'Book a free call', href: '/contact' }}
+  />
+</BaseLayout>
+
+<style>
+  .story { display: grid; grid-template-columns: 1.4fr .6fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+  .prose :global(h2) { margin-top: 0; }
+  .story__links { list-style: none; padding: 0; margin: 1.8rem 0 0; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .story__links li { max-width: none; }
+  .story__links a { font-weight: 600; }
+  .creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .creds__group {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.7rem;
+  }
+  .creds__heading {
+    font-family: var(--font-body);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--pink-accent);
+    font-weight: 700;
+    margin-bottom: .9rem;
+  }
+  .creds__list { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+  .creds__list li { font-size: .93rem; color: var(--ink-soft); max-width: none; }
+  @media (max-width: 900px) { .story { grid-template-columns: 1fr; } .story__aside { max-width: 340px; } }
+</style>

@@ -1,0 +1,36 @@
+---
+interface Props {
+  heading: string;
+  body: string;
+  cta: { label: string; href: string };
+  tone?: 'purple' | 'deep';
+}
+const { heading, body, cta, tone = 'deep' } = Astro.props;
+---
+<section class="band" data-tone={tone}>
+  <div class="wrap band__inner">
+    <div>
+      <h2 class="band__heading">{heading}</h2>
+      <p class="band__body">{body}</p>
+    </div>
+    <a href={cta.href} class="btn band__cta">{cta.label}</a>
+  </div>
+</section>
+
+<style>
+  .band { padding-block: clamp(3rem, 6vw, 4.5rem); }
+  .band[data-tone='deep'] { background: var(--purple-deep); }
+  .band[data-tone='purple'] { background: var(--purple); }
+  .band__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .band__heading { color: #fff; margin-bottom: .6rem; }
+  .band__body { color: #EEE1F2; margin: 0; max-width: 56ch; }
+  .band__cta { background: #fff; color: var(--purple-deep); flex-shrink: 0; }
+  .band__cta:hover { background: var(--pink-soft); color: var(--purple-deep); transform: translateY(-2px); }
+  .band :global(.band__cta:focus-visible) { outline-color: #fff; }
+</style>

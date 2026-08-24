@@ -1,0 +1,97 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const page = await getEntry('pages', 'contact');
+const p = page!.data;
+const site = await getEntry('settings', 'site');
+const s = site!.data;
+const telHref = (n: string) => `tel:${n.replace(/\s/g, '')}`;
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero eyebrow={p.eyebrow} heading={p.heading} intro={p.intro} />
+
+  {p.routes && (
+    <section class="section section--paper">
+      <div class="wrap">
+        <ul class="routes">
+          {p.routes.map((r) => (
+            <li class="route" data-audience={r.audience}>
+              <h2 class="route__title">{r.title}</h2>
+              <p class="route__body">{r.body}</p>
+              <a href={r.cta.href} class="route__link">{r.cta.label} <span aria-hidden="true">&rarr;</span></a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <section class="section" id="contact-form">
+    <div class="wrap contact">
+      <div>
+        <h2>Send Helen a message</h2>
+        <ContactForm />
+      </div>
+      <aside class="details">
+        <h2 class="details__heading">Contact details</h2>
+        <dl class="details__list">
+          <dt>Email</dt>
+          <dd><a href={`mailto:${s.email}`}>{s.email}</a></dd>
+          <dt>Phone</dt>
+          <dd><a href={telHref(s.phone)}>{s.phone}</a></dd>
+          {s.mobile && (
+            <Fragment>
+              <dt>Mobile</dt>
+              <dd><a href={telHref(s.mobile)}>{s.mobile}</a></dd>
+            </Fragment>
+          )}
+          <dt>Based in</dt>
+          <dd>{s.location}, in person and online</dd>
+          <dt>Response time</dt>
+          <dd>{s.responseTime}</dd>
+        </dl>
+        <ul class="details__socials">
+          {s.socials.map((l) => <li><a href={l.href} rel="me noopener">{l.label}</a></li>)}
+        </ul>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .routes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .route { border-radius: var(--radius-lg); padding: 1.9rem; max-width: none; display: flex; flex-direction: column; }
+  .route[data-audience='families'] { background: var(--pink-soft); }
+  .route[data-audience='families'] .route__link { color: var(--pink-accent); }
+  .route[data-audience='schools'] { background: var(--bg-tint); }
+  .route[data-audience='schools'] .route__link { color: var(--purple); }
+  .route[data-audience='business'] { background: var(--business-fill); }
+  .route[data-audience='business'] .route__link { color: var(--purple-deep); }
+  .route__title { font-size: 1.15rem; margin-bottom: .5rem; }
+  .route__body { font-size: .95rem; margin-bottom: 1.1rem; }
+  .route__link { margin-top: auto; font-weight: 700; text-decoration: none; font-size: .93rem; }
+  .route__link:hover { text-decoration: underline; }
+
+  .contact { display: grid; grid-template-columns: 1.3fr .7fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
+  .details { background: var(--bg-tint); border-radius: var(--radius-lg); padding: 1.9rem; }
+  .details__heading { font-size: 1.1rem; }
+  .details__list { margin: 0; display: grid; gap: .15rem; }
+  .details__list dt {
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 700;
+    color: var(--purple-deep);
+    margin-top: .9rem;
+  }
+  .details__list dd { margin: 0; font-size: .95rem; color: var(--ink-soft); }
+  .details__socials { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .details__socials li { max-width: none; }
+  .details__socials a { font-size: .9rem; font-weight: 600; }
+
+  @media (max-width: 950px) { .routes { grid-template-columns: 1fr; } .contact { grid-template-columns: 1fr; } }
+</style>

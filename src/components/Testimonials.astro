@@ -1,0 +1,52 @@
+---
+interface T { quote: string; name: string; role?: string; tone: 'families' | 'schools' | 'business' }
+interface Props { heading: string; items: T[] }
+const { heading, items } = Astro.props;
+---
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="section-head"><h2>{heading}</h2></div>
+    <ul class="quotes">
+      {items.map((t) => (
+        <li class="quote" data-tone={t.tone}>
+          <blockquote class="quote__text">{t.quote}</blockquote>
+          <p class="quote__by">
+            <strong>{t.name}</strong>{t.role && <span>, {t.role}</span>}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .quotes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .quote {
+    border-radius: var(--radius-lg);
+    padding: 2.2rem 2rem 1.8rem;
+    max-width: none;
+    border-left: 6px solid transparent;
+  }
+  .quote[data-tone='families'] { background: var(--pink-tint); border-left-color: var(--pink-accent); }
+  .quote[data-tone='schools'] { background: var(--bg-tint); border-left-color: var(--purple); }
+  .quote[data-tone='business'] { background: var(--business-fill); border-left-color: var(--purple-deep); }
+  .quote__text {
+    margin: 0 0 1.2rem;
+    font-size: 1.08rem;
+    line-height: 1.6;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .quote__text::before { content: '\201C'; }
+  .quote__text::after { content: '\201D'; }
+  .quote__by { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+  .quote__by strong { color: var(--ink); }
+</style>

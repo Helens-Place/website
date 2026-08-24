@@ -1,0 +1,61 @@
+---
+interface Teaser {
+  label: string;
+  title: string;
+  body: string;
+  audience: 'families' | 'schools' | 'business';
+  cta: { label: string; href: string };
+}
+interface Props { items: Teaser[] }
+const { items } = Astro.props;
+---
+<section class="section">
+  <div class="wrap">
+    <ul class="teasers">
+      {items.map((t) => (
+        <li class="teaser" data-audience={t.audience}>
+          <p class="teaser__label">{t.label}</p>
+          <h3>{t.title}</h3>
+          <p class="teaser__body">{t.body}</p>
+          <a href={t.cta.href} class="teaser__link">{t.cta.label} <span aria-hidden="true">&rarr;</span></a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .teasers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .teaser {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--purple);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .teaser[data-audience='business'] { border-top-color: var(--purple-deep); }
+  .teaser[data-audience='families'] { border-top-color: var(--pink-accent); }
+  .teaser__label {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: .6rem;
+    max-width: none;
+  }
+  .teaser__body { font-size: .96rem; color: var(--ink-soft); }
+  .teaser__link { margin-top: auto; font-weight: 700; text-decoration: none; font-size: .95rem; }
+  .teaser__link:hover { text-decoration: underline; }
+  @media (max-width: 800px) { .teasers { grid-template-columns: 1fr; } }
+</style>

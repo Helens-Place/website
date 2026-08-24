@@ -1,0 +1,55 @@
+---
+interface S { name: string; price: string; note?: string }
+interface Props { heading: string; note?: string; items: S[] }
+const { heading, note, items } = Astro.props;
+---
+<section class="section section--pink" id="prices">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{heading}</h2>
+      {note && <p class="lede">{note}</p>}
+    </div>
+    <ul class="services">
+      {items.map((s) => (
+        <li class="service">
+          <div class="service__main">
+            <h3 class="service__name">{s.name}</h3>
+            {s.note && <p class="service__note">{s.note}</p>}
+          </div>
+          <p class="service__price">{s.price}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+  .service {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.5rem;
+    max-width: none;
+  }
+  .service__main { flex: 1; }
+  .service__name { font-size: 1.05rem; margin: 0; font-family: var(--font-body); font-weight: 600; }
+  .service__note { font-size: .87rem; color: var(--ink-soft); margin: .2rem 0 0; }
+  .service__price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--pink-accent);
+    margin: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  @media (max-width: 560px) {
+    .service { flex-direction: column; gap: .4rem; }
+    .service__price { white-space: normal; }
+  }
+</style>

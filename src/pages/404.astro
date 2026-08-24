@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+<BaseLayout title="Page not found" description="That page does not exist.">
+  <PageHero
+    eyebrow="404"
+    heading="That page has wandered off."
+    intro="The link may be old, or the address may have a typo in it. Try the menu above, or head back to the homepage and start again."
+    primaryCta={{ label: 'Back to the homepage', href: '/' }}
+    secondaryCta={{ label: 'Get in touch', href: '/contact' }}
+  />
+</BaseLayout>

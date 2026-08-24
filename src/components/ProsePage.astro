@@ -1,0 +1,44 @@
+---
+/** Shared shell for the simple prose pages: legal, publications and similar. */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+interface Props { slug: string }
+const { slug } = Astro.props;
+
+const page = await getEntry('pages', slug);
+const p = page!.data;
+const { Content } = await render(page!);
+---
+
+<BaseLayout title={p.title} description={p.description}>
+  <PageHero eyebrow={p.eyebrow} heading={p.heading} intro={p.intro} audience={p.audience} />
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <Content />
+        {p.links && (
+          <ul class="prose__links">
+            {p.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(blockquote) {
+    margin: 0 0 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--pink-tint);
+    border-left: 6px solid var(--pink-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .prose :global(blockquote p:last-child) { margin-bottom: 0; }
+  .prose__links { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: .8rem; }
+  .prose__links li { max-width: none; }
+  .prose__links a { font-weight: 600; }
+</style>

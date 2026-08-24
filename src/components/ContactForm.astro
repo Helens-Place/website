@@ -1,0 +1,99 @@
+---
+/**
+ * Netlify Forms. The static HTML is detected at deploy time, so submissions
+ * arrive in the Netlify dashboard with no backend to maintain. The honeypot
+ * field catches bots without putting a CAPTCHA in front of a dyslexic visitor.
+ */
+---
+
+<form
+  name="contact"
+  method="POST"
+  action="/thank-you"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="form"
+>
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="form__hp">
+    <label>Leave this field empty if you are human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  <div class="form__row">
+    <label class="field">
+      <span class="field__label">Your name <abbr title="required">*</abbr></span>
+      <input type="text" name="name" required autocomplete="name" />
+    </label>
+    <label class="field">
+      <span class="field__label">Email address <abbr title="required">*</abbr></span>
+      <input type="email" name="email" required autocomplete="email" />
+    </label>
+  </div>
+
+  <div class="form__row">
+    <label class="field">
+      <span class="field__label">Phone number</span>
+      <span class="field__hint">Optional, if you would rather Helen rang you.</span>
+      <input type="tel" name="phone" autocomplete="tel" />
+    </label>
+    <label class="field">
+      <span class="field__label">School or organisation</span>
+      <span class="field__hint">Optional.</span>
+      <input type="text" name="organisation" autocomplete="organization" />
+    </label>
+  </div>
+
+  <label class="field">
+    <span class="field__label">How can Helen help? <abbr title="required">*</abbr></span>
+    <select name="enquiry" required>
+      <option value="">Please choose one</option>
+      <option>Dyslexia assessment for my child</option>
+      <option>Dyslexia assessment for myself</option>
+      <option>Exam access arrangements</option>
+      <option>Specialist tutoring, maths or literacy</option>
+      <option>Family support and advice</option>
+      <option>School training, INSET or CPD</option>
+      <option>SEND consultancy</option>
+      <option>Research or consultancy project</option>
+      <option>Expert witness instruction</option>
+      <option>Speaking engagement</option>
+      <option>Something else</option>
+    </select>
+  </label>
+
+  <label class="field">
+    <span class="field__label">Tell Helen a little more <abbr title="required">*</abbr></span>
+    <span class="field__hint">A sentence or two is plenty. There is no wrong way to write this.</span>
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+
+  <button type="submit" class="btn btn--primary">Send message</button>
+  <p class="form__note">Helen replies within 48 hours.</p>
+</form>
+
+<style>
+  .form { max-width: 44rem; }
+  .form__hp { position: absolute; left: -9999px; }
+  .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .field { display: block; margin-bottom: 1.3rem; }
+  .field__label { display: block; font-weight: 600; font-size: .95rem; margin-bottom: .35rem; }
+  .field__hint { display: block; font-size: .85rem; color: var(--ink-soft); margin-bottom: .45rem; }
+  .field abbr { color: var(--pink-accent); text-decoration: none; }
+
+  input, select, textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ink);
+    background: var(--paper);
+    border: 2px solid var(--line);
+    border-radius: var(--radius);
+    padding: .75rem .9rem;
+    line-height: 1.5;
+  }
+  input:hover, select:hover, textarea:hover { border-color: var(--purple); }
+  textarea { resize: vertical; }
+  .form__note { font-size: .9rem; color: var(--ink-soft); margin: 1rem 0 0; }
+
+  @media (max-width: 640px) { .form__row { grid-template-columns: 1fr; gap: 0; } }
+</style>

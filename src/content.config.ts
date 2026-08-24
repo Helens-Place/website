@@ -1,0 +1,151 @@
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
+
+const link = z.object({ label: z.string(), href: z.string() });
+
+/* One card in the three doors block. `audience` drives the colour coding. */
+const door = z.object({
+  audience: z.enum(['families', 'schools', 'business']),
+  label: z.string(),
+  title: z.string(),
+  body: z.string(),
+  price: z.string().optional(),
+  linkLabel: z.string(),
+  href: z.string(),
+});
+
+const testimonial = z.object({
+  quote: z.string(),
+  name: z.string(),
+  role: z.string().optional(),
+  tone: z.enum(['families', 'schools', 'business']).default('families'),
+});
+
+const service = z.object({
+  name: z.string(),
+  price: z.string(),
+  note: z.string().optional(),
+});
+
+const step = z.object({ title: z.string(), body: z.string() });
+
+const pages = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
+  schema: z.object({
+    /* SEO and routing */
+    title: z.string(),
+    description: z.string(),
+    /* Hero, editable on every page */
+    eyebrow: z.string().optional(),
+    heading: z.string(),
+    intro: z.string().optional(),
+    audience: z.enum(['families', 'schools', 'business', 'neutral']).default('neutral'),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    primaryCta: link.optional(),
+    secondaryCta: link.optional(),
+    trustLine: z.string().optional(),
+
+    /* Optional blocks, only the pages that use them declare them */
+    authority: z.array(z.string()).optional(),
+    doorsHeading: z.string().optional(),
+    doorsSubheading: z.string().optional(),
+    doors: z.array(door).optional(),
+    testimonialsHeading: z.string().optional(),
+    testimonials: z.array(testimonial).optional(),
+    bookBand: z.object({
+      heading: z.string(),
+      body: z.string(),
+      cta: link,
+      image: z.string().optional(),
+      imageAlt: z.string().optional(),
+    }).optional(),
+    teasers: z.array(z.object({
+      label: z.string(),
+      title: z.string(),
+      body: z.string(),
+      cta: link,
+      audience: z.enum(['families', 'schools', 'business']).default('schools'),
+    })).optional(),
+    servicesHeading: z.string().optional(),
+    servicesNote: z.string().optional(),
+    services: z.array(service).optional(),
+    sessionsHeading: z.string().optional(),
+    sessions: z.array(z.object({ title: z.string(), body: z.string() })).optional(),
+    alsoHeading: z.string().optional(),
+    also: z.array(z.object({ title: z.string(), body: z.string() })).optional(),
+    stepsHeading: z.string().optional(),
+    steps: z.array(step).optional(),
+    whyHeading: z.string().optional(),
+    whyBody: z.string().optional(),
+    priceLine: z.string().optional(),
+    expertWitness: z.object({ heading: z.string(), body: z.string() }).optional(),
+    offerHeading: z.string().optional(),
+    offerBody: z.string().optional(),
+    clientsHeading: z.string().optional(),
+    clients: z.array(z.object({ name: z.string(), note: z.string().optional() })).optional(),
+    clientsFootnote: link.optional(),
+    featuredCourse: z.object({
+      label: z.string(),
+      title: z.string(),
+      body: z.string(),
+      bullets: z.array(z.string()).default([]),
+      price: z.string().optional(),
+      cta: link,
+      note: z.string().optional(),
+    }).optional(),
+    credentialGroups: z.array(z.object({
+      heading: z.string(),
+      items: z.array(z.string()),
+    })).optional(),
+    routes: z.array(z.object({
+      audience: z.enum(['families', 'schools', 'business']),
+      title: z.string(),
+      body: z.string(),
+      cta: link,
+    })).optional(),
+    links: z.array(link).optional(),
+    finalCta: z.object({
+      heading: z.string(),
+      body: z.string(),
+      cta: link,
+    }).optional(),
+    /* Set true to keep a page out of the sitemap and nav */
+    draft: z.boolean().default(false),
+  }),
+});
+
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+const settings = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/settings' }),
+  schema: z.object({
+    siteName: z.string(),
+    tagline: z.string(),
+    strapline: z.string(),
+    email: z.string(),
+    phone: z.string(),
+    mobile: z.string().optional(),
+    location: z.string(),
+    responseTime: z.string(),
+    bookCallLabel: z.string(),
+    bookCallHref: z.string(),
+    nav: z.array(link),
+    footerNote: z.string(),
+    socials: z.array(link),
+    legal: z.array(link),
+  }),
+});
+
+export const collections = { pages, blog, settings };

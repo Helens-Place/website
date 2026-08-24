@@ -1,0 +1,74 @@
+---
+import Photo from './Photo.astro';
+
+interface Cta { label: string; href: string }
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  trustLine?: string;
+  image?: string;
+  imageAlt?: string;
+  audience?: 'families' | 'schools' | 'business' | 'neutral';
+  primaryCta?: Cta;
+  secondaryCta?: Cta;
+  ratio?: string;
+}
+
+const {
+  eyebrow, heading, intro, trustLine, image, imageAlt,
+  audience = 'neutral', primaryCta, secondaryCta, ratio = '4 / 5',
+} = Astro.props;
+
+const accent: Record<string, string> = {
+  families: 'var(--families)',
+  schools: 'var(--schools)',
+  business: 'var(--business)',
+  neutral: 'var(--pink-accent)',
+};
+---
+
+<section class="hero" data-has-image={image ? 'true' : 'false'}>
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      {eyebrow && <p class="eyebrow" style={`color:${accent[audience]}`}>{eyebrow}</p>}
+      <h1>{heading}</h1>
+      {intro && <p class="lede">{intro}</p>}
+      {trustLine && <p class="hero__trust">{trustLine}</p>}
+      {(primaryCta || secondaryCta) && (
+        <div class="hero__ctas">
+          {primaryCta && <a href={primaryCta.href} class="btn btn--primary">{primaryCta.label}</a>}
+          {secondaryCta && <a href={secondaryCta.href} class="btn btn--secondary">{secondaryCta.label}</a>}
+        </div>
+      )}
+    </div>
+    {image && (
+      <div class="hero__media">
+        <Photo src={image} alt={imageAlt ?? ''} ratio={ratio} audience={audience} loading="eager" />
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero { padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2.5rem, 5vw, 4rem); }
+  .hero__inner { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .hero[data-has-image='true'] .hero__inner { grid-template-columns: 1.15fr .85fr; }
+  .hero__trust {
+    font-size: .95rem;
+    color: var(--purple-deep);
+    font-weight: 500;
+    background: var(--bg-tint);
+    border-radius: var(--radius);
+    padding: .8rem 1.1rem;
+    display: inline-block;
+    max-width: 58ch;
+  }
+  .hero__ctas { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+  .hero__media :global(.photo) { box-shadow: var(--shadow); }
+
+  @media (max-width: 900px) {
+    .hero[data-has-image='true'] .hero__inner { grid-template-columns: 1fr; }
+    .hero__media { max-width: 460px; }
+  }
+</style>

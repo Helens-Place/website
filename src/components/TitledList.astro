@@ -1,0 +1,65 @@
+---
+interface Item { title: string; body: string }
+interface Props {
+  heading?: string;
+  items: Item[];
+  variant?: 'cards' | 'steps';
+  background?: 'default' | 'tint' | 'paper';
+  columns?: number;
+}
+const { heading, items, variant = 'cards', background = 'default', columns = 3 } = Astro.props;
+const bg = background === 'tint' ? 'section--tint' : background === 'paper' ? 'section--paper' : '';
+---
+<section class={`section ${bg}`}>
+  <div class="wrap">
+    {heading && <div class="section-head"><h2>{heading}</h2></div>}
+    <ol class={`tl tl--${variant}`} style={`--cols:${columns}`}>
+      {items.map((item, i) => (
+        <li class="tl__item">
+          {variant === 'steps' && <span class="tl__num" aria-hidden="true">{i + 1}</span>}
+          <div>
+            <h3 class="tl__title">{item.title}</h3>
+            <p class="tl__body">{item.body}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .tl { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.4rem; }
+  .tl--cards { grid-template-columns: repeat(var(--cols), 1fr); }
+  .tl--cards .tl__item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+    max-width: none;
+  }
+  .tl--steps { max-width: 78ch; }
+  .tl--steps .tl__item {
+    display: flex;
+    gap: 1.3rem;
+    align-items: flex-start;
+    max-width: none;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .tl--steps .tl__item:last-child { border-bottom: 0; }
+  .tl__num {
+    flex-shrink: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background: var(--purple);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+  .tl__title { font-size: 1.12rem; margin-bottom: .5rem; }
+  .tl__body { font-size: .96rem; color: var(--ink-soft); margin: 0; }
+  @media (max-width: 900px) { .tl--cards { grid-template-columns: 1fr; } }
+</style>

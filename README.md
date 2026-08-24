@@ -1,18 +1,109 @@
 # helensplace.co.uk
 
-Source for the Helen's Place website.
+Source for the Helen's Place website, the practice of Dr Helen Ross, dyslexia
+and SEND specialist, Trowbridge, Wiltshire.
 
-## Status
+| | |
+|---|---|
+| Framework | [Astro](https://docs.astro.build) 7, static output |
+| Editing | [TinaCMS](https://tina.io) |
+| Hosting | [Netlify](https://docs.netlify.com) |
+| Node | 22.12.0, pinned in `.nvmrc` and `netlify.toml` |
 
-Early setup — site content not yet written.
-
-## Local development
-
-The site is static. To preview it locally, open `index.html` in a browser, or
-serve the folder over HTTP:
+## Getting started
 
 ```bash
-python -m http.server 8000
+npm install
 ```
 
-Then visit http://localhost:8000
+```bash
+npm run dev
+```
+
+The site runs at http://localhost:4321
+
+To run the site with the editing interface attached:
+
+```bash
+npm run tina:dev
+```
+
+The CMS is then at http://localhost:4321/admin/index.html
+
+## Scripts
+
+| Script | What it does |
+|---|---|
+| `npm run dev` | Astro dev server |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Serve the built site locally |
+| `npm run tina:dev` | Astro dev server with the TinaCMS editor |
+| `npm run tina:build` | Production build including the CMS |
+| `npm run check:dashes` | Enforces the no em dash and no en dash rule |
+
+## How the content works
+
+All words, prices and photos live in content files, not in components, so they
+can be edited through TinaCMS without touching code.
+
+```
+src/content/
+  pages/      one Markdown file per page, structured frontmatter
+  blog/       one Markdown file per post
+  settings/   site wide details: contact, menu, socials
+```
+
+Page structure, layout and the colour system live in code and are deliberately
+not editable from the CMS. Helen edits words and prices, not layout.
+
+## Design system
+
+Tokens are defined once in `src/styles/global.css`. The three audiences are
+colour coded, and that coding is functional wayfinding rather than decoration:
+
+| Audience | Colour |
+|---|---|
+| Parents and families | soft pink |
+| Schools and local authorities | purple |
+| Business, research and legal | deep aubergine |
+
+### Accessibility
+
+This is the practice's own field, so the baseline is non negotiable:
+
+- Body text 18px minimum, line height 1.65, measure capped at 64 characters.
+- Never pure white backgrounds, never pure black text.
+- Left aligned, never justified.
+- Visible keyboard focus on every interactive element.
+- `prefers-reduced-motion` respected.
+- Skip to content link.
+- All colour pairs meet WCAG AA. Run `node scripts/contrast.mjs` to re-check
+  after any palette change.
+- A reading comfort bar offers larger text, roomier spacing and a lilac tint,
+  remembered between visits.
+
+Two palette notes, both deliberate:
+
+- `--pink-accent` was darkened from `#A83080` to `#972B73`. The original scored
+  4.20:1 on the soft pink door fill, below the AA threshold. It now scores 4.91:1.
+- `--muted` scores 2.58:1 on the page background, so it is used only for
+  dividers and borders, never for text. Secondary text uses `--ink-soft`.
+
+## Photos
+
+Photos go in `public/images/`. See `public/images/README.md` for the filenames
+the site expects. Any image not yet present renders as a labelled placeholder
+block in the brand colours, so the build never breaks.
+
+## Content rules
+
+Two rules apply to every word on this site:
+
+1. No em dashes or en dashes. Use commas and full stops. Enforced by
+   `npm run check:dashes`.
+2. Prices, qualifications and credentials are exact. Do not paraphrase them.
+
+## Deployment
+
+Pushes to `main` trigger a Netlify build. The contact form uses Netlify Forms,
+so submissions appear in the Netlify dashboard with no backend to maintain.

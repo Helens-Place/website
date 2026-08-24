@@ -3,7 +3,15 @@ node_modules/
 
 # Build output
 dist/
+.astro/
 _site/
+
+# TinaCMS generated, rebuilt by `tinacms build` on every deploy
+tina/__generated__/
+public/admin/
+
+# Netlify
+.netlify/
 
 # OS cruft
 .DS_Store
@@ -11,10 +19,11 @@ Thumbs.db
 desktop.ini
 
 # Editor
-.vscode/
 .idea/
 
 # Logs and env
 *.log
+npm-debug.log*
 .env
 .env.local
+.env.production

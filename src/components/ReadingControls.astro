@@ -1,0 +1,74 @@
+---
+/* Reading comfort controls. On brand for a dyslexia practice: larger text,
+   roomier spacing and a soft lilac tint, remembered between visits. */
+---
+<div class="reading">
+  <div class="wrap reading__inner">
+    <span class="reading__label" id="reading-label">Reading comfort</span>
+    <div class="reading__buttons" role="group" aria-labelledby="reading-label">
+      <button type="button" data-reading-toggle="reading" data-value="large" aria-pressed="false">Larger text</button>
+      <button type="button" data-reading-toggle="spacing" data-value="roomy" aria-pressed="false">More spacing</button>
+      <button type="button" data-reading-toggle="tint" data-value="lilac" aria-pressed="false">Lilac tint</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .reading { background: var(--purple-deep); }
+  .reading__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-block: .45rem;
+  }
+  .reading__label {
+    font-size: .78rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: #EBD9F5;
+    font-weight: 600;
+  }
+  .reading__buttons { display: flex; gap: .45rem; flex-wrap: wrap; }
+  .reading button {
+    font-family: var(--font-body);
+    font-size: .8rem;
+    font-weight: 600;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .45);
+    border-radius: 999px;
+    padding: .22rem .8rem;
+    cursor: pointer;
+  }
+  .reading button:hover { background: rgba(255, 255, 255, .16); }
+  .reading button[aria-pressed='true'] { background: #fff; color: var(--purple-deep); border-color: #fff; }
+  .reading :global(button:focus-visible) { outline: 3px solid #fff; outline-offset: 2px; }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-reading-toggle]');
+
+  buttons.forEach((btn) => {
+    const key = btn.dataset.readingToggle!;
+    const value = btn.dataset.value!;
+    const stored = localStorage.getItem(`hp-${key}`);
+    if (stored === value) {
+      root.setAttribute(`data-${key}`, value);
+      btn.setAttribute('aria-pressed', 'true');
+    }
+    btn.addEventListener('click', () => {
+      const on = btn.getAttribute('aria-pressed') === 'true';
+      if (on) {
+        root.removeAttribute(`data-${key}`);
+        localStorage.removeItem(`hp-${key}`);
+        btn.setAttribute('aria-pressed', 'false');
+      } else {
+        root.setAttribute(`data-${key}`, value);
+        localStorage.setItem(`hp-${key}`, value);
+        btn.setAttribute('aria-pressed', 'true');
+      }
+    });
+  });
+</script>

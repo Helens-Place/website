@@ -1,0 +1,43 @@
+---
+interface Props { items: string[] }
+const { items } = Astro.props;
+---
+<section class="authority" aria-label="Credentials">
+  <div class="wrap">
+    <ul class="authority__list">
+      {items.map((item) => <li class="authority__item">{item}</li>)}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .authority { background: var(--purple-deep); padding-block: 1.5rem; }
+  .authority__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .7rem 2.2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .authority__item {
+    color: #F1E6F7;
+    font-size: .92rem;
+    font-weight: 500;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    text-align: left;
+  }
+  .authority__item::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--pink-soft);
+    flex-shrink: 0;
+  }
+</style>

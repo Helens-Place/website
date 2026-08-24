@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const dateFormat = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <PageHero
+    eyebrow={dateFormat.format(post.data.pubDate)}
+    heading={post.data.title}
+    intro={post.data.description}
+    image={post.data.image}
+    imageAlt={post.data.imageAlt}
+    ratio="3 / 2"
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <article class="prose">
+        <Content />
+      </article>
+      <p class="back"><a href="/blog">Back to all posts</a></p>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Questions about your own situation?"
+    body="Start with a free 20-minute call. Helen will point you to the right next step."
+    cta={{ label: 'Book a free call', href: '/contact' }}
+  />
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.2rem; }
+  .prose :global(h3) { margin-top: 1.8rem; }
+  .prose :global(blockquote) {
+    margin: 0 0 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--pink-tint);
+    border-left: 6px solid var(--pink-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .back { margin-top: 2.5rem; font-weight: 600; }
+</style>

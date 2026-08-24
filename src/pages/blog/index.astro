@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const dateFormat = new Intl.DateTimeFormat('en-GB', {
+  day: 'numeric', month: 'long', year: 'numeric',
+});
+---
+
+<BaseLayout
+  title="Blog"
+  description="Writing on dyslexia, SEND and inclusive practice from Dr Helen Ross."
+>
+  <PageHero
+    eyebrow="Blog"
+    heading="Writing on dyslexia, SEND and inclusion"
+    intro="Thoughts from practice and from research, written plainly for parents, teachers and anyone else who needs them."
+  />
+
+  <section class="section">
+    <div class="wrap">
+      {posts.length === 0 ? (
+        <p class="lede">The first posts are on their way. Do check back soon.</p>
+      ) : (
+        <ul class="posts">
+          {posts.map((post) => (
+            <li class="post">
+              <p class="post__date">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {dateFormat.format(post.data.pubDate)}
+                </time>
+              </p>
+              <h2 class="post__title">
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              </h2>
+              <p class="post__desc">{post.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .posts { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.4rem; max-width: 78ch; }
+  .post {
+    max-width: none;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+  }
+  .post__date {
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 600;
+    color: var(--pink-accent);
+    margin-bottom: .5rem;
+  }
+  .post__title { font-size: 1.35rem; margin-bottom: .5rem; }
+  .post__title a { text-decoration: none; color: var(--ink); }
+  .post__title a:hover { color: var(--purple-deep); text-decoration: underline; }
+  .post__desc { color: var(--ink-soft); margin: 0; font-size: .96rem; }
+</style>

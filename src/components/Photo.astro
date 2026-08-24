@@ -1,0 +1,91 @@
+---
+/**
+ * Renders a photograph from /public/images.
+ * If the file is not present yet, it renders a labelled placeholder block in
+ * the brand colours instead, so the build never breaks and real photos drop
+ * straight in later without touching any markup.
+ */
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Props {
+  src: string;
+  alt: string;
+  ratio?: string;
+  audience?: 'families' | 'schools' | 'business' | 'neutral';
+  loading?: 'lazy' | 'eager';
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  ratio = '4 / 5',
+  audience = 'neutral',
+  loading = 'lazy',
+  class: className = '',
+} = Astro.props;
+
+/* Content files use a bare filename, TinaCMS's media picker writes a rooted
+   path like /images/helen-hero.jpg. Accept either. */
+const file = src.replace(/^\/?images\//, '').replace(/^\//, '');
+const exists = fs.existsSync(path.join(process.cwd(), 'public', 'images', file));
+const fills: Record<string, string> = {
+  families: 'var(--pink-soft)',
+  schools: 'var(--bg-tint)',
+  business: 'var(--business-fill)',
+  neutral: 'var(--bg-tint)',
+};
+---
+
+{exists ? (
+  <img
+    class={`photo ${className}`}
+    src={`/images/${file}`}
+    alt={alt}
+    loading={loading}
+    decoding="async"
+    style={`aspect-ratio:${ratio}`}
+  />
+) : (
+  <div
+    class={`photo photo--placeholder ${className}`}
+    style={`aspect-ratio:${ratio}; background:${fills[audience]}`}
+    role="img"
+    aria-label={alt}
+  >
+    <span class="photo__label">
+      <strong>Photo to come</strong>
+      <span>{file}</span>
+    </span>
+  </div>
+)}
+
+<style>
+  .photo {
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    display: block;
+  }
+  .photo--placeholder {
+    display: grid;
+    place-items: center;
+    border: 2px dashed var(--line);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .photo__label {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    color: var(--ink-soft);
+    font-size: .85rem;
+  }
+  .photo__label strong {
+    font-family: var(--font-display);
+    color: var(--purple-deep);
+    font-size: 1rem;
+  }
+  .photo__label span { font-family: ui-monospace, 'Cascadia Code', monospace; }
+</style>
