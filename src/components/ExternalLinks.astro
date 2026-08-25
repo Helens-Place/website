@@ -1,0 +1,63 @@
+---
+/**
+ * Makes external links open in a new tab, so people are not sent away from the
+ * site by a link to a podcast or a publisher.
+ *
+ * Done at runtime rather than in each component because links also come from
+ * Markdown bodies and from content edited in the CMS, and those cannot be
+ * annotated by hand.
+ *
+ * Two things go with it, and neither is optional on a site whose own subject is
+ * accessibility. A new tab that opens without warning is disorienting,
+ * particularly for screen reader users, who get no signal at all that the
+ * browser has moved. So every external link also gains hidden text saying so,
+ * and text links get a small visible marker.
+ *
+ * mailto: and tel: are deliberately left alone. Opening a mail client in a new
+ * browser tab just leaves an empty tab behind.
+ */
+---
+
+<script>
+  const isHttp = (href: string) => /^https?:/i.test(href);
+
+  document.querySelectorAll<HTMLAnchorElement>('a[href]').forEach((a) => {
+    const href = a.getAttribute('href') ?? '';
+    if (!isHttp(href)) return;                       // internal, mailto, tel, #
+    if (a.hostname === window.location.hostname) return;
+    if (a.target === '_blank') return;               // already handled
+
+    a.target = '_blank';
+    /* noopener stops the new page reaching back through window.opener.
+       noreferrer also withholds the referrer header. */
+    a.rel = [...new Set((a.rel || '').split(/\s+/).filter(Boolean).concat(['noopener', 'noreferrer']))].join(' ');
+    a.classList.add('is-external');
+
+    /* Tell assistive technology what is about to happen. Skipped where the link
+       has no text of its own, such as a card whose heading carries the label. */
+    if (a.textContent?.trim() && !a.querySelector('.external-note')) {
+      const note = document.createElement('span');
+      note.className = 'visually-hidden external-note';
+      note.textContent = ' (opens in a new tab)';
+      a.appendChild(note);
+    }
+  });
+</script>
+
+<style is:global>
+  /* A visible marker, but only on links that read as text. Buttons and whole
+     card links already look like they go somewhere. */
+  .prose a.is-external::after,
+  .footer__list a.is-external::after,
+  .prose__links a.is-external::after,
+  .story__links a.is-external::after,
+  .details__socials a.is-external::after,
+  .footer__socials a.is-external::after {
+    content: '\2197';           /* north east arrow */
+    display: inline-block;
+    margin-left: .25em;
+    font-size: .85em;
+    text-decoration: none;
+    vertical-align: baseline;
+  }
+</style>

@@ -87,6 +87,11 @@ This is the practice's own field, so the baseline is non negotiable:
   after any palette change.
 - A reading comfort bar offers larger text, roomier spacing and a lilac tint,
   remembered between visits.
+- External links open in a new tab, so nobody is sent away from the site. They
+  also carry hidden text saying so, and text links get a small arrow, because an
+  unannounced new tab is disorienting and a screen reader gives no clue that the
+  browser has moved. `src/components/ExternalLinks.astro` does this at runtime,
+  so it covers Markdown bodies and anything added later through the CMS.
 
 Two palette notes, both deliberate:
 

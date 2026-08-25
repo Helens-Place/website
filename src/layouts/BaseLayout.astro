@@ -3,6 +3,7 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingControls from '../components/ReadingControls.astro';
+import ExternalLinks from '../components/ExternalLinks.astro';
 import { getEntry } from 'astro:content';
 import { SITE, IDS, person, business } from '../lib/schema';
 
@@ -91,6 +92,7 @@ const siteGraph = {
       <slot />
     </main>
     <SiteFooter />
+    <ExternalLinks />
   </body>
 </html>
 
