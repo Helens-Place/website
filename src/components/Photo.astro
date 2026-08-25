@@ -26,9 +26,12 @@ const {
   class: className = '',
 } = Astro.props;
 
-/* Content files use a bare filename, TinaCMS's media picker writes a rooted
-   path like /images/helen-hero.jpg. Accept either. */
-const file = src.replace(/^\/?images\//, '').replace(/^\//, '');
+/* Accept any of the forms this value turns up in.
+   Content files use a bare filename. TinaCMS's media picker writes a rooted
+   path, and sometimes drops the separator, producing "/imageshelen-hero.jpg".
+   Making the trailing slash optional catches that too, which matters because
+   the alternative is a silently broken hero image. */
+const file = src.replace(/^\/?images\/?/, '');
 const exists = fs.existsSync(path.join(process.cwd(), 'public', 'images', file));
 const fills: Record<string, string> = {
   families: 'var(--pink-soft)',
