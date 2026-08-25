@@ -1,5 +1,8 @@
 [build]
-  command = "npm run build"
+  # tina:build runs `tinacms build` first, which generates public/admin,
+  # then `astro build`. Requires TINA_CLIENT_ID and TINA_TOKEN to be set in the
+  # Netlify dashboard.
+  command = "npm run tina:build"
   publish = "dist"
 
 [build.environment]

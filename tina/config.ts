@@ -18,6 +18,18 @@ const branch =
   process.env.HEAD ||               // Netlify sets this to the deploy branch
   'main';
 
+/* TinaCloud credentials. Tina's own docs use different variable names across
+   framework examples, so accept the common spellings rather than fail a deploy
+   over a prefix. Both are set in the Netlify dashboard, not in the repo. */
+const clientId =
+  process.env.TINA_CLIENT_ID ||
+  process.env.TINA_PUBLIC_CLIENT_ID ||
+  process.env.PUBLIC_TINA_CLIENT_ID ||
+  process.env.NEXT_PUBLIC_TINA_CLIENT_ID ||
+  null;
+
+const token = process.env.TINA_TOKEN || process.env.TINA_READ_ONLY_TOKEN || null;
+
 /* ---------- reusable field groups ---------------------------------------- */
 
 const seoFields = [
@@ -498,8 +510,8 @@ const blog: Collection = {
 
 export default defineConfig({
   branch,
-  clientId: process.env.TINA_CLIENT_ID ?? null,
-  token: process.env.TINA_TOKEN ?? null,
+  clientId,
+  token,
   build: {
     outputFolder: 'admin',
     publicFolder: 'public',
