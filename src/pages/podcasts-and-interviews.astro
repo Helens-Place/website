@@ -1,0 +1,189 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Photo from '../components/Photo.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+
+const page = await getEntry('pages', 'podcasts-and-interviews');
+const p = page!.data;
+const watch = p.watch ?? [];
+const listen = p.listen ?? [];
+
+/* Appearances on other people's shows, so these are cited rather than claimed
+   as our own media. subjectOf ties them back to Helen as the person featured. */
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: p.title,
+    description: p.description,
+    about: { '@id': IDS.person },
+    url: `${SITE}/podcasts-and-interviews`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: watch.length + listen.length,
+      itemListElement: [...watch, ...listen].map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: item.href,
+        name: `${item.title}, ${item.show}`,
+      })),
+    },
+  },
+  breadcrumbs([{ name: 'Podcasts and interviews', path: '/podcasts-and-interviews' }]),
+];
+---
+
+<BaseLayout
+  title={p.title}
+  description={p.description}
+  image="helen-contact.jpg"
+  schema={pageSchema}
+>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    audience="neutral"
+    primaryCta={p.primaryCta}
+  />
+
+  {watch.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><h2>{p.watchHeading}</h2></div>
+        <ul class="watch">
+          {watch.map((v) => (
+            <li class="watch__item">
+              <a class="watch__link" href={v.href} rel="noopener">
+                {v.image && (
+                  <span class="watch__thumb">
+                    <Photo src={v.image} alt="" ratio="16 / 9" />
+                    <span class="watch__play" aria-hidden="true"></span>
+                  </span>
+                )}
+                <span class="watch__text">
+                  <span class="watch__show">{v.show}</span>
+                  <span class="watch__title">{v.title}</span>
+                  <span class="watch__body">{v.body}</span>
+                  <span class="watch__cue">Watch on YouTube</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {listen.length > 0 && (
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section-head"><h2>{p.listenHeading}</h2></div>
+        <ul class="listen">
+          {listen.map((l) => (
+            <li class="listen__item">
+              <p class="listen__show">{l.show}</p>
+              <h3 class="listen__title"><a href={l.href} rel="noopener">{l.title}</a></h3>
+              <p class="listen__body">{l.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .watch {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.5rem;
+  }
+  .watch__item { max-width: none; }
+  .watch__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .watch__link:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--purple); }
+  .watch__thumb { position: relative; display: block; }
+  .watch__thumb :global(.photo) { border-radius: 0; }
+  .watch__play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+  }
+  .watch__play::after {
+    content: '';
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 50%;
+    background: rgba(42, 27, 61, .78);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .85);
+    clip-path: circle(50%);
+  }
+  .watch__play::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    border-left: .95rem solid #fff;
+    border-top: .6rem solid transparent;
+    border-bottom: .6rem solid transparent;
+    margin-left: .28rem;
+  }
+  .watch__text { display: flex; flex-direction: column; gap: .35rem; padding: 1.4rem 1.5rem 1.6rem; flex: 1; }
+  .watch__show {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--pink-accent);
+  }
+  .watch__title { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; line-height: 1.3; }
+  .watch__body { font-size: .97rem; color: var(--ink-soft); }
+  .watch__cue { margin-top: auto; padding-top: .7rem; font-weight: 700; font-size: .95rem; color: var(--purple-deep); }
+
+  .listen { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; max-width: 76ch; }
+  .listen__item {
+    position: relative;
+    max-width: none;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--purple);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+  }
+  .listen__item:hover { border-left-color: var(--purple-deep); }
+  .listen__show {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: .35rem;
+    max-width: none;
+  }
+  .listen__title { font-size: 1.1rem; margin-bottom: .4rem; }
+  .listen__title a { text-decoration: none; color: var(--ink); }
+  .listen__title a:hover { color: var(--purple-deep); text-decoration: underline; }
+  .listen__title a::after { content: ''; position: absolute; inset: 0; }
+  .listen__body { font-size: .97rem; color: var(--ink-soft); margin: 0; }
+</style>

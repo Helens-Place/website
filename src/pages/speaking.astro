@@ -3,6 +3,7 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 
 const page = await getEntry('pages', 'speaking');
 const p = page!.data;
@@ -19,6 +20,17 @@ const p = page!.data;
     primaryCta={p.primaryCta}
     ratio="3 / 2"
   />
+  {p.related && (
+    <RelatedContent
+      heading={p.relatedHeading!}
+      intro={p.relatedIntro}
+      items={p.related}
+      cta={p.relatedCta}
+      audience="business"
+      background="paper"
+    />
+  )}
+
   {p.finalCta && (
     <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
   )}

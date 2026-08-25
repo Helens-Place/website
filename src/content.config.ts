@@ -70,6 +70,22 @@ const pages = defineCollection({
     })).optional(),
     /* Audience-specific signposting. Each of the three audience pages surfaces
        the content that suits it, rather than sending everyone to one hub. */
+    /* Podcast and video appearances. */
+    watchHeading: z.string().optional(),
+    watch: z.array(z.object({
+      title: z.string(),
+      show: z.string(),
+      body: z.string(),
+      href: z.string(),
+      image: z.string().optional(),
+    })).optional(),
+    listenHeading: z.string().optional(),
+    listen: z.array(z.object({
+      title: z.string(),
+      show: z.string(),
+      body: z.string(),
+      href: z.string(),
+    })).optional(),
     relatedHeading: z.string().optional(),
     relatedIntro: z.string().optional(),
     related: z.array(z.object({

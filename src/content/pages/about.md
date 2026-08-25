@@ -39,6 +39,8 @@ credentialGroups:
       - PgCert Dyslexia and SpLD with AMBDA, Bath Spa
       - PgCert National Award for SEN Coordination, Bedfordshire
 links:
+  - label: Podcasts and interviews
+    href: /podcasts-and-interviews
   - label: My Churchill Fellowship
     href: /churchill-fellowship
   - label: LinkedIn profile

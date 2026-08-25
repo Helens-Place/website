@@ -421,6 +421,7 @@ const courses = singlePage('courses', 'Courses and guides page', 'courses', [
 const speaking = singlePage('speaking', 'Speaking page', 'speaking', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
+  ...relatedFields,
   finalCtaField,
 ]);
 
@@ -632,6 +633,46 @@ const dyslexiaToolkit = singlePage(
   ],
 );
 
+const podcasts = singlePage(
+  'podcasts',
+  'Podcasts and interviews page',
+  'podcasts-and-interviews',
+  [
+    ...heroFields,
+    ctaField('primaryCta', 'Primary button'),
+    { type: 'string', name: 'watchHeading', label: 'Watch: heading' },
+    {
+      type: 'object',
+      name: 'watch',
+      label: 'Videos',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.title }) },
+      fields: [
+        { type: 'string', name: 'title', label: 'Title' },
+        { type: 'string', name: 'show', label: 'Channel or show' },
+        { type: 'string', name: 'body', label: 'Description', ui: { component: 'textarea' } },
+        { type: 'string', name: 'href', label: 'Link' },
+        { type: 'image', name: 'image', label: 'Thumbnail' },
+      ],
+    },
+    { type: 'string', name: 'listenHeading', label: 'Listen: heading' },
+    {
+      type: 'object',
+      name: 'listen',
+      label: 'Podcast episodes',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.title }) },
+      fields: [
+        { type: 'string', name: 'title', label: 'Episode title' },
+        { type: 'string', name: 'show', label: 'Podcast' },
+        { type: 'string', name: 'body', label: 'Description', ui: { component: 'textarea' } },
+        { type: 'string', name: 'href', label: 'Link' },
+      ],
+    },
+    finalCtaField,
+  ],
+);
+
 const legal: Collection = {
   name: 'legal',
   label: 'Policy and reference pages',
@@ -773,6 +814,7 @@ export default defineConfig({
       courses,
       dyslexiaToolkit,
       speaking,
+      podcasts,
       about,
       book,
       contact,
