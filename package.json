@@ -12,7 +12,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "tina:dev": "tinacms dev -c \"astro dev\"",
-    "tina:build": "tinacms build && astro build",
+    "tina:build": "tinacms build --skip-cloud-checks && astro build",
     "check:dashes": "node scripts/check-dashes.mjs",
     "check:contrast": "node scripts/contrast.mjs",
     "check": "npm run check:dashes && npm run check:contrast"

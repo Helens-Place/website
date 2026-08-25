@@ -86,6 +86,14 @@ Skip this until the site content is agreed. Local editing with
 
 4. Change the Netlify build command to `npm run tina:build`. Either edit
    `netlify.toml` in the repo, or override it under **Build & deploy**.
+
+   That script runs `tinacms build --skip-cloud-checks`. The flag matters. By
+   default `tinacms build` compares the schema in the repo against the one
+   TinaCloud has indexed, and fails the build if they differ. TinaCloud only
+   re-indexes once it has seen the push, so the very first deploy after any
+   config change always loses that race and fails with
+   `ERR_CLOUD_CHECK_FAILED`. Skipping the check lets the deploy proceed;
+   TinaCloud catches up on its own a moment later.
 5. Redeploy.
 6. Helen edits at `https://<the site URL>/admin/index.html`, logging in with
    the Tina account she is invited to.
