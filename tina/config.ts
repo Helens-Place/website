@@ -615,6 +615,23 @@ const elevatorSeries = singlePage(
   ],
 );
 
+const dyslexiaToolkit = singlePage(
+  'dyslexiaToolkit',
+  'Schools Guide to Dyslexia page',
+  'dyslexia-toolkit',
+  [
+    ...heroFields,
+    ctaField('primaryCta', 'Download button'),
+    ctaField('secondaryCta', 'Secondary button'),
+    { type: 'string', name: 'sessionsHeading', label: 'Skill areas: heading' },
+    titledListField('sessions', 'Skill areas'),
+    { type: 'string', name: 'whyHeading', label: 'Approach: heading' },
+    { type: 'string', name: 'whyBody', label: 'Approach: body', ui: { component: 'textarea' } },
+    finalCtaField,
+    { type: 'rich-text', name: 'body', label: 'Page content', isBody: true },
+  ],
+);
+
 const legal: Collection = {
   name: 'legal',
   label: 'Policy and reference pages',
@@ -754,6 +771,7 @@ export default defineConfig({
       churchill,
       elevatorSeries,
       courses,
+      dyslexiaToolkit,
       speaking,
       about,
       book,

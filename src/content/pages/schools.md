@@ -55,6 +55,13 @@ relatedIntro: >-
   The course and the book do the sustained work. The guides are what to hand a
   colleague who needs something practical this week.
 related:
+  - tag: Free download
+    title: The Schools Guide to Dyslexia
+    body: >-
+      A free, evidence-informed guide to the technology that supports dyslexic
+      learners, across six skill areas from phonological awareness to writing. I
+      co-authored it.
+    href: /dyslexia-toolkit
   - tag: Course
     title: Supporting SEND in Mainstream Classrooms
     body: >-

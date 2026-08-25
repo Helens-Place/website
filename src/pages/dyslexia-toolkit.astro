@@ -1,0 +1,92 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import TitledList from '../components/TitledList.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+
+const page = await getEntry('pages', 'dyslexia-toolkit');
+const p = page!.data;
+const { Content } = await render(page!);
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'LearningResource',
+    name: 'The Schools Guide to Dyslexia',
+    description: p.description,
+    author: { '@id': IDS.person },
+    inLanguage: 'en-GB',
+    isAccessibleForFree: true,
+    learningResourceType: 'Guide',
+    educationalLevel: 'Primary and secondary education',
+    audience: {
+      '@type': 'EducationalAudience',
+      educationalRole: 'Teacher, teaching assistant and SENCo',
+    },
+    teaches: [
+      'Phonological awareness',
+      'Verbal memory',
+      'Verbal processing',
+      'Spelling',
+      'Reading',
+      'Writing',
+    ],
+    url: `${SITE}/dyslexia-toolkit`,
+    sameAs: p.primaryCta?.href,
+  },
+  breadcrumbs([{ name: 'The Schools Guide to Dyslexia', path: '/dyslexia-toolkit' }]),
+];
+---
+
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    audience="schools"
+    primaryCta={p.primaryCta}
+    secondaryCta={p.secondaryCta}
+  />
+
+  {p.sessions && (
+    <TitledList heading={p.sessionsHeading} items={p.sessions} background="tint" columns={3} />
+  )}
+
+  {p.whyBody && (
+    <section class="section">
+      <div class="wrap">
+        <h2>{p.whyHeading}</h2>
+        <p class="lede">{p.whyBody}</p>
+      </div>
+    </section>
+  )}
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="prose"><Content /></div>
+      {p.primaryCta && (
+        <p class="download">
+          <a href={p.primaryCta.href} class="btn btn--primary">{p.primaryCta.label}</a>
+        </p>
+      )}
+    </div>
+  </section>
+
+  {p.finalCta && (
+    <CtaBand
+      heading={p.finalCta.heading}
+      body={p.finalCta.body}
+      cta={p.finalCta.cta}
+      tone="purple"
+    />
+  )}
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.4rem; }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .download { margin-top: 2rem; }
+</style>
