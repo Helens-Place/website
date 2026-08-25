@@ -17,6 +17,7 @@ for the web and converts the logo to a transparent PNG.
 | `helen-garden-laptop.jpg`| On the decking with the laptop, leaves in the foreground           | Courses                     |
 | `helen-dog-bw.jpg`       | Black and white, with the labrador                                 | About, second image         |
 | `book-cover.jpg`         | Literacy Learning Journeys cover                                   | Homepage book band, book    |
+| `course-supporting-send.jpg` | Course promo, Helen and Dr Sarah Moseley                       | Courses and guides page     |
 | `churchill-fellow-logo.png` | The round red Churchill Fellow badge                            | Churchill Fellowship page   |
 
 ## Replacing or adding a photo

@@ -364,8 +364,14 @@ const research = singlePage(
   ],
 );
 
-const courses = singlePage('courses', 'Courses page', 'courses', [
+const courses = singlePage('courses', 'Courses and guides page', 'courses', [
   ...heroFields,
+  ctaField('primaryCta', 'Primary button'),
+  { type: 'string', name: 'guidesHeading', label: 'Guides section: heading' },
+  { type: 'string', name: 'guidesIntro', label: 'Guides section: intro', ui: { component: 'textarea' } },
+  { type: 'string', name: 'alsoHeading', label: 'Also worth your time: heading' },
+  { type: 'string', name: 'alsoIntro', label: 'Also worth your time: intro', ui: { component: 'textarea' } },
+  finalCtaField,
   {
     type: 'object',
     name: 'featuredCourse',
@@ -374,6 +380,8 @@ const courses = singlePage('courses', 'Courses page', 'courses', [
       { type: 'string', name: 'label', label: 'Small label' },
       { type: 'string', name: 'title', label: 'Course title' },
       { type: 'string', name: 'body', label: 'Description', ui: { component: 'textarea' } },
+      { type: 'image', name: 'image', label: 'Course image' },
+      { type: 'string', name: 'imageAlt', label: 'Course image description for screen readers' },
       { type: 'string', name: 'bullets', label: 'Key points', list: true },
       { type: 'string', name: 'price', label: 'Price line' },
       ctaField('cta', 'Button'),
@@ -606,12 +614,6 @@ const legal: Collection = {
   ],
 };
 
-const guidesHub = singlePage('guidesHub', 'Guides hub page', 'guides', [
-  ...heroFields,
-  ctaField('primaryCta', 'Primary button'),
-  finalCtaField,
-]);
-
 const guides: Collection = {
   name: 'guides',
   label: 'Guides',
@@ -717,7 +719,6 @@ export default defineConfig({
       home,
       assessments,
       whatToExpect,
-      guidesHub,
       guides,
       faq,
       schools,

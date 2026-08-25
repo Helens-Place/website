@@ -12,16 +12,12 @@ bookCallHref: /contact
 nav:
   - label: Assessments
     href: /assessments
-  - label: Guides
-    href: /guides
   - label: Schools and training
     href: /schools
   - label: Research and expert witness
     href: /research-and-expert-witness
-  - label: Courses
+  - label: Courses and guides
     href: /courses
-  - label: Speaking
-    href: /speaking
   - label: About
     href: /about
   - label: Contact

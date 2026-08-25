@@ -18,7 +18,7 @@ primaryCta:
   href: /contact
 secondaryCta:
   label: Read the guides
-  href: /guides
+  href: /courses#guides
 stepsHeading: The process, start to finish
 steps:
   - title: We make contact and find a date

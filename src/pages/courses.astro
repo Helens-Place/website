@@ -1,13 +1,52 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import CtaBand from '../components/CtaBand.astro';
 import Photo from '../components/Photo.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'courses');
 const p = page!.data;
 const c = p.featuredCourse;
+
+const guides = (await getCollection('guides', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+
+/* Longer form material that is not a guide, and the research behind it. This is
+   where papers and book extracts will slot in as they are added. */
+const alsoHere = [
+  {
+    href: '/what-to-expect',
+    title: 'What happens in a dyslexia assessment',
+    body: 'The whole process from booking to report: how long it takes, what we do on the day, and how long the report stays valid.',
+  },
+  {
+    href: '/elevator-series',
+    title: 'The Elevator Series',
+    body: 'Fourteen short videos covering a whole dyslexia journey, from first signs through assessment to working out who you want to be. Each has a full transcript.',
+  },
+  {
+    href: '/churchill-fellowship',
+    title: 'The Churchill Fellowship report',
+    body: 'School and Beyond, my research on supporting dyslexic and neurodivergent girls through the move beyond school. Free to download.',
+  },
+  {
+    href: '/publications',
+    title: 'Publications and media',
+    body: 'Peer-reviewed papers, invited chapters and evidence to Parliament, with links to the originals.',
+  },
+  {
+    href: '/book',
+    title: 'Literacy Learning Journeys',
+    body: 'The book: a practical guide to supporting dyslexic children from Early Years to age 18, published by Routledge.',
+  },
+  {
+    href: '/faq',
+    title: 'Questions and answers',
+    body: 'The questions I get asked most, on assessments, costs, tutoring and the process.',
+  },
+];
 
 const pageSchema = [
   {
@@ -32,7 +71,19 @@ const pageSchema = [
       url: c?.cta.href,
     },
   },
-  breadcrumbs([{ name: 'Courses', path: '/courses' }]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Free guides on dyslexia and SEND',
+    numberOfItems: guides.length,
+    itemListElement: guides.map((g, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: `${SITE}/guides/${g.id}`,
+      name: g.data.heading,
+    })),
+  },
+  breadcrumbs([{ name: 'Courses and guides', path: '/courses' }]),
 ];
 ---
 
@@ -41,7 +92,11 @@ const pageSchema = [
     eyebrow={p.eyebrow}
     heading={p.heading}
     intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
     audience="schools"
+    primaryCta={p.primaryCta}
+    ratio="3 / 2"
   />
 
   {c && (
@@ -60,13 +115,53 @@ const pageSchema = [
           <a href={c.cta.href} class="btn btn--primary">{c.cta.label}</a>
           {c.note && <p class="course__note">{c.note}</p>}
         </div>
-        {p.image && (
+        {c.image && (
           <div class="course__media">
-            <Photo src={p.image} alt={p.imageAlt ?? ''} ratio="4 / 5" audience="schools" />
+            <Photo src={c.image} alt={c.imageAlt ?? ''} ratio="1 / 1" audience="schools" />
           </div>
         )}
       </div>
     </section>
+  )}
+
+  <section class="section section--tint" id="guides">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>{p.guidesHeading}</h2>
+        {p.guidesIntro && <p class="lede">{p.guidesIntro}</p>}
+      </div>
+      <ul class="cards">
+        {guides.map((g) => (
+          <li class="card-item" data-audience={g.data.audience}>
+            <h3 class="card-item__title"><a href={`/guides/${g.id}`}>{g.data.heading}</a></h3>
+            <p class="card-item__body">{g.data.summary}</p>
+            <span class="card-item__more" aria-hidden="true">Read the guide &rarr;</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>{p.alsoHeading}</h2>
+        {p.alsoIntro && <p class="lede">{p.alsoIntro}</p>}
+      </div>
+      <ul class="cards cards--plain">
+        {alsoHere.map((a) => (
+          <li class="card-item">
+            <h3 class="card-item__title"><a href={a.href}>{a.title}</a></h3>
+            <p class="card-item__body">{a.body}</p>
+            <span class="card-item__more" aria-hidden="true">Have a look &rarr;</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} tone="purple" />
   )}
 </BaseLayout>
 
@@ -77,20 +172,8 @@ const pageSchema = [
     border-radius: var(--radius-lg);
     padding: clamp(1.8rem, 4vw, 2.8rem);
   }
-  .course__bullets {
-    list-style: none;
-    padding: 0;
-    margin: 1.4rem 0;
-    display: grid;
-    gap: .55rem;
-  }
-  .course__bullets li {
-    display: flex;
-    gap: .6rem;
-    align-items: center;
-    font-weight: 500;
-    font-size: .96rem;
-  }
+  .course__bullets { list-style: none; padding: 0; margin: 1.4rem 0; display: grid; gap: .55rem; }
+  .course__bullets li { display: flex; gap: .6rem; align-items: center; font-weight: 500; font-size: 1rem; }
   .course__bullets li::before {
     content: '';
     width: 8px; height: 8px;
@@ -106,6 +189,37 @@ const pageSchema = [
     border-top: 1px solid var(--line);
     padding-top: 1.1rem;
   }
-  .course__note { font-size: .9rem; color: var(--ink-soft); margin-top: 1.2rem; margin-bottom: 0; }
+  .course__note { font-size: .95rem; color: var(--ink-soft); margin-top: 1.2rem; margin-bottom: 0; }
   @media (max-width: 900px) { .course { grid-template-columns: 1fr; } .course__media { max-width: 380px; } }
+
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.4rem;
+  }
+  .card-item {
+    position: relative;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--pink-accent);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card-item[data-audience='schools'] { border-top-color: var(--purple); }
+  .card-item[data-audience='business'] { border-top-color: var(--purple-deep); }
+  .cards--plain .card-item { border-top-color: var(--purple); }
+  .card-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .card-item__title { font-size: 1.2rem; margin-bottom: .6rem; }
+  .card-item__title a { text-decoration: none; color: var(--ink); }
+  .card-item__title a:hover { color: var(--purple-deep); text-decoration: underline; }
+  .card-item__title a::after { content: ''; position: absolute; inset: 0; }
+  .card-item__body { font-size: 1rem; color: var(--ink-soft); }
+  .card-item__more { margin-top: auto; font-weight: 700; font-size: .97rem; color: var(--purple-deep); }
 </style>

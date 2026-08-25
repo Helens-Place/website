@@ -19,6 +19,12 @@
 # rules in order, so the specific paths come before the section wildcards.
 # ---------------------------------------------------------------------------
 
+# The guides hub was folded into the courses page.
+[[redirects]]
+  from = "/guides"
+  to = "/courses"
+  status = 301
+
 [[redirects]]
   from = "/helen/"
   to = "/about"

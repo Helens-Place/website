@@ -131,6 +131,17 @@ Two rules apply to every word on this site:
    `npm run check:dashes`.
 2. Prices, qualifications and credentials are exact. Do not paraphrase them.
 
+## When the dev server disagrees with the build
+
+Astro caches parsed content in `.astro/`, and it does not always invalidate that
+cache when `src/content.config.ts` changes. The symptom is a field that is
+present in the file and in `npm run build`, but missing in `npm run dev`.
+
+    rm -rf .astro && npx astro sync
+
+The same applies to files added to `public/` while the dev server is running:
+it reads that directory at startup, so restart it.
+
 ## Before pushing a Tina config change
 
 `npm run build` is Astro only. It never loads `tina/config.ts`, and TypeScript
