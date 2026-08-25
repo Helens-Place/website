@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import TitledList from '../../components/TitledList.astro';
+import BookBand from '../../components/BookBand.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../../lib/schema';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
+};
+
+const { guide } = Astro.props;
+const g = guide.data;
+const { Content } = await render(guide);
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: g.heading,
+    name: g.title,
+    description: g.description,
+    author: { '@id': IDS.person },
+    publisher: { '@id': IDS.business },
+    inLanguage: 'en-GB',
+    isAccessibleForFree: true,
+    mainEntityOfPage: `${SITE}/guides/${guide.id}`,
+    url: `${SITE}/guides/${guide.id}`,
+    about: [
+      { '@type': 'Thing', name: 'Dyslexia' },
+      { '@type': 'Thing', name: 'Special educational needs and disabilities' },
+    ],
+  },
+  breadcrumbs([
+    { name: 'Guides', path: '/guides' },
+    { name: g.heading, path: `/guides/${guide.id}` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={g.title}
+  description={g.description}
+  image={g.image ?? 'helen-dog-sofa.jpg'}
+  schema={pageSchema}
+>
+  <PageHero
+    eyebrow={g.eyebrow}
+    heading={g.heading}
+    intro={g.intro}
+    image={g.image}
+    imageAlt={g.imageAlt}
+    audience={g.audience}
+    ratio="3 / 2"
+  />
+
+  {g.signs && (
+    <TitledList heading={g.signsHeading} items={g.signs} background="tint" columns={2} />
+  )}
+
+  {g.strategies && (
+    <TitledList heading={g.strategiesHeading} items={g.strategies} columns={2} />
+  )}
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <div class="prose"><Content /></div>
+
+      {g.episode && (
+        <p class="episode-link">
+          This guide grew out of episode {g.episode} of
+          <a href="/elevator-series">The Elevator Series</a>, where you can watch
+          me talk it through in about two minutes.
+        </p>
+      )}
+
+      <p class="back"><a href="/guides">All guides</a></p>
+    </div>
+  </section>
+
+  {g.showBook && (
+    <BookBand
+      heading="There is a whole book of this."
+      body="Literacy Learning Journeys is a practical guide to supporting dyslexic children from Early Years to age 18, with evidence-based strategies, real case studies and reflection prompts. Published by Routledge."
+      cta={{ label: 'Read more about the book', href: '/book' }}
+      image="book-cover.jpg"
+      imageAlt="Cover of Literacy Learning Journeys by Helen Ross"
+    />
+  )}
+
+  <CtaBand
+    heading="Wondering whether to get an assessment?"
+    body="Book a free 20-minute call and tell me what you have noticed. I will tell you honestly whether an assessment is the right next step."
+    cta={{ label: 'Book a free call', href: '/contact' }}
+  />
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.4rem; }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(ul) { padding-left: 1.2rem; }
+  .prose :global(li) { margin-bottom: .5rem; }
+  .episode-link {
+    margin-top: 2.2rem;
+    background: var(--pink-tint);
+    border-radius: var(--radius);
+    padding: 1rem 1.3rem;
+    max-width: 70ch;
+  }
+  .back { margin-top: 2rem; font-weight: 600; }
+</style>

@@ -40,7 +40,8 @@ The CMS is then at http://localhost:4321/admin/index.html
 | `npm run tina:dev` | Astro dev server with the TinaCMS editor |
 | `npm run tina:build` | Production build including the CMS |
 | `npm run check:dashes` | Enforces the no em dash and no en dash rule |
-| `npm run check:tina` | Validates `tina/config.ts`. Run this before pushing any CMS change |
+| `npm run check:frontmatter` | Checks every content file's YAML parses |
+| `npm run check:tina` | Validates `tina/config.ts` and regenerates `tina-lock.json`. Run before pushing any CMS change |
 | `npm run check` | All of the above |
 
 ## How the content works

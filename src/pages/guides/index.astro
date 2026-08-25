@@ -1,0 +1,146 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../../lib/schema';
+
+const page = await getEntry('pages', 'guides');
+const p = page!.data;
+
+const guides = (await getCollection('guides', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+
+/* Other things on the site that belong in a resources hub but are not guides. */
+const alsoHere = [
+  {
+    href: '/what-to-expect',
+    title: 'What happens in a dyslexia assessment',
+    body: 'The whole process from booking to report: how long it takes, what we actually do on the day, and how long the report stays valid.',
+  },
+  {
+    href: '/elevator-series',
+    title: 'The Elevator Series',
+    body: 'Fourteen short videos covering a whole dyslexia journey, from first signs through assessment to working out who you want to be. Each has a full transcript.',
+  },
+  {
+    href: '/faq',
+    title: 'Questions and answers',
+    body: 'The questions I get asked most, on assessments, costs, tutoring and the process.',
+  },
+  {
+    href: '/churchill-fellowship',
+    title: 'The Churchill Fellowship report',
+    body: 'School and Beyond, my research on supporting dyslexic and neurodivergent girls through the move beyond school. Free to download.',
+  },
+  {
+    href: '/publications',
+    title: 'Publications and media',
+    body: 'Peer-reviewed papers, invited chapters and evidence to Parliament, with links to the originals.',
+  },
+];
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: p.title,
+    description: p.description,
+    about: { '@id': IDS.business },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: guides.length,
+      itemListElement: guides.map((g, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE}/guides/${g.id}`,
+        name: g.data.heading,
+      })),
+    },
+  },
+  breadcrumbs([{ name: 'Guides', path: '/guides' }]),
+];
+---
+
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    audience="families"
+    primaryCta={p.primaryCta}
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Practical guides</h2></div>
+      <ul class="cards">
+        {guides.map((g) => (
+          <li class="card-item" data-audience={g.data.audience}>
+            <h3 class="card-item__title">
+              <a href={`/guides/${g.id}`}>{g.data.heading}</a>
+            </h3>
+            <p class="card-item__body">{g.data.summary}</p>
+            <span class="card-item__more" aria-hidden="true">Read the guide &rarr;</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Also here</h2>
+        <p class="lede">Longer pieces, videos and the research behind all of it.</p>
+      </div>
+      <ul class="cards cards--plain">
+        {alsoHere.map((a) => (
+          <li class="card-item">
+            <h3 class="card-item__title"><a href={a.href}>{a.title}</a></h3>
+            <p class="card-item__body">{a.body}</p>
+            <span class="card-item__more" aria-hidden="true">Have a look &rarr;</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.4rem;
+  }
+  .card-item {
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--pink-accent);
+    border-radius: var(--radius-lg);
+    padding: 1.8rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card-item[data-audience='schools'] { border-top-color: var(--purple); }
+  .card-item[data-audience='business'] { border-top-color: var(--purple-deep); }
+  .cards--plain .card-item { border-top-color: var(--purple); }
+  .card-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .card-item__title { font-size: 1.2rem; margin-bottom: .6rem; }
+  .card-item__title a { text-decoration: none; color: var(--ink); }
+  .card-item__title a:hover { color: var(--purple-deep); text-decoration: underline; }
+  /* Make the whole card clickable without nesting interactive elements. */
+  .card-item__title a::after { content: ''; position: absolute; inset: 0; }
+  .card-item { position: relative; }
+  .card-item__body { font-size: 1rem; color: var(--ink-soft); }
+  .card-item__more { margin-top: auto; font-weight: 700; font-size: .97rem; color: var(--purple-deep); }
+</style>

@@ -132,6 +132,33 @@ const pages = defineCollection({
   }),
 });
 
+const guides = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/guides' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    eyebrow: z.string().optional(),
+    heading: z.string(),
+    intro: z.string(),
+    /* Controls the order on the hub page. */
+    order: z.number().default(50),
+    audience: z.enum(['families', 'schools', 'business', 'neutral']).default('families'),
+    /* Short line for the hub card. */
+    summary: z.string(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    signsHeading: z.string().optional(),
+    signs: z.array(z.object({ title: z.string(), body: z.string() })).optional(),
+    strategiesHeading: z.string().optional(),
+    strategies: z.array(z.object({ title: z.string(), body: z.string() })).optional(),
+    /* Links back to the video this grew out of, where there is one. */
+    episode: z.number().optional(),
+    /* Show the book promotion band at the foot of the guide. */
+    showBook: z.boolean().default(true),
+    draft: z.boolean().default(false),
+  }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
@@ -164,4 +191,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { pages, blog, settings };
+export const collections = { pages, guides, blog, settings };

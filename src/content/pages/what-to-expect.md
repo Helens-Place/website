@@ -17,8 +17,8 @@ primaryCta:
   label: Book a free 20-minute call
   href: /contact
 secondaryCta:
-  label: See prices
-  href: /assessments#prices
+  label: Read the guides
+  href: /guides
 stepsHeading: The process, start to finish
 steps:
   - title: We make contact and find a date

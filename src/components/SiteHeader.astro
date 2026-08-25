@@ -119,7 +119,9 @@ const hasLogo = fs.existsSync(path.join(process.cwd(), 'public', 'images', 'logo
   .nav-toggle__bars::before { top: -6px; }
   .nav-toggle__bars::after { top: 6px; }
 
-  @media (max-width: 1200px) {
+  /* The nav needs about 1240px of viewport to sit on one line with eight
+     items and the brief's full labels. Below that, collapse to the menu. */
+  @media (max-width: 1260px) {
     .nav-toggle { display: grid; }
     .nav {
       position: absolute;

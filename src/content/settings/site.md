@@ -12,6 +12,8 @@ bookCallHref: /contact
 nav:
   - label: Assessments
     href: /assessments
+  - label: Guides
+    href: /guides
   - label: Schools and training
     href: /schools
   - label: Research and expert witness

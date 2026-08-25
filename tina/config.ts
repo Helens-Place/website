@@ -606,6 +606,69 @@ const legal: Collection = {
   ],
 };
 
+const guidesHub = singlePage('guidesHub', 'Guides hub page', 'guides', [
+  ...heroFields,
+  ctaField('primaryCta', 'Primary button'),
+  finalCtaField,
+]);
+
+const guides: Collection = {
+  name: 'guides',
+  label: 'Guides',
+  path: 'src/content/guides',
+  format: 'md',
+  fields: [
+    ...seoFields,
+    { type: 'string', name: 'eyebrow', label: 'Small label above the heading' },
+    { type: 'string', name: 'heading', label: 'Main heading', isTitle: true, required: true },
+    { type: 'string', name: 'intro', label: 'Introduction', ui: { component: 'textarea' }, required: true },
+    {
+      type: 'string',
+      name: 'summary',
+      label: 'Summary for the guides hub card',
+      ui: { component: 'textarea' },
+      required: true,
+    },
+    {
+      type: 'number',
+      name: 'order',
+      label: 'Order on the hub page',
+      description: 'Lower numbers come first.',
+    },
+    {
+      type: 'string',
+      name: 'audience',
+      label: 'Colour path',
+      options: [
+        { value: 'families', label: 'Families, soft pink' },
+        { value: 'schools', label: 'Schools, purple' },
+        { value: 'business', label: 'Business and legal, deep aubergine' },
+        { value: 'neutral', label: 'Neutral' },
+      ],
+    },
+    { type: 'image', name: 'image', label: 'Photo' },
+    { type: 'string', name: 'imageAlt', label: 'Photo description for screen readers' },
+    { type: 'string', name: 'signsHeading', label: 'First section: heading' },
+    titledListField('signs', 'First section: points'),
+    { type: 'string', name: 'strategiesHeading', label: 'Second section: heading' },
+    titledListField('strategies', 'Second section: points'),
+    {
+      type: 'number',
+      name: 'episode',
+      label: 'Related Elevator Series episode',
+      description: 'Optional. Adds a link back to the video this grew out of.',
+    },
+    {
+      type: 'boolean',
+      name: 'showBook',
+      label: 'Show the book promotion',
+      description: 'Adds the Literacy Learning Journeys band at the foot of the guide.',
+    },
+    { type: 'boolean', name: 'draft', label: 'Draft', description: 'Leave on while writing.' },
+    { type: 'rich-text', name: 'body', label: 'Main text', isBody: true },
+  ],
+};
+
 const blog: Collection = {
   name: 'blog',
   label: 'Blog posts',
@@ -654,6 +717,8 @@ export default defineConfig({
       home,
       assessments,
       whatToExpect,
+      guidesHub,
+      guides,
       faq,
       schools,
       research,
