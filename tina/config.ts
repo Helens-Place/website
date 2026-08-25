@@ -457,7 +457,7 @@ const contact = singlePage('contact', 'Contact page', 'contact', [
 ]);
 
 const whatToExpect = singlePage(
-  'what-to-expect',
+  'whatToExpect',
   'What to expect page',
   'what-to-expect',
   [
@@ -545,7 +545,7 @@ const churchill = singlePage(
 );
 
 const elevatorSeries = singlePage(
-  'elevator-series',
+  'elevatorSeries',
   'Elevator Series page',
   'elevator-series',
   [

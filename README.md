@@ -40,6 +40,8 @@ The CMS is then at http://localhost:4321/admin/index.html
 | `npm run tina:dev` | Astro dev server with the TinaCMS editor |
 | `npm run tina:build` | Production build including the CMS |
 | `npm run check:dashes` | Enforces the no em dash and no en dash rule |
+| `npm run check:tina` | Validates `tina/config.ts`. Run this before pushing any CMS change |
+| `npm run check` | All of the above |
 
 ## How the content works
 
@@ -127,6 +129,20 @@ Two rules apply to every word on this site:
 1. No em dashes or en dashes. Use commas and full stops. Enforced by
    `npm run check:dashes`.
 2. Prices, qualifications and credentials are exact. Do not paraphrase them.
+
+## Before pushing a Tina config change
+
+`npm run build` is Astro only. It never loads `tina/config.ts`, and TypeScript
+will not catch Tina's own schema rules either, so a broken CMS config passes
+every local check and then fails the deploy.
+
+Run `npm run check:tina` instead. It runs Tina's real validation. Two rules have
+bitten already:
+
+- Collection `name` must be alphanumeric or underscores. No hyphens. Use `label`
+  for the human-readable version.
+- Every page under `src/content/pages` needs its own collection, or it simply
+  will not appear in the CMS.
 
 ## Deployment
 
