@@ -456,6 +456,129 @@ const contact = singlePage('contact', 'Contact page', 'contact', [
   },
 ]);
 
+const whatToExpect = singlePage(
+  'what-to-expect',
+  'What to expect page',
+  'what-to-expect',
+  [
+    ...heroFields,
+    ctaField('primaryCta', 'Primary button'),
+    ctaField('secondaryCta', 'Secondary button'),
+    { type: 'string', name: 'stepsHeading', label: 'Steps: heading' },
+    {
+      type: 'object',
+      name: 'steps',
+      label: 'The process, step by step',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.title }) },
+      fields: [
+        { type: 'string', name: 'title', label: 'Step title' },
+        { type: 'string', name: 'body', label: 'Step body', ui: { component: 'textarea' } },
+      ],
+    },
+    {
+      type: 'object',
+      name: 'links',
+      label: 'Linked episodes',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.label }) },
+      fields: [
+        { type: 'string', name: 'label', label: 'Text' },
+        { type: 'string', name: 'href', label: 'Link' },
+      ],
+    },
+    finalCtaField,
+    { type: 'rich-text', name: 'body', label: 'Page content', isBody: true },
+  ],
+);
+
+const faq = singlePage('faq', 'Questions and answers page', 'faq', [
+  ...heroFields,
+  ctaField('primaryCta', 'Primary button'),
+  {
+    type: 'object',
+    name: 'faqs',
+    label: 'Questions',
+    list: true,
+    ui: { itemProps: (item: any) => ({ label: item?.question }) },
+    fields: [
+      {
+        type: 'string',
+        name: 'category',
+        label: 'Section',
+        description: 'Questions are grouped under this heading. Reuse the exact wording to keep them together.',
+      },
+      { type: 'string', name: 'question', label: 'Question' },
+      { type: 'string', name: 'answer', label: 'Answer', ui: { component: 'textarea' } },
+    ],
+  },
+  finalCtaField,
+]);
+
+const churchill = singlePage(
+  'churchill',
+  'Churchill Fellowship page',
+  'churchill-fellowship',
+  [
+    ...heroFields,
+    ctaField('primaryCta', 'Primary button'),
+    ctaField('secondaryCta', 'Secondary button'),
+    { type: 'string', name: 'authority', label: 'Credibility strip', list: true },
+    { type: 'string', name: 'stepsHeading', label: 'Locations: heading' },
+    titledListField('steps', 'Locations visited'),
+    { type: 'string', name: 'sessionsHeading', label: 'Research questions: heading' },
+    titledListField('sessions', 'Research questions'),
+    {
+      type: 'object',
+      name: 'links',
+      label: 'Report links',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.label }) },
+      fields: [
+        { type: 'string', name: 'label', label: 'Text' },
+        { type: 'string', name: 'href', label: 'Link' },
+      ],
+    },
+    finalCtaField,
+    { type: 'rich-text', name: 'body', label: 'Page content', isBody: true },
+  ],
+);
+
+const elevatorSeries = singlePage(
+  'elevator-series',
+  'Elevator Series page',
+  'elevator-series',
+  [
+    ...heroFields,
+    ctaField('primaryCta', 'Primary button'),
+    {
+      type: 'object',
+      name: 'episodes',
+      label: 'Episodes',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.title }) },
+      fields: [
+        { type: 'number', name: 'number', label: 'Episode number' },
+        { type: 'string', name: 'title', label: 'Title' },
+        { type: 'string', name: 'description', label: 'Description', ui: { component: 'textarea' } },
+        { type: 'string', name: 'vimeoId', label: 'Vimeo ID' },
+        { type: 'string', name: 'vimeoHash', label: 'Vimeo hash' },
+        { type: 'string', name: 'duration', label: 'Duration', description: 'ISO 8601, for example PT2M6S' },
+        { type: 'string', name: 'uploadDate', label: 'Upload date' },
+        { type: 'string', name: 'thumbnail', label: 'Thumbnail URL' },
+        {
+          type: 'string',
+          name: 'transcript',
+          label: 'Transcript',
+          description: 'One paragraph per entry. Auto-generated from the captions, so corrections are welcome.',
+          list: true,
+          ui: { component: 'textarea' },
+        },
+      ],
+    },
+  ],
+);
+
 const legal: Collection = {
   name: 'legal',
   label: 'Policy and reference pages',
@@ -530,8 +653,12 @@ export default defineConfig({
     collections: [
       home,
       assessments,
+      whatToExpect,
+      faq,
       schools,
       research,
+      churchill,
+      elevatorSeries,
       courses,
       speaking,
       about,
