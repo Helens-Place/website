@@ -96,9 +96,13 @@ const singlePage = (
   path: 'src/content/pages',
   format: 'md',
   match: { include: file },
+  /* No `router` here on purpose. Setting one makes Tina open its visual editing
+     view, which only works when a page registers a form through Tina's
+     client-side data layer. These pages are statically rendered by Astro, so
+     that view would sit empty and say "TinaCMS form fields will appear here".
+     Without a router, clicking a page opens the normal field editor. */
   ui: {
     allowedActions: { create: false, delete: false },
-    router: () => (file === 'home' ? '/' : `/${file}`),
   },
   fields: [...seoFields, ...fields],
 });
@@ -484,7 +488,7 @@ const blog: Collection = {
   label: 'Blog posts',
   path: 'src/content/blog',
   format: 'md',
-  ui: { router: (props: any) => `/blog/${props.document._sys.filename}` },
+
   fields: [
     { type: 'string', name: 'title', label: 'Title', isTitle: true, required: true },
     {
