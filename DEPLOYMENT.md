@@ -123,6 +123,11 @@ The domain is managed at Inios.
 
 ### Before you point the domain
 
+- [ ] **Remove the `X-Robots-Tag = "noindex, nofollow"` block from `netlify.toml`.**
+      It is there so the review site does not get indexed. Leave it in place and
+      the real site will never be indexed either
+- [ ] Remove the review note at the top of the terms page, once Helen has
+      confirmed the notice periods and percentages
 - [x] Real photos and the logo in place
 - [x] Privacy, safeguarding and terms pages carry Helen's real wording
 - [x] The course link points at Dr Sarah Moseley's platform

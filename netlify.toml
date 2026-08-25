@@ -95,6 +95,22 @@
 
 # ---------------------------------------------------------------------------
 
+# ===========================================================================
+# REMOVE THIS BLOCK BEFORE POINTING helensplace.co.uk AT NETLIFY.
+#
+# While the site lives on its temporary netlify.app address it is publicly
+# reachable, and Google will index it if allowed to. That would put a review
+# copy of the site, including the draft terms page, into search results, and
+# leave a duplicate competing with the real domain later.
+#
+# This header tells search engines to leave the whole site alone. It must come
+# off at go-live or the real site will never be indexed either.
+# ===========================================================================
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
 [[headers]]
   for = "/*"
   [headers.values]
