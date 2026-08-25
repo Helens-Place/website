@@ -136,8 +136,16 @@ Two rules apply to every word on this site:
 will not catch Tina's own schema rules either, so a broken CMS config passes
 every local check and then fails the deploy.
 
-Run `npm run check:tina` instead. It runs Tina's real validation. Two rules have
-bitten already:
+Run `npm run check:tina` instead. It runs Tina's real validation. Three things
+have bitten already:
+
+- **`tina/tina-lock.json` must be regenerated and committed** whenever
+  `tina/config.ts` changes. TinaCloud reads that file to learn the schema, so a
+  stale one means the CMS loads with the new fields but queries an API that
+  knows nothing about them, and shows "GraphQL Schema Mismatch". Regenerate by
+  running `npx tinacms dev`, waiting for "Dev Server is active", then stopping
+  it, and commit the changed file. Pushing it also triggers a TinaCloud
+  re-index.
 
 - Collection `name` must be alphanumeric or underscores. No hyphens. Use `label`
   for the human-readable version.
