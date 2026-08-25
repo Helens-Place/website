@@ -74,6 +74,51 @@ steps:
       I talk you through the findings so nothing is left unclear, and I answer
       questions afterwards. If further support would help, I'll tell you
       honestly, whether that is with me or with someone else.
+relatedHeading: Read up before you decide
+relatedIntro: >-
+  Everything here is free. If it answers your question and you never need to
+  book, that is a good outcome.
+related:
+  - tag: Start here
+    title: What happens in a dyslexia assessment
+    body: >-
+      The whole process from booking to report. How long it takes, what we
+      actually do on the day, and how long the report stays valid.
+    href: /what-to-expect
+  - tag: Guide
+    title: Brilliant out loud, stuck on paper
+    body: >-
+      The gap between how well a child explains something and what they manage
+      to write. This is the signal that makes most parents pick up the phone.
+    href: /guides/bright-but-struggling
+  - tag: Guide
+    title: When reading is hard
+    body: >-
+      What reading difficulty actually looks like day to day, why it happens,
+      and the small changes that help most.
+    href: /guides/reading
+  - tag: Guide
+    title: Remembering things
+    body: >-
+      Why working memory causes so much of the daily chaos, and the systems that
+      genuinely help at home and at school.
+    href: /guides/memory-and-organisation
+  - tag: Watch
+    title: The Elevator Series
+    body: >-
+      Fourteen short videos following a whole dyslexia journey, from first signs
+      through assessment and onwards. Each about two minutes, each with a
+      transcript.
+    href: /elevator-series
+  - tag: Questions
+    title: Questions and answers
+    body: >-
+      Costs, timescales, whether the report lasts, whether you need to go
+      privately, and what happens if your child is unwell on the day.
+    href: /faq
+relatedCta:
+  label: All courses and guides
+  href: /courses
 finalCta:
   heading: Still deciding?
   body: >-

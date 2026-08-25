@@ -3,6 +3,7 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'research-and-expert-witness');
@@ -82,6 +83,17 @@ const pageSchema = [
         <p class="price-line">{p.priceLine}</p>
       </div>
     </section>
+  )}
+
+  {p.related && (
+    <RelatedContent
+      heading={p.relatedHeading!}
+      intro={p.relatedIntro}
+      items={p.related}
+      cta={p.relatedCta}
+      audience="business"
+      background="paper"
+    />
   )}
 
   {p.finalCta && (

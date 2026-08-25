@@ -50,6 +50,51 @@ also:
 priceLine: >-
   Half-day INSET sessions from £200. For a detailed quote, get in touch and I'll
   reply within 48 hours.
+relatedHeading: For your staff, before or after a session
+relatedIntro: >-
+  The course and the book do the sustained work. The guides are what to hand a
+  colleague who needs something practical this week.
+related:
+  - tag: Course
+    title: Supporting SEND in Mainstream Classrooms
+    body: >-
+      A four-week, self-paced course made with Dr Sarah Moseley, for staff in
+      mainstream, special and alternative settings. Lifetime access.
+    href: /courses
+  - tag: Book
+    title: Literacy Learning Journeys
+    body: >-
+      A practical guide to supporting dyslexic children from Early Years to age
+      18, with evidence-based strategies, case studies and reflection prompts.
+      Published by Routledge.
+    href: /book
+  - tag: Guide
+    title: Why spelling does not make sense
+    body: >-
+      Why English spelling defeats so many learners, and the multi-sensory
+      methods that work in a classroom.
+    href: /guides/spelling
+  - tag: Guide
+    title: Knowing what goes first
+    body: >-
+      Why starting a task is the hardest part, and the sentence starters and
+      prompts that get a student moving.
+    href: /guides/getting-started
+  - tag: Guide
+    title: When writing is the thing they avoid
+    body: >-
+      Why writing is so cognitively demanding, what sits underneath letter
+      formation, and how to mark work without flattening a child.
+    href: /guides/writing
+  - tag: Research
+    title: Leaving school when you are neurodivergent
+    body: >-
+      From my Churchill Fellowship. What actually helps young people, especially
+      girls, through the move beyond compulsory schooling.
+    href: /guides/leaving-school
+relatedCta:
+  label: All courses and guides
+  href: /courses
 finalCta:
   heading: Talk about your setting
   body: >-

@@ -84,6 +84,31 @@ const finalCtaField = {
   ],
 };
 
+/** Audience-specific signposting shown near the foot of an audience page. */
+const relatedFields = [
+  { type: 'string' as const, name: 'relatedHeading', label: 'Related content: heading' },
+  {
+    type: 'string' as const,
+    name: 'relatedIntro',
+    label: 'Related content: intro',
+    ui: { component: 'textarea' as const },
+  },
+  {
+    type: 'object' as const,
+    name: 'related',
+    label: 'Related content',
+    list: true,
+    ui: { itemProps: (item: any) => ({ label: item?.title }) },
+    fields: [
+      { type: 'string' as const, name: 'tag', label: 'Small label, e.g. Guide or Course' },
+      { type: 'string' as const, name: 'title', label: 'Title' },
+      { type: 'string' as const, name: 'body', label: 'Body', ui: { component: 'textarea' as const } },
+      { type: 'string' as const, name: 'href', label: 'Link' },
+    ],
+  },
+  ctaField('relatedCta', 'Button under the related content'),
+];
+
 /** A page that maps to exactly one file, with structure locked. */
 const singlePage = (
   name: string,
@@ -290,6 +315,7 @@ const assessments = singlePage('assessments', 'Assessments page', 'assessments',
   },
   { type: 'string', name: 'whyHeading', label: 'Why choose Helen: heading' },
   { type: 'string', name: 'whyBody', label: 'Why choose Helen: body', ui: { component: 'textarea' } },
+  ...relatedFields,
   { type: 'string', name: 'stepsHeading', label: 'What to expect: heading' },
   {
     type: 'object',
@@ -325,6 +351,7 @@ const schools = singlePage('schools', 'Schools and training page', 'schools', [
   { type: 'string', name: 'alsoHeading', label: 'Also available: heading' },
   titledListField('also', 'Also available'),
   { type: 'string', name: 'priceLine', label: 'Price line', ui: { component: 'textarea' } },
+  ...relatedFields,
   finalCtaField,
 ]);
 
@@ -360,6 +387,7 @@ const research = singlePage(
     },
     ctaField('clientsFootnote', 'Link under the client list'),
     { type: 'string', name: 'priceLine', label: 'Price line', ui: { component: 'textarea' } },
+    ...relatedFields,
     finalCtaField,
   ],
 );

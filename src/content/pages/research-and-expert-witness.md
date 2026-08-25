@@ -51,6 +51,41 @@ clientsFootnote:
 priceLine: >-
   Research projects from £450 per day, with reduced rates considered for limited
   budgets. Expert witness work on enquiry.
+relatedHeading: The evidence behind the work
+relatedIntro: >-
+  If you are deciding whether to instruct me, this is the material to judge me
+  on.
+related:
+  - tag: Publications
+    title: Peer-reviewed publications
+    body: >-
+      Papers in Support for Learning, the British Journal of Special Education,
+      the Scandinavian Journal of Disability Research and others, with DOIs so
+      you can go to the originals.
+    href: /publications
+  - tag: Fellowship
+    title: The Churchill Fellowship report
+    body: >-
+      School and Beyond, on supporting dyslexic and neurodivergent girls beyond
+      school. Fieldwork in Australia and the USA, 30 recommendations, published
+      August 2026.
+    href: /churchill-fellowship
+  - tag: Evidence
+    title: Evidence to Parliament and government
+    body: >-
+      A review for the Council for Science and Technology, written evidence to
+      the Education Select Committee, and a contribution to the All-Party
+      Parliamentary Group report on the human cost of dyslexia.
+    href: /publications
+  - tag: Book
+    title: Literacy Learning Journeys
+    body: >-
+      Published by Routledge, an educator's guide to dyslexia from Early Years
+      to age 18.
+    href: /book
+relatedCta:
+  label: See the full publications list
+  href: /publications
 finalCta:
   heading: Discuss a project
   body: >-

@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import ServiceList from '../components/ServiceList.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 import Photo from '../components/Photo.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
@@ -67,6 +68,17 @@ const pageSchema = [
 
   {p.steps && (
     <TitledList heading={p.stepsHeading} items={p.steps} variant="steps" background="tint" />
+  )}
+
+  {p.related && (
+    <RelatedContent
+      heading={p.relatedHeading!}
+      intro={p.relatedIntro}
+      items={p.related}
+      cta={p.relatedCta}
+      audience="families"
+      background="paper"
+    />
   )}
 
   {p.finalCta && (

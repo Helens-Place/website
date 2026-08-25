@@ -1,0 +1,98 @@
+---
+/**
+ * Audience-specific signposting.
+ *
+ * Each of the three audience pages carries its own list, so a parent lands on
+ * assessments and is offered the guides and the videos, while a school lands on
+ * training and is offered the course and the book. Everything is still collated
+ * centrally on the courses page and in the publications list, but nobody has to
+ * go hunting through material aimed at someone else.
+ */
+interface Item { title: string; body: string; href: string; tag?: string }
+interface Props {
+  heading: string;
+  intro?: string;
+  items: Item[];
+  cta?: { label: string; href: string };
+  audience?: 'families' | 'schools' | 'business' | 'neutral';
+  background?: 'default' | 'tint' | 'paper' | 'pink';
+}
+const {
+  heading, intro, items, cta,
+  audience = 'families', background = 'paper',
+} = Astro.props;
+
+const bg =
+  background === 'tint' ? 'section--tint'
+  : background === 'pink' ? 'section--pink'
+  : background === 'paper' ? 'section--paper'
+  : '';
+---
+
+<section class={`section ${bg}`}>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>{heading}</h2>
+      {intro && <p class="lede">{intro}</p>}
+    </div>
+
+    <ul class="related" data-audience={audience}>
+      {items.map((item) => (
+        <li class="related__item">
+          {item.tag && <p class="related__tag">{item.tag}</p>}
+          <h3 class="related__title"><a href={item.href}>{item.title}</a></h3>
+          <p class="related__body">{item.body}</p>
+        </li>
+      ))}
+    </ul>
+
+    {cta && (
+      <p class="related__cta">
+        <a href={cta.href} class="btn btn--secondary">{cta.label}</a>
+      </p>
+    )}
+  </div>
+</section>
+
+<style>
+  .related {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+    gap: 1.3rem;
+  }
+  .related__item {
+    position: relative;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--pink-accent);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.6rem;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .related[data-audience='schools'] .related__item { border-left-color: var(--purple); }
+  .related[data-audience='business'] .related__item { border-left-color: var(--purple-deep); }
+  .related__item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+
+  .related__tag {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: .5rem;
+    max-width: none;
+  }
+  .related__title { font-size: 1.1rem; margin-bottom: .45rem; }
+  .related__title a { text-decoration: none; color: var(--ink); }
+  .related__title a:hover { color: var(--purple-deep); text-decoration: underline; }
+  /* Whole card clickable, without nesting interactive elements. */
+  .related__title a::after { content: ''; position: absolute; inset: 0; }
+  .related__body { font-size: .97rem; color: var(--ink-soft); margin: 0; }
+  .related__cta { margin-top: 2rem; }
+</style>

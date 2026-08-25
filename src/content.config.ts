@@ -68,6 +68,17 @@ const pages = defineCollection({
       cta: link,
       audience: z.enum(['families', 'schools', 'business']).default('schools'),
     })).optional(),
+    /* Audience-specific signposting. Each of the three audience pages surfaces
+       the content that suits it, rather than sending everyone to one hub. */
+    relatedHeading: z.string().optional(),
+    relatedIntro: z.string().optional(),
+    related: z.array(z.object({
+      title: z.string(),
+      body: z.string(),
+      href: z.string(),
+      tag: z.string().optional(),
+    })).optional(),
+    relatedCta: link.optional(),
     guidesHeading: z.string().optional(),
     guidesIntro: z.string().optional(),
     alsoHeading: z.string().optional(),

@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
+import RelatedContent from '../components/RelatedContent.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'schools');
@@ -58,6 +59,17 @@ const pageSchema = [
         <p class="price-line">{p.priceLine}</p>
       </div>
     </section>
+  )}
+
+  {p.related && (
+    <RelatedContent
+      heading={p.relatedHeading!}
+      intro={p.relatedIntro}
+      items={p.related}
+      cta={p.relatedCta}
+      audience="schools"
+      background="paper"
+    />
   )}
 
   {p.finalCta && (
