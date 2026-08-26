@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReadingControls from '../components/ReadingControls.astro';
 import ExternalLinks from '../components/ExternalLinks.astro';
+import Analytics from '../components/Analytics.astro';
 import { getEntry } from 'astro:content';
 import { SITE, IDS, person, business } from '../lib/schema';
 
@@ -78,6 +79,14 @@ const siteGraph = {
     <meta property="og:image:alt" content="Dr Helen Ross of Helen's Place" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
+
+    {s.googleSiteVerification && (
+      <meta name="google-site-verification" content={s.googleSiteVerification} />
+    )}
+    {s.bingSiteVerification && (
+      <meta name="msvalidate.01" content={s.bingSiteVerification} />
+    )}
+    <Analytics />
 
     <script type="application/ld+json" set:html={JSON.stringify(siteGraph)} />
     {schema.map((item) => (

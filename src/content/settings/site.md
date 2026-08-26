@@ -22,6 +22,10 @@ nav:
     href: /about
   - label: Contact
     href: /contact
+analyticsProvider: none
+analyticsToken: ''
+googleSiteVerification: ''
+bingSiteVerification: ''
 footerNote: >-
   Helen's Place is my practice. I'm a dyslexia and SEND specialist based in
   Trowbridge, Wiltshire, working with families, schools and organisations across

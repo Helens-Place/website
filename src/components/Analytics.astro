@@ -1,0 +1,37 @@
+---
+/**
+ * Analytics, off by default.
+ *
+ * Nothing is emitted until a provider and token are set in site settings, so
+ * the site ships with no third-party script and no tracking at all.
+ *
+ * Two providers are supported, both chosen because they produce aggregate
+ * statistics only:
+ *
+ *   cloudflare  free, sets no cookies and writes nothing to browser storage
+ *   plausible   paid, EU hosted, also cookieless
+ *
+ * Why not Google Analytics: it sets cookies and processes visitor-level data
+ * for purposes beyond improving this website, so under PECR it needs consent.
+ * That means a banner in front of every visitor, on a site whose whole point is
+ * being easy to use. See the note in README.
+ */
+import { getEntry } from 'astro:content';
+
+const site = await getEntry('settings', 'site');
+const provider = site!.data.analyticsProvider ?? 'none';
+const token = site!.data.analyticsToken ?? '';
+const enabled = provider !== 'none' && token.trim().length > 0;
+---
+
+{enabled && provider === 'cloudflare' && (
+  <script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={`{"token": "${token}"}`}
+  />
+)}
+
+{enabled && provider === 'plausible' && (
+  <script defer data-domain={token} src="https://plausible.io/js/script.js" />
+)}

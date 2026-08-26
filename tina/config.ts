@@ -165,6 +165,35 @@ const settings: Collection = {
     },
     {
       type: 'string',
+      name: 'analyticsProvider',
+      label: 'Analytics provider',
+      description: 'Leave as none until a token is pasted below. Nothing loads while this is none.',
+      options: [
+        { value: 'none', label: 'None, no analytics' },
+        { value: 'cloudflare', label: 'Cloudflare Web Analytics, free and cookieless' },
+        { value: 'plausible', label: 'Plausible, paid and cookieless' },
+      ],
+    },
+    {
+      type: 'string',
+      name: 'analyticsToken',
+      label: 'Analytics token or domain',
+      description: 'Cloudflare: the site token. Plausible: the domain, e.g. helensplace.co.uk',
+    },
+    {
+      type: 'string',
+      name: 'googleSiteVerification',
+      label: 'Google Search Console verification',
+      description: 'Only the content value from the meta tag Google gives you.',
+    },
+    {
+      type: 'string',
+      name: 'bingSiteVerification',
+      label: 'Bing Webmaster Tools verification',
+      description: 'Only the content value from the meta tag Bing gives you.',
+    },
+    {
+      type: 'string',
       name: 'footerNote',
       label: 'Footer description',
       ui: { component: 'textarea' },

@@ -128,6 +128,24 @@ Both reward the same thing: specific, verifiable, cross-linked facts.
 After changing the schema, validate with Google's Rich Results Test and
 Schema.org's validator.
 
+## Analytics
+
+Off by default. Nothing third-party loads until a provider and token are set in
+site settings, editable in the CMS.
+
+Google Analytics is deliberately not one of the options. It sets cookies and
+processes visitor-level data for purposes beyond improving this site, so under
+PECR it needs consent, which means a banner in front of every visitor. On a site
+built for people who find interfaces hard, that is a real cost, and a banner
+suppresses the data anyway because many people decline.
+
+The two supported providers produce aggregate statistics only. Cloudflare Web
+Analytics is free and writes nothing at all to the browser. Plausible is paid,
+EU hosted and also cookieless.
+
+If the provider ever changes, update the Analytics section of the privacy policy
+to name it.
+
 ## Content rules
 
 Two rules apply to every word on this site:

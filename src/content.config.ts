@@ -242,6 +242,12 @@ const settings = defineCollection({
     bookCallHref: z.string(),
     nav: z.array(link),
     footerNote: z.string(),
+    /* Analytics stays off until both are set. See src/components/Analytics.astro. */
+    analyticsProvider: z.enum(['none', 'cloudflare', 'plausible']).default('none'),
+    analyticsToken: z.string().default(''),
+    /* Pasted verification tokens for the search consoles, one-time setup. */
+    googleSiteVerification: z.string().default(''),
+    bingSiteVerification: z.string().default(''),
     socials: z.array(link),
     legal: z.array(link),
   }),
