@@ -52,7 +52,8 @@ can be edited through TinaCMS without touching code.
 ```
 src/content/
   pages/      one Markdown file per page, structured frontmatter
-  blog/       one Markdown file per post
+  guides/     one Markdown file per guide
+  articles/   one Markdown file per article
   settings/   site wide details: contact, menu, socials
 ```
 

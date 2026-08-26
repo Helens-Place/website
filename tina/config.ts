@@ -9,8 +9,8 @@ import { defineConfig, type Collection } from 'tinacms';
  * actually has. The colour system, page structure and component choices live in
  * code and cannot be broken from the CMS.
  *
- * The blog is the one exception: it is a normal repeatable collection so Helen
- * can add posts freely.
+ * Guides and articles are the exceptions: those are normal repeatable
+ * collections, so new ones can be added freely.
  */
 
 const branch =
@@ -852,35 +852,6 @@ const articles: Collection = {
   ],
 };
 
-const blog: Collection = {
-  name: 'blog',
-  label: 'Blog posts',
-  path: 'src/content/blog',
-  format: 'md',
-
-  fields: [
-    { type: 'string', name: 'title', label: 'Title', isTitle: true, required: true },
-    {
-      type: 'string',
-      name: 'description',
-      label: 'Short summary',
-      description: 'Shown on the blog index and in search results.',
-      ui: { component: 'textarea' },
-      required: true,
-    },
-    { type: 'datetime', name: 'pubDate', label: 'Date', required: true },
-    { type: 'image', name: 'image', label: 'Header photo' },
-    { type: 'string', name: 'imageAlt', label: 'Photo description for screen readers' },
-    {
-      type: 'boolean',
-      name: 'draft',
-      label: 'Draft',
-      description: 'Leave switched on while writing. Switch off to publish.',
-    },
-    { type: 'rich-text', name: 'body', label: 'Post', isBody: true },
-  ],
-};
-
 export default defineConfig({
   branch,
   clientId,
@@ -915,7 +886,6 @@ export default defineConfig({
       about,
       book,
       contact,
-      blog,
       legal,
       settings,
     ],

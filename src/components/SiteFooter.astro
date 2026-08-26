@@ -22,12 +22,11 @@ const year = new Date().getFullYear();
         <h2 class="footer__heading">Services</h2>
         <ul class="footer__list">
           <li><a href="/assessments">Dyslexia assessments</a></li>
-          <li><a href="/what-to-expect">What to expect</a></li>
-          <li><a href="/elevator-series">The Elevator Series</a></li>
+          <li><a href="/what-to-expect">Booking an assessment</a></li>
           <li><a href="/schools">Schools and training</a></li>
+          <li><a href="/dyslexia-toolkit">Schools Guide to Dyslexia</a></li>
           <li><a href="/research-and-expert-witness">Research and expert witness</a></li>
           <li><a href="/courses">Courses and guides</a></li>
-          <li><a href="/dyslexia-toolkit">Schools Guide to Dyslexia</a></li>
           <li><a href="/speaking">Speaking</a></li>
         </ul>
       </div>
@@ -38,16 +37,16 @@ const year = new Date().getFullYear();
           <li><a href="/churchill-fellowship">Churchill Fellowship</a></li>
           <li><a href="/book">The book</a></li>
           <li><a href="/articles">Articles</a></li>
-          <li><a href="/faq">Questions and answers</a></li>
-          <li><a href="/podcasts-and-interviews">Podcasts and interviews</a></li>
           <li><a href="/publications">Publications</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/elevator-series">The Elevator Series</a></li>
+          <li><a href="/podcasts-and-interviews">Podcasts and interviews</a></li>
+          <li><a href="/faq">Questions and answers</a></li>
         </ul>
       </div>
       <div>
         <h2 class="footer__heading">Get in touch</h2>
         <ul class="footer__list">
+          <li><a href="/contact">Send a message</a></li>
           <li><a href={`mailto:${s.email}`}>{s.email}</a></li>
           {s.mobile && (
             <li><a href={`tel:${s.mobile.replace(/\s/g, '')}`}>{s.mobile}</a></li>

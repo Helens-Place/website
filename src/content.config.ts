@@ -215,18 +215,6 @@ const articles = defineCollection({
   }),
 });
 
-const blog = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    image: z.string().optional(),
-    imageAlt: z.string().optional(),
-    draft: z.boolean().default(false),
-  }),
-});
-
 const settings = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/settings' }),
   schema: z.object({
@@ -253,4 +241,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { pages, guides, articles, blog, settings };
+export const collections = { pages, guides, articles, settings };

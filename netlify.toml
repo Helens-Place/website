@@ -80,15 +80,26 @@
   to = "/terms"
   status = 301
 
-# WordPress feed. Anyone subscribed lands on the blog instead of an error.
+# WordPress feed. Anyone still subscribed lands on the articles rather than an
+# error. There is no blog any more, so /blog goes there too.
 [[redirects]]
   from = "/feed/"
-  to = "/blog"
+  to = "/articles"
   status = 301
 
 [[redirects]]
   from = "/comments/feed/"
-  to = "/blog"
+  to = "/articles"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/articles"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/articles"
   status = 301
 
 # Section wildcards, last, to catch any child page not listed above.
