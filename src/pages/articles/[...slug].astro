@@ -112,17 +112,20 @@ const pageSchema = [
     border-top: 1px solid var(--line);
     margin: 2.6rem 0;
   }
-  /* The closing biography, set apart from the article itself. */
-  .prose :global(hr + p em),
-  .prose :global(p > em:only-child) {
-    display: block;
+  /* The closing biography, set apart from the article itself.
+     Styled on the paragraph, never on the emphasis inside it: the bio mixes
+     italic and upright runs, and styling each <em> as a block chopped it into
+     separate boxes. */
+  .prose :global(.author-note) {
     background: var(--bg-tint);
     border-radius: var(--radius);
-    padding: 1.2rem 1.4rem;
-    font-style: normal;
+    padding: 1.3rem 1.5rem;
     font-size: .97rem;
     color: var(--ink-soft);
+    max-width: none;
+    margin-top: 2.4rem;
   }
+  .prose :global(.author-note a) { font-weight: 600; }
   .prose :global(blockquote) {
     margin: 0 0 1.5rem;
     padding: 1.1rem 1.4rem;

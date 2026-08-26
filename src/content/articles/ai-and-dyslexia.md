@@ -97,6 +97,5 @@ I'd favour thoughtful engagement over outright bans, alongside clear guidance, a
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She gave expert opinion on ChatGPT as assistive technology and researches technology for neurodivergent learners. She works with schools and EdTech organisations across the UK and internationally. <a href="/contact">Talk to me about AI and assistive technology</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She gave expert opinion on ChatGPT as assistive technology and researches technology for neurodivergent learners. She works with schools and EdTech organisations across the UK and internationally. [Talk to me about AI and assistive technology](/contact).*

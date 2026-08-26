@@ -132,6 +132,5 @@ That's a real and fair worry. I'd rather you booked a free call so we can talk a
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a qualified diagnostic assessor (AMBDA) with a current Assessment Practising Certificate, based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow and the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She has published peer-reviewed research on dyslexia assessment, families and inclusion, and works with families and schools across the UK and beyond. <a href="/assessments">Explore assessments</a> or <a href="/contact">book a free call</a>.</p>
 
-*Dr Helen Ross is a qualified diagnostic assessor (AMBDA) with a current Assessment Practising Certificate, based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow and the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She has published peer-reviewed research on dyslexia assessment, families and inclusion, and works with families and schools across the UK and beyond. [Explore assessments](/assessments) or [book a free call](/contact).*

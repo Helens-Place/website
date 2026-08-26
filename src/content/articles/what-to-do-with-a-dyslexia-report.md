@@ -105,6 +105,5 @@ Dyslexia is lifelong, so a diagnosis doesn't expire. However, specific recommend
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a qualified diagnostic assessor (AMBDA) with a current Assessment Practising Certificate, and a former SENCo, based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She carries out diagnostic assessments and helps families and schools turn reports into practical support. <a href="/assessments">Explore assessments</a> or <a href="/contact">book a free call</a>.</p>
 
-*Dr Helen Ross is a qualified diagnostic assessor (AMBDA) with a current Assessment Practising Certificate, and a former SENCo, based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She carries out diagnostic assessments and helps families and schools turn reports into practical support. [Explore assessments](/assessments) or [book a free call](/contact).*

@@ -102,6 +102,5 @@ Your SENCo first, and experienced colleagues. Ask early and often. Combine that 
 - Ross, H. (2021) *Speaking and writing quietly into the abyss: SEND and inclusion training for teachers*, **SEN Magazine**, 114, 32-33.
 - Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. https://doi.org/10.1111/1467-8578.12174
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and former SENCo based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She has written guidance for early career teachers, including a chapter for Questions on SEND (Routledge), and delivers training to schools across the UK and internationally. <a href="/courses">Explore courses and guides</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and former SENCo based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She has written guidance for early career teachers, including a chapter for* Questions on SEND *(Routledge), and delivers training to schools across the UK and internationally. [Explore courses and guides](/courses).*

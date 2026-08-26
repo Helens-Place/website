@@ -103,6 +103,5 @@ Look for patterns rather than proof: a capable child who tires quickly, avoids r
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She has written on hidden learning needs for the Chartered College of Teaching and works with families and schools across the UK and internationally. <a href="/contact">Get in touch</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She has written on hidden learning needs for the Chartered College of Teaching and works with families and schools across the UK and internationally. [Get in touch](/contact).*

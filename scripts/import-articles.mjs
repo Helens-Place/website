@@ -126,6 +126,33 @@ for (const f of files) {
     body = body.split(`](${from}#`).join(`](${to}#`);
   }
 
+  /* The closing biography.
+   *
+   * In the drafts it is one paragraph using alternating emphasis: italic prose
+   * with the book and journal titles left upright. That pattern is fragile, and
+   * it has already broken. A closing marker sitting directly before a full stop
+   * cannot open emphasis, so it renders as a literal asterisk, which is exactly
+   * what was showing on the page.
+   *
+   * Rather than repair the markers, lift the whole thing out as a styled note.
+   * The box already sets it apart from the article, so the italics were doing
+   * no work. Markdown links are converted so "Get in touch" still works.
+   */
+  const lastRule = body.lastIndexOf('\n---');
+  if (lastRule !== -1) {
+    const tail = body.slice(lastRule + 4).trim();
+    const looksLikeBio = /^\*/.test(tail) && /Dr Helen Ross/.test(tail) && tail.length < 1200;
+    if (looksLikeBio) {
+      const note = tail
+        .replace(/\*/g, '')
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/\s+/g, ' ')
+        .trim();
+      body = body.slice(0, lastRule).trim()
+        + `\n\n<p class="author-note">${note}</p>\n`;
+    }
+  }
+
   /* Lift the Q&A block for FAQPage markup. */
   const faqs = [];
   const qa = body.match(/##\s*Questions people often ask\s*\n([\s\S]*?)(?=\n---|\n##\s)/i);

@@ -99,6 +99,5 @@ They can help the right child. Visual stress is not the same as dyslexia, though
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She has researched and evaluated assistive technology for learners with dyslexia, and works with schools and EdTech companies across the UK and internationally. <a href="/dyslexia-toolkit">Download the Schools Guide to Dyslexia</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She has researched and evaluated assistive technology for learners with dyslexia, and works with schools and EdTech companies across the UK and internationally. [Download the Schools Guide to Dyslexia](/dyslexia-toolkit).*

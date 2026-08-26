@@ -105,6 +105,5 @@ Usually not. A lot of it, including text-to-speech, dictation and immersive read
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and former SENCo based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She writes CPD for teachers, delivers training to schools across the UK and internationally, and researches how dyslexia support works in the ordinary classroom. <a href="/courses">Explore training and courses</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and former SENCo based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She writes CPD for teachers, delivers training to schools across the UK and internationally, and researches how dyslexia support works in the ordinary classroom. [Explore training and courses](/courses).*

@@ -108,6 +108,5 @@ Get clarity on your child's needs, keep their confidence and your relationship s
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She led the data analysis behind the APPG's Human Cost of Dyslexia report, has given evidence to the House of Commons, and reviewed for the Council for Science and Technology. She works with families, schools and organisations across the UK and internationally. <a href="/contact">Book a free 20-minute call</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She led the data analysis behind the APPG's* Human Cost of Dyslexia *report, has given evidence to the House of Commons, and reviewed for the Council for Science and Technology. She works with families, schools and organisations across the UK and internationally. [Book a free 20-minute call](/contact).*

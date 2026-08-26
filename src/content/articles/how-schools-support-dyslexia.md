@@ -103,6 +103,5 @@ By building staff knowledge and confidence, championing an inclusive framing of 
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and former SENCo based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). Her research on teachers, schools and dyslexia support appears in the British Journal of Special Education, and she works with school leaders and SENCos across the UK and internationally. <a href="/contact">Talk to me about your school</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and former SENCo based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). Her research on teachers, schools and dyslexia support appears in the* British Journal of Special Education*, and she works with school leaders and SENCos across the UK and internationally. [Talk to me about your school](/contact).*

@@ -107,6 +107,5 @@ Give them an accurate picture of their strengths as well as their difficulties, 
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. Diagnosed dyslexic at 17 and with ADHD at 44, she brings lived experience to her work alongside a PhD from the University of Bath. She is a 2025 Churchill Fellow and the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge), and works with people of all ages across the UK and internationally. <a href="/contact">Get in touch</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. Diagnosed dyslexic at 17 and with ADHD at 44, she brings lived experience to her work alongside a PhD from the University of Bath. She is a 2025 Churchill Fellow and the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge), and works with people of all ages across the UK and internationally. [Get in touch](/contact).*

@@ -100,6 +100,5 @@ The tension is real, which is why I disclose funding openly, welcome participant
 
 See the [full list of publications](/publications).
 
----
+<p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor, and the owner of Helen's Place Educational Consultancy in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She co-authored international guidance on responsible academia-industry research and evaluates EdTech for organisations worldwide. <a href="/research-and-expert-witness">Talk to me about evaluation and expert witness work</a>.</p>
 
-*Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor, and the owner of Helen's Place Educational Consultancy in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of* Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 *(Speechmark/Routledge). She co-authored international guidance on responsible academia-industry research and evaluates EdTech for organisations worldwide. [Talk to me about evaluation and expert witness work](/research-and-expert-witness).*
