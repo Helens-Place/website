@@ -192,6 +192,29 @@ const guides = defineCollection({
   }),
 });
 
+/* Long-form research-backed articles. These exist to be found from search and
+   from AI assistants rather than browsed by visitors already on the site, so
+   they live in their own section with a hub that makes the topic cluster
+   legible. */
+const articles = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/articles' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    heading: z.string(),
+    summary: z.string(),
+    theme: z.string(),
+    themeLabel: z.string(),
+    audience: z.enum(['families', 'schools', 'business', 'neutral']).default('families'),
+    order: z.number().default(50),
+    keyword: z.string().optional(),
+    image: z.string().optional(),
+    imageAlt: z.string().optional(),
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: z.object({
@@ -224,4 +247,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { pages, guides, blog, settings };
+export const collections = { pages, guides, articles, blog, settings };

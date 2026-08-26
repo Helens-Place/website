@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
 import RelatedContent from '../components/RelatedContent.astro';
+import ArticleLinks from '../components/ArticleLinks.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'schools');
@@ -71,6 +72,13 @@ const pageSchema = [
       background="paper"
     />
   )}
+
+  <ArticleLinks
+    audience="schools"
+    heading="Reading for teachers and school leaders"
+    intro="Research-backed articles on inclusive teaching, wellbeing, training and technology."
+    background="tint"
+  />
 
   {p.finalCta && (
     <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} tone="purple" />

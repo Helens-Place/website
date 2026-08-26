@@ -1,0 +1,139 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../../lib/schema';
+
+const page = await getEntry('pages', 'articles');
+const p = page!.data;
+
+const articles = (await getCollection('articles', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+
+/* Grouped by theme, in the order the themes first appear. */
+const themes: { key: string; label: string; items: typeof articles }[] = [];
+for (const a of articles) {
+  let t = themes.find((x) => x.key === a.data.theme);
+  if (!t) { t = { key: a.data.theme, label: a.data.themeLabel, items: [] }; themes.push(t); }
+  t.items.push(a);
+}
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: p.title,
+    description: p.description,
+    about: { '@id': IDS.business },
+    author: { '@id': IDS.person },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: articles.length,
+      itemListElement: articles.map((a, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE}/articles/${a.id}`,
+        name: a.data.heading,
+      })),
+    },
+  },
+  breadcrumbs([{ name: 'Articles', path: '/articles' }]),
+];
+---
+
+<BaseLayout title={p.title} description={p.description} schema={pageSchema}>
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    primaryCta={p.primaryCta}
+  />
+
+  <section class="section">
+    <div class="wrap">
+      <nav class="jump" aria-label="Article themes">
+        <h2 class="jump__heading">Jump to</h2>
+        <ul>
+          {themes.map((t) => (
+            <li><a href={`#${t.key}`}>{t.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      {themes.map((t) => (
+        <section class="theme" id={t.key}>
+          <h2 class="theme__heading">{t.label}</h2>
+          <ul class="cards">
+            {t.items.map((a) => (
+              <li class="card-item" data-audience={a.data.audience}>
+                <h3 class="card-item__title">
+                  <a href={`/articles/${a.id}`}>{a.data.heading}</a>
+                </h3>
+                <p class="card-item__body">{a.data.summary}</p>
+                <span class="card-item__more" aria-hidden="true">Read the article &rarr;</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  </section>
+
+  {p.finalCta && (
+    <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
+  )}
+</BaseLayout>
+
+<style>
+  .jump {
+    background: var(--bg-tint);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.7rem;
+    margin-bottom: 3rem;
+  }
+  .jump__heading {
+    font-family: var(--font-body);
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--purple-deep);
+    margin-bottom: .8rem;
+  }
+  .jump ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.6rem; }
+  .jump li { max-width: none; }
+  .jump a { font-size: .97rem; font-weight: 500; }
+
+  .theme { margin-bottom: 3.2rem; scroll-margin-top: 6rem; }
+  .theme__heading { font-size: 1.5rem; margin-bottom: 1.3rem; }
+
+  .cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 1.3rem;
+  }
+  .card-item {
+    position: relative;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--pink-accent);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card-item[data-audience='schools'] { border-top-color: var(--purple); }
+  .card-item[data-audience='business'] { border-top-color: var(--purple-deep); }
+  .card-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+  .card-item__title { font-size: 1.12rem; margin-bottom: .5rem; }
+  .card-item__title a { text-decoration: none; color: var(--ink); }
+  .card-item__title a:hover { color: var(--purple-deep); text-decoration: underline; }
+  .card-item__title a::after { content: ''; position: absolute; inset: 0; }
+  .card-item__body { font-size: .97rem; color: var(--ink-soft); }
+  .card-item__more { margin-top: auto; font-weight: 700; font-size: .95rem; color: var(--purple-deep); }
+</style>

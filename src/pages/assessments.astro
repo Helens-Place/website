@@ -6,6 +6,7 @@ import ServiceList from '../components/ServiceList.astro';
 import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
 import RelatedContent from '../components/RelatedContent.astro';
+import ArticleLinks from '../components/ArticleLinks.astro';
 import Photo from '../components/Photo.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
@@ -80,6 +81,13 @@ const pageSchema = [
       background="paper"
     />
   )}
+
+  <ArticleLinks
+    audience="families"
+    heading="Reading on dyslexia, assessment and family life"
+    intro="Longer pieces, each grounded in research I have published, with the sources linked."
+    background="tint"
+  />
 
   {p.finalCta && (
     <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />

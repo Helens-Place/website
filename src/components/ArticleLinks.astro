@@ -1,0 +1,82 @@
+---
+/**
+ * Lists the articles written for one audience, on that audience's page.
+ *
+ * These articles exist to be found from search rather than browsed, but an
+ * orphaned page is a page search engines discount. Linking them from the
+ * relevant audience page gives them a crawlable route in, and tells Google and
+ * AI assistants which cluster each one belongs to.
+ *
+ * Generated from the collection rather than curated, so new articles appear on
+ * the right page without anyone remembering to add them.
+ */
+import { getCollection } from 'astro:content';
+
+interface Props {
+  audience: 'families' | 'schools' | 'business';
+  heading: string;
+  intro?: string;
+  limit?: number;
+  background?: 'default' | 'tint' | 'paper' | 'pink';
+}
+const { audience, heading, intro, limit = 8, background = 'tint' } = Astro.props;
+
+const articles = (await getCollection('articles', ({ data }) =>
+  !data.draft && data.audience === audience))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, limit);
+
+const bg =
+  background === 'tint' ? 'section--tint'
+  : background === 'pink' ? 'section--pink'
+  : background === 'paper' ? 'section--paper' : '';
+---
+
+{articles.length > 0 && (
+  <section class={`section ${bg}`}>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>{heading}</h2>
+        {intro && <p class="lede">{intro}</p>}
+      </div>
+
+      <ul class="article-links">
+        {articles.map((a) => (
+          <li>
+            <a href={`/articles/${a.id}`}>{a.data.heading}</a>
+            <span class="article-links__theme">{a.data.themeLabel}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p class="article-links__all"><a href="/articles">All articles</a></p>
+    </div>
+  </section>
+)}
+
+<style>
+  .article-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+    gap: .6rem 1.6rem;
+    max-width: 100%;
+  }
+  .article-links li {
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    padding: .8rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .article-links a { font-weight: 600; font-size: 1rem; text-decoration: none; }
+  .article-links a:hover { text-decoration: underline; }
+  .article-links__theme {
+    font-size: .85rem;
+    color: var(--ink-soft);
+  }
+  .article-links__all { margin-top: 1.8rem; font-weight: 600; }
+</style>

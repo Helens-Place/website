@@ -1,11 +1,11 @@
 ---
-title: What happens in a dyslexia assessment
+title: "Booking a dyslexia assessment with me: how it works"
 description: >-
-  What a full diagnostic dyslexia assessment actually involves, from booking to
-  report: how long it takes, where it happens, what tests are used, and how long
-  the report stays valid.
+  How booking an assessment with Dr Helen Ross works: the free call, the £150
+  booking fee, where assessments happen in Trowbridge, how long the day takes
+  and when your report arrives.
 eyebrow: Parents and families
-heading: What happens in a dyslexia assessment
+heading: Booking an assessment with me
 audience: families
 intro: >-
   People usually want to know three things before they book: how long it takes,

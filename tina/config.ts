@@ -757,6 +757,72 @@ const guides: Collection = {
   ],
 };
 
+const articlesHub = singlePage('articlesHub', 'Articles hub page', 'articles', [
+  ...heroFields,
+  ctaField('primaryCta', 'Primary button'),
+  finalCtaField,
+]);
+
+const articles: Collection = {
+  name: 'articles',
+  label: 'Articles',
+  path: 'src/content/articles',
+  format: 'md',
+  fields: [
+    ...seoFields,
+    { type: 'string', name: 'heading', label: 'Main heading', isTitle: true, required: true },
+    {
+      type: 'string',
+      name: 'summary',
+      label: 'Summary for listings',
+      ui: { component: 'textarea' },
+      required: true,
+    },
+    {
+      type: 'string',
+      name: 'theme',
+      label: 'Theme key',
+      description: 'Groups the article on the hub. Articles sharing a key appear together.',
+      options: [
+        { value: 't1', label: 'Understanding dyslexia' },
+        { value: 't2', label: 'Wellbeing and mental health' },
+        { value: 't3', label: 'Families and lived experience' },
+        { value: 't4', label: 'Teaching and teacher training' },
+        { value: 't5', label: 'Assistive technology and EdTech' },
+        { value: 't6', label: 'Voice, identity and hidden needs' },
+      ],
+    },
+    { type: 'string', name: 'themeLabel', label: 'Theme name as shown' },
+    {
+      type: 'string',
+      name: 'audience',
+      label: 'Audience',
+      description: 'Decides which audience page lists this article, and its colour.',
+      options: [
+        { value: 'families', label: 'Families' },
+        { value: 'schools', label: 'Schools' },
+        { value: 'business', label: 'Business, research and legal' },
+        { value: 'neutral', label: 'Neutral' },
+      ],
+    },
+    { type: 'number', name: 'order', label: 'Order' },
+    { type: 'string', name: 'keyword', label: 'Primary search term' },
+    {
+      type: 'object',
+      name: 'faqs',
+      label: 'Questions people often ask',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.question }) },
+      fields: [
+        { type: 'string', name: 'question', label: 'Question' },
+        { type: 'string', name: 'answer', label: 'Answer', ui: { component: 'textarea' } },
+      ],
+    },
+    { type: 'boolean', name: 'draft', label: 'Draft' },
+    { type: 'rich-text', name: 'body', label: 'Article', isBody: true },
+  ],
+};
+
 const blog: Collection = {
   name: 'blog',
   label: 'Blog posts',
@@ -806,6 +872,8 @@ export default defineConfig({
       assessments,
       whatToExpect,
       guides,
+      articlesHub,
+      articles,
       faq,
       schools,
       research,

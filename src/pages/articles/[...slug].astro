@@ -1,0 +1,147 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../../lib/schema';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const articles = await getCollection('articles', ({ data }) => !data.draft);
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article, articles } }));
+};
+
+const { article, articles } = Astro.props;
+const a = article.data;
+const { Content } = await render(article);
+
+/* Other articles on the same theme, so a reader who arrived from a search has
+   somewhere sensible to go next. */
+const related = articles
+  .filter((x) => x.data.theme === a.theme && x.id !== article.id && !x.data.draft)
+  .sort((x, y) => x.data.order - y.data.order)
+  .slice(0, 3);
+
+/* Where this reader most likely wants to end up. */
+const destination = {
+  families:  { href: '/assessments', label: 'Dyslexia assessments', body: 'Diagnostic assessments and exam access arrangements, in Trowbridge or online.' },
+  schools:   { href: '/schools', label: 'Training for schools', body: 'Practical INSET and bespoke CPD, delivered in your setting and shaped around your staff.' },
+  business:  { href: '/research-and-expert-witness', label: 'Research and expert witness', body: 'Qualitative research, consultancy and SEND expert witness work.' },
+  neutral:   { href: '/contact', label: 'Get in touch', body: 'Start with a free 20-minute call.' },
+}[a.audience];
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: a.heading,
+    name: a.title,
+    description: a.description,
+    author: { '@id': IDS.person },
+    publisher: { '@id': IDS.business },
+    inLanguage: 'en-GB',
+    isAccessibleForFree: true,
+    mainEntityOfPage: `${SITE}/articles/${article.id}`,
+    url: `${SITE}/articles/${article.id}`,
+    articleSection: a.themeLabel,
+    about: [
+      { '@type': 'Thing', name: 'Dyslexia' },
+      { '@type': 'Thing', name: 'Special educational needs and disabilities' },
+    ],
+  },
+  ...(a.faqs.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: a.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }]
+    : []),
+  breadcrumbs([
+    { name: 'Articles', path: '/articles' },
+    { name: a.heading, path: `/articles/${article.id}` },
+  ]),
+];
+---
+
+<BaseLayout title={a.title} description={a.description} schema={pageSchema}>
+  <PageHero
+    eyebrow={a.themeLabel}
+    heading={a.heading}
+    intro={a.summary}
+    audience={a.audience}
+  />
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <article class="prose"><Content /></article>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section-head"><h2>More on {a.themeLabel.toLowerCase()}</h2></div>
+        <ul class="related-articles">
+          {related.map((r) => (
+            <li>
+              <h3><a href={`/articles/${r.id}`}>{r.data.heading}</a></h3>
+              <p>{r.data.summary}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="all"><a href="/articles">All articles</a></p>
+      </div>
+    </section>
+  )}
+
+  <CtaBand heading={destination.label} body={destination.body} cta={{ label: 'Have a look', href: destination.href }} />
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.5rem; font-size: clamp(1.4rem, 2.6vw, 1.75rem); }
+  .prose :global(h3) { margin-top: 1.9rem; }
+  .prose :global(ul), .prose :global(ol) { padding-left: 1.2rem; }
+  .prose :global(li) { margin-bottom: .5rem; }
+  .prose :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 2.6rem 0;
+  }
+  /* The closing biography, set apart from the article itself. */
+  .prose :global(hr + p em),
+  .prose :global(p > em:only-child) {
+    display: block;
+    background: var(--bg-tint);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.4rem;
+    font-style: normal;
+    font-size: .97rem;
+    color: var(--ink-soft);
+  }
+  .prose :global(blockquote) {
+    margin: 0 0 1.5rem;
+    padding: 1.1rem 1.4rem;
+    background: var(--pink-tint);
+    border-left: 6px solid var(--pink-accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+
+  .related-articles { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.2rem; }
+  .related-articles li {
+    max-width: none;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+  }
+  .related-articles h3 { font-size: 1.08rem; margin-bottom: .4rem; }
+  .related-articles h3 a { text-decoration: none; color: var(--ink); }
+  .related-articles h3 a:hover { color: var(--purple-deep); text-decoration: underline; }
+  .related-articles p { font-size: .96rem; color: var(--ink-soft); margin: 0; }
+  .all { margin-top: 1.6rem; font-weight: 600; }
+</style>

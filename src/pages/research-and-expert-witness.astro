@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import CtaBand from '../components/CtaBand.astro';
 import RelatedContent from '../components/RelatedContent.astro';
+import ArticleLinks from '../components/ArticleLinks.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'research-and-expert-witness');
@@ -95,6 +96,13 @@ const pageSchema = [
       background="paper"
     />
   )}
+
+  <ArticleLinks
+    audience="business"
+    heading="Research writing"
+    intro="Articles drawn from my own studies, with the papers linked so you can check the source."
+    background="tint"
+  />
 
   {p.finalCta && (
     <CtaBand heading={p.finalCta.heading} body={p.finalCta.body} cta={p.finalCta.cta} />
