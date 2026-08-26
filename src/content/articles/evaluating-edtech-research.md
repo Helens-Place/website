@@ -8,7 +8,7 @@ heading: "Evaluating EdTech honestly: doing research with technology companies"
 summary: >-
   Every EdTech product comes with a claim: this improves reading, this
   raises attainment, this changes lives. Some of those claims are well
-  founded. Many are not. For schools and.
+  founded. Many are not.
 theme: "t5"
 themeLabel: "Assistive technology and EdTech"
 audience: "business"

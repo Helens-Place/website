@@ -7,8 +7,7 @@ description: >-
 heading: "Working with your child's school without it becoming a fight"
 summary: >-
   For a lot of parents, talking to school about dyslexia feels adversarial
-  before anyone has even sat down. The research bears that out. In the Human
-  Cost of Dyslexia survey (Ross and.
+  before anyone has even sat down. The research bears that out.
 theme: "t3"
 themeLabel: "Families and lived experience"
 audience: "families"

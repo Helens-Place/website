@@ -8,7 +8,7 @@ heading: "Protecting the wellbeing of dyslexic learners: what schools and famili
 summary: >-
   In a companion article I set out why dyslexia and mental health are so
   closely linked, and why so much of the distress comes not from the
-  difficulty itself but from how it gets.
+  difficulty itself but from how it gets handled.
 theme: "t2"
 themeLabel: "Wellbeing and mental health"
 audience: "schools"

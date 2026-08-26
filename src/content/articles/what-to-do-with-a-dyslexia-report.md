@@ -6,9 +6,7 @@ description: >-
   and use it for exam access.
 heading: "What to do with a dyslexia report once you have it"
 summary: >-
-  A dyslexia assessment report can be a strange thing to receive. You've
-  waited for it, maybe paid a fair amount for it, and then a long document
-  lands in your inbox full of tables,.
+  A dyslexia assessment report can be a strange thing to receive.
 theme: "t3"
 themeLabel: "Families and lived experience"
 audience: "families"

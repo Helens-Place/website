@@ -8,7 +8,7 @@ heading: "Why teachers still aren't trained for SEND, and what to do about it"
 summary: >-
   Every so often a petition lands in my inbox, and lately they seem to
   arrive in a steady stream, asking me to sign, share or follow a campaign
-  for better special needs training for.
+  for better special needs training for everyone who works in schools.
 theme: "t4"
 themeLabel: "Teaching and teacher training"
 audience: "schools"

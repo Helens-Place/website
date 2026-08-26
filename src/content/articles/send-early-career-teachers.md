@@ -8,7 +8,7 @@ heading: "Supporting SEND as an early career teacher"
 summary: >-
   If you're early in your teaching career and you feel underprepared to
   support learners with SEND, I want to start by taking that weight off your
-  shoulders. It is not a sign that you're.
+  shoulders. It is not a sign that you're a bad teacher.
 theme: "t4"
 themeLabel: "Teaching and teacher training"
 audience: "schools"

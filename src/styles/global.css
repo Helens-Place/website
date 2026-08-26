@@ -69,6 +69,10 @@ body {
   font-weight: 350;
   text-align: left;         /* never justified */
   -webkit-font-smoothing: antialiased;
+  /* Inherited. A bare DOI or a long URL is one unbreakable token, and on a
+     narrow screen it pushes the whole page sideways. break-word only splits a
+     word that would otherwise overflow, so ordinary text wraps as normal. */
+  overflow-wrap: break-word;
 }
 
 h1, h2, h3, h4 {

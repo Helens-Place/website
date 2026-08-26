@@ -68,14 +68,16 @@ const pageSchema = [
 ---
 
 <BaseLayout title={a.title} description={a.description} schema={pageSchema}>
+  {/* No intro here. The article's own opening paragraph is the standfirst, and
+      repeating a trimmed copy of it above the real thing read as a mistake. */}
   <PageHero
     eyebrow={a.themeLabel}
     heading={a.heading}
-    intro={a.summary}
     audience={a.audience}
+    compact
   />
 
-  <section class="section section--paper">
+  <section class="section section--paper article-body">
     <div class="wrap">
       <article class="prose"><Content /></article>
     </div>
@@ -102,6 +104,8 @@ const pageSchema = [
 </BaseLayout>
 
 <style>
+  /* The heading has already provided the separation. */
+  .article-body { padding-top: clamp(1.4rem, 2.6vw, 2rem); }
   .prose { max-width: 70ch; }
   .prose :global(h2) { margin-top: 2.5rem; font-size: clamp(1.4rem, 2.6vw, 1.75rem); }
   .prose :global(h3) { margin-top: 1.9rem; }

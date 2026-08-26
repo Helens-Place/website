@@ -8,7 +8,7 @@ heading: "What actually happens in a dyslexia assessment"
 summary: >-
   For most families, booking a dyslexia assessment comes after a long
   stretch of worry. You've noticed something. Maybe homework takes twice as
-  long as it should. Maybe a bright, funny.
+  long as it should.
 theme: "t1"
 themeLabel: "Understanding dyslexia"
 audience: "families"

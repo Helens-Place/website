@@ -8,7 +8,7 @@ heading: "Dyslexia and mental health: the link we can't afford to ignore"
 summary: >-
   Of all the conversations I have, in assessments, in staffrooms, and on the
   podcasts I get asked onto, the one people are least prepared for is the
-  link between dyslexia and mental.
+  link between dyslexia and mental health.
 theme: "t2"
 themeLabel: "Wellbeing and mental health"
 audience: "families"

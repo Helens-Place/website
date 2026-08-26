@@ -8,7 +8,7 @@ heading: "What is dyslexia, really?"
 summary: >-
   This is the question I get asked more than any other. Parents ask it,
   teachers ask it, and a good number of adults ask it about themselves,
-  sometimes after wondering for thirty years..
+  sometimes after wondering for thirty years.
 theme: "t1"
 themeLabel: "Understanding dyslexia"
 audience: "families"

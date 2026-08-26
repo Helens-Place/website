@@ -7,8 +7,7 @@ description: >-
 heading: "Dyslexia from the inside and out: identity, labels and taking control"
 summary: >-
   I write about dyslexia as a researcher and an assessor. I also live it. I
-  was diagnosed dyslexic at 17, and, much later, with ADHD at 44. So when I
-  talk about what it means to carry a.
+  was diagnosed dyslexic at 17, and, much later, with ADHD at 44.
 theme: "t6"
 themeLabel: "Voice, identity and hidden needs"
 audience: "families"

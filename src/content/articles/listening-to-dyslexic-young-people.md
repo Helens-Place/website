@@ -8,7 +8,7 @@ heading: "\"I'm dyslexic, but what does that even mean?\""
 summary: >-
   That question, asked by a young person I was working with, became the
   title of one of my studies, because it captures something we too often
-  skip past. We spend a great deal of energy.
+  skip past.
 theme: "t6"
 themeLabel: "Voice, identity and hidden needs"
 audience: "families"

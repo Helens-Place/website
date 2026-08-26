@@ -7,8 +7,7 @@ description: >-
 heading: "Assistive technology for dyslexia: what the evidence actually says"
 summary: >-
   There's a lot of enthusiasm about technology for dyslexia, and a fair
-  amount of scepticism too. Some people treat a gadget as a magic fix;
-  others worry it's a crutch that stops.
+  amount of scepticism too.
 theme: "t5"
 themeLabel: "Assistive technology and EdTech"
 audience: "business"

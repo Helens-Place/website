@@ -8,7 +8,7 @@ heading: "Integrating dyslexia support into mainstream teaching"
 summary: >-
   Ask a room of teachers how to support a dyslexic pupil and someone will
   usually picture a separate intervention: a withdrawal group, a specialist
-  session, something that happens.
+  session, something that happens somewhere else, to someone else.
 theme: "t4"
 themeLabel: "Teaching and teacher training"
 audience: "schools"

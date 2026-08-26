@@ -166,10 +166,25 @@ for (const f of files) {
     }
   }
 
-  /* First real paragraph, trimmed, as the card summary. */
+  /* Card summary: whole sentences from the opening paragraph.
+   *
+   * Cutting at a character count left listings ending mid-sentence, on "...a
+   * crutch that stops." Take complete sentences instead, and keep the article's
+   * own first-person voice rather than the meta description, which is written
+   * in the third person for search results. */
   const firstPara = body.split(/\n\n/).find((p) => p.trim() && !p.startsWith('#')) || description;
-  const summary = firstPara.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_]/g, '')
-    .replace(/\s+/g, ' ').trim().slice(0, 185).replace(/\s+\S*$/, '') + '.';
+  const plain = firstPara
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/[*_]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const sentences = plain.match(/[^.!?]+[.!?]+(\s|$)/g) ?? [plain];
+  let summary = '';
+  for (const s of sentences) {
+    if (summary && (summary + s).trim().length > 200) break;
+    summary += s;
+  }
+  summary = summary.trim() || plain.slice(0, 180);
 
   const [theme, audience] = MAP[num] ?? ['t1', 'families'];
 

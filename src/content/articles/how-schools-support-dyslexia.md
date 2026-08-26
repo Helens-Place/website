@@ -8,7 +8,7 @@ heading: "How good dyslexia support actually happens in schools"
 summary: >-
   School leaders often ask me a version of the same question: what system
   should we put in place to support our dyslexic learners? It's the right
-  instinct, and policies and structures.
+  instinct, and policies and structures matter.
 theme: "t4"
 themeLabel: "Teaching and teacher training"
 audience: "schools"

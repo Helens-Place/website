@@ -8,7 +8,7 @@ heading: "Can AI tools like ChatGPT help dyslexic learners?"
 summary: >-
   When ChatGPT arrived, I was asked for my view on whether it could work as
   assistive technology for students with learning disabilities, and I gave
-  an expert opinion for Dystinct (Ross,.
+  an expert opinion for Dystinct (Ross, 2023).
 theme: "t5"
 themeLabel: "Assistive technology and EdTech"
 audience: "schools"

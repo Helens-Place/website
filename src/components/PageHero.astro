@@ -13,11 +13,13 @@ interface Props {
   primaryCta?: Cta;
   secondaryCta?: Cta;
   ratio?: string;
+  /** Tightens the space beneath, for pages that run straight into prose. */
+  compact?: boolean;
 }
 
 const {
   eyebrow, heading, intro, trustLine, image, imageAlt,
-  audience = 'neutral', primaryCta, secondaryCta, ratio = '4 / 5',
+  audience = 'neutral', primaryCta, secondaryCta, ratio = '4 / 5', compact = false,
 } = Astro.props;
 
 const accent: Record<string, string> = {
@@ -28,7 +30,7 @@ const accent: Record<string, string> = {
 };
 ---
 
-<section class="hero" data-has-image={image ? 'true' : 'false'}>
+<section class="hero" data-has-image={image ? 'true' : 'false'} data-compact={compact ? 'true' : 'false'}>
   <div class="wrap hero__inner">
     <div class="hero__text">
       {eyebrow && <p class="eyebrow" style={`color:${accent[audience]}`}>{eyebrow}</p>}
@@ -52,6 +54,12 @@ const accent: Record<string, string> = {
 
 <style>
   .hero { padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2.5rem, 5vw, 4rem); }
+  /* An article heading runs straight into the article, so the usual breathing
+     room below the hero reads as a hole rather than as space. */
+  .hero[data-compact='true'] { padding-bottom: clamp(.6rem, 1.5vw, 1rem); }
+  /* The heading's own generous margin is most of the gap, and it is not needed
+     when prose follows immediately. */
+  .hero[data-compact='true'] h1 { margin-bottom: 0; }
   .hero__inner { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
   .hero[data-has-image='true'] .hero__inner { grid-template-columns: 1.15fr .85fr; }
   .hero__trust {

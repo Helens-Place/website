@@ -8,7 +8,7 @@ heading: "Choosing dyslexia technology for your classroom: a practical guide"
 summary: >-
   Once a school is persuaded that assistive technology helps, and the
   evidence is strong that it does, the next questions are practical. What do
-  we actually buy? Is it affordable? Where.
+  we actually buy? Is it affordable? Where do we start?
 theme: "t5"
 themeLabel: "Assistive technology and EdTech"
 audience: "schools"

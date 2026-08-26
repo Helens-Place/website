@@ -7,8 +7,7 @@ description: >-
 heading: "The real cost of dyslexia to families"
 summary: >-
   We don't talk enough about what dyslexia actually costs the families
-  living with it. Not the tidy version, the real one: the money, yes, but
-  also the worry, the exhaustion, and the.
+  living with it.
 theme: "t3"
 themeLabel: "Families and lived experience"
 audience: "families"

@@ -7,8 +7,7 @@ description: >-
 heading: "\"It's a battle\": supporting your dyslexic child through school"
 summary: >-
   When I researched what it's like to parent a dyslexic child, one word came
-  up again and again. Battle. Parents used it to describe getting their
-  child assessed, getting the school to.
+  up again and again. Battle.
 theme: "t3"
 themeLabel: "Families and lived experience"
 audience: "families"

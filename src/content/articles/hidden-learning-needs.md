@@ -6,9 +6,7 @@ description: >-
   about the learners they can't see.
 heading: "Hidden needs: helping the learners you can't see"
 summary: >-
-  There's a particular kind of pupil I worry about most. Not the child whose
-  difficulty is obvious and documented, but the one whose need is invisible:
-  no wheelchair, no medical.
+  There's a particular kind of pupil I worry about most.
 theme: "t6"
 themeLabel: "Voice, identity and hidden needs"
 audience: "schools"
