@@ -10,6 +10,11 @@ and SEND specialist, Trowbridge, Wiltshire.
 | Hosting | [Netlify](https://docs.netlify.com) |
 | Node | 22.12.0, pinned in `.nvmrc` and `netlify.toml` |
 
+Before pointing the domain at Netlify, work through [LAUNCH.md](LAUNCH.md).
+It lists the temporary scaffolding that has to come back out, most importantly
+the `noindex` header, which will keep the real site out of Google if it is left
+in place.
+
 ## Getting started
 
 ```bash
