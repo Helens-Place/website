@@ -59,6 +59,30 @@ const siteGraph = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--
+      Reading preferences are applied here, inline and render blocking, on
+      purpose. They change the root font size and the body line height, so
+      setting them from a deferred script restyles a document that has already
+      been painted and moves every element on the page at once. Cloudflare
+      measured that as a Cumulative Layout Shift of 1.0, where anything above
+      0.25 counts as poor.
+
+      Keep this inline. Astro bundles and defers any script without is:inline,
+      which is exactly the bug.
+    -->
+    <script is:inline>
+      try {
+        var d = document.documentElement;
+        var keys = ['reading', 'spacing', 'tint'];
+        for (var i = 0; i < keys.length; i++) {
+          var v = localStorage.getItem('hp-' + keys[i]);
+          if (v) d.setAttribute('data-' + keys[i], v);
+        }
+      } catch (e) {
+        /* Private browsing can refuse localStorage. Defaults are fine. */
+      }
+    </script>
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />

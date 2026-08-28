@@ -46,13 +46,22 @@
 
 <style is:global>
   /* A visible marker, but only on links that read as text. Buttons and whole
-     card links already look like they go somewhere. */
-  .prose a.is-external::after,
-  .footer__list a.is-external::after,
-  .prose__links a.is-external::after,
-  .story__links a.is-external::after,
-  .details__socials a.is-external::after,
-  .footer__socials a.is-external::after {
+     card links already look like they go somewhere.
+
+     Matched on the href, not on the class the script adds. The class arrives
+     after the first paint, so hanging the arrow off it reflowed every
+     paragraph containing an external link, which counts against Cumulative
+     Layout Shift. An href selector is there on the first frame instead.
+
+     Every internal link on this site is relative, so an absolute http link is
+     external by definition. The domain exclusion is belt and braces, for any
+     link written out in full. */
+  .prose a[href^="http"]:not([href*="helensplace.co.uk"])::after,
+  .footer__list a[href^="http"]:not([href*="helensplace.co.uk"])::after,
+  .prose__links a[href^="http"]:not([href*="helensplace.co.uk"])::after,
+  .story__links a[href^="http"]:not([href*="helensplace.co.uk"])::after,
+  .details__socials a[href^="http"]:not([href*="helensplace.co.uk"])::after,
+  .footer__socials a[href^="http"]:not([href*="helensplace.co.uk"])::after {
     content: '\2197';           /* north east arrow */
     display: inline-block;
     margin-left: .25em;

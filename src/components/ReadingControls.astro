@@ -42,7 +42,10 @@
     cursor: pointer;
   }
   .reading button:hover { background: rgba(255, 255, 255, .16); }
-  .reading button[aria-pressed='true'] { background: #fff; color: var(--purple-deep); border-color: #fff; }
+  .reading button[aria-pressed='true'],
+  html[data-reading='large'] .reading button[data-value='large'],
+  html[data-spacing='roomy'] .reading button[data-value='roomy'],
+  html[data-tint='lilac'] .reading button[data-value='lilac'] { background: #fff; color: var(--purple-deep); border-color: #fff; }
   .reading :global(button:focus-visible) { outline: 3px solid #fff; outline-offset: 2px; }
 </style>
 
@@ -53,9 +56,10 @@
   buttons.forEach((btn) => {
     const key = btn.dataset.readingToggle!;
     const value = btn.dataset.value!;
-    const stored = localStorage.getItem(`hp-${key}`);
-    if (stored === value) {
-      root.setAttribute(`data-${key}`, value);
+    /* The attribute is already set, before first paint, by the inline script
+       in the document head. All that is left to do here is match the button
+       state to it. */
+    if (root.getAttribute(`data-${key}`) === value) {
       btn.setAttribute('aria-pressed', 'true');
     }
     btn.addEventListener('click', () => {
