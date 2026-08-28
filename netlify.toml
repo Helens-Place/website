@@ -5,6 +5,28 @@
   command = "npm run tina:build"
   publish = "dist"
 
+  # Skip the build entirely when a commit touched nothing that reaches the
+  # published site. Every deploy rebuilds all 48 pages and is metered, so a
+  # commit that only edits the README should not cost one.
+  #
+  # Read the exit code the opposite way round to the obvious one. Netlify
+  # SKIPS the build when this command exits 0, and builds when it exits
+  # non-zero. `git diff --quiet` exits 0 when it finds no differences, so:
+  #
+  #   no changes outside the excluded paths  ->  exit 0  ->  build skipped
+  #   something else changed                 ->  exit 1  ->  build runs
+  #
+  # Nothing in scripts/ runs during the build. They are local checks and one
+  # off importers, and whatever they generate lands in src/content or public/,
+  # neither of which is excluded here.
+  #
+  # On a first deploy CACHED_COMMIT_REF is empty, git errors, and the build
+  # runs. Failing towards building is the right way round.
+  #
+  # To force a build after a change that is excluded here, touch any other
+  # file, or use Trigger deploy in the Netlify dashboard.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)README.md' ':(exclude)scripts/' ':(exclude).claude/' ':(exclude).gitignore'"
+
 [build.environment]
   NODE_VERSION = "22.12.0"
 

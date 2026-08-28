@@ -201,3 +201,22 @@ have bitten already:
 
 Pushes to `main` trigger a Netlify build. The contact form uses Netlify Forms,
 so submissions appear in the Netlify dashboard with no backend to maintain.
+
+Every deploy is a full rebuild. Astro has no incremental mode, so changing one
+word in the CMS regenerates all 48 pages, takes around 35 seconds locally and
+one to two minutes on Netlify, and costs exactly what a large change costs.
+Netlify only uploads the files whose contents changed, but build time is what
+is metered, not upload.
+
+That allowance is finite, and it can run out. When it does, published sites stay
+up and only new deploys stop, so the symptom is a site that quietly will not
+update. Check Billing in the Netlify dashboard.
+
+`netlify.toml` carries an `ignore` rule so commits touching only the README,
+`scripts/`, `.claude/` or `.gitignore` do not trigger a build. Note that its
+exit codes read backwards: exit 0 skips the build. The comment above the rule
+explains it.
+
+Editing in TinaCMS commits to `main`, so each save is one deploy. That is fine
+at the pace one person edits content. It is not fine at the pace of active
+development, so batch pushes while building.
