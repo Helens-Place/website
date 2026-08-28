@@ -26,7 +26,8 @@ const enabled = provider !== 'none' && token.trim().length > 0;
 
 {enabled && provider === 'cloudflare' && (
   <script
-    defer
+    is:inline
+    type="module"
     src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon={`{"token": "${token}"}`}
   />

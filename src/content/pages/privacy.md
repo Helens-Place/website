@@ -113,12 +113,26 @@ analysis, to understand user behaviour, and to administer the site.
 
 ## Analytics
 
-This website may use analytics services provided by third parties. The
-information generated about your use of the website, including your IP address,
-may be transmitted to and stored by the provider on servers which may be outside
-the UK. That information is used for the purpose of evaluating your use of the
-website, compiling reports on website activity, and providing other services
-relating to website activity and internet usage.
+I use Cloudflare Web Analytics to see which pages people find useful. I chose it
+deliberately, because it is the least intrusive option I could find.
+
+It sets no cookies, stores nothing on your device, and does not use
+fingerprinting. It cannot follow you to other websites, and it does not build a
+profile of you or recognise you if you come back. What I see are aggregate
+counts: which pages were viewed, which site or search sent someone here, and a
+broad breakdown by country, browser and device type. I cannot identify an
+individual visitor from it.
+
+Your IP address is used momentarily to work out roughly where a visit came from
+and to filter out automated traffic. It is not stored against your visit and it
+is not available to me.
+
+Because this sets no cookies and does no tracking across sites, it does not need
+your consent under the Privacy and Electronic Communications Regulations. That
+is why this site does not put a cookie banner in front of you. Cloudflare, Inc.
+is a United States company and processes this data across its global network.
+You can read exactly what it collects in
+[Cloudflare's Web Analytics documentation](https://developers.cloudflare.com/web-analytics/).
 
 ## Security
 

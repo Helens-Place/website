@@ -22,8 +22,8 @@ nav:
     href: /about
   - label: Contact
     href: /contact
-analyticsProvider: none
-analyticsToken: ''
+analyticsProvider: cloudflare
+analyticsToken: 89f2d89a2df84730b206d40eced814b6
 googleSiteVerification: ''
 bingSiteVerification: ''
 footerNote: >-

@@ -131,8 +131,17 @@ Schema.org's validator.
 
 ## Analytics
 
-Off by default. Nothing third-party loads until a provider and token are set in
-site settings, editable in the CMS.
+Cloudflare Web Analytics, enabled in site settings and editable in the CMS. The
+beacon token is public by design, since it ships in the page source, so it lives
+in the content file rather than an environment variable.
+
+The component emits nothing at all while the provider is `none` or the token is
+blank, so analytics can be turned off without touching code.
+
+Keep the script tag matching whatever snippet Cloudflare currently hands out. It
+moved from `defer` to `type="module"`, and a module loaded as a classic script
+fails silently. It carries `is:inline` so Astro renders it verbatim instead of
+trying to bundle a third-party URL.
 
 Google Analytics is deliberately not one of the options. It sets cookies and
 processes visitor-level data for purposes beyond improving this site, so under
