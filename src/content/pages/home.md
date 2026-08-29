@@ -1,10 +1,10 @@
 ---
 title: 'Dr Helen Ross, dyslexia specialist and researcher in Wiltshire'
-description: 'Dyslexia assessments, teacher training and research from Dr Helen Ross, a published academic and qualified diagnostic assessor based in Trowbridge, Wiltshire.'
+description: 'Dyslexia assessments, teacher training and research from Dr Helen Ross, a published academic and qualified diagnostic assessor based in Wiltshire.'
 eyebrow: Dr Helen Ross · Dyslexia specialist and researcher
 heading: 'Serious expertise, with a genuinely warm welcome.'
 intro: 'I''m Helen. I do dyslexia assessments, teacher training and research, and I explain things plainly. I''m based in Trowbridge, and I work with families, schools and organisations across the UK and beyond.'
-image: /imageshelen-hero.jpg
+image: /images/__staging/content/__filehelen-hero.jpg
 imageAlt: Dr Helen Ross smiling at her desk in her garden office
 primaryCta:
   label: Book a free 20-minute call
@@ -59,7 +59,7 @@ bookBand:
   cta:
     label: Read more and buy
     href: /book
-  image: /imagesbook-cover.jpg
+  image: /images/__staging/content/__filebook-cover.jpg
   imageAlt: Cover of Literacy Learning Journeys by Helen Ross
 teasers:
   - label: Courses
