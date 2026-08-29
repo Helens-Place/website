@@ -27,11 +27,23 @@ const {
 } = Astro.props;
 
 /* Accept any of the forms this value turns up in.
-   Content files use a bare filename. TinaCMS's media picker writes a rooted
-   path, and sometimes drops the separator, producing "/imageshelen-hero.jpg".
-   Making the trailing slash optional catches that too, which matters because
-   the alternative is a silently broken hero image. */
-const file = src.replace(/^\/?images\/?/, '');
+
+   Content files written by hand use a bare filename. TinaCMS rewrites the
+   field on every save, and has produced two different broken shapes so far:
+
+     /imageshelen-hero.jpg                            separator dropped
+     /images/__staging/content/__filehelen-hero.jpg   staging prefix, on a branch
+
+   Both appeared when the editor had only changed text elsewhere on the page,
+   because saving re-serialises every field rather than just the edited one.
+   So this is not a one off and cannot be left to chance.
+
+   Every image lives flat in public/images, so whatever arrives is reduced to
+   its filename. The alternative is a hero image that silently disappears. */
+const file = src
+  .replace(/^\/?images\/?/, '')          // rooted path, separator optional
+  .replace(/^__staging\/.*?__file/, '')  // TinaCloud media staging prefix
+  .replace(/^.*\//, '');                 // any directories left over
 const exists = fs.existsSync(path.join(process.cwd(), 'public', 'images', file));
 const fills: Record<string, string> = {
   families: 'var(--pink-soft)',

@@ -4,7 +4,7 @@ description: 'Dyslexia assessments, teacher training and research from Dr Helen 
 eyebrow: Dr Helen Ross · Dyslexia specialist and researcher
 heading: 'Serious expertise, with a genuinely warm welcome.'
 intro: 'I''m Helen. I do dyslexia assessments, teacher training and research, and I explain things plainly. I''m based in Wiltshire, and I work with families, schools and organisations across the UK and beyond.'
-image: /images/__staging/content/__filehelen-hero.jpg
+image: helen-hero.jpg
 imageAlt: Dr Helen Ross smiling at her desk in her garden office
 primaryCta:
   label: Book a free 20-minute call
@@ -59,7 +59,7 @@ bookBand:
   cta:
     label: Read more and buy
     href: /book
-  image: /images/__staging/content/__filebook-cover.jpg
+  image: book-cover.jpg
   imageAlt: Cover of Literacy Learning Journeys by Helen Ross
 teasers:
   - label: Courses
