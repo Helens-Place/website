@@ -15,9 +15,10 @@
     "tina:build": "tinacms build --skip-cloud-checks && astro build",
     "check:dashes": "node scripts/check-dashes.mjs",
     "check:contrast": "node scripts/contrast.mjs",
-    "check": "npm run check:frontmatter && npm run check:dashes && npm run check:contrast && npm run check:tina",
+    "check": "npm run check:frontmatter && npm run check:dashes && npm run check:contrast && npm run check:tina && npm run check:lock",
     "check:tina": "tinacms build --skip-cloud-checks --local --skip-indexing --skip-search-index --noTelemetry",
-    "check:frontmatter": "node scripts/check-frontmatter.mjs"
+    "check:frontmatter": "node scripts/check-frontmatter.mjs",
+    "check:lock": "node scripts/check-tina-lock.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.8",
