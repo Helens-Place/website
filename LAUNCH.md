@@ -6,7 +6,7 @@ the temporary scaffolding that has to be taken back out.
 Nothing here is optional. Two items will silently break the launch if missed:
 the `noindex` header, and the review note on the terms page.
 
-Last updated: 28 August 2026.
+Last updated: 29 August 2026.
 
 ## 1. Temporary scaffolding to remove
 
@@ -22,6 +22,18 @@ out, and none of them announce themselves.
 - [ ] **Remove the review note from the top of `src/content/pages/terms.md`.**
       It is visible to anyone reading the page and says the cancellation terms
       are unconfirmed proposals.
+
+- [ ] **Tidy the image paths.** TinaCMS rewrites every field on save and mangles
+      image paths while doing it, so each page Helen edits gains a value like
+      `/images/__staging/content/__filehelen-hero.jpg`. The site renders
+      correctly regardless, because `Photo.astro` reduces them to filenames,
+      but the repo should not carry them. Run:
+
+          npm run tidy:images
+
+      It also fails if an image is genuinely missing from `public/images`,
+      which is a real problem rather than a cosmetic one, and means a CMS upload
+      never reached the repo.
 
 - [ ] **Wind up the `content` branch workflow.** Set up so Helen could review
       the whole site while production deploys were paused. Once she is done:
@@ -78,12 +90,13 @@ The sequence matters.
 
 1. Helen finishes her review on the `content` branch.
 2. Merge `content` into `main`.
-3. Confirm section 2 sign-offs are done.
-4. Remove the review note from the terms page.
-5. Add the Search Console and Bing verification codes.
-6. Remove the `X-Robots-Tag` block.
-7. Point the domain at Netlify.
-8. Wind up the branch workflow, section 1.
+3. Run `npm run tidy:images` and commit the result.
+4. Confirm section 2 sign-offs are done.
+5. Remove the review note from the terms page.
+6. Add the Search Console and Bing verification codes.
+7. Remove the `X-Robots-Tag` block.
+8. Point the domain at Netlify.
+9. Wind up the branch workflow, section 1.
 
 ## 6. Once it is live
 
