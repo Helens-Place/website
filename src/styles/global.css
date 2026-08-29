@@ -10,6 +10,50 @@
 @import '@fontsource-variable/lexend';
 @import '@fontsource-variable/bricolage-grotesque';
 
+/* Metric matched fallbacks.
+ *
+ * The fonts load with font-display: swap, so a visitor with a cold cache sees
+ * the fallback first and then the real face. Lexend sets about 7.8% wider than
+ * Segoe UI, so that swap reflowed every paragraph on the page, and it changed
+ * the height of the reading comfort bar, which sits above everything and moved
+ * the whole document with it.
+ *
+ * Cloudflare showed the result plainly: the same page over the same six hours
+ * came out roughly half Good and half Poor for Cumulative Layout Shift. The
+ * split is cache. A repeat visit has the fonts already and never swaps.
+ *
+ * These descriptors scale the fallback so it occupies the same space as the
+ * real face, which makes the swap invisible. Measured against the actual fonts
+ * in a browser rather than taken from a table:
+ *
+ *   Lexend    2771.9 wide, ascent 100, descent 25   per 100px
+ *   Segoe UI  2570.5 wide  ->  size-adjust 107.83%
+ *   Bricolage 2705.6 wide, ascent 93, descent 27
+ *   Trebuchet 2610.1 wide  ->  size-adjust 103.66%
+ *
+ * Ascent and descent are divided by the size adjustment so they stay correct
+ * once it is applied. The local() list is ordered Windows, macOS, then a
+ * generic: the numbers are exact for Segoe UI and approximate elsewhere, which
+ * is still far closer than no adjustment at all.
+ */
+@font-face {
+  font-family: 'Lexend Fallback';
+  src: local('Segoe UI'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 107.83%;
+  ascent-override: 92.74%;
+  descent-override: 23.18%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Bricolage Fallback';
+  src: local('Trebuchet MS'), local('Helvetica Neue'), local('Arial');
+  size-adjust: 103.66%;
+  ascent-override: 89.72%;
+  descent-override: 26.05%;
+  line-gap-override: 0%;
+}
+
 :root {
   /* Helen's actual brand colours */
   --purple:      #7030A0;
@@ -36,8 +80,8 @@
   --business:        var(--purple-deep);
   --business-fill:   #E6DCEF;
 
-  --font-display: 'Bricolage Grotesque Variable', 'Trebuchet MS', sans-serif;
-  --font-body: 'Lexend Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', 'Bricolage Fallback', 'Trebuchet MS', sans-serif;
+  --font-body: 'Lexend Variable', 'Lexend Fallback', 'Segoe UI', system-ui, sans-serif;
 
   --measure: 64ch;
   --radius: 14px;

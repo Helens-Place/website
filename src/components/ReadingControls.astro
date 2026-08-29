@@ -40,6 +40,20 @@
     border-radius: 999px;
     padding: .22rem .8rem;
     cursor: pointer;
+    /* Fixed width, so how these wrap depends on the width of the viewport and
+       nothing else.
+
+       This bar sits above the header, so any change to its height moves the
+       entire document. Sized to the text, the buttons were a different width
+       in the fallback font than in Lexend, wrapped onto a different number of
+       rows, and shifted the whole page when the web font arrived. The metric
+       matched fallbacks in global.css fix that for body copy, but they cannot
+       fix it here: these are semibold, and one size-adjust value cannot match
+       a variable font at every weight.
+
+       In em, so it still scales with the larger text setting. */
+    min-width: 9em;
+    text-align: center;
   }
   .reading button:hover { background: rgba(255, 255, 255, .16); }
   .reading button[aria-pressed='true'],
