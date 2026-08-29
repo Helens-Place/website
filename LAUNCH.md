@@ -74,12 +74,27 @@ Content written or rewritten on her behalf, published in her name.
 
 ## 4. Needs a code or a credential
 
-- [ ] **`googleSiteVerification`** in `src/content/settings/site.md`, from
-      Google Search Console.
-- [ ] **`bingSiteVerification`**, same file, from Bing Webmaster Tools.
+Verify against **helensplace.co.uk**, never the netlify.app address. The preview
+is set to noindex so there would be nothing to report on, and if it ever were
+indexed it would compete with the real site as duplicate content.
 
-Get both verified before the domain is pointed, so indexing starts the moment
-the `noindex` comes off rather than days later.
+- [ ] **Google Search Console.** Add `helensplace.co.uk` as a **Domain
+      property**, not a URL prefix property, and verify with a **DNS TXT
+      record** at the registrar. This works before the domain points at
+      Netlify, so do it now rather than at go-live. A domain property also
+      covers every subdomain and both http and https at once.
+
+- [ ] **Bing Webmaster Tools.** Sign in and use **Import from Google Search
+      Console**. It carries the verification across and takes seconds.
+
+Doing both up front means indexing can start the moment the `noindex` comes
+off, rather than the clock starting then.
+
+The `googleSiteVerification` and `bingSiteVerification` fields in
+`src/content/settings/site.md` are for the meta tag method instead. They can
+only verify once helensplace.co.uk is actually serving the site, so they are a
+belt and braces second method rather than the route to take. DNS alone is
+enough.
 
 Cloudflare Web Analytics is already live and needs nothing further. The token is
 public by design.
@@ -93,7 +108,8 @@ The sequence matters.
 3. Run `npm run tidy:images` and commit the result.
 4. Confirm section 2 sign-offs are done.
 5. Remove the review note from the terms page.
-6. Add the Search Console and Bing verification codes.
+6. Add the meta tag verification codes, if using them as a backup. The DNS
+   verification in section 4 should already be done by this point.
 7. Remove the `X-Robots-Tag` block.
 8. Point the domain at Netlify.
 9. Wind up the branch workflow, section 1.
