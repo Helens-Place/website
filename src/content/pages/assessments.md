@@ -14,8 +14,8 @@ intro: >-
   Practising Certificate, so my reports are recognised by schools and exam
   boards. Assessments always take place in person, usually at my garden office
   in Trowbridge and sometimes at your child's school or home, whichever suits
-  them best. I see one young person a day and let each assessment take as long
-  as it needs.
+  them best. I see one young person a day, so there is never anyone waiting and
+  we can take as long as your child needs.
 trustLine: >-
   AMBDA qualified · Assessment Practising Certificate (APC) · reports accepted
   for exam access arrangements and DSA.
@@ -65,13 +65,17 @@ steps:
       so we are never watching the clock. Contact time itself can be up to three
       or four hours or so, depending on whether we look at numeracy as well as
       literacy. We work through problem-solving, reading speed and
-      comprehension, writing speed and sometimes maths calculation. Breaks
-      happen whenever they are needed, because it is an intense process.
+      comprehension, writing speed and sometimes maths calculation, with a good
+      deal of talking and plenty of breaks around it. I follow your child's lead
+      on pace. If they need to stop, we stop, and none of that counts against
+      them.
   - title: Your report
     body: >-
       You receive a full written report that says plainly whether your child is
       dyslexic, what their profile looks like, and exactly what school can do
-      about it. I write it so that parents and teachers can both act on it.
+      about it. I write it so that you and their teachers can both act on it,
+      and so that your child could read it one day and recognise themselves in
+      it rather than a list of things they find hard.
   - title: Talking it through
     body: >-
       I talk you through the findings so nothing is left unclear, and I answer

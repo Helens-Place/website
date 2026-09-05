@@ -19,9 +19,9 @@ faqs:
       No. I assess in person, because so much of what I need to see happens in
       the room: how a young person reacts when a task gets hard, their body
       language, whether they are anxious, tired, or simply finding the reading
-      difficult. A camera flattens all of that. I would rather you waited a
-      little longer for an in-person appointment than had a thinner assessment
-      sooner. Tutoring and family support sessions can be online, but a
+      difficult. A camera flattens all of that. I know that means waiting
+      longer, and I am sorry for it, but I would rather give you something you
+      can rely on. Tutoring and family support sessions can be online, but a
       diagnostic assessment is always face to face.
   - category: Assessments
     question: Why do you only assess one young person a day?
@@ -40,13 +40,16 @@ faqs:
   - category: Assessments
     question: What is a dyslexia assessment and what does it involve?
     answer: >-
-      A full diagnostic assessment takes up to three or four hours of contact
-      time, and I leave a good day free for it. We work through problem-solving,
-      reading speed and comprehension, writing speed, sometimes maths
-      calculation, and other areas depending on the individual. You receive a
-      comprehensive written report, clearly written and suitable for schools,
-      universities and employers. Full assessments start from £450 including
-      VAT.
+      It is a day spent working out how your child learns, rather than a test
+      they can pass or fail. I set aside four to five hours and see only one
+      young person, and three or four hours of that is contact time. We look at
+      problem-solving, reading speed and comprehension, writing speed, sometimes
+      maths calculation, and whatever else that particular young person needs me
+      to look at. Around all of it there is talking, and breaks, and time to get
+      to know each other, because a tired or anxious child will not show me what
+      they can actually do. You receive a full written report afterwards,
+      written so that you and their teachers can both act on it. Full
+      assessments start from £450 including VAT.
   - category: Assessments
     question: How much does a dyslexia assessment cost?
     answer: >-

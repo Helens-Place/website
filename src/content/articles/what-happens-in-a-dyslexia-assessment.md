@@ -38,9 +38,9 @@ faqs:
       No. I assess in person, because so much of what I need to see happens in
       the room: how a young person reacts when a task gets hard, their body
       language, and whether they are anxious, tired, or simply finding the
-      reading difficult. A screen hides most of that. I would rather you waited
-      a little longer for an in-person appointment than had a thinner
-      assessment sooner.
+      reading difficult. A screen hides most of that. I know that means waiting
+      longer, and I am sorry for it, but I would rather give you something you
+      can rely on.
   - question: "We can't easily afford it. Is it still worth it?"
     answer: >-
       That's a real and fair worry. I'd rather you booked a free call so we can
@@ -118,7 +118,7 @@ Full diagnostic assessments become more reliable once a child has had enough rea
 An assessment carried out by an appropriately qualified assessor, holding a current Assessment Practising Certificate, meets the standard schools and exam boards expect. Exam access arrangements have their own specific rules, which I can talk you through.
 
 **Do you offer online dyslexia assessments?**
-No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, and whether they are anxious, tired, or simply finding the reading difficult. A screen hides most of that. I would rather you waited a little longer for an in-person appointment than had a thinner assessment sooner.
+No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, and whether they are anxious, tired, or simply finding the reading difficult. A screen hides most of that. I know that means waiting longer, and I am sorry for it, but I would rather give you something you can rely on.
 
 **We can't easily afford it. Is it still worth it?**
 That's a real and fair worry. I'd rather you booked a free call so we can talk about your situation, and about what an assessment would and wouldn't give you, before you commit to anything.
