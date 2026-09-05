@@ -14,6 +14,30 @@ primaryCta:
   href: /contact
 faqs:
   - category: Assessments
+    question: Do you offer online dyslexia assessments?
+    answer: >-
+      No. I assess in person, because so much of what I need to see happens in
+      the room: how a young person reacts when a task gets hard, their body
+      language, whether they are anxious, tired, or simply finding the reading
+      difficult. A camera flattens all of that. I would rather you waited a
+      little longer for an in-person appointment than had a thinner assessment
+      sooner. Tutoring and family support sessions can be online, but a
+      diagnostic assessment is always face to face.
+  - category: Assessments
+    question: Why do you only assess one young person a day?
+    answer: >-
+      Because an assessment should take as long as it needs, and that is
+      impossible if someone else is booked in behind. Seeing one family a day
+      means we can take proper breaks, follow something up when it turns out to
+      matter, and never rush a tired child.
+  - category: Assessments
+    question: How long will I wait for an appointment?
+    answer: >-
+      I am usually booked around three months ahead. That is the honest cost of
+      only assessing one young person a day and never rushing. Book a free call
+      and I will tell you where things stand and what I would suggest in the
+      meantime.
+  - category: Assessments
     question: What is a dyslexia assessment and what does it involve?
     answer: >-
       A full diagnostic assessment takes up to three or four hours of contact
@@ -68,11 +92,12 @@ faqs:
   - category: Assessments
     question: How long does the assessment take, and how quickly will I get the report?
     answer: >-
-      Contact time can be up to three or four hours or so, depending on whether
-      we look at numeracy as well as literacy, and I leave a good day free.
-      Students invariably need breaks, because it is an intense process. You
-      will then have your report, and for me that is two weeks maximum after the
-      assessment.
+      I set aside four to five hours and only ever see one young person a day,
+      so we are never rushing. Contact time itself can be up to three or four
+      hours or so, depending on whether we look at numeracy as well as
+      literacy. Students invariably need breaks, because it is an intense
+      process. You will then have your report, and for me that is two weeks
+      maximum after the assessment.
   - category: Assessments
     question: Where does the assessment take place?
     answer: >-
@@ -121,9 +146,12 @@ faqs:
   - category: Tutoring and support
     question: Do you offer in-person sessions, or is everything online?
     answer: >-
-      Both. Assessments and some support sessions are available in person at the
-      Trowbridge hub. Tutoring is currently delivered online. Family support and
-      advice sessions are available either in person or online.
+      Diagnostic assessments are always in person, usually at my garden office
+      in Trowbridge and sometimes at a child's school or home. Tutoring is
+      currently delivered online. Family support and advice sessions are
+      available either in person or online. So the assessment itself is face to
+      face, and the ongoing support around it can be online if that is easier
+      for you.
   - category: Tutoring and support
     question: What does family support and advice involve?
     answer: >-
@@ -211,8 +239,9 @@ faqs:
   - category: About me
     question: Where are you based, and what area do you cover?
     answer: >-
-      I am based in Trowbridge, Wiltshire, and offer in-person sessions from the
-      hub there. I also work online with families across the UK. For school CPD
+      I am based in Trowbridge, Wiltshire, and assessments take place in person
+      there, or sometimes at a child's school or home. I also work online with
+      families across the UK for tutoring and family support. For school CPD
       visits I work within the South West and surrounding regions. Do get in
       touch to discuss.
   - category: About me

@@ -35,10 +35,12 @@ steps:
       your child would find one setting much easier than another.
   - title: The assessment itself
     body: >-
-      I leave a good day free for a full assessment. Contact time can be up to
-      three or four hours or so, depending on whether we look at numeracy as
-      well as literacy. I tend to do it over a day for an older student, and
-      maybe over two sessions for a younger one. I always chunk things down, and
+      I only ever see one young person in a day, so we are never watching the
+      clock. I set aside four to five hours for a full assessment, and contact
+      time itself can be up to three or four hours or so, depending on whether
+      we look at numeracy as well as literacy. I tend to do it over a day for
+      an older student, and maybe over two sessions for a younger one. I always
+      chunk things down, and
       I never lump all the reading tasks together, because doing two or three
       reading activities back to back is simply too much if you find reading
       hard. Writing tasks get split up in the same way. I will also ask the

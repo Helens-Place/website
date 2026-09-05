@@ -60,6 +60,13 @@ Content written or rewritten on her behalf, published in her name.
 - [ ] **FAQ answers.** Drawn from her March 2026 draft rather than written by
       her.
 
+- [ ] **The claims in "Why I assess in person".** The article states that she
+      sets aside four to five hours, assesses one young person a day, is booked
+      about three months ahead, and returns the report within two weeks. Those
+      came from Andrew rather than from Helen, and the same figures now appear
+      on /assessments, /what-to-expect and /faq. If any of them is wrong, it is
+      wrong in five places at once.
+
 ## 3. Needs a decision
 
 - [ ] **Home address in the privacy policy.** Flagged early and still open. It

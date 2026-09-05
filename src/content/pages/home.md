@@ -25,7 +25,7 @@ doors:
   - audience: families
     label: Parents and families
     title: I think my child might be dyslexic
-    body: 'Calm, thorough diagnostic assessments and specialist tutoring, in Trowbridge or online. You leave with a clear report your child''s school will act on, and every one of your questions answered.'
+    body: 'Calm, thorough diagnostic assessments in person, plus specialist tutoring. You leave with a clear report your child''s school will act on, and every one of your questions answered.'
     price: Full diagnostic assessment from £450
     linkLabel: Explore assessments
     href: /assessments

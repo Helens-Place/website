@@ -17,9 +17,10 @@ keyword: "dyslexia assessment"
 faqs:
   - question: "How long does a dyslexia assessment take?"
     answer: >-
-      The face-to-face part usually runs to a couple of hours, with breaks, plus
-      the background-gathering beforehand and the report afterwards. I'd far
-      rather take the time to do it properly than rush a young person.
+      I set aside four to five hours and only see one young person a day, with
+      breaks throughout, plus the background-gathering beforehand and the report
+      afterwards. I'd far rather take the time to do it properly than rush a
+      young person.
   - question: "What age should my child be?"
     answer: >-
       Full diagnostic assessments become more reliable once a child has had
@@ -32,11 +33,14 @@ faqs:
       a current Assessment Practising Certificate, meets the standard schools
       and exam boards expect. Exam access arrangements have their own specific
       rules, which I can talk you through.
-  - question: "Can assessments be done online?"
+  - question: "Do you offer online dyslexia assessments?"
     answer: >-
-      Some parts can be done remotely, and I offer online appointments where
-      that works, though certain tasks are best done in person. I'll always be
-      straight with you about which approach suits your child.
+      No. I assess in person, because so much of what I need to see happens in
+      the room: how a young person reacts when a task gets hard, their body
+      language, and whether they are anxious, tired, or simply finding the
+      reading difficult. A screen hides most of that. I would rather you waited
+      a little longer for an in-person appointment than had a thinner
+      assessment sooner.
   - question: "We can't easily afford it. Is it still worth it?"
     answer: >-
       That's a real and fair worry. I'd rather you booked a free call so we can
@@ -62,7 +66,7 @@ I'll also make sure the young person knows what's coming, in a way that suits th
 
 ## On the day: what's actually tested
 
-An assessment is a series of standardised activities, done one to one, usually over a couple of hours with breaks. It's nothing like a school test. There's no pass or fail. Some parts will feel easy to your child and some will stretch them, and that's deliberate. I need to see the full shape of what they can do.
+An assessment is a series of standardised activities, done one to one over several hours with plenty of breaks. It's nothing like a school test. There's no pass or fail. Some parts will feel easy to your child and some will stretch them, and that's deliberate. I need to see the full shape of what they can do.
 
 Broadly, I look at three things and how they relate to one another.
 
@@ -105,7 +109,7 @@ If you'd like to understand my process in more detail, including timings and wha
 ## Questions people often ask
 
 **How long does a dyslexia assessment take?**
-The face-to-face part usually runs to a couple of hours, with breaks, plus the background-gathering beforehand and the report afterwards. I'd far rather take the time to do it properly than rush a young person.
+I set aside four to five hours and only see one young person a day, with breaks throughout, plus the background-gathering beforehand and the report afterwards. I'd far rather take the time to do it properly than rush a young person.
 
 **What age should my child be?**
 Full diagnostic assessments become more reliable once a child has had enough reading teaching behind them, often from around age seven. I assess teenagers and adults regularly too. Concerns before that age are still worth acting on, with early support.
@@ -113,8 +117,8 @@ Full diagnostic assessments become more reliable once a child has had enough rea
 **Will the report be accepted by my child's school and for exams?**
 An assessment carried out by an appropriately qualified assessor, holding a current Assessment Practising Certificate, meets the standard schools and exam boards expect. Exam access arrangements have their own specific rules, which I can talk you through.
 
-**Can assessments be done online?**
-Some parts can be done remotely, and I offer online appointments where that works, though certain tasks are best done in person. I'll always be straight with you about which approach suits your child.
+**Do you offer online dyslexia assessments?**
+No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, and whether they are anxious, tired, or simply finding the reading difficult. A screen hides most of that. I would rather you waited a little longer for an in-person appointment than had a thinner assessment sooner.
 
 **We can't easily afford it. Is it still worth it?**
 That's a real and fair worry. I'd rather you booked a free call so we can talk about your situation, and about what an assessment would and wouldn't give you, before you commit to anything.

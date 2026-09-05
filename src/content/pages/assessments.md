@@ -1,19 +1,21 @@
 ---
-title: Dyslexia assessments in Trowbridge and online
+title: Dyslexia assessments in Trowbridge, in person
 description: >-
   Full diagnostic dyslexia assessments and exam access arrangements from a
-  qualified assessor with a current Assessment Practising Certificate, in
-  Trowbridge, Wiltshire or online.
+  qualified assessor with a current Assessment Practising Certificate, in person
+  in Trowbridge, Wiltshire.
 eyebrow: Parents and families
-heading: Dyslexia assessments in Trowbridge and online
+heading: Dyslexia assessments in Trowbridge, in person
 audience: families
 intro: >-
   If you are worried about your child's reading, spelling or confidence, a
   proper diagnostic assessment answers the question clearly and tells you what
   to do next. I'm a qualified diagnostic assessor with a current Assessment
   Practising Certificate, so my reports are recognised by schools and exam
-  boards. Assessments take place at the Trowbridge hub or online, wherever your
-  family is.
+  boards. Assessments always take place in person, usually at my garden office
+  in Trowbridge and sometimes at your child's school or home, whichever suits
+  them best. I see one young person a day and let each assessment take as long
+  as it needs.
 trustLine: >-
   AMBDA qualified · Assessment Practising Certificate (APC) · reports accepted
   for exam access arrangements and DSA.
@@ -59,11 +61,12 @@ steps:
       costs. No pressure, and no jargon.
   - title: The assessment itself
     body: >-
-      I leave a good day free. Contact time can be up to three or four hours or
-      so, depending on whether we look at numeracy as well as literacy. We work
-      through problem-solving, reading speed and comprehension, writing speed
-      and sometimes maths calculation. Breaks happen whenever they are needed,
-      because it is an intense process.
+      I set aside four to five hours and only ever see one young person a day,
+      so we are never watching the clock. Contact time itself can be up to three
+      or four hours or so, depending on whether we look at numeracy as well as
+      literacy. We work through problem-solving, reading speed and
+      comprehension, writing speed and sometimes maths calculation. Breaks
+      happen whenever they are needed, because it is an intense process.
   - title: Your report
     body: >-
       You receive a full written report that says plainly whether your child is
@@ -85,6 +88,12 @@ related:
       The whole process from booking to report. How long it takes, what we
       actually do on the day, and how long the report stays valid.
     href: /what-to-expect
+  - tag: How I work
+    title: Why I assess in person, and only one young person a day
+    body: >-
+      Why there is no online option, what I can see in the room that a camera
+      hides, and why the diary usually runs about three months ahead.
+    href: /articles/why-i-assess-in-person
   - tag: Guide
     title: Brilliant out loud, stuck on paper
     body: >-

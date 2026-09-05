@@ -3,7 +3,8 @@
 > Helen's Place is the practice of Dr Helen Ross, a dyslexia and SEND
 > specialist, diagnostic assessor and published researcher based in Trowbridge,
 > Wiltshire, United Kingdom. She works with families, schools and organisations
-> in person and online across the UK.
+> across the UK. Diagnostic assessments are always carried out in person.
+> Tutoring and family support are also available online.
 
 Dr Helen Ross is dyslexic herself. She holds a PhD from the University of Bath,
 AMBDA (Associate Member of the British Dyslexia Association, 20/AMB04046),
@@ -43,10 +44,11 @@ All prices include VAT.
 ## Pages
 
 - [Home](https://helensplace.co.uk/): overview of the three audiences served, families, schools, and business and legal
-- [Articles](https://helensplace.co.uk/articles): nineteen in-depth articles grouped by theme, covering what dyslexia is, assessment, mental health and wellbeing, family experience, teacher training, assistive technology and EdTech evidence, and young people's own voice. Each cites Dr Ross's published research with DOIs
+- [Articles](https://helensplace.co.uk/articles): twenty in-depth articles grouped by theme, covering what dyslexia is, assessment, mental health and wellbeing, family experience, teacher training, assistive technology and EdTech evidence, and young people's own voice. Each cites Dr Ross's published research with DOIs
+- [Why I assess in person](https://helensplace.co.uk/articles/why-i-assess-in-person): why there are no online diagnostic assessments, why only one young person is assessed a day, and why the wait is usually about three months
 - [The Schools Guide to Dyslexia](https://helensplace.co.uk/dyslexia-toolkit): a free, evidence-informed technology toolkit for teachers co-authored by Helen, covering phonological awareness, verbal memory, verbal processing, spelling, reading and writing
 - [Courses and guides](https://helensplace.co.uk/courses): the Supporting SEND in Mainstream Classrooms course, plus free practical guides on reading, writing, spelling, working memory, task initiation, the gap between spoken and written work, and leaving school when neurodivergent
-- [Dyslexia assessments](https://helensplace.co.uk/assessments): diagnostic assessments and exam access arrangements in Trowbridge and online, with prices
+- [Dyslexia assessments](https://helensplace.co.uk/assessments): diagnostic assessments and exam access arrangements, in person in Trowbridge, with prices. One young person assessed a day, and the diary usually runs about three months ahead
 - [What happens in a dyslexia assessment](https://helensplace.co.uk/what-to-expect): the full process from booking to report, how long it takes, what tests are used, and how long the report stays valid
 - [Schools and training](https://helensplace.co.uk/schools): INSET and CPD on dyslexia, dyscalculia and ADHD for schools and local authorities
 - [Research and expert witness](https://helensplace.co.uk/research-and-expert-witness): qualitative research, consultancy and SEND expert witness work

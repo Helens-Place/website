@@ -99,7 +99,7 @@ export const business = {
   name: "Helen's Place",
   alternateName: "Helen's Place Education Consultancy",
   description:
-    "Helen's Place is the practice of Dr Helen Ross, offering diagnostic dyslexia assessments, exam access arrangements, specialist tutoring, SEND training for schools, and research and expert witness work. Based in Trowbridge, Wiltshire, working in person and online across the UK.",
+    "Helen's Place is the practice of Dr Helen Ross, offering diagnostic dyslexia assessments, exam access arrangements, specialist tutoring, SEND training for schools, and research and expert witness work. Based in Trowbridge, Wiltshire. Diagnostic assessments are always carried out in person, and tutoring and family support are available online across the UK.",
   slogan: 'Driving positive change for dyslexic people of all ages',
   url: SITE,
   logo: `${SITE}/images/logo.png`,
