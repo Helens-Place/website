@@ -1,9 +1,9 @@
 ---
-title: 'Dr Helen Ross, dyslexia specialist and researcher in Wiltshire'
-description: 'Dyslexia assessments, teacher training and research from Dr Helen Ross, a published academic and qualified diagnostic assessor based in Wiltshire.'
-eyebrow: Dr Helen Ross · Dyslexia specialist and researcher
+title: 'Dr Helen Ross: Internationally renowned Dyslexia and Dyscalculia Specialist Assessor and researcher in Wiltshire'
+description: 'Dyslexia and dyscalculia assessments, teacher training and research from Dr Helen Ross, a published academic and qualified diagnostic assessor working globally but based in Wiltshire, UK.'
+eyebrow: 'Dr Helen Ross · Dyslexia and Dyscalculia specialist, researcher and consultant'
 heading: 'Serious expertise, with a genuinely warm welcome.'
-intro: 'I''m Helen. I do dyslexia assessments, teacher training and research, and I explain things plainly. I''m based in Wiltshire, and I work with families, schools and organisations across the UK and beyond.'
+intro: 'I''m Helen. I do dyslexia and dyscalculia assessments, teacher training and research, and I explain things plainly. I''m based in Wiltshire, and I work with families, schools and organisations across the UK and beyond.'
 image: /images/__staging/content/__filehelen-hero.jpg
 imageAlt: Dr Helen Ross smiling at her desk in her garden office
 primaryCta:
@@ -14,8 +14,8 @@ secondaryCta:
   href: '#doors'
 authority:
   - Churchill Fellow 2025
-  - 13+ peer-reviewed publications
-  - 'Author, Literacy Learning Journeys'
+  - 13+ peer-reviewed papers and many other publications
+  - Author of Literacy Learning Journeys
   - Evidence given at the House of Commons
   - 'Reviewer, Council for Science and Technology'
   - 'Qualified diagnostic assessor, AMBDA with a current Assessment Practising Certificate'
