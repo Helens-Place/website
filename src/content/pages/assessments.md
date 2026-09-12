@@ -81,7 +81,7 @@ steps:
   - title: Your report
     body: 'You receive a full written report that says plainly whether your child is dyslexic or dyscalculic (or both), what their profile looks like, and exactly what school can do about it. I write it so that you and their teachers can both act on it, and so that your child could read it one day and recognise themselves in it rather than a list of things they find hard.'
   - title: Talking it through
-    body: 'I talk you through the findings so nothing is left unclear, and I answer questions afterwards. If further support would help, I''ll tell you honestly, whether that is with me or with someone else.'
+    body: 'I talk you through the findings so nothing is left unclear, and I answer questions afterwards- I make sure everyone has the opportunity for a free call to follow up the report an assessment if they want to. If further support would help, I''ll tell you honestly, whether that is with me or with someone else.'
 finalCta:
   heading: Still deciding?
   body: 'Book a free 20-minute call and we''ll talk it through. No pressure, and no jargon.'
