@@ -1,14 +1,10 @@
 ---
 title: About Dr Helen Ross
-description: >-
-  Dyslexia specialist, AMBDA-qualified assessor, published researcher and
-  Trustee of the British Dyslexia Association, based in Trowbridge, Wiltshire.
+description: 'Dyslexia specialist, AMBDA-qualified assessor, published researcher and Trustee of the British Dyslexia Association, based in Trowbridge, Wiltshire.'
 eyebrow: About
 heading: About me
-intro: >-
-  I've advised government, published internationally and written the book. I
-  also still get down on the floor to put a nervous ten-year-old at ease.
-image: helen-portrait.jpg
+intro: 'I''ve advised government, published internationally and written a book (the second one is on the way!). I am equally at ease working with families to put nervous 10-year-olds at ease. '
+image: /images/__staging/content/__filehelen-portrait.jpg
 imageAlt: Portrait of Dr Helen Ross holding her book
 primaryCta:
   label: Book a free 20-minute call
@@ -16,35 +12,34 @@ primaryCta:
 credentialGroups:
   - heading: Assessor status
     items:
-      - AMBDA (Associate Member of the British Dyslexia Association), membership 20/AMB04046
+      - 'AMBDA (Associate Member of the British Dyslexia Association), membership 20/AMB04046'
       - AMBDA Dyscalculia 23/AMD05008
       - Assessment Practising Certificate 23/APC05078
   - heading: Roles
     items:
-      - Churchill Fellow 2025, supported by The Mercers' Company
+      - 'Churchill Fellow 2025, supported by The Mercers'' Company'
       - Chair of the Wiltshire Dyslexia Association
       - Trustee of the British Dyslexia Association
   - heading: Memberships
     items:
       - Chartered College of Teaching (affiliate)
       - British Educational Research Association
-      - National Education Union
   - heading: Qualifications
     items:
-      - PhD, University of Bath
-      - MRes Social Policy, University of Bath
-      - MA Education, Open University
-      - PGCE Secondary MFL, Sheffield Hallam
-      - MEng Mechanical Engineering with French, University of Sheffield
-      - PgCert Dyslexia and SpLD with AMBDA, Bath Spa
-      - PgCert National Award for SEN Coordination, Bedfordshire
+      - 'PhD, University of Bath'
+      - 'MRes Social Policy, University of Bath'
+      - 'MA Education, Open University'
+      - 'PGCE Secondary MFL, Sheffield Hallam'
+      - 'MEng Mechanical Engineering with French, University of Sheffield'
+      - 'PgCert Dyslexia and SpLD with AMBDA, Bath Spa'
+      - 'PgCert National Award for SEN Coordination, Bedfordshire'
 links:
   - label: Podcasts and interviews
     href: /podcasts-and-interviews
   - label: My Churchill Fellowship
     href: /churchill-fellowship
   - label: LinkedIn profile
-    href: https://www.linkedin.com/in/helenlouiseross/
+    href: 'https://www.linkedin.com/in/helenlouiseross/'
   - label: Full publications list
     href: /publications
 ---
