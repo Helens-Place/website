@@ -1,19 +1,11 @@
 ---
-title: "Booking a dyslexia assessment with me: how it works"
-description: >-
-  How booking an assessment with Dr Helen Ross works: the free call, the £150
-  booking fee, where assessments happen in Trowbridge, how long the day takes
-  and when your report arrives.
+audience: families
+title: 'Booking a dyslexia assessment with me: how it works'
+description: 'How booking an assessment with Dr Helen Ross works: the free call, the £150 booking fee, where assessments happen in Trowbridge, how long the day takes and when your report arrives.'
 eyebrow: Parents and families
 heading: Booking an assessment with me
-audience: families
-intro: >-
-  Most people ring wanting to know the same things. How long it takes, what
-  their child will actually be asked to do, and what they are left with at the
-  end. Underneath that there is usually a quieter worry about whether their
-  child will find the day hard. Here is the whole process, plainly, including
-  that part.
-image: helen-dog-sofa.jpg
+intro: 'Most people ring wanting to know the same things. How long it takes, what their child will actually be asked to do, and what they are left with at the end. Underneath that there is usually a quieter worry about whether their child will find the day hard. Here is the whole process, plainly, including that part.'
+image: /images/__staging/content/__filehelen-dog-sofa.jpg
 imageAlt: Dr Helen Ross laughing with her dog at home
 primaryCta:
   label: Book a free 20-minute call
@@ -21,50 +13,20 @@ primaryCta:
 secondaryCta:
   label: Read the guides
   href: /courses#guides
-stepsHeading: The process, start to finish
+stepsHeading: 'The process, start to finish'
 steps:
   - title: We make contact and find a date
-    body: >-
-      The process is quite straightforward. We make contact and find a date that
-      works for both of us. A full assessment is £450, and I ask for £150 to
-      secure the booking. If you would rather talk it through first, a free
-      20-minute call is often worth more than a long exchange of emails.
+    body: 'The process is quite straightforward. We make contact and find a date that works for both of us. A full assessment is £450, and I ask for £150 to secure the booking. If you would rather talk it through first, a free 20-minute call is often worth more than a long exchange of emails.'
   - title: We agree where it happens
-    body: >-
-      I usually assess at my house in Trowbridge, in a garden office. I do also
-      sometimes work in children's schools or at their homes, depending on what
-      is best for them. There is no right answer here, and it is worth saying if
-      your child would find one setting much easier than another.
+    body: 'I usually assess at my house in Trowbridge, in a garden office. I do also sometimes work in children''s schools or at their homes, depending on what is best for them. There is no right answer here, and it is worth saying if your child would find one setting much easier than another.'
   - title: The assessment itself
-    body: >-
-      I only ever see one young person in a day, so we are never watching the
-      clock. I set aside four to five hours for a full assessment, and contact
-      time itself can be up to three or four hours or so, depending on whether
-      we look at numeracy as well as literacy. I tend to do it over a day for
-      an older student, and maybe over two sessions for a younger one. I always
-      chunk things down, and
-      I never lump all the reading tasks together, because doing two or three
-      reading activities back to back is simply too much if you find reading
-      hard. Writing tasks get split up in the same way. I will also ask the
-      person I am working with what they would prefer, because some people would
-      rather get all the writing done in one go.
-  - title: Breaks, as many as are needed
-    body: >-
-      Students invariably need breaks and time out, because it is a very intense
-      process. That is expected, not a problem. When I assess in school, I make
-      sure students take their breaks with their peers, because that matters a
-      great deal for their wellbeing.
+    body: 'I only ever see one young person in a day, so we are never watching the clock. I set aside four to five hours for a full assessment, and contact time itself can be up to three or four hours or so, depending on whether we look at numeracy as well as literacy. I tend to do it over a day for an older student, and maybe over two sessions for a younger one. I always chunk things down, and I never lump all the reading tasks together, because doing two or three reading activities back to back is simply too much if you find reading hard. Writing tasks get split up in the same way. I will also ask the person I am working with what they would prefer, because some people would rather get all the writing done in one go.'
+  - title: 'Breaks, as many as are needed'
+    body: 'Students invariably need breaks and time out, because it is a very intense process. That is expected, not a problem. When I assess in school, I make sure students take their breaks with their peers, because that matters a great deal for their wellbeing.'
   - title: The report
-    body: >-
-      You receive a full written report, and for me that is two weeks maximum
-      after the assessment. It is a long document, but an important one. I can
-      send a sample report in advance so you can see exactly the kind of thing
-      the process produces, before you commit to anything.
+    body: 'You receive a full written report, and for me that is two weeks maximum after the assessment. It is a long document, but an important one. I can send a sample report in advance so you can see exactly the kind of thing the process produces, before you commit to anything.'
   - title: A conversation about what it means
-    body: >-
-      Assessments are an important thing, and families almost always have
-      questions. I am happy to talk it through so you can ask in real time.
-      Sometimes a chat is worth a thousand emails.
+    body: 'Assessments are an important thing, and families almost always have questions. I am happy to talk it through so you can ask in real time. Sometimes a chat is worth a thousand emails.'
 links:
   - label: 'Episode 9: who can help you understand you?'
     href: /elevator-series
@@ -74,9 +36,7 @@ links:
     href: /elevator-series
 finalCta:
   heading: Questions before you decide?
-  body: >-
-    Book a free 20-minute call. I completely understand that you will want to
-    have a think as a family before confirming anything.
+  body: Book a free 20-minute call. I completely understand that you will want to have a think as a family before confirming anything.
   cta:
     label: Book a free call
     href: /contact
@@ -86,19 +46,18 @@ finalCta:
 
 An assessment is not just a reading test. Across the day we look at:
 
-- **Reading skills**, including reading aloud, reading silently, speed and
+* **Reading skills**, including reading aloud, reading silently, speed and
   comprehension
-- **Writing skills**, including writing speed
-- **Comprehension of spoken text**, which is a different skill from reading
-- **Underlying ability**, meaning the things you are really good at
-- **Visual processing**
-- **Problem solving**, both worded and visual
-- **Language**, how you manipulate it and how you understand different
-  definitions of words
-- **Phonological processing**, how you process sound. This is the one that
+* **Writing skills**, including writing speed
+* **Comprehension of spoken text**, which is a different skill from reading
+* **Speaking skills,** meaning how you express ideas and use language to communicate
+* **Memory skills, **so we know how you best remember things, whether spoken, visually or hands-on** **
+* **Problem solving**, both worded and visual reasoning may be looked at to understand how you connet ideas
+* **Processing**, how quickly and easily you can recall or make sense of spoken, written or pictorial information
+* **Phonological processing**, how you process sound. This is the one that
   matters most, because sound processing is the thing that makes dyslexia what
   it is
-- **Maths calculation**, where numeracy is part of what we are looking at
+* **Maths calculation**, where numeracy is part of what we are looking at
 
 Taken together, your profile across all of those areas is what informs whether
 you are dyslexic. No single test decides it.
@@ -122,7 +81,7 @@ about how that applies to your situation, I am happy to talk it through.
 I do not split dyscalculia and dyslexia assessments, because the two often
 co-occur. Looking at literacy and numeracy together gives a truer picture of how
 a person actually learns, rather than answering one question and leaving another
-open.
+open. It also means that individuals do not have to go through two separate assessments and pay twice. 
 
 This is also why the length of the assessment varies. If we are looking at
 numeracy as well as literacy, it takes longer.
