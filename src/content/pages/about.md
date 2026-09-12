@@ -1,6 +1,6 @@
 ---
 title: About Dr Helen Ross
-description: 'Dyslexia specialist, AMBDA-qualified assessor, published researcher and Trustee of the British Dyslexia Association, based in Trowbridge, Wiltshire.'
+description: 'Dyslexia and dyscalculia specialist, AMBDA-qualified assessor, published researcher and former Trustee of the British Dyslexia Association, based in Trowbridge, Wiltshire.'
 eyebrow: About
 heading: About me
 intro: 'I''ve advised government, published internationally and written a book (the second one is on the way!). I am equally at ease working with families to put nervous 10-year-olds at ease. '
@@ -64,9 +64,11 @@ At a national level, my work has included advising the UK Government through the
 Council for Science and Technology on supporting young people with specific
 learning difficulties, and contributing to All-Party Parliamentary Group reports
 presented at the House of Commons. I'm Chair of the Wiltshire Dyslexia
-Association, and as a Trustee of the British Dyslexia Association I keep
+Association, and as a former Trustee of the British Dyslexia Association I keep
 advocating to make the world a more inclusive place for dyslexic people.
 
 I'm dyslexic myself, so I don't just understand dyslexia academically. I live
 it. I know what it is to be the child in the room working twice as hard for half
-the credit, and I offer the inclusive, friendly support I wish I'd had.
+the credit, and I offer the inclusive, friendly support I wish I'd had. 
+
+I have recently been diagnosed with ADHD, which means i really do understand what it is like to be neurodivergent in a mainstream classroom!
