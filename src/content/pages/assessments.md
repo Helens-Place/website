@@ -37,7 +37,7 @@ services:
     price: £45 per hour
     note: Online
 whyHeading: Why work with me
-whyBody: 'I''ve spent over ten years teaching, as a Maths and French teacher and then as a qualified SENCo, and I''ve worked with primary and secondary schools to build young people''s confidence. I''m dyslexic myself, and I offer the inclusive, friendly support I wish I''d had.'
+whyBody: 'I''ve spent nearly twenty years teaching, as a Maths and French teacher and then as a qualified SENCo, and I''ve worked with primary and secondary schools to build young people''s confidence. I''m dyslexic and have ADHD myself, and I offer the inclusive, friendly support I wish I''d had.'
 relatedHeading: Read up before you decide
 relatedIntro: 'Everything here is free. If it answers your question and you never need to book, that is a good outcome.'
 related:
@@ -77,7 +77,7 @@ steps:
   - title: A free 20-minute call
     body: 'You tell me what you have noticed and what worries you. I''ll explain whether an assessment is the right next step, what it involves and what it costs. No pressure, and no jargon.'
   - title: The assessment itself
-    body: 'I set aside four to five hours and only ever see one young person a day, so we are never watching the clock. Contact time itself can be up to three or four hours or so, depending on whether we look at numeracy as well as literacy. We work through problem-solving, reading speed and comprehension, writing speed and sometimes maths calculation, with a good deal of talking and plenty of breaks around it. I follow your child''s lead on pace. If they need to stop, we stop, and none of that counts against them.'
+    body: 'I set aside four to five hours and only ever see one young person a day here, so we are never watching the clock. Contact time itself can be up to three or four hours or so, depending on whether we look at numeracy as well as literacy. We work through problem-solving, reading speed and comprehension, writing speed and sometimes maths calculation, with a good deal of talking and plenty of breaks around it. I follow your child''s lead on pace. If they need to stop, we stop, and none of that counts against them.'
   - title: Your report
     body: 'You receive a full written report that says plainly whether your child is dyslexic, what their profile looks like, and exactly what school can do about it. I write it so that you and their teachers can both act on it, and so that your child could read it one day and recognise themselves in it rather than a list of things they find hard.'
   - title: Talking it through
