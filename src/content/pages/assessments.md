@@ -79,7 +79,7 @@ steps:
   - title: The assessment itself
     body: 'I set aside four to five hours and only ever see one young person a day here, so we are never watching the clock. Contact time itself can be up to three or four hours or so, depending on whether we look at numeracy as well as literacy. We work through problem-solving, reading speed and comprehension, writing speed and sometimes maths calculation, with a good deal of talking and plenty of breaks around it. I follow your child''s lead on pace. If they need to stop, we stop, and none of that counts against them.'
   - title: Your report
-    body: 'You receive a full written report that says plainly whether your child is dyslexic, what their profile looks like, and exactly what school can do about it. I write it so that you and their teachers can both act on it, and so that your child could read it one day and recognise themselves in it rather than a list of things they find hard.'
+    body: 'You receive a full written report that says plainly whether your child is dyslexic or dyscalculic (or both), what their profile looks like, and exactly what school can do about it. I write it so that you and their teachers can both act on it, and so that your child could read it one day and recognise themselves in it rather than a list of things they find hard.'
   - title: Talking it through
     body: 'I talk you through the findings so nothing is left unclear, and I answer questions afterwards. If further support would help, I''ll tell you honestly, whether that is with me or with someone else.'
 finalCta:
