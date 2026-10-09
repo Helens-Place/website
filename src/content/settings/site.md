@@ -9,6 +9,8 @@ responseTime: I reply within 48 hours
 prices:
   - name: Full diagnostic assessment
     price: from £450
+  - name: Full diagnostic assessment for adults
+    price: from £450
   - name: Booking deposit
     price: £150
   - name: Exam access arrangements

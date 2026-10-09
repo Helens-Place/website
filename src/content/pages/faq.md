@@ -53,7 +53,7 @@ faqs:
   - category: Assessments
     question: How much does a dyslexia assessment cost?
     answer: >-
-      All prices include VAT. A full diagnostic assessment is [price: Full diagnostic assessment]. That
+      All prices include VAT. A full diagnostic assessment is [price: Full diagnostic assessment] for children and young people, and [price: Full diagnostic assessment for adults] for adults. That
       covers dyslexia and, where needed, dyscalculia in the same assessment, so
       you only pay once. It also includes your full written report within two
       weeks and a conversation afterwards about what it all means. [price: Booking deposit] secures
@@ -69,8 +69,8 @@ faqs:
       Yes. I assess children, teenagers and adults, including students who need
       a diagnostic report for Disabled Students' Allowance, whether they are in
       sixth form, at college or already at university. If you are an adult who
-      has never been formally assessed, I can help. Tutoring is currently
-      offered for KS2, KS3 and KS4 learners.
+      has never been formally assessed, I can help. An assessment for adults is
+      [price: Full diagnostic assessment for adults]. Tutoring is currently offered for KS2, KS3 and KS4 learners.
   - category: Assessments
     question: What is an exam access arrangement assessment?
     answer: >-

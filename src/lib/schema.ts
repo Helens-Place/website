@@ -145,10 +145,17 @@ export const services = [
     url: `${SITE}/assessments/exam-access-arrangements`,
   },
   {
+    name: 'Full diagnostic dyslexia and dyscalculia assessment for adults',
+    description:
+      'A diagnostic assessment for adults who have never been assessed, covering reading, writing, spelling, phonological processing, working memory and processing speed, and dyscalculia where needed, in one assessment for one fee. In person in Trowbridge, with the full written report within two weeks.',
+    priceName: 'Full diagnostic assessment for adults',
+    url: `${SITE}/assessments/adults`,
+  },
+  {
     name: "Diagnostic assessment for Disabled Students' Allowance",
     description:
       "A full diagnostic assessment for students heading to or already at university, written to the standard a Disabled Students' Allowance application needs.",
-    priceName: 'Full diagnostic assessment',
+    priceName: 'Full diagnostic assessment for adults',
     url: `${SITE}/assessments/students-and-dsa`,
   },
   {

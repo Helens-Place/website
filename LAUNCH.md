@@ -109,10 +109,13 @@ Content written or rewritten on her behalf, published in her name.
 
 - [x] **Adult assessments.** Confirmed 9 October 2026: Helen assesses adults.
       The FAQ, the students and DSA page, two articles and src/data/llms.txt all
-      say so. Two things still open: whether the adult price differs from the
-      "from £450" for children (Wiltshire SEN charges adults more), and whether
-      to add an adults page to the services collection, which is the search a
-      competitor currently wins.
+      say so, and /assessments/adults is the page for the search a competitor
+      currently wins.
+
+- [ ] **The adult price.** Set in Site settings > Prices as "from £450", the
+      same as children, so the site never shows a figure nobody chose. Change
+      it there and every adult price follows. The DSA assessment uses the adult
+      price, because DSA is for students heading to or at university.
 
 - [ ] **International work, made specific.** Helen works internationally and
       the site now says so, but the only concrete evidence it gives is the

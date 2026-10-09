@@ -19,7 +19,7 @@ intro: >-
 
 ## Assessments
 
-- A full diagnostic assessment is [price: Full diagnostic assessment], and [price: Booking deposit] secures the booking. The
+- A full diagnostic assessment is [price: Full diagnostic assessment] for children and young people, and [price: Full diagnostic assessment for adults] for adults. [price: Booking deposit] secures the booking. The
   balance is payable on or before the day of the assessment.
 - If you need to move the appointment, please give at least **7 days' notice**.
   The booking fee will be carried over to the new date.

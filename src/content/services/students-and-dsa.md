@@ -12,7 +12,7 @@ intro: >-
   harder than you expected, a diagnostic report can open up Disabled Students'
   Allowance and the support that comes with it. I carry out assessments written
   to the standard DSA applications need.
-price: '[price: Full diagnostic assessment]'
+price: '[price: Full diagnostic assessment for adults]'
 priceNote: A full diagnostic assessment
 credentials: "Assessment Practising Certificate, 23/APC05078 · AMBDA, 20/AMB04046 · AMBDA Dyscalculia, 23/AMD05008"
 serviceType: Diagnostic assessment for Disabled Students' Allowance
@@ -42,7 +42,8 @@ faqs:
   - question: "Do you assess adults who are not students?"
     answer: >-
       Yes. I assess adults whether or not they are in education. If you have
-      never been formally assessed, I can help.
+      never been formally assessed, I can help. An assessment for adults is
+      [price: Full diagnostic assessment for adults].
 ---
 
 ## What Disabled Students' Allowance is

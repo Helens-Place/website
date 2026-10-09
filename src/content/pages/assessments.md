@@ -30,8 +30,12 @@ services:
   - name: Exam access arrangements
     price: '[price: Exam access arrangements]'
     href: /assessments/exam-access-arrangements
+  - name: Full diagnostic assessment for adults
+    price: '[price: Full diagnostic assessment for adults]'
+    note: Dyslexia and dyscalculia in one assessment, so you only pay once
+    href: /assessments/adults
   - name: "Assessment for Disabled Students' Allowance"
-    price: '[price: Full diagnostic assessment]'
+    price: '[price: Full diagnostic assessment for adults]'
     note: For students heading to, or already at, university
     href: /assessments/students-and-dsa
   - name: Other assessments
