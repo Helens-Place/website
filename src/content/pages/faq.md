@@ -169,6 +169,16 @@ faqs:
       the school system and plan next steps. I can also help families understand
       EHCP processes, communicate effectively with schools, and find the right
       support. Sessions are £50 per hour, online or in person in Trowbridge.
+  - category: Tutoring and support
+    question: Can you help us with an EHCP?
+    answer: >-
+      Yes. In family support sessions I help you understand how the EHCP
+      process works and how to communicate effectively with your child's
+      school, and we plan the next steps together. My full diagnostic reports
+      are written to be suitable as evidence for an EHCP application. I also
+      write expert witness reports in EHCP and tribunal cases, so I know how
+      the process looks from the inside. Sessions are £50 per hour, online or in
+      person in Trowbridge, and a free 20-minute call is a good place to start.
   - category: The process
     question: How do I get started?
     answer: >-

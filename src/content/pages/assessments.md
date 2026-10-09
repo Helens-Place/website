@@ -8,7 +8,7 @@ description: 'Full diagnostic dyslexia and dyscalculia assessments and exam acce
 eyebrow: Parents and families
 heading: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
 intro: |-
-  If you are worried about your child's reading, spelling, writing or maths, a proper diagnostic assessment answers the question clearly and tells you what to do next. I'm a qualified diagnostic assessor with a current Assessment Practising Certificate, so my reports are recognised by schools and exam boards. Assessments always take place in person, usually at my garden office in Trowbridge and sometimes at your child's school or home, whichever suits them best. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
+  If you are worried about your child's reading, spelling, writing or maths, a proper diagnostic assessment answers the question clearly and tells you what to do next. I'm a qualified diagnostic assessor with a current Assessment Practising Certificate, so my reports are recognised by schools and exam boards. Assessments always take place in person, usually at my garden office in Trowbridge and sometimes at your child's school or home, whichever suits them best. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham and Devizes. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
 
   I don't separate dyscalculia and dyslexia assessments, so you pay for an assessment that will explore both areas if needed. I wholly believe that young people and their families should not have to pay twice and go through two long and stressful assessments if we can avoid it.
 image: /images/__staging/content/__filehelen-dog-sofa.jpg
@@ -38,7 +38,7 @@ services:
     price: price on consultation
   - name: Family support and advice
     price: £50 per hour
-    note: Online or in person
+    note: Online or in person, including help with the EHCP process
   - name: 'Mathematics tuition (KS2, 3, 4)'
     price: £45 per hour
     note: Online

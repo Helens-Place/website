@@ -72,7 +72,7 @@ It is worth being clear about what it does not do. An access arrangements assess
 
 Teenagers often arrive expecting another test they might fail, usually in the subject they already find hardest. I explain what we are doing and why, I take breaks whenever they need them, and I make sure they understand that the whole point is to let the exam measure what they actually know. For a lot of young people, hearing that said plainly is a relief in itself.
 
-As with everything I do, it happens in person and I only see one young person in a day, so nobody is rushed.
+As with everything I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham and Devizes. I only see one young person in a day, so nobody is rushed.
 
 ## Afterwards
 

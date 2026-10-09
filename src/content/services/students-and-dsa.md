@@ -69,7 +69,7 @@ Some of the most capable people I meet spent years quietly covering a difficulty
 
 ## What the day looks like
 
-The assessment happens in person, in Trowbridge, and as with every assessment I do, I only see one person in a day. I set aside four to five hours. We look at reading, writing and spelling, and at underlying skills such as working memory and processing speed, with breaks whenever you want them.
+The assessment happens in person, in Trowbridge, which is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham and Devizes. As with every assessment I do, I only see one person in a day. I set aside four to five hours. We look at reading, writing and spelling, and at underlying skills such as working memory and processing speed, with breaks whenever you want them.
 
 I also want your own account of what studying is like for you: what takes longest, what you avoid, and what you have worked out for yourself along the way. That is part of the picture, and it often tells me as much as any test.
 

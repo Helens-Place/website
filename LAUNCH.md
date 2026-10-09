@@ -75,6 +75,12 @@ Content written or rewritten on her behalf, published in her name.
       before the assessment, which is the JCQ position as I understand it, and
       the DSA page says her reports meet the standard DSA asks for.
 
+- [ ] **The new "Can you help us with an EHCP?" FAQ.** Built only from facts
+      already on the site: EHCP help in family support sessions, reports
+      suitable as EHCP evidence, and expert witness work in EHCP and tribunal
+      cases. Worth her read, because it now gives EHCP help a headline where
+      before it was buried in other answers.
+
 - [ ] **"Private" in the /assessments title.** Added because it is how families
       search. Worth checking she is comfortable with the word.
 
@@ -173,6 +179,22 @@ Business Profiles and their reviews, not from websites.
       Churchill Fellowship site, the University of Bath, Routledge, and every
       podcast she has appeared on. Each should link to helensplace.co.uk, not to
       an old page or to nothing.
+
+## Why launch sooner rather than later
+
+Measured on 9 October 2026, in a test outside this repo. ChatGPT was given what
+Helen's site and four local competitors' sites say, and asked 15 questions
+families ask, five times each in rotated order. The run was then repeated with
+everything identical except Helen's old site in place of the new one.
+
+- New site: Helen first in 53 of 60 fair answers.
+- Old site, live today: Helen first in 21 of 60.
+- "Who is the best dyslexia assessor in Wiltshire?": old site first 0 times in
+  5, new site 5 times in 5.
+
+The old site is what Google and AI assistants read until the domain is pointed
+at Netlify. This measures content only, not Google ranking, which also depends
+on links, reviews and the Business Profile.
 
 ## 5. Go-live order
 
