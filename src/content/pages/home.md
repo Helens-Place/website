@@ -26,7 +26,7 @@ doors:
     label: Parents and families
     title: I think my child might be dyslexic
     body: 'Calm, thorough diagnostic assessments, in person and never more than one a day, plus specialist tutoring. You leave with a clear report your child''s school will act on, and every one of your questions answered.'
-    price: Full diagnostic assessment from £450
+    price: Full diagnostic assessment from £450, dyscalculia included
     linkLabel: Explore assessments
     href: /assessments
   - audience: schools

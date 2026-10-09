@@ -132,7 +132,7 @@ export const services = [
   {
     name: 'Full diagnostic dyslexia and dyscalculia assessment',
     description:
-      'A diagnostic assessment of reading, writing, spelling, phonological processing, working memory and processing speed, and of number sense and calculation where dyscalculia is a concern, in one assessment for one fee. Carried out in person, one young person a day, producing a written report accepted by schools and exam boards.',
+      'A diagnostic assessment of reading, writing, spelling, phonological processing, working memory and processing speed, and of number sense and calculation where dyscalculia is a concern, in one assessment for one fee. Carried out in person, one young person a day. The price includes the full written report within two weeks, accepted by schools and exam boards, and a follow-up conversation about the findings.',
     price: '450',
     unit: 'assessment',
     url: `${SITE}/assessments`,

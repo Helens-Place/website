@@ -53,12 +53,16 @@ faqs:
   - category: Assessments
     question: How much does a dyslexia assessment cost?
     answer: >-
-      All prices include VAT. A full diagnostic assessment is from £450. Exam
-      access arrangements are from £180. Other assessments, such as dyscalculia,
-      are priced on consultation. Family support and advice is £50 per hour, and
-      maths or literacy tutoring for KS2 to KS4 is £45 per hour. A free
-      20-minute initial consultation is available to help you decide what is
-      right for you.
+      All prices include VAT. A full diagnostic assessment is from £450. That
+      covers dyslexia and, where needed, dyscalculia in the same assessment, so
+      you only pay once. It also includes your full written report within two
+      weeks and a conversation afterwards about what it all means. £150 secures
+      the booking, and I can send you a sample report first if you would like to
+      see what you will get. Exam access arrangements are from £180. Other
+      assessments are priced on consultation. Family support and advice is £50
+      per hour, and maths or literacy tutoring for KS2 to KS4 is £45 per hour. A
+      free 20-minute initial consultation is available to help you decide what
+      is right for you.
   - category: Assessments
     question: Can you assess adults as well as children?
     answer: >-

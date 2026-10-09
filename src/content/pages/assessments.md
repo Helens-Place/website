@@ -22,7 +22,7 @@ servicesNote: All prices include VAT.
 services:
   - name: Full diagnostic assessment
     price: from £450
-    note: £150 secures the booking
+    note: Includes dyscalculia where needed, your full report within two weeks, and a conversation about the findings. £150 secures the booking.
   - name: Dyscalculia assessment
     price: included
     note: Part of the full diagnostic assessment, so you only pay once
