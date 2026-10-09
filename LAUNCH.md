@@ -111,7 +111,7 @@ Content written or rewritten on her behalf, published in her name.
       not offer assessments for adults outside education, and the site says so.
       When it changes, update all of these together: the FAQ answer to "Can you
       assess adults as well as children?", the last question on
-      /assessments/students-and-dsa, the adults line in public/llms.txt, and the
+      /assessments/students-and-dsa, the adults line in src/data/llms.txt, and the
       age answers in the "What happens in a dyslexia assessment" and "What is
       dyslexia" articles. An adults page can then go into the services
       collection alongside the others.

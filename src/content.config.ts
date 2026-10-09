@@ -250,6 +250,8 @@ const services = defineCollection({
 const settings = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/settings' }),
   schema: z.object({
+    /* The only place a price is typed. See src/lib/prices.ts. */
+    prices: z.array(z.object({ name: z.string(), price: z.string() })).default([]),
     siteName: z.string(),
     tagline: z.string(),
     strapline: z.string(),

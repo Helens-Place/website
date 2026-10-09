@@ -48,7 +48,7 @@ also:
       Developing evaluation frameworks and supporting settings towards the
       British Dyslexia Association Dyslexia Friendly Schools Kitemark.
 priceLine: >-
-  Half-day INSET sessions from £200. For a detailed quote, get in touch and I'll
+  Half-day INSET sessions [price: Half-day INSET]. For a detailed quote, get in touch and I'll
   reply within 48 hours.
 relatedHeading: For your staff, before or after a session
 relatedIntro: >-

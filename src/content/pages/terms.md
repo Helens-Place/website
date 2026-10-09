@@ -19,12 +19,12 @@ intro: >-
 
 ## Assessments
 
-- A full diagnostic assessment is £450, and £150 secures the booking. The
+- A full diagnostic assessment is [price: Full diagnostic assessment], and [price: Booking deposit] secures the booking. The
   balance is payable on or before the day of the assessment.
 - If you need to move the appointment, please give at least **7 days' notice**.
   The booking fee will be carried over to the new date.
 - Where an assessment is cancelled or moved with **less than 7 days' notice**,
-  the £150 booking fee is retained, because the day has been held and cannot
+  the [price: Booking deposit] booking fee is retained, because the day has been held and cannot
   usually be filled at short notice.
 - **If your child is unwell on the day, tell me and we will simply rearrange.**
   I will not charge you for that. Assessing a child who is poorly produces an

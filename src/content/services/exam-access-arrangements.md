@@ -4,7 +4,7 @@ title: "Exam access arrangements assessment in Trowbridge, Wiltshire"
 description: >-
   Exam access arrangements assessments for GCSE and A level, from a qualified
   assessor with a current Assessment Practising Certificate, in person in
-  Trowbridge, Wiltshire. From £180.
+  Trowbridge, Wiltshire, [price: Exam access arrangements].
 eyebrow: Parents and families
 heading: "Exam access arrangements"
 intro: >-
@@ -12,7 +12,7 @@ intro: >-
   between an exam that shows what a young person knows and one that mostly
   shows how fast they read and write. I carry out the assessments schools need
   before they can put those arrangements in place.
-price: from £180
+price: '[price: Exam access arrangements]'
 priceNote: Shorter than a full diagnostic assessment
 credentials: "Assessment Practising Certificate, 23/APC05078 · AMBDA, 20/AMB04046"
 serviceType: Exam access arrangements assessment
@@ -44,7 +44,7 @@ faqs:
       child's SENCo will know the school's own timetable for this.
   - question: "How much does it cost?"
     answer: >-
-      From £180, including VAT. Book a free 20-minute call if you would like to
+      The assessment is [price: Exam access arrangements], including VAT. Book a free 20-minute call if you would like to
       talk it through first.
 ---
 

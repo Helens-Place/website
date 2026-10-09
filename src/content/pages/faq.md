@@ -49,18 +49,18 @@ faqs:
       to know each other, because a tired or anxious child will not show me what
       they can actually do. You receive a full written report afterwards,
       written so that you and their teachers can both act on it. Full
-      assessments start from £450 including VAT.
+      assessments are [price: Full diagnostic assessment], including VAT.
   - category: Assessments
     question: How much does a dyslexia assessment cost?
     answer: >-
-      All prices include VAT. A full diagnostic assessment is from £450. That
+      All prices include VAT. A full diagnostic assessment is [price: Full diagnostic assessment]. That
       covers dyslexia and, where needed, dyscalculia in the same assessment, so
       you only pay once. It also includes your full written report within two
-      weeks and a conversation afterwards about what it all means. £150 secures
+      weeks and a conversation afterwards about what it all means. [price: Booking deposit] secures
       the booking, and I can send you a sample report first if you would like to
-      see what you will get. Exam access arrangements are from £180. Other
-      assessments are priced on consultation. Family support and advice is £50
-      per hour, and maths or literacy tutoring for KS2 to KS4 is £45 per hour. A
+      see what you will get. Exam access arrangements are [price: Exam access arrangements]. Other
+      assessments are priced on consultation. Family support and advice is [price: Family support and advice],
+      and maths or literacy tutoring for KS2 to KS4 is [price: Tuition]. A
       free 20-minute initial consultation is available to help you decide what
       is right for you.
   - category: Assessments
@@ -79,7 +79,7 @@ faqs:
       qualifies for accommodations in formal exams, such as extra time, a
       reader, a scribe, or use of a laptop. Schools need a qualified assessor to
       carry this out. I hold the Assessment Practising Certificate
-      (23/APC05078) required for this work. These assessments start from £180
+      (23/APC05078) required for this work. These assessments are [price: Exam access arrangements],
       including VAT.
   - category: Assessments
     question: What is the difference between a full assessment and an exam access arrangement?
@@ -133,7 +133,7 @@ faqs:
   - category: The process
     question: Is there a deposit, and can I see a sample report first?
     answer: >-
-      A full assessment is £450, and I ask for £150 to secure the booking. I can
+      A full assessment is [price: Full diagnostic assessment], and I ask for [price: Booking deposit] to secure the booking. I can
       send you a sample report beforehand so you can see the kind of document
       the process produces before committing to anything. I completely
       understand that families want to have a think before confirming.
@@ -168,7 +168,7 @@ faqs:
       their child's difficulties, understand the assessment process, navigate
       the school system and plan next steps. I can also help families understand
       EHCP processes, communicate effectively with schools, and find the right
-      support. Sessions are £50 per hour, online or in person in Trowbridge.
+      support. Sessions are [price: Family support and advice], online or in person in Trowbridge.
   - category: Tutoring and support
     question: Can you help us with an EHCP?
     answer: >-
@@ -177,7 +177,7 @@ faqs:
       school, and we plan the next steps together. My full diagnostic reports
       are written to be suitable as evidence for an EHCP application. I also
       write expert witness reports in EHCP and tribunal cases, so I know how
-      the process looks from the inside. Sessions are £50 per hour, online or in
+      the process looks from the inside. Sessions are [price: Family support and advice], online or in
       person in Trowbridge, and a free 20-minute call is a good place to start.
   - category: The process
     question: How do I get started?
@@ -215,8 +215,7 @@ faqs:
       I offer specialist half-day INSET sessions on dyslexia, dyscalculia, and
       supporting learners with ADD and ADHD in mainstream classrooms. I can also
       develop bespoke packages including SEND consultancy, tailored training and
-      specific guidance for your setting. Sessions start from £200 for a
-      half-day INSET, and I reply within 48 hours.
+      specific guidance for your setting. Half-day INSET is [price: Half-day INSET], and I reply within 48 hours.
   - category: Schools and CPD
     question: Can you carry out exam access arrangement assessments for our school?
     answer: >-
@@ -234,7 +233,7 @@ faqs:
   - category: Schools and CPD
     question: How much does school CPD training cost?
     answer: >-
-      Half-day INSET sessions start from £200. Bespoke packages, including
+      Half-day INSET sessions are [price: Half-day INSET]. Bespoke packages, including
       combinations of training, SEND consultancy and ongoing support, are priced
       individually. I will provide a detailed quotation for your specific needs
       and come back to you within 48 hours.

@@ -6,6 +6,21 @@ email: helen@helensplace.co.uk
 phone: 07541 557827
 location: Trowbridge, Wiltshire
 responseTime: I reply within 48 hours
+prices:
+  - name: Full diagnostic assessment
+    price: from £450
+  - name: Booking deposit
+    price: £150
+  - name: Exam access arrangements
+    price: from £180
+  - name: Family support and advice
+    price: £50 per hour
+  - name: Tuition
+    price: £45 per hour
+  - name: Half-day INSET
+    price: from £200
+  - name: Research and consultancy
+    price: from £450 per day
 bookCallLabel: Book a call
 bookCallHref: /contact
 nav:

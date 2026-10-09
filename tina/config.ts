@@ -155,6 +155,25 @@ const settings: Collection = {
     },
     { type: 'string', name: 'location', label: 'Location', required: true },
     { type: 'string', name: 'responseTime', label: 'Response time line', required: true },
+    {
+      type: 'object',
+      name: 'prices',
+      label: 'Prices',
+      description:
+        'The only place prices are typed. Change one here and it changes on every page that shows it. Elsewhere, prices appear in the text as [price: name], which is filled in from this list, so leave those as they are.',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: `${item?.name ?? 'New price'}: ${item?.price ?? ''}` }) },
+      fields: [
+        {
+          type: 'string',
+          name: 'name',
+          label: 'Name',
+          description: 'Other pages find this price by its name. Changing a name stops the site updating until those pages are changed to match, so ask Andrew first.',
+          required: true,
+        },
+        { type: 'string', name: 'price', label: 'Price', description: 'Exactly as it should appear on the site, for example: from £450', required: true },
+      ],
+    },
     { type: 'string', name: 'bookCallLabel', label: 'Header button text', required: true },
     { type: 'string', name: 'bookCallHref', label: 'Header button link', required: true },
     {

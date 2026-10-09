@@ -49,7 +49,7 @@ clientsFootnote:
   label: See the full publications list
   href: /publications
 priceLine: >-
-  Research projects from £450 per day, with reduced rates considered for limited
+  Research projects [price: Research and consultancy], with reduced rates considered for limited
   budgets. Expert witness work on enquiry.
 relatedHeading: The evidence behind the work
 relatedIntro: >-

@@ -21,29 +21,29 @@ servicesHeading: Services and prices
 servicesNote: All prices include VAT.
 services:
   - name: Full diagnostic assessment
-    price: from £450
-    note: Includes dyscalculia where needed, your full report within two weeks, and a conversation about the findings. £150 secures the booking.
+    price: '[price: Full diagnostic assessment]'
+    note: "Includes dyscalculia where needed, your full report within two weeks, and a conversation about the findings. [price: Booking deposit] secures the booking."
   - name: Dyscalculia assessment
     price: included
     note: Part of the full diagnostic assessment, so you only pay once
     href: /assessments/dyscalculia
   - name: Exam access arrangements
-    price: from £180
+    price: '[price: Exam access arrangements]'
     href: /assessments/exam-access-arrangements
   - name: "Assessment for Disabled Students' Allowance"
-    price: from £450
+    price: '[price: Full diagnostic assessment]'
     note: For students heading to, or already at, university
     href: /assessments/students-and-dsa
   - name: Other assessments
     price: price on consultation
   - name: Family support and advice
-    price: £50 per hour
+    price: '[price: Family support and advice]'
     note: Online or in person, including help with the EHCP process
   - name: 'Mathematics tuition (KS2, 3, 4)'
-    price: £45 per hour
+    price: '[price: Tuition]'
     note: Online
   - name: 'Literacy and dyslexia tuition (KS2, 3, 4)'
-    price: £45 per hour
+    price: '[price: Tuition]'
     note: Online
 whyHeading: Why work with me
 whyBody: 'I''ve spent nearly twenty years teaching, as a Maths and French teacher and then as a qualified SENCo, and I''ve worked with primary and secondary schools to build young people''s confidence. I''m dyslexic and have ADHD myself, and I offer the inclusive, friendly support I wish I''d had.'

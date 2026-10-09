@@ -1,7 +1,7 @@
 ---
 audience: families
 title: 'Booking a dyslexia assessment with me: how it works'
-description: 'How booking an assessment with Dr Helen Ross works: the free call, the £150 booking fee, where assessments happen in Trowbridge, how long the day takes and when your report arrives.'
+description: 'How booking an assessment with Dr Helen Ross works: the free call, the [price: Booking deposit] booking fee, where assessments happen in Trowbridge, how long the day takes and when your report arrives.'
 eyebrow: Parents and families
 heading: Booking an assessment with me
 intro: 'Most people ring wanting to know the same things. How long it takes, what their child will actually be asked to do, and what they are left with at the end. Underneath that there is usually a quieter worry about whether their child will find the day hard. Here is the whole process, plainly, including that part.'
@@ -16,7 +16,7 @@ secondaryCta:
 stepsHeading: 'The process, start to finish'
 steps:
   - title: We make contact and find a date
-    body: 'The process is quite straightforward. We make contact and find a date that works for both of us. A full assessment is £450, and I ask for £150 to secure the booking. If you would rather talk it through first, a free 20-minute call is often worth more than a long exchange of emails.'
+    body: 'The process is quite straightforward. We make contact and find a date that works for both of us. A full assessment is [price: Full diagnostic assessment], and I ask for [price: Booking deposit] to secure the booking. If you would rather talk it through first, a free 20-minute call is often worth more than a long exchange of emails.'
   - title: We agree where it happens
     body: 'I usually assess at my house in Trowbridge, in a garden office. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham and Devizes. I do also sometimes work in children''s schools or at their homes, depending on what is best for them. There is no right answer here, and it is worth saying if your child would find one setting much easier than another.'
   - title: The assessment itself

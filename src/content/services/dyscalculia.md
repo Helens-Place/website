@@ -12,7 +12,7 @@ intro: >-
   the one for dyslexia, and a good many assessors do not hold it. I do. I also
   spent years teaching maths before I ever assessed anyone, so I know what a
   child who is struggling with number looks like from the front of a classroom.
-price: from £450
+price: '[price: Full diagnostic assessment]'
 priceNote: Dyslexia and dyscalculia in one assessment, so you only pay once
 credentials: "AMBDA Dyscalculia, 23/AMD05008 · AMBDA, 20/AMB04046 · Assessment Practising Certificate, 23/APC05078"
 serviceType: Dyscalculia diagnostic assessment
@@ -43,7 +43,7 @@ faqs:
       assess either or both.
   - question: "How much does a dyscalculia assessment cost?"
     answer: >-
-      It is part of my full diagnostic assessment, from £450 including VAT. I do
+      It is part of my full diagnostic assessment, [price: Full diagnostic assessment] including VAT. I do
       not charge separately for dyslexia and dyscalculia, so if both need
       looking at, you are not paying twice for it.
 ---

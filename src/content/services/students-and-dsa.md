@@ -12,7 +12,7 @@ intro: >-
   harder than you expected, a diagnostic report can open up Disabled Students'
   Allowance and the support that comes with it. I carry out assessments written
   to the standard DSA applications need.
-price: from £450
+price: '[price: Full diagnostic assessment]'
 priceNote: A full diagnostic assessment
 credentials: "Assessment Practising Certificate, 23/APC05078 · AMBDA, 20/AMB04046 · AMBDA Dyscalculia, 23/AMD05008"
 serviceType: Diagnostic assessment for Disabled Students' Allowance

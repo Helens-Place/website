@@ -127,62 +127,56 @@ export const business = {
   knowsAbout: person.knowsAbout,
 };
 
-/** Services, with the real prices. Google shows these; assistants quote them. */
+/** Services. Prices come from Site settings > Prices, never typed here. Google
+    shows these; assistants quote them. */
 export const services = [
   {
     name: 'Full diagnostic dyslexia and dyscalculia assessment',
     description:
       'A diagnostic assessment of reading, writing, spelling, phonological processing, working memory and processing speed, and of number sense and calculation where dyscalculia is a concern, in one assessment for one fee. Carried out in person, one young person a day. The price includes the full written report within two weeks, accepted by schools and exam boards, and a follow-up conversation about the findings.',
-    price: '450',
-    unit: 'assessment',
+    priceName: 'Full diagnostic assessment',
     url: `${SITE}/assessments`,
   },
   {
     name: 'Exam access arrangements assessment',
     description:
       'Assessment determining whether a student qualifies for exam accommodations such as extra time, a reader, a scribe or use of a laptop.',
-    price: '180',
-    unit: 'assessment',
+    priceName: 'Exam access arrangements',
     url: `${SITE}/assessments/exam-access-arrangements`,
   },
   {
     name: "Diagnostic assessment for Disabled Students' Allowance",
     description:
       "A full diagnostic assessment for students heading to or already at university, written to the standard a Disabled Students' Allowance application needs.",
-    price: '450',
-    unit: 'assessment',
+    priceName: 'Full diagnostic assessment',
     url: `${SITE}/assessments/students-and-dsa`,
   },
   {
     name: 'Family support and advice',
     description:
       'Sessions for parents and carers covering the assessment process, the school system, EHCP processes and next steps.',
-    price: '50',
-    unit: 'hour',
+    priceName: 'Family support and advice',
     url: `${SITE}/assessments`,
   },
   {
     name: 'Specialist literacy, dyslexia and mathematics tuition',
     description:
       'Online specialist tuition for learners in KS2, KS3 and KS4, using structured, multi-sensory approaches.',
-    price: '45',
-    unit: 'hour',
+    priceName: 'Tuition',
     url: `${SITE}/assessments`,
   },
   {
     name: 'Half-day INSET and CPD for schools',
     description:
       'Practical, research-grounded training on dyslexia, dyscalculia and SEND, delivered in your setting.',
-    price: '200',
-    unit: 'session',
+    priceName: 'Half-day INSET',
     url: `${SITE}/schools`,
   },
   {
     name: 'Research, consultancy and SEND expert witness work',
     description:
       'Qualitative research design and analysis, methodology consultation, evidence review, and expert witness reports in SEND and dyslexia matters including EHCP and tribunal contexts.',
-    price: '450',
-    unit: 'day',
+    priceName: 'Research and consultancy',
     url: `${SITE}/research-and-expert-witness`,
   },
 ];
@@ -194,10 +188,12 @@ export const offerCatalog = {
     '@type': 'Offer',
     priceSpecification: {
       '@type': 'PriceSpecification',
-      price: s.price,
+      /* Markers, filled in from Site settings > Prices as the page is built.
+         See src/lib/prices.ts. */
+      price: `[amount: ${s.priceName}]`,
       priceCurrency: 'GBP',
       valueAddedTaxIncluded: true,
-      description: `From £${s.price} per ${s.unit}, including VAT`,
+      description: `[price: ${s.priceName}], including VAT`,
     },
     itemOffered: {
       '@type': 'Service',

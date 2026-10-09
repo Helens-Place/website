@@ -26,21 +26,21 @@ doors:
     label: Parents and families
     title: I think my child might be dyslexic
     body: 'Calm, thorough diagnostic assessments, in person and never more than one a day, plus specialist tutoring. You leave with a clear report your child''s school will act on, and every one of your questions answered.'
-    price: Full diagnostic assessment from £450, dyscalculia included
+    price: 'Full diagnostic assessment [price: Full diagnostic assessment], dyscalculia included'
     linkLabel: Explore assessments
     href: /assessments
   - audience: schools
     label: Schools and local authorities
     title: We need training that actually sticks
     body: 'Practical, research-grounded INSET and bespoke CPD on dyslexia, dyscalculia and SEND, delivered in your setting and shaped around your staff, not a generic slide deck.'
-    price: Half-day INSET from £200
+    price: 'Half-day INSET [price: Half-day INSET]'
     linkLabel: See training and support
     href: /schools
   - audience: business
     label: 'Business, research and legal'
     title: We need the evidence to be right
     body: 'Qualitative research, product and market consultancy, and SEND expert witness work. I turn complex findings into decisions you can defend.'
-    price: 'Research from £450 per day, expert witness work on enquiry'
+    price: 'Research [price: Research and consultancy], expert witness work on enquiry'
     linkLabel: Discuss a project
     href: /research-and-expert-witness
 testimonialsHeading: What people say about working with me.
