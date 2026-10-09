@@ -31,7 +31,7 @@ export const person = {
   url: `${SITE}/about`,
   image: `${SITE}/images/helen-portrait.jpg`,
   email: 'helen@helensplace.co.uk',
-  telephone: '+441225766766',
+  telephone: '+447541557827',
   worksFor: { '@id': IDS.business },
   knowsAbout: [
     'Dyslexia',
@@ -105,7 +105,7 @@ export const business = {
   logo: `${SITE}/images/logo.png`,
   image: `${SITE}/images/helen-hero.jpg`,
   email: 'helen@helensplace.co.uk',
-  telephone: '+441225766766',
+  telephone: '+447541557827',
   founder: { '@id': IDS.person },
   employee: { '@id': IDS.person },
   address: {

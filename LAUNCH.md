@@ -89,11 +89,11 @@ Content written or rewritten on her behalf, published in her name.
       was diagnosed with ADHD at 44. Carried into the structured data and
       llms.txt to match.
 
-- [ ] **Phone number, one everywhere.** The footer shows the mobile, but the
-      structured data and llms.txt give the landline. Google matches name,
-      address and phone across the web when ranking local businesses, so pick
-      one and use it on the site, the Google Business Profile and every
-      directory listing.
+- [x] **Phone number, one everywhere.** Settled: the mobile, 07541 557827, now
+      the only number on the site, in the structured data and in llms.txt. Use
+      the same number on the Google Business Profile and every directory
+      listing, because Google matches name, address and phone across the web
+      when ranking local businesses.
 
 - [ ] **Publisher of the Schools Guide to Dyslexia.** Not identified, so
       `dyslexia-toolkit.md` says "hosted by the publisher" and credits nobody.

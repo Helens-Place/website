@@ -48,9 +48,7 @@ const year = new Date().getFullYear();
         <ul class="footer__list">
           <li><a href="/contact">Send a message</a></li>
           <li><a href={`mailto:${s.email}`}>{s.email}</a></li>
-          {s.mobile && (
-            <li><a href={`tel:${s.mobile.replace(/\s/g, '')}`}>{s.mobile}</a></li>
-          )}
+          <li><a href={`tel:${s.phone.replace(/\s/g, '')}`}>{s.phone}</a></li>
           <li>{s.location}</li>
         </ul>
       </div>

@@ -43,12 +43,6 @@ const telHref = (n: string) => `tel:${n.replace(/\s/g, '')}`;
           <dd><a href={`mailto:${s.email}`}>{s.email}</a></dd>
           <dt>Phone</dt>
           <dd><a href={telHref(s.phone)}>{s.phone}</a></dd>
-          {s.mobile && (
-            <Fragment>
-              <dt>Mobile</dt>
-              <dd><a href={telHref(s.mobile)}>{s.mobile}</a></dd>
-            </Fragment>
-          )}
           <dt>Based in</dt>
           {/* Spelled out rather than "in person and online", which read as
               though assessments could be done remotely. They cannot. */}

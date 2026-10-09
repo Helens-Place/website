@@ -255,7 +255,6 @@ const settings = defineCollection({
     strapline: z.string(),
     email: z.string(),
     phone: z.string(),
-    mobile: z.string().optional(),
     location: z.string(),
     responseTime: z.string(),
     bookCallLabel: z.string(),

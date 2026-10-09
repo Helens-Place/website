@@ -1,6 +1,9 @@
 ---
+import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+
+const s = (await getEntry('settings', 'site'))!.data;
 ---
 
 <BaseLayout
@@ -10,7 +13,7 @@ import PageHero from '../components/PageHero.astro';
   <PageHero
     eyebrow="Message sent"
     heading="Thank you, your message is on its way."
-    intro="I read every enquiry myself and reply within 48 hours. If it is urgent, do ring me on 01225 766766."
+    intro={`I read every enquiry myself and reply within 48 hours. If it is urgent, do ring me on ${s.phone}.`}
     primaryCta={{ label: 'Back to the homepage', href: '/' }}
   />
 </BaseLayout>

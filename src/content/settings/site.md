@@ -3,8 +3,7 @@ siteName: Helen's Place
 tagline: Dr Helen Ross, dyslexia specialist and researcher
 strapline: Driving positive change for dyslexic people of all ages
 email: helen@helensplace.co.uk
-phone: 01225 766766
-mobile: 07541 557827
+phone: 07541 557827
 location: Trowbridge, Wiltshire
 responseTime: I reply within 48 hours
 bookCallLabel: Book a call
