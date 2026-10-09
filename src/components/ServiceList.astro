@@ -1,5 +1,7 @@
 ---
-interface S { name: string; price: string; note?: string }
+/* href is optional: a service with its own page links to it, so the price
+   list doubles as the route into the detail. */
+interface S { name: string; price: string; note?: string; href?: string }
 interface Props { heading: string; note?: string; items: S[] }
 const { heading, note, items } = Astro.props;
 ---
@@ -13,7 +15,7 @@ const { heading, note, items } = Astro.props;
       {items.map((s) => (
         <li class="service">
           <div class="service__main">
-            <h3 class="service__name">{s.name}</h3>
+            <h3 class="service__name">{s.href ? <a href={s.href}>{s.name}</a> : s.name}</h3>
             {s.note && <p class="service__note">{s.note}</p>}
           </div>
           <p class="service__price">{s.price}</p>
@@ -38,6 +40,8 @@ const { heading, note, items } = Astro.props;
   }
   .service__main { flex: 1; }
   .service__name { font-size: 1.05rem; margin: 0; font-family: var(--font-body); font-weight: 600; }
+  .service__name a { color: var(--ink); text-decoration-color: var(--pink-accent); text-underline-offset: 3px; }
+  .service__name a:hover { color: var(--purple-deep); }
   .service__note { font-size: .95rem; color: var(--ink-soft); margin: .2rem 0 0; }
   .service__price {
     font-family: var(--font-display);

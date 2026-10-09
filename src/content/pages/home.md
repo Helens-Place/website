@@ -1,9 +1,9 @@
 ---
-title: 'Dr Helen Ross: Internationally renowned Dyslexia and Dyscalculia Specialist Assessor and researcher in Wiltshire'
-description: 'Dyslexia and dyscalculia assessments, teacher training and research from Dr Helen Ross, a published academic and qualified diagnostic assessor working globally but based in Wiltshire, UK.'
+title: 'Dyslexia and dyscalculia assessor in Wiltshire, Dr Helen Ross'
+description: 'Private dyslexia and dyscalculia assessments in Trowbridge, Wiltshire, from Dr Helen Ross, an internationally recognised researcher and qualified assessor.'
 eyebrow: 'Dr Helen Ross · Dyslexia and Dyscalculia specialist, researcher and consultant'
 heading: 'Serious expertise, with a genuinely warm welcome.'
-intro: 'I''m Helen. I do dyslexia and dyscalculia assessments, teacher training and research, and I explain things plainly. I''m based in Wiltshire, and I work with families, schools and organisations across the UK and beyond.'
+intro: 'I''m Helen. I do dyslexia and dyscalculia assessments, teacher training and research, and I explain things plainly. I''m based in Wiltshire, and I work with families, schools and organisations across the UK and internationally.'
 image: /images/__staging/content/__filehelen-hero.jpg
 imageAlt: Dr Helen Ross smiling at her desk in her garden office
 primaryCta:

@@ -19,7 +19,7 @@ credentialGroups:
     items:
       - 'Churchill Fellow 2025, supported by The Mercers'' Company'
       - Chair of the Wiltshire Dyslexia Association
-      - Trustee of the British Dyslexia Association
+      - Former Trustee of the British Dyslexia Association
   - heading: Memberships
     items:
       - Chartered College of Teaching (affiliate)

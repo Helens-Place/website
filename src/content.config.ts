@@ -26,6 +26,7 @@ const service = z.object({
   name: z.string(),
   price: z.string(),
   note: z.string().optional(),
+  href: z.string().optional(),
 });
 
 const step = z.object({ title: z.string(), body: z.string() });
@@ -215,6 +216,37 @@ const articles = defineCollection({
   }),
 });
 
+/* One page per service people search for by name: dyscalculia, exam access
+   arrangements, students and DSA. The competitor ranks on a separate page for
+   each, and a single /assessments page cannot match a specific search.
+
+   `category` exists because the practice will grow beyond assessment. Helen
+   plans holistic coaching, mentoring and life skills work, and those pages
+   belong in this same collection rather than in a new one. Assessment pages
+   are served under /assessments/; a later category gets its own route that
+   filters on it. Nothing else needs to change when that happens. */
+const services = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
+  schema: z.object({
+    category: z.enum(['assessment', 'support', 'coaching']).default('assessment'),
+    title: z.string(),
+    description: z.string(),
+    eyebrow: z.string(),
+    heading: z.string(),
+    intro: z.string(),
+    price: z.string(),
+    priceNote: z.string().optional(),
+    /* A field rather than raw HTML in the body: Tina edits the body as rich
+       text, and raw HTML there may not survive a save. */
+    credentials: z.string().optional(),
+    serviceType: z.string(),
+    audienceType: z.string(),
+    order: z.number().default(50),
+    faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+
 const settings = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/settings' }),
   schema: z.object({
@@ -241,4 +273,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { pages, guides, articles, settings };
+export const collections = { pages, guides, articles, services, settings };

@@ -6,7 +6,7 @@ the temporary scaffolding that has to be taken back out.
 Nothing here is optional. Two items will silently break the launch if missed:
 the `noindex` header, and the review note on the terms page.
 
-Last updated: 29 August 2026.
+Last updated: 9 October 2026.
 
 ## 1. Temporary scaffolding to remove
 
@@ -67,17 +67,65 @@ Content written or rewritten on her behalf, published in her name.
       on /assessments, /what-to-expect and /faq. If any of them is wrong, it is
       wrong in five places at once.
 
+- [ ] **The three new assessment pages.** /assessments/dyscalculia,
+      /assessments/exam-access-arrangements and /assessments/students-and-dsa
+      were written from facts already on the site plus general knowledge of how
+      exam access arrangements and DSA work. Two things in particular need her
+      eye: the exam access page says the school must agree to the assessor
+      before the assessment, which is the JCQ position as I understand it, and
+      the DSA page says her reports meet the standard DSA asks for.
+
+- [ ] **"Private" in the /assessments title.** Added because it is how families
+      search. Worth checking she is comfortable with the word.
+
 ## 3. Needs a decision
 
 - [ ] **Home address in the privacy policy.** Flagged early and still open. It
       is currently the practice address. Decide whether it should be there at
       all, given it is also where she lives.
 
-- [ ] **ADHD disclosure.** Deliberately left out. Her call whether it goes in.
+- [x] **ADHD disclosure.** Settled by Helen. She now writes "I'm dyslexic and
+      have ADHD myself" on /assessments, and the article author note says she
+      was diagnosed with ADHD at 44. Carried into the structured data and
+      llms.txt to match.
+
+- [ ] **Phone number, one everywhere.** The footer shows the mobile, but the
+      structured data and llms.txt give the landline. Google matches name,
+      address and phone across the web when ranking local businesses, so pick
+      one and use it on the site, the Google Business Profile and every
+      directory listing.
 
 - [ ] **Publisher of the Schools Guide to Dyslexia.** Not identified, so
       `dyslexia-toolkit.md` says "hosted by the publisher" and credits nobody.
       Name them, or confirm that is fine.
+
+## Waiting on something else
+
+- [ ] **Adult assessments, once the APC moves to PATOSS.** Until then she does
+      not offer assessments for adults outside education, and the site says so.
+      When it changes, update all of these together: the FAQ answer to "Can you
+      assess adults as well as children?", the last question on
+      /assessments/students-and-dsa, the adults line in public/llms.txt, and the
+      age answers in the "What happens in a dyslexia assessment" and "What is
+      dyslexia" articles. An adults page can then go into the services
+      collection alongside the others.
+
+- [ ] **International work, made specific.** Helen works internationally and
+      the site now says so, but the only concrete evidence it gives is the
+      Churchill Fellowship fieldwork in Australia and the USA. Named projects
+      and countries would do far more for search and for AI answers than the
+      word "internationally".
+
+- [ ] **Author notes on the 20 articles.** Each ends with raw HTML for the
+      biography. Tina edits article bodies as rich text, and nobody has yet
+      saved an article through the CMS, so it is unproven whether that HTML
+      survives. Save one article in the CMS and check the bio is still there
+      before trusting it. The new assessment pages avoid the question by
+      keeping their credentials line in a field instead.
+
+- [ ] **Coaching and mentoring.** Planned, not yet offered. The services
+      collection already has a coaching category so these pages can be added
+      without rebuilding anything.
 
 ## 4. Needs a code or a credential
 
@@ -105,6 +153,26 @@ enough.
 
 Cloudflare Web Analytics is already live and needs nothing further. The token is
 public by design.
+
+## Off the site, and bigger than anything on it
+
+For searches like "best dyslexia assessor Wiltshire", Google shows a map with
+three local businesses above the ordinary results. That map comes from Google
+Business Profiles and their reviews, not from websites.
+
+- [ ] **Google Business Profile.** Create or claim one for Helen's Place.
+      Category close to "Educational consultant", Trowbridge address shown or
+      a service area set instead if the home address should stay private,
+      the same phone number as the site, and a link to helensplace.co.uk.
+
+- [ ] **Google reviews.** Ask recent families. "Best" searches lean heavily on
+      ratings, and without reviews she cannot appear in that map at all.
+
+- [ ] **Links from the places that already trust her.** The Wiltshire Dyslexia
+      Association, the British Dyslexia Association assessor directory, the
+      Churchill Fellowship site, the University of Bath, Routledge, and every
+      podcast she has appeared on. Each should link to helensplace.co.uk, not to
+      an old page or to nothing.
 
 ## 5. Go-live order
 
@@ -134,7 +202,8 @@ The sequence matters.
       Netlify Forms.
 - [ ] Confirm Cloudflare Web Analytics is recording against the real hostname
       rather than the netlify.app one.
-- [ ] Check Cumulative Layout Shift has moved off Poor. It was 1.0, caused by
-      reading preferences being applied after first paint, fixed in `1e2b4fa`.
-      That fix has not reached the live site yet, because deploys were paused
-      when it was pushed.
+- [ ] Check Cumulative Layout Shift has moved off Poor. It had three causes,
+      all fixed on the review branch: reading preferences applied after first
+      paint, the web fonts reflowing the page as they loaded, and the reading
+      comfort bar changing height when they did. None of it reaches the live
+      site until launch.

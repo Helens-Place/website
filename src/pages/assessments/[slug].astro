@@ -1,0 +1,190 @@
+---
+/**
+ * One page per assessment people search for by name. See the `services`
+ * collection in src/content.config.ts for why these exist.
+ *
+ * Only `category: assessment` is served here. Coaching and mentoring pages,
+ * when they come, live in the same collection under their own route.
+ */
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, IDS, breadcrumbs } from '../../lib/schema';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const all = await getCollection('services', ({ data }) => data.category === 'assessment' && !data.draft);
+  return all.map((entry) => ({ params: { slug: entry.id }, props: { entry, all } }));
+};
+
+const { entry, all } = Astro.props;
+const s = entry.data;
+const { Content } = await render(entry);
+const url = `${SITE}/assessments/${entry.id}`;
+
+/* The other assessment pages, so a reader who arrived from a search for one can
+   find the rest, and so each page passes some weight to its neighbours. */
+const others = all
+  .filter((x) => x.id !== entry.id)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const pageSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: s.heading,
+    serviceType: s.serviceType,
+    description: s.description,
+    provider: { '@id': IDS.business },
+    areaServed: [
+      { '@type': 'City', name: 'Trowbridge' },
+      { '@type': 'AdministrativeArea', name: 'Wiltshire' },
+    ],
+    audience: { '@type': 'Audience', audienceType: s.audienceType },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceLocation: {
+        '@type': 'Place',
+        address: { '@type': 'PostalAddress', addressLocality: 'Trowbridge', addressRegion: 'Wiltshire', addressCountry: 'GB' },
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'GBP',
+      description: `${s.heading}, ${s.price}`,
+    },
+    url,
+  },
+  ...(s.faqs.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: s.faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.question,
+          acceptedAnswer: { '@type': 'Answer', text: f.answer },
+        })),
+      }]
+    : []),
+  breadcrumbs([
+    { name: 'Assessments', path: '/assessments' },
+    { name: s.heading, path: `/assessments/${entry.id}` },
+  ]),
+];
+
+const priceLine = s.priceNote ? `${s.price} · ${s.priceNote}` : s.price;
+---
+
+<BaseLayout title={s.title} description={s.description} schema={pageSchema}>
+  <PageHero
+    eyebrow={s.eyebrow}
+    heading={s.heading}
+    intro={s.intro}
+    trustLine={priceLine}
+    audience="families"
+    primaryCta={{ label: 'Book a free 20-minute call', href: '/contact' }}
+    secondaryCta={{ label: 'All assessments and prices', href: '/assessments#prices' }}
+  />
+
+  <section class="section section--paper">
+    <div class="wrap">
+      <article class="prose">
+        <Content />
+        {s.credentials && <p class="credentials-note">{s.credentials}</p>}
+      </article>
+    </div>
+  </section>
+
+  {s.faqs.length > 0 && (
+    <section class="section section--tint">
+      <div class="wrap">
+        <div class="section-head"><h2>Questions people often ask</h2></div>
+        {/* Native details/summary: keyboard and screen reader friendly with no
+            JavaScript, and the answers stay in the page for search engines and
+            AI assistants whether or not they are opened. */}
+        <div class="qa">
+          {s.faqs.map((f) => (
+            <details class="qa__item">
+              <summary>{f.question}</summary>
+              <p>{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {others.length > 0 && (
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head"><h2>Other assessments</h2></div>
+        <ul class="others">
+          <li>
+            <h3><a href="/assessments">Full diagnostic dyslexia assessment</a></h3>
+            <p>The main assessment for children and young people, in person in Trowbridge.</p>
+          </li>
+          {others.map((o) => (
+            <li>
+              <h3><a href={`/assessments/${o.id}`}>{o.data.heading}</a></h3>
+              <p>{o.data.price}{o.data.priceNote ? `. ${o.data.priceNote}` : ''}.</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <CtaBand
+    heading="Not sure which you need?"
+    body="Book a free 20-minute call. Tell me what you have noticed, and I will tell you honestly which assessment would help, if any."
+    cta={{ label: 'Book a free call', href: '/contact' }}
+  />
+</BaseLayout>
+
+<style>
+  .prose { max-width: 70ch; }
+  .prose :global(h2) { margin-top: 2.4rem; font-size: clamp(1.35rem, 2.6vw, 1.7rem); }
+  .prose :global(h2:first-child) { margin-top: 0; }
+  .prose :global(ul), .prose :global(ol) { padding-left: 1.2rem; }
+  .prose :global(li) { margin-bottom: .5rem; }
+  .prose :global(.credentials-note) {
+    margin-top: 2.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    font-size: .92rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    max-width: none;
+  }
+
+  .qa { display: grid; gap: .8rem; max-width: 70ch; }
+  .qa__item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1rem 1.3rem;
+  }
+  .qa__item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ink);
+    list-style-position: outside;
+  }
+  .qa__item summary:focus-visible { outline: 3px solid var(--purple); outline-offset: 3px; border-radius: 4px; }
+  .qa__item p { margin: .75rem 0 0; color: var(--ink-soft); }
+
+  .others { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  @media (min-width: 760px) { .others { grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); } }
+  .others li {
+    max-width: none;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.5rem;
+  }
+  .others h3 { font-size: 1.08rem; margin-bottom: .4rem; }
+  .others h3 a { color: var(--ink); text-decoration: none; }
+  .others h3 a:hover { color: var(--purple-deep); text-decoration: underline; }
+  .others p { font-size: .96rem; color: var(--ink-soft); margin: 0; }
+</style>

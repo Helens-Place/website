@@ -27,9 +27,9 @@ analyticsToken: 89f2d89a2df84730b206d40eced814b6
 googleSiteVerification: ''
 bingSiteVerification: ''
 footerNote: >-
-  Helen's Place is my practice. I'm a dyslexia and SEND specialist based in
-  Trowbridge, Wiltshire, working with families, schools and organisations across
-  the UK and beyond.
+  Helen's Place is my practice. I'm a dyslexia, dyscalculia and SEND specialist
+  based in Trowbridge, Wiltshire, working with families, schools and
+  organisations across the UK and internationally.
 socials:
   - label: LinkedIn
     href: https://www.linkedin.com/in/helenlouiseross/

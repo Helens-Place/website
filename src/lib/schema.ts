@@ -25,9 +25,9 @@ export const person = {
   givenName: 'Helen',
   familyName: 'Ross',
   honorificPrefix: 'Dr',
-  jobTitle: 'Dyslexia specialist, diagnostic assessor and researcher',
+  jobTitle: 'Dyslexia and dyscalculia specialist, diagnostic assessor and researcher',
   description:
-    'Dr Helen Ross is a dyslexia and SEND specialist, AMBDA-qualified diagnostic assessor and published researcher based in Trowbridge, Wiltshire. She is dyslexic herself.',
+    'Dr Helen Ross is an internationally recognised dyslexia and dyscalculia specialist, AMBDA-qualified diagnostic assessor and published researcher based in Trowbridge, Wiltshire, who works across the UK and internationally. She is Chair of the Wiltshire Dyslexia Association, a former Trustee of the British Dyslexia Association and a 2025 Churchill Fellow. She is dyslexic and has ADHD herself.',
   url: `${SITE}/about`,
   image: `${SITE}/images/helen-portrait.jpg`,
   email: 'helen@helensplace.co.uk',
@@ -99,7 +99,7 @@ export const business = {
   name: "Helen's Place",
   alternateName: "Helen's Place Education Consultancy",
   description:
-    "Helen's Place is the practice of Dr Helen Ross, offering diagnostic dyslexia assessments, exam access arrangements, specialist tutoring, SEND training for schools, and research and expert witness work. Based in Trowbridge, Wiltshire. Diagnostic assessments are always carried out in person, and tutoring and family support are available online across the UK.",
+    "Helen's Place is the practice of Dr Helen Ross, offering private diagnostic dyslexia and dyscalculia assessments, assessments for Disabled Students' Allowance, exam access arrangements, specialist tutoring, SEND training for schools, and research and expert witness work. Based in Trowbridge, Wiltshire. Diagnostic assessments are always carried out in person, and tutoring and family support are available online across the UK.",
   slogan: 'Driving positive change for dyslexic people of all ages',
   url: SITE,
   logo: `${SITE}/images/logo.png`,
@@ -115,6 +115,8 @@ export const business = {
     addressCountry: 'GB',
   },
   areaServed: [
+    ...['Trowbridge', 'Bradford on Avon', 'Westbury', 'Melksham', 'Warminster', 'Frome', 'Devizes', 'Bath']
+      .map((name) => ({ '@type': 'City', name })),
     { '@type': 'AdministrativeArea', name: 'Wiltshire' },
     { '@type': 'AdministrativeArea', name: 'South West England' },
     { '@type': 'Country', name: 'United Kingdom' },
@@ -128,9 +130,9 @@ export const business = {
 /** Services, with the real prices. Google shows these; assistants quote them. */
 export const services = [
   {
-    name: 'Full diagnostic dyslexia assessment',
+    name: 'Full diagnostic dyslexia and dyscalculia assessment',
     description:
-      'A diagnostic assessment of reading, writing, spelling, phonological processing, working memory and processing speed, producing a written report accepted by schools and exam boards.',
+      'A diagnostic assessment of reading, writing, spelling, phonological processing, working memory and processing speed, and of number sense and calculation where dyscalculia is a concern, in one assessment for one fee. Carried out in person, one young person a day, producing a written report accepted by schools and exam boards.',
     price: '450',
     unit: 'assessment',
     url: `${SITE}/assessments`,
@@ -141,7 +143,15 @@ export const services = [
       'Assessment determining whether a student qualifies for exam accommodations such as extra time, a reader, a scribe or use of a laptop.',
     price: '180',
     unit: 'assessment',
-    url: `${SITE}/assessments`,
+    url: `${SITE}/assessments/exam-access-arrangements`,
+  },
+  {
+    name: "Diagnostic assessment for Disabled Students' Allowance",
+    description:
+      "A full diagnostic assessment for students heading to or already at university, written to the standard a Disabled Students' Allowance application needs.",
+    price: '450',
+    unit: 'assessment',
+    url: `${SITE}/assessments/students-and-dsa`,
   },
   {
     name: 'Family support and advice',

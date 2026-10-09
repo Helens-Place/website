@@ -340,6 +340,16 @@ const assessments = singlePage('assessments', 'Assessments page', 'assessments',
       { type: 'string', name: 'name', label: 'Service' },
       { type: 'string', name: 'price', label: 'Price' },
       { type: 'string', name: 'note', label: 'Note' },
+      /* Must be declared here, not only in the Astro schema. Tina rewrites
+         every field on save and drops any it does not know about, so without
+         this the links would quietly disappear the next time this page was
+         edited in the CMS. */
+      {
+        type: 'string',
+        name: 'href',
+        label: 'Links to (optional)',
+        description: 'Leave blank unless this service has its own page, for example /assessments/dyscalculia',
+      },
     ],
   },
   { type: 'string', name: 'whyHeading', label: 'Why choose Helen: heading' },
@@ -792,6 +802,55 @@ const articlesHub = singlePage('articlesHub', 'Articles hub page', 'articles', [
   finalCtaField,
 ]);
 
+/* The assessment pages under /assessments/. Same collection will hold coaching
+   and mentoring pages when Helen adds them, distinguished by category. */
+const services: Collection = {
+  name: 'services',
+  label: 'Assessment pages',
+  path: 'src/content/services',
+  format: 'md',
+  fields: [
+    ...seoFields,
+    {
+      type: 'string',
+      name: 'category',
+      label: 'Kind of page',
+      options: [
+        { value: 'assessment', label: 'Assessment' },
+        { value: 'support', label: 'Support' },
+        { value: 'coaching', label: 'Coaching and mentoring' },
+      ],
+    },
+    { type: 'string', name: 'eyebrow', label: 'Small label above the heading' },
+    { type: 'string', name: 'heading', label: 'Main heading', isTitle: true, required: true },
+    { type: 'string', name: 'intro', label: 'Introduction', ui: { component: 'textarea' }, required: true },
+    { type: 'string', name: 'price', label: 'Price', description: 'For example, from £180', required: true },
+    { type: 'string', name: 'priceNote', label: 'Note beside the price' },
+    {
+      type: 'string',
+      name: 'credentials',
+      label: 'Qualifications line at the foot of the page',
+      ui: { component: 'textarea' },
+    },
+    { type: 'string', name: 'serviceType', label: 'Service type, for search engines', required: true },
+    { type: 'string', name: 'audienceType', label: 'Who it is for, for search engines', required: true },
+    { type: 'number', name: 'order', label: 'Order', description: 'Lower numbers come first.' },
+    {
+      type: 'object',
+      name: 'faqs',
+      label: 'Questions people often ask',
+      list: true,
+      ui: { itemProps: (item: any) => ({ label: item?.question }) },
+      fields: [
+        { type: 'string', name: 'question', label: 'Question' },
+        { type: 'string', name: 'answer', label: 'Answer', ui: { component: 'textarea' } },
+      ],
+    },
+    { type: 'boolean', name: 'draft', label: 'Draft' },
+    { type: 'rich-text', name: 'body', label: 'Page', isBody: true },
+  ],
+};
+
 const articles: Collection = {
   name: 'articles',
   label: 'Articles',
@@ -870,6 +929,7 @@ export default defineConfig({
     collections: [
       home,
       assessments,
+      services,
       whatToExpect,
       guides,
       articlesHub,

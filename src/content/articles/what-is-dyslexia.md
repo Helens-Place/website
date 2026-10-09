@@ -27,8 +27,8 @@ faqs:
       Signs can be spotted early, and early support should never wait for a
       formal diagnosis. Full diagnostic assessments become more reliable once a
       child has had enough teaching of reading behind them, often from around
-      age seven, though I assess older children, teenagers and adults all the
-      time.
+      age seven, though I assess older children and teenagers all the time, and
+      students applying for Disabled Students' Allowance.
   - question: "Do we need a diagnosis to get support?"
     answer: >-
       In principle, no. Good teaching supports the difficulty whether or not
@@ -111,7 +111,7 @@ Understanding what dyslexia really is, is where that starts to change.
 Legally, in the UK, dyslexia can count as a disability under the Equality Act 2010 where it has a substantial and long-term effect on everyday activities. Plenty of dyslexic people don't think of themselves as disabled, and that's fine too. What matters in practice is that reasonable adjustments should be made, in education and at work.
 
 **At what age can a child be assessed for dyslexia?**
-Signs can be spotted early, and early support should never wait for a formal diagnosis. Full diagnostic assessments become more reliable once a child has had enough teaching of reading behind them, often from around age seven, though I assess older children, teenagers and adults all the time.
+Signs can be spotted early, and early support should never wait for a formal diagnosis. Full diagnostic assessments become more reliable once a child has had enough teaching of reading behind them, often from around age seven, though I assess older children and teenagers all the time, and students applying for Disabled Students' Allowance.
 
 **Do we need a diagnosis to get support?**
 In principle, no. Good teaching supports the difficulty whether or not there's a formal label. In reality, a diagnostic assessment often opens the door to the right support, to exam access arrangements, and to a clear plan, which is why so many families go for one.

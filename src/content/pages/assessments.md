@@ -3,17 +3,17 @@ audience: families
 secondaryCta:
   label: What happens in an assessment
   href: /what-to-expect
-title: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
+title: 'Private dyslexia and dyscalculia assessments in Trowbridge, Wiltshire'
 description: 'Full diagnostic dyslexia and dyscalculia assessments and exam access arrangements from a qualified assessor with a current Assessment Practising Certificate, in person in Trowbridge, Wiltshire.'
 eyebrow: Parents and families
-heading: 'Dyslexia and Dyscalculia assessments in Trowbridge, in person'
+heading: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
 intro: |-
   If you are worried about your child's reading, spelling, writing or maths, a proper diagnostic assessment answers the question clearly and tells you what to do next. I'm a qualified diagnostic assessor with a current Assessment Practising Certificate, so my reports are recognised by schools and exam boards. Assessments always take place in person, usually at my garden office in Trowbridge and sometimes at your child's school or home, whichever suits them best. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
 
   I don't separate dyscalculia and dyslexia assessments, so you pay for an assessment that will explore both areas if needed. I wholly believe that young people and their families should not have to pay twice and go through two long and stressful assessments if we can avoid it.
 image: /images/__staging/content/__filehelen-dog-sofa.jpg
 imageAlt: Dr Helen Ross laughing with her dog at home
-trustLine: AMBDA qualified · Assessment Practising Certificate (APC) · reports accepted for exam access arrangements and DSA.
+trustLine: AMBDA and AMBDA Dyscalculia qualified · Assessment Practising Certificate (APC) · Chair of the Wiltshire Dyslexia Association · reports accepted for exam access arrangements and DSA.
 primaryCta:
   label: Book a free 20-minute call
   href: /contact
@@ -23,8 +23,17 @@ services:
   - name: Full diagnostic assessment
     price: from £450
     note: £150 secures the booking
+  - name: Dyscalculia assessment
+    price: included
+    note: Part of the full diagnostic assessment, so you only pay once
+    href: /assessments/dyscalculia
   - name: Exam access arrangements
     price: from £180
+    href: /assessments/exam-access-arrangements
+  - name: "Assessment for Disabled Students' Allowance"
+    price: from £450
+    note: For students heading to, or already at, university
+    href: /assessments/students-and-dsa
   - name: Other assessments
     price: price on consultation
   - name: Family support and advice
