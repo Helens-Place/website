@@ -25,6 +25,21 @@ watch:
       and what came after.
     href: https://www.youtube.com/watch?v=zUdMmu0rHkw
     image: media-helens-story.jpg
+  - title: "Dyslexia, ADHD, identity and labels: taking control"
+    show: Dyslexia Explored, episode 174
+    body: >-
+      With Darius Namdaran and Jo Lee, on masking and the mental load girls
+      carry, what labels do, when they help, and what it means to take control
+      of your own.
+    href: https://www.youtube.com/watch?v=bsrClOf5SZ4
+    image: media-dyslexia-explored-174.jpg
+  - title: Dyslexia, ADHD and workplace inclusion
+    show: re:think dyslexia
+    body: >-
+      A short film on living and working with dyslexia and ADHD in education,
+      the strengths they bring, and what makes a workplace genuinely inclusive.
+    href: https://www.youtube.com/watch?v=L5VY073Vh_8
+    image: media-rethink-workplace.jpg
   - title: "Dyslexia Unplugged: Conversations Across Continents"
     show: "re:think dyslexia, episode 85"
     body: >-
@@ -40,20 +55,85 @@ watch:
       and what it takes to get through education with both intact.
     href: https://www.youtube.com/watch?v=aBtMXhWBr1Q
     image: media-succeed-with-dyslexia.jpg
+  - title: Neurodiversity insights and my journey
+    show: Adult Network for Neurodiversity and Dyslexia
+    body: >-
+      Session 12 of the adult network run by the Adult Dyslexia Centre and its
+      partners. An open conversation about my own journey and what I have
+      learned along the way.
+    href: https://www.youtube.com/watch?v=02s6hjFnf2g
+    image: media-annd-adults.jpg
+  - title: "Dysgraphia: the underdog of the dysses?"
+    show: Dyslexia A2Z
+    body: >-
+      A talk on why dysgraphia is less formally recognised than other specific
+      learning difficulties, where assessment falls short, and what would help
+      in the classroom.
+    href: https://www.youtube.com/watch?v=LfhqQuwY9xM
+    image: media-dysgraphia-talk.jpg
+  - title: Dr Helen Ross and dysgraphia
+    show: Dyslexic Life with Jo Rees
+    body: >-
+      A short interview after my conference talk on dysgraphia: what it is and
+      how it shows up.
+    href: https://www.youtube.com/watch?v=70L4yhUahdI
+    image: media-dysgraphia-jo-rees.jpg
+  - title: Sarah catches up with Dr Helen Ross
+    show: Catching up with Sarah and Ginny
+    body: >-
+      On how the definition of dyslexia is changing, my current research, and
+      why feedback, inclusion and compassion matter in education.
+    href: https://www.youtube.com/watch?v=bTUi44QhHeU
+    image: media-sarah-and-ginny.jpg
+  - title: SEND Searchlights, January 2025
+    show: GL Education
+    body: >-
+      Continuing the conversation about dyslexia, and answering questions sent
+      in by the audience.
+    href: https://www.youtube.com/watch?v=_t5sPRNIOc0
+    image: media-send-searchlights.jpg
+  - title: SEN in Ten with Dr Helen Ross
+    show: SEN in Ten
+    body: >-
+      Ten minutes with Darren on special educational needs and dyslexia.
+    href: https://www.youtube.com/watch?v=qc_nktIgLvM
+    image: media-sen-in-ten.jpg
+  - title: Doctor's tips on dyslexia
+    show: Blossom4Life
+    body: >-
+      With Una, on what an assessment involves, reading, anxiety in students,
+      and practical tips for parents.
+    href: https://www.youtube.com/watch?v=KyBK3XGxVok
+    image: media-blossom4life.jpg
+  - title: Dyslexia Screening Bill special
+    show: SEND in the Experts with Georgina Durrant
+    body: >-
+      Alongside Matt Hancock and Sharon Hodgson, on the proposed bill to screen
+      every child for dyslexia by the end of primary school.
+    href: https://www.youtube.com/watch?v=0hMX5ujKEEg
+    image: media-screening-bill.jpg
+  - title: Breaking down barriers in mental health
+    show: Positive Dyslexia masterclass
+    body: >-
+      My own lived experience of mental health, and why it matters to talk
+      about it openly.
+    href: https://www.youtube.com/watch?v=k4HbmY07T-g
+    image: media-positive-dyslexia.jpg
 listenHeading: Listen
 listen:
-  - title: "Dyslexia, ADHD, identity and labels: taking control"
-    show: Dyslexia Explored, episode 174
-    body: >-
-      With Darius Namdaran and Jo Lee, on what labels do, when they help, and
-      what it means to take control of your own.
-    href: https://podcasts.apple.com/gb/podcast/174-dyslexia-adhd-identity-and-labels-taking-control/id1387645599?i=1000754484556
   - title: Dyslexia and mental health
     show: The SENDcast
     body: >-
       With Dale Pickles, on dyslexia and specific learning difficulties, and why
       the wellbeing cost is so often bigger than the academic one.
     href: https://thesendcast.com/dyslexia-and-mental-health/
+  - title: Identifying dyslexia and why it matters
+    show: The SENDcast
+    body: >-
+      Back on The SENDcast, on why identifying dyslexia matters: when children
+      understand why some things are harder for them, they are far less likely
+      to decide they are stupid.
+    href: https://open.spotify.com/episode/4iQuy2FFOyh8BuXXJyosnZ
   - title: Whole life mental health meanderings
     show: The SENDcast
     body: >-
