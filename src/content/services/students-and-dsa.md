@@ -39,6 +39,10 @@ faqs:
     answer: >-
       Yes. I hold the specialist qualification for dyscalculia as well as for
       dyslexia, so I can look at either or both in one assessment.
+  - question: "Do you assess adults who are not students?"
+    answer: >-
+      Yes. I assess adults whether or not they are in education. If you have
+      never been formally assessed, I can help.
 ---
 
 ## What Disabled Students' Allowance is

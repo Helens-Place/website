@@ -25,9 +25,9 @@ faqs:
     answer: >-
       Full diagnostic assessments become more reliable once a child has had
       enough reading teaching behind them, often from around age seven. I assess
-      teenagers regularly too, and students who need a report for Disabled
-      Students' Allowance. Concerns before that age are still worth acting on,
-      with early support.
+      teenagers and adults regularly too, including students who need a report
+      for Disabled Students' Allowance. Concerns before that age are still worth
+      acting on, with early support.
   - question: "Will the report be accepted by my child's school and for exams?"
     answer: >-
       An assessment carried out by an appropriately qualified assessor, holding
@@ -113,7 +113,7 @@ If you'd like to understand my process in more detail, including timings and wha
 I set aside four to five hours and only see one young person a day, with breaks throughout, plus the background-gathering beforehand and the report afterwards. I'd far rather take the time to do it properly than rush a young person.
 
 **What age should my child be?**
-Full diagnostic assessments become more reliable once a child has had enough reading teaching behind them, often from around age seven. I assess teenagers regularly too, and students who need a report for Disabled Students' Allowance. Concerns before that age are still worth acting on, with early support.
+Full diagnostic assessments become more reliable once a child has had enough reading teaching behind them, often from around age seven. I assess teenagers and adults regularly too, including students who need a report for Disabled Students' Allowance. Concerns before that age are still worth acting on, with early support.
 
 **Will the report be accepted by my child's school and for exams?**
 An assessment carried out by an appropriately qualified assessor, holding a current Assessment Practising Certificate, meets the standard schools and exam boards expect. Exam access arrangements have their own specific rules, which I can talk you through.

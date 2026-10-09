@@ -66,12 +66,11 @@ faqs:
   - category: Assessments
     question: Can you assess adults as well as children?
     answer: >-
-      I assess children and teenagers, and students who need a diagnostic
-      report for Disabled Students' Allowance, whether they are in sixth form,
-      at college or already at university. If you are an adult thinking about
-      an assessment for yourself, do get in touch and we can talk through what
-      you are looking for. Tutoring is currently offered for KS2, KS3 and KS4
-      learners.
+      Yes. I assess children, teenagers and adults, including students who need
+      a diagnostic report for Disabled Students' Allowance, whether they are in
+      sixth form, at college or already at university. If you are an adult who
+      has never been formally assessed, I can help. Tutoring is currently
+      offered for KS2, KS3 and KS4 learners.
   - category: Assessments
     question: What is an exam access arrangement assessment?
     answer: >-
