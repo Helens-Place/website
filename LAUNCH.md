@@ -107,14 +107,12 @@ Content written or rewritten on her behalf, published in her name.
 
 ## Waiting on something else
 
-- [ ] **Adult assessments, once the APC moves to PATOSS.** Until then she does
-      not offer assessments for adults outside education, and the site says so.
-      When it changes, update all of these together: the FAQ answer to "Can you
-      assess adults as well as children?", the last question on
-      /assessments/students-and-dsa, the adults line in src/data/llms.txt, and the
-      age answers in the "What happens in a dyslexia assessment" and "What is
-      dyslexia" articles. An adults page can then go into the services
-      collection alongside the others.
+- [ ] **Adult assessments, once the APC moves to PATOSS.** The site does not
+      say she assesses adults outside education, and it no longer says she does
+      not. Adults are invited to get in touch: the "Can you assess adults as
+      well as children?" FAQ and src/data/llms.txt both say so. When the PATOSS
+      APC is in place, make that FAQ a plain yes, and an adults page can go into
+      the services collection alongside the others.
 
 - [ ] **International work, made specific.** Helen works internationally and
       the site now says so, but the only concrete evidence it gives is the
