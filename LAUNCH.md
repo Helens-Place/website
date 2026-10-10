@@ -361,6 +361,31 @@ to her pages and Site settings, rather than a separate Cloudflare login.
 - [ ] **Check it locked.** Open `/api/analytics` in a private window and
       confirm it asks for the code rather than returning figures.
 
+### Keeping it reachable from school networks
+
+Teachers will often visit from inside a school web filter. Filters judge the
+domain and its category, not the host, and Cloudflare serves a large share of
+the web, schools' own sites included, so the move itself changes nothing for
+them. What can catch a school out is Cloudflare's own security set too high.
+
+- [ ] **Leave Bot Fight Mode off and the security level at its default.**
+      A whole school shares one internet address, and many filters inspect
+      and re-sign encrypted traffic, which can look like a bot. Turned up,
+      Cloudflare would show those teachers a challenge page or block them.
+      A static site needs none of it. Turnstile goes on the contact form only.
+- [ ] **Check the domain's category with the main school filter vendors**
+      (Smoothwall, Netsweeper, Fortinet FortiGuard, Palo Alto, Cisco Talos,
+      Lightspeed). Each has a free lookup. helensplace.co.uk is not a new
+      domain, so it should already be categorised; ask for Education or
+      Reference wherever it is not.
+- [ ] **Test from a real school.** Once live, ask a SENCo Helen knows to open
+      the site, the contact form and the Schools Guide download from their
+      school network.
+- **Expect lower analytics counts from schools.** Some filters block the
+      Cloudflare analytics script, so visits from school networks will be
+      undercounted. The site still works. The Elevator Series videos come from
+      Vimeo, which some schools block wherever the site is hosted.
+
 ## 5. Go-live order
 
 The sequence matters.
