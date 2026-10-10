@@ -1,52 +1,24 @@
 ---
-title: "What actually happens in a dyslexia assessment?"
-description: >-
-  A qualified diagnostic assessor walks you through a dyslexia assessment
-  step by step: what's tested, how long it takes, what the report includes,
-  and what happens next.
-heading: "What actually happens in a dyslexia assessment"
-summary: >-
-  For most families, booking a dyslexia assessment comes after a long
-  stretch of worry. You've noticed something. Maybe homework takes twice as
-  long as it should.
-theme: "t1"
-themeLabel: "Understanding dyslexia"
-audience: "families"
+title: What actually happens in a dyslexia assessment?
+description: 'A qualified diagnostic assessor walks you through a dyslexia assessment step by step: what''s tested, how long it takes, what the report includes, and what happens next.'
+heading: What actually happens in a dyslexia assessment
+summary: 'For most families, booking a dyslexia assessment comes after a long stretch of worry. You''ve noticed something. Maybe homework takes twice as long as it should.'
+theme: t1
+themeLabel: Understanding dyslexia
+audience: families
 order: 2
-keyword: "dyslexia assessment"
+keyword: dyslexia assessment
 faqs:
-  - question: "How long does a dyslexia assessment take?"
-    answer: >-
-      I set aside four to five hours and only see one young person a day, with
-      breaks throughout, plus the background-gathering beforehand and the report
-      afterwards. I'd far rather take the time to do it properly than rush a
-      young person.
-  - question: "What age should my child be?"
-    answer: >-
-      Full diagnostic assessments become more reliable once a child has had
-      enough reading teaching behind them, often from around age seven. I assess
-      teenagers and adults regularly too, including students who need a report
-      for Disabled Students' Allowance. Concerns before that age are still worth
-      acting on, with early support.
-  - question: "Will the report be accepted by my child's school and for exams?"
-    answer: >-
-      An assessment carried out by an appropriately qualified assessor, holding
-      a current Assessment Practising Certificate, meets the standard schools
-      and exam boards expect. Exam access arrangements have their own specific
-      rules, which I can talk you through.
-  - question: "Do you offer online dyslexia assessments?"
-    answer: >-
-      No. I assess in person, because so much of what I need to see happens in
-      the room: how a young person reacts when a task gets hard, their body
-      language, and whether they are anxious, tired, or simply finding the
-      reading difficult. A screen hides most of that. I know that means waiting
-      longer, and I am sorry for it, but I would rather give you something you
-      can rely on.
-  - question: "We can't easily afford it. Is it still worth it?"
-    answer: >-
-      That's a real and fair worry. I'd rather you booked a free call so we can
-      talk about your situation, and about what an assessment would and wouldn't
-      give you, before you commit to anything.
+  - question: How long does a dyslexia assessment take?
+    answer: 'I set aside four to five hours and only see one young person a day, with breaks throughout, plus the background-gathering beforehand and the report afterwards. I''d far rather take the time to do it properly than rush a young person.'
+  - question: What age should my child be?
+    answer: 'Full diagnostic assessments become more reliable once a child has had enough reading teaching behind them, often from around age seven. I assess teenagers and adults regularly too, including students who need a report for Disabled Students'' Allowance. Concerns before that age are still worth acting on, with early support.'
+  - question: Will the report be accepted by my child's school and for exams?
+    answer: 'An assessment carried out by an appropriately qualified assessor, holding a current Assessment Practising Certificate, meets the standard schools and exam boards expect. Exam access arrangements have their own specific rules, which I can talk you through.'
+  - question: Do you offer online dyslexia assessments?
+    answer: 'No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, and whether they are anxious, tired, or simply finding the reading difficult. A screen hides most of that. I know that means waiting longer, and I am sorry for it, but I would rather give you something you can rely on.'
+  - question: We can't easily afford it. Is it still worth it?
+    answer: 'That''s a real and fair worry. I''d rather you booked a free call so we can talk about your situation, and about what an assessment would and wouldn''t give you, before you commit to anything.'
 ---
 
 For most families, booking a dyslexia assessment comes after a long stretch of worry. You've noticed something. Maybe homework takes twice as long as it should. Maybe a bright, funny child has started saying they're stupid. Maybe the school has been reassuring, or maybe you've been quietly fighting to get someone to take it seriously.
@@ -71,7 +43,7 @@ An assessment is a series of standardised activities, done one to one over sever
 
 Broadly, I look at three things and how they relate to one another.
 
-**Underlying ability.** Reasoning and thinking skills, both verbal and non-verbal. This helps me understand a young person's potential, separately from their reading.
+**Language and reasoning skills.** Reasoning and thinking skills, both verbal and non-verbal. We also look at how comfortably you can express yourself verbally and understand spoken language This helps me understand a young person's potential, separately from their reading.
 
 **Cognitive processing.** The engine-room skills that dyslexia tends to affect: phonological awareness (working with the sounds in words), verbal memory, and processing speed.
 
@@ -83,13 +55,13 @@ Dyslexia doesn't show up in any single score. It shows up in the pattern between
 
 Within a couple of weeks you'll have a full written report. A report from me will:
 
-- explain the findings in plain language, rather than a wall of jargon and numbers;
-- say clearly whether the profile is consistent with dyslexia (or another SpLD);
-- describe the young person's strengths, because those are what we build on;
-- set out practical, specific recommendations for home and school;
-- and, where it's relevant, cover exam access arrangements.
+* explain the findings in plain language, rather than a wall of jargon and numbers;
+* say clearly whether the profile is consistent with dyslexia (or another SpLD);
+* describe the young person's strengths, because those are what we build on;
+* set out practical, specific recommendations for home and school;
+* and, where it's relevant, cover exam access arrangements.
 
-I always talk families through the report rather than emailing it over and disappearing. You should come away understanding your child better than you did before, with every question answered. There's more on reading and acting on a report in my piece [*Dyslexia reports and schools: what to do*](https://studyingwithdyslexiablog.co.uk/blog/dyslexia-reports-and-schools-what-to-do-dr-helen-ross).
+I always talk families through the report rather than emailing it over and disappearing. You should come away understanding your child better than you did before, with every question answered. There's more on reading and acting on a report in my piece *[Dyslexia reports and schools: what to do](https://studyingwithdyslexiablog.co.uk/blog/dyslexia-reports-and-schools-what-to-do-dr-helen-ross)*.
 
 ## What happens next
 
@@ -105,7 +77,7 @@ I won't pretend assessments are cheap, and I've written plainly about the uncomf
 
 If you'd like to understand my process in more detail, including timings and what to bring, [here's what to expect](/what-to-expect). And if you'd just like to talk it through with no obligation, you can [book a free 20-minute call](/contact).
 
----
+***
 
 ## Questions people often ask
 
@@ -124,18 +96,17 @@ No. I assess in person, because so much of what I need to see happens in the roo
 **We can't easily afford it. Is it still worth it?**
 That's a real and fair worry. I'd rather you booked a free call so we can talk about your situation, and about what an assessment would and wouldn't give you, before you commit to anything.
 
----
+***
 
 ## References and further reading
 
-- Ross, H. (2024) *Impact of OrCam Learn on reading comprehension*, **Support for Learning**, 39(3), 95-103. https://doi.org/10.1111/1467-9604.12474
-- Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. https://doi.org/10.16993/sjdr.782
-- Ross, H. (2019) *Supporting a child with dyslexia*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
-- Ross, H. (2019) *Are we supporting all of our children? The cost of dyslexia to families*, **University of Bath IPR Blog**. [Read the blog](https://blogs.bath.ac.uk/iprblog/2019/04/24/are-we-supporting-all-of-our-children-the-cost-of-dyslexia-to-families/)
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
-- Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. https://doi.org/10.1111/1467-8578.12174
+* Ross, H. (2024) *Impact of OrCam Learn on reading comprehension*, **Support for Learning**, 39(3), 95-103. [https://doi.org/10.1111/1467-9604.12474](https://doi.org/10.1111/1467-9604.12474)
+* Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. [https://doi.org/10.16993/sjdr.782](https://doi.org/10.16993/sjdr.782)
+* Ross, H. (2019) *Supporting a child with dyslexia*, **British Journal of Special Education**, 46(2), 136-157. [https://doi.org/10.1111/1467-8578.12254](https://doi.org/10.1111/1467-8578.12254)
+* Ross, H. (2019) *Are we supporting all of our children? The cost of dyslexia to families*, **University of Bath IPR Blog**. [Read the blog](https://blogs.bath.ac.uk/iprblog/2019/04/24/are-we-supporting-all-of-our-children-the-cost-of-dyslexia-to-families/)
+* Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
+* Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. [https://doi.org/10.1111/1467-8578.12174](https://doi.org/10.1111/1467-8578.12174)
 
 See the [full list of publications](/publications).
 
 <p class="author-note">Dr Helen Ross is a qualified diagnostic assessor (AMBDA) with a current Assessment Practising Certificate, based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow and the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She has published peer-reviewed research on dyslexia assessment, families and inclusion, and works with families and schools across the UK and beyond. <a href="/assessments">Explore assessments</a> or <a href="/contact">book a free call</a>.</p>
-
