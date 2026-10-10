@@ -13,7 +13,8 @@ Last updated: 9 October 2026.
 These were put in deliberately to make review possible. They all have to come
 out, and none of them announce themselves.
 
-- [ ] **Remove the `X-Robots-Tag` block from `netlify.toml`.** It currently
+- [ ] **Remove the `X-Robots-Tag` block from `netlify.toml`** (from
+      `public/_headers` once the site has moved to Cloudflare). It currently
       sends `noindex, nofollow` for every page. It exists so the review copy on
       the netlify.app address never reaches Google. Leave it in and the real
       site will never be indexed either, which is the single most expensive
@@ -43,7 +44,8 @@ out, and none of them announce themselves.
          publishes directly and does not need anyone to merge for her.
       3. Delete the `content` branch.
       4. Turn branch deploys back off in Netlify, under Site configuration,
-         Build and deploy, Branches and deploy contexts.
+         Build and deploy, Branches and deploy contexts. After the move to
+         Cloudflare, delete the Netlify site instead.
 
 ## 2. Needs Helen's sign-off
 
@@ -280,6 +282,85 @@ The old site is what Google and AI assistants read until the domain is pointed
 at Netlify. This measures content only, not Google ranking, which also depends
 on links, reviews and the Business Profile.
 
+## Moving to Cloudflare, between the review and go-live
+
+Decided 10 October 2026. Once Helen has finished her review, the site moves
+from Netlify to Cloudflare Pages, and only then is helensplace.co.uk connected.
+
+**Why.** Netlify's free plan meters every production deploy, which is why
+review edits have been parked on the `content` branch. Cloudflare Pages does
+not charge per deploy, so once live Helen can save as often as she likes. It
+also gives every branch its own preview address, as Netlify does now. The
+analytics move is not the reason: Cloudflare Web Analytics already works on
+Netlify.
+
+**Do not start before the review ends.** Netlify also reads `_redirects` and
+`_headers` files, so adding them while Netlify is still serving the review copy
+would leave two sets of rules fighting.
+
+### In the Cloudflare dashboard (Andrew)
+
+No connector available to Claude can create a Pages project, so these are
+clicks.
+
+- [ ] **Create the Pages project.** Workers & Pages, Create, Pages, Connect to
+      Git, `Helens-Place/website`. Production branch `main`, build command
+      `npm run tina:build`, output directory `dist`.
+- [ ] **Environment variables**, for both Production and Preview:
+      `NODE_VERSION` = `22.12.0`, `TINA_CLIENT_ID`, `TINA_TOKEN`. The same
+      values as in Netlify. Scope them to Preview too, or branch builds fail
+      with "Missing clientId", as they did on Netlify.
+- [ ] **Build watch paths.** Exclude `README.md`, `scripts/*`, `.claude/*` and
+      `.gitignore`. This replaces the `ignore` rule in `netlify.toml`, so a
+      commit that only changes notes does not trigger a build.
+- [ ] **Where the domain's DNS lives.** If helensplace.co.uk's DNS can move to
+      Cloudflare, connecting the domain is a couple of clicks. Cloudflare's
+      import copies existing records across, but check the Google Search
+      Console TXT record (section 4) and any email records (MX, SPF, DKIM)
+      arrived before switching nameservers, or verification and Helen's email
+      both break.
+
+### In the repo (Claude)
+
+- [ ] **Branch name for Tina.** `tina/config.ts` reads the branch from
+      Netlify's `HEAD`. Add Cloudflare's `CF_PAGES_BRANCH`, or every preview
+      build edits `main` in TinaCloud.
+- [ ] **Redirects.** Move the 18 redirects from `netlify.toml` into
+      `public/_redirects`, one line each: `/helen/ /about 301`.
+- [ ] **Headers.** Move the header rules into `public/_headers`, including
+      the `X-Robots-Tag: noindex, nofollow` block, which still has to come off
+      at go-live.
+- [ ] **Contact form.** The one real piece of work. It uses Netlify Forms,
+      which Cloudflare has no equivalent of. Replace it with a Pages Function
+      that checks the submission with Cloudflare Turnstile (free spam
+      protection) and emails it to Helen, keeping the same fields, the
+      honeypot and the `/thank-you` redirect. Then send a real test enquiry
+      from the preview address and confirm it reaches Helen's inbox. A form
+      that silently drops enquiries is the worst failure this site could have.
+- [ ] **Remove `netlify.toml`** once the Cloudflare build is confirmed, so
+      there is one source of truth.
+- [ ] **Update the privacy policy.** It names the host and how contact form
+      submissions are processed. Both change.
+
+### The analytics page in the admin area (option 2)
+
+Helen gets an Analytics page inside the editing screen she already uses, next
+to her pages and Site settings, rather than a separate Cloudflare login.
+
+- [ ] **A custom screen in TinaCMS** (Tina's screen plugin, registered in
+      `tina/config.ts`) showing the last 30 days: visitors and page views,
+      top pages, where visitors came from, and devices.
+- [ ] **A Pages Function at `/api/analytics`** that fetches those figures
+      from Cloudflare's GraphQL Analytics API. It holds a read-only API token,
+      stored as a Cloudflare secret. The token must never reach the browser.
+- [ ] **Lock it with Cloudflare Access.** Tina's login protects Tina's own
+      content API, not code we add, so `/api/analytics` needs its own lock.
+      An Access policy allowing only Helen's (and Andrew's) email, with a
+      one-time code sent to that address and a session of about a month, so
+      it is not a daily chore. Free for this many users.
+- [ ] **Check it locked.** Open `/api/analytics` in a private window and
+      confirm it asks for the code rather than returning figures.
+
 ## 5. Go-live order
 
 The sequence matters.
@@ -288,12 +369,15 @@ The sequence matters.
 2. Merge `content` into `main`.
 3. Run `npm run tidy:images` and commit the result.
 4. Confirm section 2 sign-offs are done.
-5. Remove the review note from the terms page.
-6. Add the meta tag verification codes, if using them as a backup. The DNS
+5. Move to Cloudflare, the section above: the Pages project, the repo
+   changes, and the contact form, tested with a real enquiry.
+6. Add the analytics page and check it is locked.
+7. Remove the review note from the terms page.
+8. Add the meta tag verification codes, if using them as a backup. The DNS
    verification in section 4 should already be done by this point.
-7. Remove the `X-Robots-Tag` block.
-8. Point the domain at Netlify.
-9. Wind up the branch workflow, section 1.
+9. Remove the `X-Robots-Tag` block, from `public/_headers` by then.
+10. Point the domain at the Cloudflare Pages project.
+11. Wind up the branch workflow, section 1, and the Netlify site.
 
 ## 6. Once it is live
 
