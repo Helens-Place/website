@@ -135,7 +135,7 @@ faqs:
       people travel to it from all over: from the Midlands, London, the Home
       Counties and the South East, and from abroad. I also assess at Moon Hall
       Assessment Centre in Reigate, Surrey, which can be easier from the South
-      East. I do also sometimes work in children's schools or at their homes,
+      East. For families nearby I can also come to a child's school or home,
       where that is what is best for them. If your child would find one setting much easier than
       another, do say so when we are arranging the date.
   - category: Assessments
@@ -180,7 +180,8 @@ faqs:
     question: Do you offer in-person sessions, or is everything online?
     answer: >-
       Diagnostic assessments are always in person, usually at my garden office
-      in Trowbridge and sometimes at a child's school or home. Tutoring is
+      in Trowbridge, or for families nearby sometimes at a child's school or
+      home. Tutoring is
       currently delivered online. Family support and advice sessions are
       available either in person or online. So the assessment itself is face to
       face, and the ongoing support around it can be online if that is easier
@@ -352,8 +353,8 @@ faqs:
       and Chippenham, but you do not need to live nearby. People travel to me
       from the Midlands, London, the Home Counties, the South East and abroad,
       and I also assess at Moon Hall Assessment Centre in Reigate, Surrey.
-      Assessments take place in person, or sometimes at a child's school or
-      home where that is needed. I also work online with
+      Assessments take place in person. For families nearby I can sometimes
+      come to a child's school or home where that is needed. I also work online with
       families across the UK for tutoring and family support. For school CPD
       visits I work within the South West and surrounding regions. Do get in
       touch to discuss.
