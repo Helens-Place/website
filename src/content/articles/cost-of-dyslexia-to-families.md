@@ -1,43 +1,22 @@
 ---
-title: "The real cost of dyslexia to families"
-description: >-
-  Dr Helen Ross led the analysis behind the APPG's Human Cost of Dyslexia
-  report. Here she sets out the financial and emotional cost of dyslexia to
-  families, and what should change.
-heading: "The real cost of dyslexia to families"
-summary: >-
-  We don't talk enough about what dyslexia actually costs the families
-  living with it.
-theme: "t3"
-themeLabel: "Families and lived experience"
-audience: "families"
+title: The real cost of dyslexia to families
+description: 'Dr Helen Ross led the analysis behind the APPG''s Human Cost of Dyslexia report. Here she sets out the financial and emotional cost of dyslexia to families, and what should change.'
+heading: The real cost of dyslexia to families
+summary: We don't talk enough about what dyslexia actually costs the families living with it.
+theme: t3
+themeLabel: Families and lived experience
+audience: families
 order: 6
-keyword: "cost of dyslexia"
+keyword: cost of dyslexia
 faqs:
-  - question: "How much does dyslexia actually cost families?"
-    answer: >-
-      The APPG survey found nearly half of families spent over £1,000 a year
-      extra, and many spent considerably more, on assessments, tuition,
-      resources and technology. The emotional cost, harder to price, is at least
-      as significant.
-  - question: "Why do families have to pay at all?"
-    answer: >-
-      In principle, good teaching should support dyslexic learners in every
-      mainstream classroom. In practice, under-resourcing and gaps in teacher
-      training mean families often step in and pay for what isn't provided,
-      which creates real inequality of access.
-  - question: "Isn't it expensive to fix this?"
-    answer: >-
-      Less than you'd think. Training a specialist teacher costs around £3,500,
-      against an estimated £100 million spent on tribunals in 2019. Early
-      investment in expertise is far cheaper than the cost of conflict and unmet
-      need.
-  - question: "What can I do as a parent?"
-    answer: >-
-      Get clarity on your child's needs, keep their confidence and your
-      relationship strong, build a working partnership with the school, and know
-      what your child is entitled to. My family articles walk through each of
-      these.
+  - question: How much does dyslexia actually cost families?
+    answer: 'The APPG survey found nearly half of families spent over £1,000 a year extra, and many spent considerably more, on assessments, tuition, resources and technology. The emotional cost, harder to price, is at least as significant.'
+  - question: Why do families have to pay at all?
+    answer: 'In principle, good teaching should support dyslexic learners in every mainstream classroom. In practice, under-resourcing and gaps in teacher training mean families often step in and pay for what isn''t provided, which creates real inequality of access.'
+  - question: Isn't it expensive to fix this?
+    answer: 'Less than you''d think. Training a specialist teacher costs around £3,500, against an estimated £100 million spent on tribunals in 2019. Early investment in expertise is far cheaper than the cost of conflict and unmet need.'
+  - question: What can I do as a parent?
+    answer: 'Get clarity on your child''s needs, keep their confidence and your relationship strong, build a working partnership with the school, and know what your child is entitled to. My family articles walk through each of these.'
 ---
 
 We don't talk enough about what dyslexia actually costs the families living with it. Not the tidy version, the real one: the money, yes, but also the worry, the exhaustion, and the slow erosion of a child's confidence when the right support doesn't come.
@@ -72,7 +51,7 @@ There's a wider bill too, and it comes due whether we like it or not. When young
 
 Here's the part that gives me hope, because the solution isn't a mystery. The British Dyslexia Association's clearest recommendation, and one I strongly support, is simple: a specialist dyslexia teacher in every school, or every cluster of schools. Someone who can support learners directly, guide colleagues, and carry out assessments so that identification doesn't depend on a family's bank balance.
 
-The economics are striking. It costs around £3,500 to train a specialist teacher. Set that against £100 million in tribunal costs, and the case makes itself. Investing at the front end, in knowledge and early support, is far cheaper than paying at the back end, in conflict, lost potential and repair. This is the kind of evidence I bring to my [research, consultancy and expert witness work](/research-and-expert-witness), because the data on this is genuinely persuasive.
+The economics are striking. It costs around £5000 to train a specialist teacher. Set that against £100 million in tribunal costs, and the case makes itself. Investing at the front end, in knowledge and early support, is far cheaper than paying at the back end, in conflict, lost potential and repair. This is the kind of evidence I bring to my [research, consultancy and expert witness work](/research-and-expert-witness), because the data on this is genuinely persuasive.
 
 Most of the strategies that support dyslexic learners, as I never tire of pointing out, are simply good teaching that helps everyone in the room. The barrier isn't cost. It's knowledge, permission, and will.
 
@@ -80,7 +59,7 @@ Most of the strategies that support dyslexic learners, as I never tire of pointi
 
 If any of this describes your life, please know two things. First, the strain you're feeling is real and it is shared by a great many families. Second, the right information can lighten the load. Understanding your child's profile through an [assessment](/assessments) often replaces months of worry with a clear plan, and there's practical help in my guides to [supporting your child](/articles/supporting-your-dyslexic-child) and [working with their school](/articles/working-with-your-childs-school). You're welcome to [book a free 20-minute call](/contact) to talk it through.
 
----
+***
 
 ## Questions people often ask
 
@@ -96,16 +75,15 @@ Less than you'd think. Training a specialist teacher costs around £3,500, again
 **What can I do as a parent?**
 Get clarity on your child's needs, keep their confidence and your relationship strong, build a working partnership with the school, and know what your child is entitled to. My family articles walk through each of these.
 
----
+***
 
 ## References and further reading
 
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
-- Ross, H. (2019) *Are we supporting all of our children? The cost of dyslexia to families*, **University of Bath IPR Blog**. [Read the blog](https://blogs.bath.ac.uk/iprblog/2019/04/24/are-we-supporting-all-of-our-children-the-cost-of-dyslexia-to-families/)
-- Ross, H. (2019) *Supporting a child with dyslexia: how parents/carers engage with school-based support for their children*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
-- Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. https://doi.org/10.5772/intechopen.93948
+* Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
+* Ross, H. (2019) *Are we supporting all of our children? The cost of dyslexia to families*, **University of Bath IPR Blog**. [Read the blog](https://blogs.bath.ac.uk/iprblog/2019/04/24/are-we-supporting-all-of-our-children-the-cost-of-dyslexia-to-families/)
+* Ross, H. (2019) *Supporting a child with dyslexia: how parents/carers engage with school-based support for their children*, **British Journal of Special Education**, 46(2), 136-157. [https://doi.org/10.1111/1467-8578.12254](https://doi.org/10.1111/1467-8578.12254)
+* Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. [https://doi.org/10.5772/intechopen.93948](https://doi.org/10.5772/intechopen.93948)
 
 See the [full list of publications](/publications).
 
 <p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist, researcher and qualified diagnostic assessor based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a 2025 Churchill Fellow, and is the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). She led the data analysis behind the APPG's Human Cost of Dyslexia report, has given evidence to the House of Commons, and reviewed for the Council for Science and Technology. She works with families, schools and organisations across the UK and internationally. <a href="/contact">Book a free 20-minute call</a>.</p>
-
