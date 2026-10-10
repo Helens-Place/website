@@ -131,9 +131,12 @@ faqs:
   - category: Assessments
     question: Where does the assessment take place?
     answer: >-
-      I usually assess at my house in Trowbridge, in a garden office. I do also
-      sometimes work in children's schools or at their homes, depending on what
-      is best for them. If your child would find one setting much easier than
+      I usually assess at my house in Trowbridge, in a garden office, and
+      people travel to it from all over: from the Midlands, London, the Home
+      Counties and the South East, and from abroad. I also assess at Moon Hall
+      Assessment Centre in Reigate, Surrey, which can be easier from the South
+      East. I do also sometimes work in children's schools or at their homes,
+      where that is what is best for them. If your child would find one setting much easier than
       another, do say so when we are arranging the date.
   - category: Assessments
     question: Do you assess dyscalculia separately from dyslexia?
@@ -346,8 +349,11 @@ faqs:
     answer: >-
       I am based in Trowbridge, Wiltshire, within about half an hour of Bath,
       Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham
-      and Chippenham. Assessments take place in person there, or sometimes at a
-      child's school or home. I also work online with
+      and Chippenham, but you do not need to live nearby. People travel to me
+      from the Midlands, London, the Home Counties, the South East and abroad,
+      and I also assess at Moon Hall Assessment Centre in Reigate, Surrey.
+      Assessments take place in person, or sometimes at a child's school or
+      home where that is needed. I also work online with
       families across the UK for tutoring and family support. For school CPD
       visits I work within the South West and surrounding regions. Do get in
       touch to discuss.

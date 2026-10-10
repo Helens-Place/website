@@ -71,7 +71,7 @@ Some of the most capable people I meet spent years quietly covering a difficulty
 
 ## What the day looks like
 
-The assessment happens in person, in Trowbridge, which is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. As with every assessment I do, I only see one person in a day. I set aside four to five hours. We look at reading, writing and spelling, and at underlying skills such as working memory and processing speed, with breaks whenever you want them.
+The assessment happens in person, in Trowbridge, which is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. If Surrey is easier for you, I also assess at [Moon Hall Assessment Centre](https://www.mhacuk.com/directory/dr-helen-ross-specialist-dyslexia-and-dyscalculia-assessor) in Reigate. As with every assessment I do, I only see one person in a day. I set aside four to five hours. We look at reading, writing and spelling, and at underlying skills such as working memory and processing speed, with breaks whenever you want them.
 
 I also want your own account of what studying is like for you: what takes longest, what you avoid, and what you have worked out for yourself along the way. That is part of the picture, and it often tells me as much as any test.
 

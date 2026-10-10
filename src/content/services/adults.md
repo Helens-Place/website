@@ -66,7 +66,7 @@ I also want your own account: what school was like, how you learned to cope, wha
 
 ## How the day goes
 
-Assessments happen in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. I only see one person in a day, and I set aside four to five hours, so nobody is watching the clock.
+Assessments happen in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. If Surrey is easier for you, I also assess at [Moon Hall Assessment Centre](https://www.mhacuk.com/directory/dr-helen-ross-specialist-dyslexia-and-dyscalculia-assessor) in Reigate. I only see one person in a day, and I set aside four to five hours, so nobody is watching the clock.
 
 Plenty of adults carry less than happy memories of being tested at school. This is not that. We take breaks whenever you want them, we talk as much as we test, and nothing we do is a test you can pass or fail. The whole point is to understand how you work.
 

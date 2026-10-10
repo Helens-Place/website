@@ -68,7 +68,7 @@ I look at how your child understands and works with number. That means their sen
 
 Maths is often the subject a child has the most painful history with, so I go gently. I never put a child in front of a page of sums and leave them to it. We talk, we take breaks whenever they are needed, and I make sure they understand that nothing we do is a test they can pass or fail.
 
-As with every assessment I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. I only see one young person in a day.
+As with every assessment I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. If Surrey is easier for you, I also assess at [Moon Hall Assessment Centre](https://www.mhacuk.com/directory/dr-helen-ross-specialist-dyslexia-and-dyscalculia-assessor) in Reigate. I only see one young person in a day.
 
 ## One assessment, not two
 

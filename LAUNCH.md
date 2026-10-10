@@ -148,6 +148,13 @@ Content written or rewritten on her behalf, published in her name.
       assessors lack, and the adults page mentions Access to Work. Eleven
       meta descriptions were shortened to fit in search results.
 
+- [ ] **Travel and Moon Hall.** Wherever the site lists the towns within half
+      an hour, it now adds that people travel from the Midlands, London, the
+      Home Counties, the South East and abroad, and that she also assesses at
+      Moon Hall Assessment Centre in Reigate, linking to her profile there.
+      Worth checking she is happy to be booked via Moon Hall from this site,
+      and that the regions named are ones she wants to draw from.
+
 - [ ] **"Private" in the /assessments title.** Added because it is how families
       search. Worth checking she is comfortable with the word.
 

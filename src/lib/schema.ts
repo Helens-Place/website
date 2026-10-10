@@ -85,6 +85,19 @@ export const person = {
     },
   ],
   award: "Churchill Fellowship 2025, supported by The Mercers' Company",
+  /* She also assesses at Moon Hall, so people in the South East can find her
+     there as well as in Trowbridge. */
+  affiliation: {
+    '@type': 'Organization',
+    name: 'Moon Hall Assessment Centre',
+    url: 'https://www.mhacuk.com/',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Reigate',
+      addressRegion: 'Surrey',
+      addressCountry: 'GB',
+    },
+  },
   memberOf: [
     { '@type': 'Organization', name: 'British Dyslexia Association' },
     { '@type': 'Organization', name: 'Wiltshire Dyslexia Association' },
