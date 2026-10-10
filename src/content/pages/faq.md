@@ -17,7 +17,7 @@ faqs:
     answer: 'Because an assessment should take as long as it needs, and that is impossible if someone else is booked in behind. Seeing one family a day means we can take proper breaks, follow something up when it turns out to matter, and never rush a tired child.'
   - category: Assessments
     question: How long will I wait for an appointment?
-    answer: I am usually booked around three months ahead. That is the honest cost of only assessing one young person a day and never rushing. Book a free call and I will tell you where things stand and what I would suggest in the meantime.
+    answer: I am usually booked around two to three months ahead. That is the honest cost of only assessing one young person a day and never rushing. Book a free call and I will tell you where things stand and what I would suggest in the meantime.
   - category: Assessments
     question: What is a dyslexia assessment and what does it involve?
     answer: 'It is a day spent working out how your child learns, rather than a test they can pass or fail. I set aside four to five hours and see only one young person, and three or four hours of that is contact time. We look at problem-solving, reading speed and comprehension, writing speed, sometimes maths calculation, and whatever else that particular young person needs me to look at. Around all of it there is talking, and breaks, and time to get to know each other, because a tired or anxious child will not show me what they can actually do. You receive a full written report afterwards, written so that you and their teachers can both act on it. Full assessments are [price: Full diagnostic assessment], including VAT.'
