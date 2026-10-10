@@ -16,7 +16,7 @@ import { IDS } from './schema';
 const ITEM = /^- ([\s\S]*?)(?=^- |^#|(?![\s\S]))/gm;
 const CITATION = /^(.+?)\s*\((\d{4})[^)]*\)\s*['‘]([\s\S]+?)['’](,|\s+in\b)[\s\S]*?\*([^*]+)\*/;
 const DOI = /\]\((https:\/\/doi\.org\/[^)\s]+)\)/;
-const AUTHOR = /([A-Z][A-Za-z'’-]+), ((?:[A-Z]\.\s?)+|[A-Z][a-z]+)/g;
+const AUTHOR = /(\p{Lu}[\p{L}'’-]+), ((?:\p{Lu}\.\s?)+|\p{Lu}\p{Ll}+)/gu;
 
 const isHelen = (surname: string) => surname === 'Ross';
 

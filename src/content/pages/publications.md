@@ -22,6 +22,11 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   implementation of adaptive literacy and well-being strategies: a case study',
   *Education 3-13*, pp. 1-16.
   [DOI](https://doi.org/10.1080/03004279.2025.2566991)
+- Kucirkova, N. I., Cherner, T., Dubé, A. K., Pasquarella, A., Pitchford, N.
+  and Ross, H. (2025) 'Commentary: Suggestions for guidance by academics who
+  collaborate with digital companies, a commentary on Bourgaize et al. (2025)',
+  *Child and Adolescent Mental Health*, 30 (3) pp. 292-295.
+  [DOI](https://doi.org/10.1111/camh.70021)
 - Ross, H. (2024) 'Impact of OrCam Learn on reading comprehension', *Support for
   Learning*, 39 (3) pp. 95-103.
   [DOI](https://doi.org/10.1111/1467-9604.12474)

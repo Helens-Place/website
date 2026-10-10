@@ -1,8 +1,9 @@
 ---
 title: Frequently asked questions about dyslexia assessments
 description: >-
-  Answers on dyslexia assessments, exam access arrangements, costs, tutoring and
-  the process, from Dr Helen Ross, a qualified assessor in Trowbridge, Wiltshire.
+  Answers on dyslexia assessments, exam access arrangements, costs, tutoring,
+  research, consultancy and expert witness work, from Dr Helen Ross, a qualified
+  assessor and published researcher in Trowbridge, Wiltshire.
 eyebrow: Questions
 heading: Frequently asked questions
 audience: families
@@ -257,6 +258,72 @@ faqs:
       combinations of training, SEND consultancy and ongoing support, are priced
       individually. I will provide a detailed quotation for your specific needs
       and come back to you within 48 hours.
+  - category: Research, consultancy and expert witness
+    question: "What research and consultancy work do you do?"
+    answer: >-
+      I design and carry out research on dyslexia, SEND and inclusive education,
+      and help organisations make sense of the evidence. That includes independent
+      evaluation of EdTech and assistive technology, qualitative research design
+      and analysis, methodology consultation, evidence reviews, and product and
+      market insight, presented in a way non-specialists can act on. Past clients
+      and projects include the British Dyslexia Association, the Council for
+      Science and Technology, a local authority SEND division and OrCam
+      Technologies.
+  - category: Research, consultancy and expert witness
+    question: "Who do you work with?"
+    answer: >-
+      Charities, technology companies, local authorities, policymakers and research
+      teams, in the UK and internationally. My Churchill Fellowship research took me
+      to Australia and the USA, and I have written guidance on how academics should
+      work with digital companies with colleagues from several countries.
+  - category: Research, consultancy and expert witness
+    question: "Can you evaluate whether our EdTech product actually helps dyslexic learners?"
+    answer: >-
+      Yes. My evaluation of OrCam Learn, a reading device, was published in the
+      peer-reviewed journal Support for Learning in 2024. Before we start, we agree
+      in writing whether the work is product development or an independent
+      evaluation, who owns the data, and what happens to the findings, including
+      results that are negative or inconclusive. That protects you as much as it
+      protects the research.
+  - category: Research, consultancy and expert witness
+    question: "Is research funded by the company that makes the product trustworthy?"
+    answer: >-
+      It can be, with the right safeguards: funding disclosed openly, clear rules
+      about publishing negative results, and honesty about whether a study is
+      independent. When a manufacturer funded my OrCam study, the paper said so
+      plainly. I have written about this in more depth in my article on
+      evaluating EdTech honestly.
+  - category: Research, consultancy and expert witness
+    question: "Have you worked with government and policymakers?"
+    answer: >-
+      Yes. I wrote a rapid evidence review on specific learning difficulties for
+      the Council for Science and Technology, contributed to the All-Party
+      Parliamentary Group report on the human cost of dyslexia presented at the
+      House of Commons, and gave written evidence to the Education Select
+      Committee. My Churchill Fellowship report makes 30 recommendations for
+      policymakers, institutions and practitioners.
+  - category: Research, consultancy and expert witness
+    question: "How much does research and consultancy cost?"
+    answer: >-
+      Research projects are [price: Research and consultancy], and I consider reduced
+      rates for organisations with limited budgets. Every project is quoted in
+      writing before it starts, and the quote says whether it is a fixed price or a
+      daily rate. Tell me what you are trying to find out and I will tell you
+      honestly whether I am the right person for it. I reply within 48 hours.
+  - category: Research, consultancy and expert witness
+    question: "What expert witness work do you do?"
+    answer: >-
+      I provide expert witness reports and opinion in SEND and dyslexia matters,
+      including EHCP and tribunal cases. I write for instructing solicitors, local
+      authorities and families, and I understand that my duty is to the court or
+      tribunal, not to whoever instructs me.
+  - category: Research, consultancy and expert witness
+    question: "How do I instruct you as an expert witness, and what does it cost?"
+    answer: >-
+      Get in touch with the details of the case and the timescale, and I will tell
+      you whether it is within my expertise and whether I have the availability.
+      Fees depend on the work involved and are agreed in writing, along with the
+      terms of the instruction, before I begin.
   - category: About me
     question: What qualifications do you have to carry out assessments?
     answer: >-

@@ -101,9 +101,19 @@ Content written or rewritten on her behalf, published in her name.
       citing the OrCam paper. Worth her read for anything she would put
       differently.
 
+- [ ] **Eight research, consultancy and expert witness FAQs, October 2026.**
+      Built from what the research page, the EdTech evaluation article and the
+      terms already say. Two need her particular eye: the EdTech answer says
+      every project agrees in writing up front what happens to negative
+      results, which is the principle her article argues for, stated here as
+      her practice; and the expert witness answers say fees and terms are
+      agreed in writing before work begins, matching the terms page.
+
 - [ ] **Two papers added to /publications.** Found on her ORCID record but
       missing from the site: the 2025 Education 3-13 paper with Malone and
-      Wood, and the 2023 Climate Capability Scale paper in Sustainability.
+      Wood, the 2023 Climate Capability Scale paper in Sustainability, and the
+      2025 Child and Adolescent Mental Health commentary with Kucirkova and
+      others, which the EdTech article cites but the list did not have.
       Worth checking there are no others she has published that ORCID does
       not know about either.
 
