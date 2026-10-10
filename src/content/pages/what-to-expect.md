@@ -1,7 +1,10 @@
 ---
 audience: families
 title: 'Booking a dyslexia assessment with me: how it works'
-description: 'How booking an assessment with Dr Helen Ross works: the free call, the [price: Booking deposit] booking fee, where assessments happen in Trowbridge, how long the day takes and when your report arrives.'
+description: >-
+  How booking an assessment with Dr Helen Ross works: the free call, the
+  [price: Booking deposit] deposit, the day itself in Trowbridge, and your
+  report within two weeks.
 eyebrow: Parents and families
 heading: Booking an assessment with me
 intro: 'Most people ring wanting to know the same things. How long it takes, what their child will actually be asked to do, and what they are left with at the end. Underneath that there is usually a quieter worry about whether their child will find the day hard. Here is the whole process, plainly, including that part.'

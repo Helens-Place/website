@@ -1,9 +1,9 @@
 ---
 title: The Elevator Series, short videos about dyslexia
 description: >-
-  Fourteen short videos from Dr Helen Ross covering the whole dyslexia journey,
-  from the first signs through assessment to understanding your own strengths.
-  Each is about two minutes, and each has a full transcript.
+  Fourteen two-minute videos from Dr Helen Ross on the dyslexia journey, from
+  the first signs through assessment to knowing your strengths, with
+  transcripts.
 eyebrow: Watch
 heading: The Elevator Series
 audience: families

@@ -3,8 +3,8 @@ category: assessment
 title: "Exam access arrangements assessment in Trowbridge, Wiltshire"
 description: >-
   Exam access arrangements assessments for GCSE and A level, from a qualified
-  assessor with a current Assessment Practising Certificate, in person in
-  Trowbridge, Wiltshire, [price: Exam access arrangements].
+  assessor with a current APC, in person in Trowbridge, Wiltshire. [price:
+  Exam access arrangements].
 eyebrow: Parents and families
 heading: "Exam access arrangements"
 intro: >-

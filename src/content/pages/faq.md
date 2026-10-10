@@ -1,9 +1,9 @@
 ---
 title: Frequently asked questions about dyslexia assessments
 description: >-
-  Answers on dyslexia assessments, exam access arrangements, costs, tutoring,
-  research, consultancy and expert witness work, from Dr Helen Ross, a qualified
-  assessor and published researcher in Trowbridge, Wiltshire.
+  Plain answers on dyslexia assessments, costs, exam access, tutoring,
+  research and expert witness work from Dr Helen Ross, a qualified assessor in
+  Wiltshire.
 eyebrow: Questions
 heading: Frequently asked questions
 audience: families

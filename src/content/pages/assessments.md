@@ -4,7 +4,10 @@ secondaryCta:
   label: What happens in an assessment
   href: /what-to-expect
 title: 'Private dyslexia and dyscalculia assessments in Trowbridge, Wiltshire'
-description: 'Full diagnostic dyslexia and dyscalculia assessments and exam access arrangements from a qualified assessor with a current Assessment Practising Certificate, in person in Trowbridge, Wiltshire.'
+description: >-
+  Private dyslexia and dyscalculia assessments for children and adults in
+  Trowbridge, Wiltshire, both in one assessment for one fee, from a qualified
+  assessor.
 eyebrow: Parents and families
 heading: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
 intro: >-
@@ -17,7 +20,7 @@ overview: |-
 
   Assessments always take place in person, usually at my garden office in Trowbridge and sometimes at your child's school or home, whichever suits them best. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
 
-  I don't separate dyscalculia and dyslexia assessments, so you pay for an assessment that will explore both areas if needed. I wholly believe that young people and their families should not have to pay twice and go through two long and stressful assessments if we can avoid it.
+  Assessing dyscalculia needs a separate specialist qualification, which many dyslexia assessors do not hold. I hold it, and I taught maths in schools before I trained as an assessor. I don't separate dyscalculia and dyslexia assessments, so you pay for an assessment that will explore both areas if needed. I wholly believe that young people and their families should not have to pay twice and go through two long and stressful assessments if we can avoid it.
 image: /images/__staging/content/__filehelen-dog-sofa.jpg
 imageAlt: Dr Helen Ross laughing with her dog at home
 trustLine: AMBDA and AMBDA Dyscalculia qualified · Assessment Practising Certificate (APC) · Chair of the Wiltshire Dyslexia Association · reports accepted for exam access arrangements and DSA.

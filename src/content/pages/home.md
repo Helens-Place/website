@@ -13,19 +13,20 @@ secondaryCta:
   label: Find the right service
   href: '#doors'
 authority:
+  - 'Qualified diagnostic assessor, AMBDA with a current Assessment Practising Certificate'
+  - Qualified to assess dyscalculia, which many dyslexia assessors are not
+  - Dyslexic, with ADHD, myself
   - Churchill Fellow 2025
   - 13+ peer-reviewed papers and many other publications
   - Author of Literacy Learning Journeys
-  - Evidence given at the House of Commons
-  - 'Reviewer, Council for Science and Technology'
-  - 'Qualified diagnostic assessor, AMBDA with a current Assessment Practising Certificate'
+  - Evidence to Parliament and the Council for Science and Technology
 doorsHeading: Where would you like to start?
 doorsSubheading: 'Three clear paths, each written for who you are and what you need next.'
 doors:
   - audience: families
     label: Parents and families
     title: I think my child might be dyslexic
-    body: 'Calm, thorough diagnostic assessments, in person and never more than one a day, plus specialist tutoring. You leave with a clear report your child''s school will act on, and every one of your questions answered.'
+    body: 'Calm, thorough diagnostic assessments for children, teenagers and adults, in person in Trowbridge and never more than one a day, plus specialist tutoring. Dyslexia and dyscalculia are explored together, for one fee. You leave with a clear report that schools act on, and every one of your questions answered.'
     price: 'Full diagnostic assessment [price: Full diagnostic assessment], dyscalculia included'
     linkLabel: Explore assessments
     href: /assessments

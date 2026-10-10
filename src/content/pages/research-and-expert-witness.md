@@ -1,9 +1,9 @@
 ---
 title: Dyslexia and SEND research, consultancy and expert witness work
 description: >-
-  Independent research, EdTech evaluation, evidence reviews and SEND expert
-  witness reports from Dr Helen Ross, a published dyslexia researcher working
-  with organisations in the UK and internationally.
+  Independent dyslexia and SEND research, EdTech evaluation, evidence reviews
+  and expert witness reports from Dr Helen Ross, for UK and international
+  clients.
 eyebrow: Business, research and legal
 heading: Research, consultancy and expert witness work you can stand behind
 audience: business

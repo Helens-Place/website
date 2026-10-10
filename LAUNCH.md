@@ -138,6 +138,16 @@ Content written or rewritten on her behalf, published in her name.
       Worth checking there are no others she has published that ORCID does
       not know about either.
 
+- [ ] **Final review changes, October 2026.** The homepage credentials strip
+      now opens with her assessor qualification and adds "Dyslexic, with ADHD,
+      myself" and "Qualified to assess dyscalculia, which many dyslexia
+      assessors are not", and merges the House of Commons and Council for
+      Science and Technology items into one. The families card now says she
+      assesses children, teenagers and adults, with dyscalculia included for
+      one fee. /assessments says the dyscalculia qualification is one many
+      assessors lack, and the adults page mentions Access to Work. Eleven
+      meta descriptions were shortened to fit in search results.
+
 - [ ] **"Private" in the /assessments title.** Added because it is how families
       search. Worth checking she is comfortable with the word.
 

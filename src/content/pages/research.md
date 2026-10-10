@@ -1,9 +1,9 @@
 ---
 title: "Dr Helen Ross's research on dyslexia, SEND and wellbeing"
 description: >-
-  A plain-English tour of Dr Helen Ross's research: dyslexia support in
-  mainstream schools, families and policy, wellbeing and adaptive teaching,
-  assistive technology, and neurodivergent girls beyond school.
+  A plain-English tour of Dr Helen Ross's research on dyslexia, SEND and
+  wellbeing: schools, families, assistive tech and neurodivergent girls beyond
+  school.
 eyebrow: Research
 heading: My research
 audience: business

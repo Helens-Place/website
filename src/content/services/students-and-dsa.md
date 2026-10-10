@@ -2,9 +2,9 @@
 category: assessment
 title: "Dyslexia assessment for Disabled Students' Allowance (DSA)"
 description: >-
-  Diagnostic dyslexia and dyscalculia assessments for students applying for
-  Disabled Students' Allowance, from a qualified assessor with a current
-  Assessment Practising Certificate, in person in Trowbridge, Wiltshire.
+  Diagnostic assessments for Disabled Students' Allowance from a qualified
+  assessor with a current APC. Dyslexia and dyscalculia in one, in person in
+  Trowbridge.
 eyebrow: Students
 heading: "Assessments for students and Disabled Students' Allowance"
 intro: >-

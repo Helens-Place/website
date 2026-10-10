@@ -127,6 +127,8 @@ export const business = {
     addressRegion: 'Wiltshire',
     addressCountry: 'GB',
   },
+  /* Trowbridge town centre, not the practice address, which stays private. */
+  geo: { '@type': 'GeoCoordinates', latitude: 51.3196, longitude: -2.2086 },
   areaServed: [
     ...['Trowbridge', 'Bradford on Avon', 'Westbury', 'Melksham', 'Warminster', 'Frome', 'Devizes', 'Bath', 'Corsham', 'Chippenham']
       .map((name) => ({ '@type': 'City', name })),

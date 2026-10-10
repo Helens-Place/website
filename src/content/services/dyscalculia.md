@@ -3,8 +3,8 @@ category: assessment
 title: "Dyscalculia assessment in Trowbridge, Wiltshire"
 description: >-
   Private dyscalculia assessment in Trowbridge, Wiltshire, from Dr Helen Ross,
-  who holds the specialist AMBDA Dyscalculia qualification and taught maths in
-  schools for years.
+  who holds the specialist AMBDA Dyscalculia qualification and once taught
+  maths.
 eyebrow: Parents and families
 heading: "Dyscalculia assessments, from an assessor who taught maths"
 intro: >-

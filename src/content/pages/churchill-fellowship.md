@@ -1,9 +1,8 @@
 ---
 title: "Churchill Fellowship: supporting dyslexic and neurodivergent girls"
 description: >-
-  Dr Helen Ross's 2025 Churchill Fellowship on how neurodivergent girls and
-  young women aged 16 to 25 can be better supported as they move beyond school.
-  Research in Australia and the USA, with the full report available to download.
+  Dr Helen Ross's 2025 Churchill Fellowship on supporting neurodivergent girls
+  aged 16 to 25 beyond school, with fieldwork in Australia and the USA.
 eyebrow: Churchill Fellowship 2025
 heading: School and Beyond
 audience: business

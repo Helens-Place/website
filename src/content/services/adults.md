@@ -74,4 +74,4 @@ Plenty of adults carry less than happy memories of being tested at school. This 
 
 You receive a full written report within two weeks. It says plainly whether your profile is consistent with dyslexia, and with dyscalculia if we looked at both, what your strengths are, and what is likely to help. I write it so that you can read it and recognise yourself in it rather than a list of things you find hard.
 
-It is yours to use as you choose. Many adults use it to understand themselves. It can also support a conversation with your employer about reasonable adjustments at work, or an application to university, including for [Disabled Students' Allowance](/assessments/students-and-dsa).
+It is yours to use as you choose. Many adults use it to understand themselves. It can also support a conversation with your employer about reasonable adjustments at work, an application for Access to Work funding, or an application to university, including for [Disabled Students' Allowance](/assessments/students-and-dsa).
