@@ -1,50 +1,27 @@
 ---
+title: Dyslexia assessment for Disabled Students' Allowance (DSA)
+description: 'Diagnostic assessments for Disabled Students'' Allowance from a qualified assessor with a current APC. Dyslexia and dyscalculia in one, in person in Trowbridge.'
 category: assessment
-title: "Dyslexia assessment for Disabled Students' Allowance (DSA)"
-description: >-
-  Diagnostic assessments for Disabled Students' Allowance from a qualified
-  assessor with a current APC. Dyslexia and dyscalculia in one, in person in
-  Trowbridge.
 eyebrow: Students
-heading: "Assessments for students and Disabled Students' Allowance"
-intro: >-
-  If you are heading to university, or you are already there and finding it
-  harder than you expected, a diagnostic report can open up Disabled Students'
-  Allowance and the support that comes with it. I carry out assessments written
-  to the standard DSA applications need.
+heading: Assessments for students and Disabled Students' Allowance
+intro: 'If you are heading to university, or you are already there and finding it harder than you expected, a diagnostic report can open up Disabled Students'' Allowance and the support that comes with it. I carry out assessments written to the standard DSA applications need.'
 price: '[price: Full diagnostic assessment for adults]'
 priceNote: A full diagnostic assessment
-credentials: "Assessment Practising Certificate, 23/APC05078 · AMBDA, 20/AMB04046 · AMBDA Dyscalculia, 23/AMD05008"
+credentials: 'Assessment Practising Certificate, 26/APC05086 · AMBDA, 20/AMB04046 · AMBDA Dyscalculia, 23/AMD05008'
 serviceType: Diagnostic assessment for Disabled Students' Allowance
 audienceType: Students
 order: 3
 faqs:
-  - question: "Will your report be accepted for a DSA application?"
-    answer: >-
-      My reports are written by an assessor with a current Assessment
-      Practising Certificate, which is the qualification DSA asks for, and they
-      follow the SpLD Assessment Standards Committee (SASC) guidelines that DSA
-      reports have to meet. Your funding body
-      makes the final decision on your application.
-  - question: "Is Disabled Students' Allowance means tested?"
-    answer: >-
-      No. It does not depend on your household income, and it does not have to
-      be paid back.
-  - question: "I was assessed at school. Do I need a new report?"
-    answer: >-
-      Not always. Some reports written for school were never meant to meet the
-      standard DSA needs, and some were. Mention it when we talk and I will tell
-      you honestly whether a new assessment is necessary. I will not book you
-      one you do not need.
-  - question: "Can you assess for dyscalculia for DSA as well?"
-    answer: >-
-      Yes. I hold the specialist qualification for dyscalculia as well as for
-      dyslexia, so I can look at either or both in one assessment.
-  - question: "Do you assess adults who are not students?"
-    answer: >-
-      Yes. I assess adults whether or not they are in education. If you have
-      never been formally assessed, I can help. An assessment for adults is
-      [price: Full diagnostic assessment for adults].
+  - question: Will your report be accepted for a DSA application?
+    answer: 'I have a current Assessment Practising Certificate, which is the qualification DSA asks for, and they follow the SpLD Assessment Standards Committee (SASC) guidelines that DSA reports have to meet. Your funding body makes the final decision on your application.'
+  - question: Is Disabled Students' Allowance means tested?
+    answer: 'No. It does not depend on your household income, and it does not have to be paid back.'
+  - question: I was assessed at school. Do I need a new report?
+    answer: 'Not always. Some reports written for school were never meant to meet the standard DSA needs, and some were. Mention it when we talk and I will tell you honestly whether a new assessment is necessary. I will not book you one you do not need.'
+  - question: Can you assess for dyscalculia for DSA as well?
+    answer: 'Yes. I hold the specialist qualification for dyscalculia as well as for dyslexia, so I can look at either or both in one assessment.'
+  - question: Do you assess adults who are not students?
+    answer: 'Yes. I assess adults whether or not they are in education. If you have never been formally assessed, I can help. An assessment for adults is [price: Full diagnostic assessment for adults].'
 ---
 
 ## What Disabled Students' Allowance is
