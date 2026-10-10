@@ -1,14 +1,14 @@
 ---
 siteName: Helen's Place
-tagline: Dr Helen Ross, dyslexia specialist and researcher
+tagline: 'Dr Helen Ross, dyslexia specialist and researcher'
 strapline: Driving positive change for dyslexic people of all ages
 email: helen@helensplace.co.uk
 phone: 07541 557827
-location: Trowbridge, Wiltshire
+location: 'Trowbridge, Wiltshire'
 responseTime: I reply within 48 hours
 prices:
   - name: Full diagnostic assessment
-    price: from £450
+    price: £450
   - name: Full diagnostic assessment for adults
     price: from £450
   - name: Booking deposit
@@ -42,17 +42,14 @@ analyticsProvider: cloudflare
 analyticsToken: 89f2d89a2df84730b206d40eced814b6
 googleSiteVerification: ''
 bingSiteVerification: ''
-footerNote: >-
-  Helen's Place is my practice. I'm a dyslexia, dyscalculia and SEND specialist
-  based in Trowbridge, Wiltshire, working with families, schools and
-  organisations across the UK and internationally.
+footerNote: 'Helen''s Place is my practice. I''m a dyslexia, dyscalculia and SEND specialist based in Trowbridge, Wiltshire, working with families, schools and organisations across the UK and internationally.'
 socials:
   - label: LinkedIn
-    href: https://www.linkedin.com/in/helenlouiseross/
+    href: 'https://www.linkedin.com/in/helenlouiseross/'
   - label: Instagram
-    href: https://www.instagram.com/drhelenlouiseross/
+    href: 'https://www.instagram.com/drhelenlouiseross/'
   - label: Facebook
-    href: https://www.facebook.com/drhelenross
+    href: 'https://www.facebook.com/drhelenross'
 legal:
   - label: Privacy
     href: /privacy
@@ -61,3 +58,4 @@ legal:
   - label: Terms
     href: /terms
 ---
+
