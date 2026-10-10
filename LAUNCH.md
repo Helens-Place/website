@@ -167,9 +167,9 @@ Content written or rewritten on her behalf, published in her name.
 
 ## 3. Needs a decision
 
-- [ ] **Home address in the privacy policy.** Flagged early and still open. It
-      is currently the practice address. Decide whether it should be there at
-      all, given it is also where she lives.
+- [x] **Home address in the privacy policy.** Settled by Helen in October
+      2026: she removed it and gave her email address instead. The rewritten
+      policy keeps it that way.
 
 - [x] **ADHD disclosure.** Settled by Helen. She now writes "I'm dyslexic and
       have ADHD myself" on /assessments, and the article author note says she
