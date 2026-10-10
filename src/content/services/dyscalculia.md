@@ -1,51 +1,27 @@
 ---
+title: 'Dyscalculia assessment in Trowbridge, Wiltshire'
+description: 'Private dyscalculia assessment in Trowbridge, Wiltshire, from Dr Helen Ross, who holds the specialist AMBDA Dyscalculia qualification and once taught maths.'
 category: assessment
-title: "Dyscalculia assessment in Trowbridge, Wiltshire"
-description: >-
-  Private dyscalculia assessment in Trowbridge, Wiltshire, from Dr Helen Ross,
-  who holds the specialist AMBDA Dyscalculia qualification and once taught
-  maths.
 eyebrow: Parents and families
-heading: "Dyscalculia assessments, from an assessor who taught maths"
-intro: >-
-  Assessing dyscalculia needs its own specialist qualification, separate from
-  the one for dyslexia, and a good many assessors do not hold it. I do. I also
-  spent years teaching maths before I ever assessed anyone, so I know what a
-  child who is struggling with number looks like from the front of a classroom.
+heading: 'Dyscalculia assessments, from an assessor who taught maths'
+intro: 'Assessing dyscalculia needs its own specialist qualification, separate from the one for dyslexia, and a good many assessors do not hold it. I do. I also spent years teaching maths before I ever assessed anyone, so I know what a child who is struggling with number looks like from the front of a classroom.'
 price: '[price: Full diagnostic assessment]'
-priceNote: Dyslexia and dyscalculia in one assessment, so you only pay once
-credentials: "AMBDA Dyscalculia, 23/AMD05008 · AMBDA, 20/AMB04046 · Assessment Practising Certificate, 23/APC05078"
+priceNote: 'Dyslexia and dyscalculia in one assessment, so you only pay once'
+credentials: 'AMBDA Dyscalculia, 26/AMD05086 · AMBDA, 20/AMB04046 · Assessment Practising Certificate, 23/APC05078'
 serviceType: Dyscalculia diagnostic assessment
 audienceType: Parents and families
 order: 1
 faqs:
-  - question: "What is dyscalculia?"
-    answer: >-
-      Dyscalculia is a persistent difficulty with understanding number itself,
-      the sense of quantity that the rest of maths is built on. It shows up as
-      trouble recognising amounts, learning and recalling number facts, and
-      working through calculations, and it carries on despite good teaching.
-  - question: "Is dyscalculia the same as being bad at maths?"
-    answer: >-
-      No. Plenty of children find maths hard for all sorts of reasons, and most
-      of them are not dyscalculic. Maths anxiety in particular is very common and
-      can look a lot like dyscalculia from the outside. Part of the assessment is
-      working out which is going on, and it is quite often more than one.
-  - question: "Can a child have dyscalculia and dyslexia?"
-    answer: >-
-      Yes, and it happens more often than people expect. That is why I do not
-      separate the two. One assessment explores both if it needs to, so your
-      child goes through it once and you pay once.
-  - question: "Do all dyslexia assessors assess dyscalculia?"
-    answer: >-
-      No. Diagnosing dyscalculia needs a separate specialist qualification. I
-      hold AMBDA Dyscalculia as well as the qualification for dyslexia, so I can
-      assess either or both.
-  - question: "How much does a dyscalculia assessment cost?"
-    answer: >-
-      It is part of my full diagnostic assessment, [price: Full diagnostic assessment] including VAT. I do
-      not charge separately for dyslexia and dyscalculia, so if both need
-      looking at, you are not paying twice for it.
+  - question: What is dyscalculia?
+    answer: 'Dyscalculia is a persistent difficulty with understanding number itself, the sense of quantity that the rest of maths is built on. It shows up as trouble recognising amounts, learning and recalling number facts, and working through calculations, and it carries on despite good teaching.'
+  - question: Is dyscalculia the same as being bad at maths?
+    answer: 'No. Plenty of children find maths hard for all sorts of reasons, and most of them are not dyscalculic. Maths anxiety in particular is very common and can look a lot like dyscalculia from the outside. Part of the assessment is working out which is going on, and it is quite often more than one.'
+  - question: Can a child have dyscalculia and dyslexia?
+    answer: 'Yes, and it happens more often than people expect. That is why I do not separate the two. One assessment explores both if it needs to, so your child goes through it once and you pay once.'
+  - question: Do all dyslexia assessors assess dyscalculia?
+    answer: 'No. Diagnosing dyscalculia needs a separate specialist qualification. I hold AMBDA Dyscalculia as well as the qualification for dyslexia, so I can assess either or both.'
+  - question: How much does a dyscalculia assessment cost?
+    answer: 'It is part of my full diagnostic assessment, [price: Full diagnostic assessment] including VAT. I do not charge separately for dyslexia and dyscalculia, so if both need looking at, you are not paying twice for it.'
 ---
 
 ## What dyscalculia actually is
