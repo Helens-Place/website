@@ -6,12 +6,6 @@ heading: Terms and conditions
 intro: 'These are the terms on which I provide assessments, tuition, training, research and speaking. If anything here is unclear, please ask before booking. I would always rather talk something through than have it come as a surprise.'
 ---
 
-> **Note for review, to be removed before the site goes live.** The sections on
-> assessments, research and consultancy, speaking and events, and the general
-> cancellation terms are new. The existing published terms covered only tuition
-> and INSET. Every notice period and percentage below is a proposal and needs
-> Helen's confirmation before publication.
-
 ## Assessments
 
 * A full diagnostic assessment is \[price: Full diagnostic assessment] for children and young people, and \[price: Full diagnostic assessment for adults] for adults. \[price: Booking deposit] secures the booking. The

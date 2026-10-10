@@ -20,14 +20,14 @@ out, and none of them announce themselves.
       site will never be indexed either, which is the single most expensive
       mistake available here. The block is commented and marked in the file.
 
-- [ ] **Fill in and remove the review note at the top of
+- [x] **Fill in and remove the review note at the top of
       `src/content/pages/privacy.md`.** The policy was rewritten in October
       2026. It has three visible placeholders in square brackets: the ICO
       registration number, the email provider, and two retention periods.
       Search the file for `[` before launch. A placeholder left in a privacy
       policy is a compliance problem, not just an untidy page.
 
-- [ ] **Remove the review note from the top of `src/content/pages/terms.md`.**
+- [x] **Remove the review note from the top of `src/content/pages/terms.md`.**
       It is visible to anyone reading the page and says the cancellation terms
       are unconfirmed proposals.
 
@@ -56,27 +56,29 @@ out, and none of them announce themselves.
 
 ## 2. Needs Helen's sign-off
 
+All signed off by Helen in her review, October 2026.
+
 Content written or rewritten on her behalf, published in her name.
 
-- [ ] **Safeguarding policy.** Rewritten against 2026 guidance and now dated
+- [x] **Safeguarding policy.** Rewritten against 2026 guidance and now dated
       August 2026 with review due August 2027. She needs to read and agree it,
       because it is her policy and the dates commit her to reviewing it.
 
-- [ ] **Terms, cancellation sections.** Every notice period and percentage is a
+- [x] **Terms, cancellation sections.** Every notice period and percentage is a
       proposal, not her existing practice. Assessments, research and events all
       needed terms that did not exist before.
 
-- [ ] **FAQ answers.** Drawn from her March 2026 draft rather than written by
+- [x] **FAQ answers.** Drawn from her March 2026 draft rather than written by
       her.
 
-- [ ] **The claims in "Why I assess in person".** The article states that she
+- [x] **The claims in "Why I assess in person".** The article states that she
       sets aside four to five hours, assesses one young person a day, is booked
       about three months ahead, and returns the report within two weeks. Those
       came from Andrew rather than from Helen, and the same figures now appear
       on /assessments, /what-to-expect and /faq. If any of them is wrong, it is
       wrong in five places at once.
 
-- [ ] **The three new assessment pages.** /assessments/dyscalculia,
+- [x] **The three new assessment pages.** /assessments/dyscalculia,
       /assessments/exam-access-arrangements and /assessments/students-and-dsa
       were written from facts already on the site plus general knowledge of how
       exam access arrangements and DSA work. Two things in particular need her
@@ -84,13 +86,13 @@ Content written or rewritten on her behalf, published in her name.
       before the assessment, which is the JCQ position as I understand it, and
       the DSA page says her reports meet the standard DSA asks for.
 
-- [ ] **The new "Can you help us with an EHCP?" FAQ.** Built only from facts
+- [x] **The new "Can you help us with an EHCP?" FAQ.** Built only from facts
       already on the site: EHCP help in family support sessions, reports
       suitable as EHCP evidence, and expert witness work in EHCP and tribunal
       cases. Worth her read, because it now gives EHCP help a headline where
       before it was buried in other answers.
 
-- [ ] **Search-phrase additions, October 2026.** Added because families search
+- [x] **Search-phrase additions, October 2026.** Added because families search
       in these words and the site never used them:
       - two new FAQs, "How do I get my child tested for dyslexia?" and "Do I
         need an educational psychologist, or is a specialist assessor enough?"
@@ -103,14 +105,14 @@ Content written or rewritten on her behalf, published in her name.
         and to the structured data. Both are roughly 20 to 30 minutes by road.
         Take them out if she would rather not draw from there.
 
-- [ ] **Research page wording, October 2026.** The title now leads with
+- [x] **Research page wording, October 2026.** The title now leads with
       "Dyslexia and SEND research", and the intro and offer say she works with
       charities, technology companies, local authorities and policymakers in
       the UK and internationally, and offers independent EdTech evaluation,
       citing the OrCam paper. Worth her read for anything she would put
       differently.
 
-- [ ] **Eight research, consultancy and expert witness FAQs, October 2026.**
+- [x] **Eight research, consultancy and expert witness FAQs, October 2026.**
       Built from what the research page, the EdTech evaluation article and the
       terms already say. Two need her particular eye: the EdTech answer says
       every project agrees in writing up front what happens to negative
@@ -118,7 +120,7 @@ Content written or rewritten on her behalf, published in her name.
       her practice; and the expert witness answers say fees and terms are
       agreed in writing before work begins, matching the terms page.
 
-- [ ] **The new /research page.** Her plain-English research summary, from a
+- [x] **The new /research page.** Her plain-English research summary, from a
       Claude chat draft. Every figure and quote was checked against the papers,
       the APPG report and her Churchill report before it went on. Two things
       from the draft were left out because nothing could be found to support
@@ -127,14 +129,14 @@ Content written or rewritten on her behalf, published in her name.
       2026), so both are now on /publications and back in the summary. The draft also gave the book's title as
       "Dyslexia Across the Ages"; the page uses Routledge's title.
 
-- [ ] **Seven publications still have no link.** Nothing could be found
+- [x] **Seven publications still have no link.** Nothing could be found
       online for them: the PATOSS Bulletin article (2024), "No Woman is an
       Island" (2023), the BDA Contact magazine piece on Swindon (2022), the two
       BDA parents' guide and handbook chapters (2021), and the UKEdChat and
       QuickFIRE conference papers (2021). If Helen has copies she is happy to
       share, they could be uploaded to the site and linked.
 
-- [ ] **Two papers added to /publications.** Found on her ORCID record but
+- [x] **Two papers added to /publications.** Found on her ORCID record but
       missing from the site: the 2025 Education 3-13 paper with Malone and
       Wood, the 2023 Climate Capability Scale paper in Sustainability, and the
       2025 Child and Adolescent Mental Health commentary with Kucirkova and
@@ -145,7 +147,7 @@ Content written or rewritten on her behalf, published in her name.
       Worth checking there are no others she has published that ORCID does
       not know about either.
 
-- [ ] **Final review changes, October 2026.** The homepage credentials strip
+- [x] **Final review changes, October 2026.** The homepage credentials strip
       now opens with her assessor qualification and adds "Dyslexic, with ADHD,
       myself" and "Qualified to assess dyscalculia, which many dyslexia
       assessors are not", and merges the House of Commons and Council for
@@ -155,14 +157,14 @@ Content written or rewritten on her behalf, published in her name.
       assessors lack, and the adults page mentions Access to Work. Eleven
       meta descriptions were shortened to fit in search results.
 
-- [ ] **Travel and Moon Hall.** Wherever the site lists the towns within half
+- [x] **Travel and Moon Hall.** Wherever the site lists the towns within half
       an hour, it now adds that people travel from the Midlands, London, the
       Home Counties, the South East and abroad, and that she also assesses at
       Moon Hall Assessment Centre in Reigate, linking to her profile there.
       Worth checking she is happy to be booked via Moon Hall from this site,
       and that the regions named are ones she wants to draw from.
 
-- [ ] **"Private" in the /assessments title.** Added because it is how families
+- [x] **"Private" in the /assessments title.** Added because it is how families
       search. Worth checking she is comfortable with the word.
 
 ## 3. Needs a decision

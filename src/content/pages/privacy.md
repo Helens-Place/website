@@ -11,11 +11,6 @@ intro: >-
   readable.
 ---
 
-> **Note for review, to be removed before the site goes live.** This policy
-> has been rewritten to match what the new site and the practice actually do.
-> Two things need Helen's confirmation: her ICO registration number and the
-> retention periods marked below.
-
 ## The short version
 
 - This website shows no adverts, does not track you from site to site, and
@@ -34,9 +29,6 @@ Helen's Place is the practice of Dr Helen Ross. I am responsible for the
 personal information described here, which makes me its data controller under
 the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act
 2018.
-
-I am registered with the Information Commissioner's Office, registration
-number [to be added].
 
 You can contact me about anything in this policy at
 [helen@helensplace.co.uk](mailto:helen@helensplace.co.uk).
@@ -111,8 +103,7 @@ Please do not put detailed information about a child's needs or health in the
 form. A short description is plenty, and we can talk through the rest on the
 free call.
 
-If an enquiry does not lead to any work, I delete it after [12 months, to be
-confirmed].
+If an enquiry does not lead to any work, I delete it after 12 months.
 
 ## If you book an assessment
 
@@ -154,8 +145,8 @@ this without consent.
 
 ### How long I keep it
 
-I keep assessment records [until the young person reaches 25, or for 7 years
-after an adult's assessment, to be confirmed], so that a report can be
+I keep assessment records until the young person reaches 25, or for 7 years
+after an adult's assessment, so that a report can be
 reissued or explained if you need it later, for example when applying for exam
 access arrangements or Disabled Students' Allowance. After that I delete or
 securely destroy it.
