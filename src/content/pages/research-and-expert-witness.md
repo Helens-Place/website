@@ -1,17 +1,19 @@
 ---
-title: Research, consultancy and SEND expert witness work
+title: Dyslexia and SEND research, consultancy and expert witness work
 description: >-
-  Qualitative research, methodology consultation and SEND expert witness reports
-  from Dr Helen Ross, a published researcher whose work has reached peer-reviewed
-  journals and the House of Commons.
+  Independent research, EdTech evaluation, evidence reviews and SEND expert
+  witness reports from Dr Helen Ross, a published dyslexia researcher working
+  with organisations in the UK and internationally.
 eyebrow: Business, research and legal
 heading: Research, consultancy and expert witness work you can stand behind
 audience: business
 intro: >-
-  I'm a published qualitative researcher. My work on dyslexia and SEND has
-  reached peer-reviewed journals, the Council for Science and Technology, and an
-  All-Party Parliamentary Group at the House of Commons. Organisations bring me
-  in when the evidence has to be right and the findings have to make sense to
+  I'm a published qualitative researcher specialising in dyslexia, SEND and
+  inclusive education. My work has reached peer-reviewed journals, the Council
+  for Science and Technology, and an All-Party Parliamentary Group at the House
+  of Commons. I work with charities, technology companies, local authorities and
+  policymakers in the UK and internationally, and they bring me in when the
+  evidence has to be right and the findings have to make sense to
   non-specialists.
 image: helen-desk-working.jpg
 imageAlt: Dr Helen Ross working at her desk
@@ -27,10 +29,12 @@ expertWitness:
     court. Get in touch to discuss instruction and availability.
 offerHeading: What I offer
 offerBody: >-
-  Research design and qualitative data analysis, methodology consultation,
-  evidence review, product and market insight, and presentation of findings to
-  teams and stakeholders. All work follows current ethical guidelines from
-  professional bodies.
+  Independent evaluation of EdTech and assistive technology, research design and
+  qualitative data analysis, methodology consultation, evidence reviews, product
+  and market insight, and presentation of findings to teams, boards and
+  policymakers. My evaluation of OrCam Learn, for example, was published in the
+  peer-reviewed journal Support for Learning. All work follows current ethical
+  guidelines from professional bodies.
 clientsHeading: Selected clients and projects
 clients:
   - name: OrCam Technologies

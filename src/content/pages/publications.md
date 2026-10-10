@@ -14,8 +14,14 @@ intro: >-
   House of Commons.
 ---
 
+My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
+
 ## Peer-reviewed publications
 
+- Ross, H., Malone, E. and Wood, P. (2025) 'Teachers' views on the
+  implementation of adaptive literacy and well-being strategies: a case study',
+  *Education 3-13*, pp. 1-16.
+  [DOI](https://doi.org/10.1080/03004279.2025.2566991)
 - Ross, H. (2024) 'Impact of OrCam Learn on reading comprehension', *Support for
   Learning*, 39 (3) pp. 95-103.
   [DOI](https://doi.org/10.1111/1467-9604.12474)
@@ -26,6 +32,9 @@ intro: >-
   education through the You and CO2 programme: modelling student engagement and
   teacher delivery during COVID-19', *Environmental Education Research*.
   [DOI](https://doi.org/10.1080/13504622.2023.2216410)
+- Horry, R., Rudd, J. A., Ross, H. and Skains, R. L. (2023) 'Development and
+  Validation of the Climate Capability Scale', *Sustainability*, 15 (15) 11933.
+  [DOI](https://doi.org/10.3390/su151511933)
 - Ross, H. (2023) 'Educating Post COVID-19: Moving on From Pandemic Pedagogy',
   *The Independent Scholar*, 9 pp. 5-22.
   [Available online](https://www.ncis.org/sites/default/files/TIS%20Vol.9%20FINAL.pdf)

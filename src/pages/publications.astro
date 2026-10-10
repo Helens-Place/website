@@ -1,5 +1,24 @@
 ---
+import { getEntry } from 'astro:content';
 import ProsePage from "../components/ProsePage.astro";
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+import { scholarlyArticles } from '../lib/publications';
+
+const page = await getEntry('pages', 'publications');
+const works = scholarlyArticles(page!.body ?? '');
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: page!.data.title,
+    description: page!.data.description,
+    url: `${SITE}/publications`,
+    about: { '@id': IDS.person },
+    mainEntity: { '@type': 'ItemList', numberOfItems: works.length, itemListElement: works },
+  },
+  breadcrumbs([{ name: 'Publications and media', path: '/publications' }]),
+];
 ---
 
-<ProsePage slug="publications" />
+<ProsePage slug="publications" schema={schema} />

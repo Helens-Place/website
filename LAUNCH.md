@@ -94,6 +94,19 @@ Content written or rewritten on her behalf, published in her name.
         and to the structured data. Both are roughly 20 to 30 minutes by road.
         Take them out if she would rather not draw from there.
 
+- [ ] **Research page wording, October 2026.** The title now leads with
+      "Dyslexia and SEND research", and the intro and offer say she works with
+      charities, technology companies, local authorities and policymakers in
+      the UK and internationally, and offers independent EdTech evaluation,
+      citing the OrCam paper. Worth her read for anything she would put
+      differently.
+
+- [ ] **Two papers added to /publications.** Found on her ORCID record but
+      missing from the site: the 2025 Education 3-13 paper with Malone and
+      Wood, and the 2023 Climate Capability Scale paper in Sustainability.
+      Worth checking there are no others she has published that ORCID does
+      not know about either.
+
 - [ ] **"Private" in the /assessments title.** Added because it is how families
       search. Worth checking she is comfortable with the word.
 
@@ -193,6 +206,34 @@ Business Profiles and their reviews, not from websites.
       Churchill Fellowship site, the University of Bath, Routledge, and every
       podcast she has appeared on. Each should link to helensplace.co.uk, not to
       an old page or to nothing.
+
+### For research and consultancy
+
+Organisations looking for a researcher check her academic footprint, and AI
+assistants use it to decide who she is. The site now names her ORCID iD
+(0000-0002-3827-9954) and describes each paper with a DOI as hers. The other
+end needs doing by Helen:
+
+- [ ] **Her ORCID record.** It lists her papers but has no websites on it.
+      Add helensplace.co.uk and her LinkedIn under "Websites and social
+      links", and Helen's Place under employment. That two-way link is how a
+      machine confirms the site and the researcher are the same person.
+
+- [ ] **Google Scholar profile.** If she has not got one, create it at
+      scholar.google.com with the same papers and a link to helensplace.co.uk.
+      Research buyers look her up there first.
+
+- [ ] **Links from co-authors and partners.** The You and CO2 project,
+      her co-authors' university pages, the National Coalition of Independent
+      Scholars, OrCam, the Council for Science and Technology review, and the
+      Churchill Fellowship report page.
+
+- [ ] **What Helen could tell us, to strengthen the page.** The international
+      projects she is working on now (countries, organisations, what she did),
+      and for expert witness work: roughly how many reports, which tribunals,
+      any expert witness training, and turnaround times. Solicitors search for
+      "SEND expert witness" specifically, so with those facts expert witness
+      work could have a page of its own, as the assessments now do.
 
 ## Why launch sooner rather than later
 
