@@ -92,7 +92,7 @@ faqs:
     answer: 'I offer specialist half-day INSET sessions on dyslexia, dyscalculia, and supporting learners with ADD and ADHD in mainstream classrooms. I can also develop bespoke packages including SEND consultancy, tailored training and specific guidance for your setting. Half-day INSET is [price: Half-day INSET], and I reply within 48 hours.'
   - category: Schools and CPD
     question: Can you carry out exam access arrangement assessments for our school?
-    answer: 'Yes. I am a qualified assessor holding the Assessment Practising Certificate (23/APC05078), and I carry out exam access arrangement assessments for schools. I work with both primary and secondary schools. Get in touch to discuss your needs and my current availability.'
+    answer: 'Yes. I am a qualified assessor holding the Assessment Practising Certificate (26/APC05086), and I carry out exam access arrangement assessments for schools. I work with both mainstream and independent schools. Get in touch to discuss your needs and my current availability.'
   - category: Schools and CPD
     question: Do you work with primary schools as well as secondary?
     answer: 'Yes. My experience spans early years through to KS4. I have volunteered at a local primary school providing oversight of special needs provision in the early years environment, and I adapt CPD sessions to the age range and context of your school.'
