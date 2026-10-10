@@ -4,26 +4,20 @@ secondaryCta:
   label: What happens in an assessment
   href: /what-to-expect
 title: 'Private dyslexia and dyscalculia assessments in Trowbridge, Wiltshire'
-description: >-
-  Private dyslexia and dyscalculia assessments for children and adults in
-  Trowbridge, Wiltshire, both in one assessment for one fee, from a qualified
-  assessor.
+description: 'Private dyslexia and dyscalculia assessments for children and adults in Trowbridge, Wiltshire, both in one assessment for one fee, from a qualified assessor.'
 eyebrow: Parents and families
 heading: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
-intro: >-
-  If you are worried about your child's reading, spelling, writing or maths, a
-  proper diagnostic assessment, what many people call a dyslexia test, answers
-  the question clearly and tells you what to do next.
+intro: 'If you are worried about your child''s reading, spelling, writing or maths, a proper diagnostic assessment, what many people call a dyslexia test, answers the question clearly and tells you what to do next.'
+image: /images/__staging/content/__filehelen-dog-sofa.jpg
+imageAlt: Dr Helen Ross laughing with her dog at home
+trustLine: AMBDA and AMBDA Dyscalculia qualified · Assessment Practising Certificate (APC) · Chair of the Wiltshire Dyslexia Association · reports accepted for exam access arrangements and DSA.
 overviewHeading: 'Qualified, in person, and never rushed'
 overview: |-
   I'm a qualified specialist dyslexia and dyscalculia assessor with a current Assessment Practising Certificate, so my reports are recognised by schools and exam boards.
 
-  Assessments always take place in person, usually at my garden office in Trowbridge. If you live nearby, I can sometimes come to your child's school or home instead, whichever suits them best. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. If Surrey is easier for you, I also assess at Moon Hall Assessment Centre in Reigate. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
+  Assessments always take place in person, usually at my garden office in Trowbridge. If you live nearby, I can sometimes come to your child's school or home instead, whichever suits them best. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. I see one young person a day here, so there is never anyone waiting and we can take as long as your child needs.
 
   Assessing dyscalculia needs a separate specialist qualification, which many dyslexia assessors do not hold. I hold it, and I taught maths in schools before I trained as an assessor. I don't separate dyscalculia and dyslexia assessments, so you pay for an assessment that will explore both areas if needed. I wholly believe that young people and their families should not have to pay twice and go through two long and stressful assessments if we can avoid it.
-image: /images/__staging/content/__filehelen-dog-sofa.jpg
-imageAlt: Dr Helen Ross laughing with her dog at home
-trustLine: AMBDA and AMBDA Dyscalculia qualified · Assessment Practising Certificate (APC) · Chair of the Wiltshire Dyslexia Association · reports accepted for exam access arrangements and DSA.
 primaryCta:
   label: Book a free 20-minute call
   href: /contact
@@ -32,27 +26,27 @@ servicesNote: All prices include VAT.
 services:
   - name: Full diagnostic assessment
     price: '[price: Full diagnostic assessment]'
-    note: "Includes dyscalculia where needed, your full report within two weeks, and a conversation about the findings. [price: Booking deposit] secures the booking."
+    note: 'Includes dyscalculia where needed, your full report within two weeks, and a conversation about the findings. [price: Booking deposit] secures the booking.'
   - name: Dyscalculia assessment
     price: included
-    note: Part of the full diagnostic assessment, so you only pay once
+    note: 'Part of the full diagnostic assessment, so you only pay once'
     href: /assessments/dyscalculia
   - name: Exam access arrangements
     price: '[price: Exam access arrangements]'
     href: /assessments/exam-access-arrangements
   - name: Full diagnostic assessment for adults
     price: '[price: Full diagnostic assessment for adults]'
-    note: Dyslexia and dyscalculia in one assessment, so you only pay once
+    note: 'Dyslexia and dyscalculia in one assessment, so you only pay once'
     href: /assessments/adults
-  - name: "Assessment for Disabled Students' Allowance"
+  - name: Assessment for Disabled Students' Allowance
     price: '[price: Full diagnostic assessment for adults]'
-    note: For students heading to, or already at, university
+    note: 'For students heading to, or already at, university'
     href: /assessments/students-and-dsa
   - name: Other assessments
     price: price on consultation
   - name: Family support and advice
     price: '[price: Family support and advice]'
-    note: Online or in person, including help with the EHCP process
+    note: 'Online or in person, including help with the EHCP process'
   - name: 'Mathematics tuition (KS2, 3, 4)'
     price: '[price: Tuition]'
     note: Online
