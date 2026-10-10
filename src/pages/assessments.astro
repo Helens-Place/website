@@ -7,11 +7,13 @@ import TitledList from '../components/TitledList.astro';
 import CtaBand from '../components/CtaBand.astro';
 import RelatedContent from '../components/RelatedContent.astro';
 import ArticleLinks from '../components/ArticleLinks.astro';
-import Photo from '../components/Photo.astro';
 import { SITE, IDS, breadcrumbs } from '../lib/schema';
 
 const page = await getEntry('pages', 'assessments');
 const p = page!.data;
+
+/* The overview is typed in Tina as paragraphs separated by a blank line. */
+const overview = (p.overview ?? '').split(/\n\s*\n/).map((s) => s.trim()).filter(Boolean);
 
 const pageSchema = [
   {
@@ -19,7 +21,7 @@ const pageSchema = [
     '@type': 'Service',
     name: 'Diagnostic dyslexia assessment',
     serviceType: 'Dyslexia diagnostic assessment',
-    description: p.intro,
+    description: p.description,
     provider: { '@id': IDS.business },
     areaServed: [
       { '@type': 'City', name: 'Trowbridge' },
@@ -44,10 +46,21 @@ const pageSchema = [
     eyebrow={p.eyebrow}
     heading={p.heading}
     intro={p.intro}
-    trustLine={p.trustLine}
+    image={p.image}
+    imageAlt={p.imageAlt}
     audience="families"
     primaryCta={p.primaryCta}
   />
+
+  {p.overview && (
+    <section class="section">
+      <div class="wrap">
+        {p.overviewHeading && <h2>{p.overviewHeading}</h2>}
+        {overview.map((para) => <p>{para}</p>)}
+        {p.trustLine && <p class="trust">{p.trustLine}</p>}
+      </div>
+    </section>
+  )}
 
   {p.services && (
     <ServiceList heading={p.servicesHeading!} note={p.servicesNote} items={p.services} />
@@ -55,14 +68,9 @@ const pageSchema = [
 
   {p.whyBody && (
     <section class="section">
-      <div class="wrap why">
-        <div>
-          <h2>{p.whyHeading}</h2>
-          <p>{p.whyBody}</p>
-        </div>
-        {p.image && (
-          <Photo src={p.image} alt={p.imageAlt ?? ''} ratio="3 / 2" audience="families" />
-        )}
+      <div class="wrap">
+        <h2>{p.whyHeading}</h2>
+        <p>{p.whyBody}</p>
       </div>
     </section>
   )}
@@ -95,6 +103,11 @@ const pageSchema = [
 </BaseLayout>
 
 <style>
-  .why { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
-  @media (max-width: 850px) { .why { grid-template-columns: 1fr; } }
+  .trust {
+    font-weight: 500;
+    background: var(--bg-tint);
+    border-radius: var(--radius);
+    padding: .8rem 1.1rem;
+    margin: .6rem 0 0;
+  }
 </style>

@@ -7,8 +7,15 @@ title: 'Private dyslexia and dyscalculia assessments in Trowbridge, Wiltshire'
 description: 'Full diagnostic dyslexia and dyscalculia assessments and exam access arrangements from a qualified assessor with a current Assessment Practising Certificate, in person in Trowbridge, Wiltshire.'
 eyebrow: Parents and families
 heading: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
-intro: |-
-  If you are worried about your child's reading, spelling, writing or maths, a proper diagnostic assessment, what many people call a dyslexia test, answers the question clearly and tells you what to do next. I'm a qualified specialist dyslexia and dyscalculia assessor with a current Assessment Practising Certificate, so my reports are recognised by schools and exam boards. Assessments always take place in person, usually at my garden office in Trowbridge and sometimes at your child's school or home, whichever suits them best. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
+intro: >-
+  If you are worried about your child's reading, spelling, writing or maths, a
+  proper diagnostic assessment, what many people call a dyslexia test, answers
+  the question clearly and tells you what to do next.
+overviewHeading: 'Qualified, in person, and never rushed'
+overview: |-
+  I'm a qualified specialist dyslexia and dyscalculia assessor with a current Assessment Practising Certificate, so my reports are recognised by schools and exam boards.
+
+  Assessments always take place in person, usually at my garden office in Trowbridge and sometimes at your child's school or home, whichever suits them best. Trowbridge is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. I see one young person a day, so there is never anyone waiting and we can take as long as your child needs.
 
   I don't separate dyscalculia and dyslexia assessments, so you pay for an assessment that will explore both areas if needed. I wholly believe that young people and their families should not have to pay twice and go through two long and stressful assessments if we can avoid it.
 image: /images/__staging/content/__filehelen-dog-sofa.jpg

@@ -143,7 +143,6 @@ const priceLine = s.priceNote ? `${s.price} · ${s.priceNote}` : s.price;
 </BaseLayout>
 
 <style>
-  .prose { max-width: 70ch; }
   .prose :global(h2) { margin-top: 2.4rem; font-size: clamp(1.35rem, 2.6vw, 1.7rem); }
   .prose :global(h2:first-child) { margin-top: 0; }
   .prose :global(ul), .prose :global(ol) { padding-left: 1.2rem; }
@@ -158,7 +157,7 @@ const priceLine = s.priceNote ? `${s.price} · ${s.priceNote}` : s.price;
     max-width: none;
   }
 
-  .qa { display: grid; gap: .8rem; max-width: 70ch; }
+  .qa { display: grid; gap: .8rem; }
   .qa__item {
     background: var(--paper);
     border: 1px solid var(--line);

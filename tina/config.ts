@@ -351,6 +351,14 @@ const home = singlePage('home', 'Home page', 'home', [
 const assessments = singlePage('assessments', 'Assessments page', 'assessments', [
   ...heroFields,
   { type: 'string', name: 'trustLine', label: 'Trust line', ui: { component: 'textarea' } },
+  { type: 'string', name: 'overviewHeading', label: 'Section after the hero: heading' },
+  {
+    type: 'string',
+    name: 'overview',
+    label: 'Section after the hero: text',
+    description: 'Leave a blank line between paragraphs. Keep the hero introduction above to one or two sentences.',
+    ui: { component: 'textarea' },
+  },
   ctaField('primaryCta', 'Primary button'),
   { type: 'string', name: 'servicesHeading', label: 'Prices: heading' },
   { type: 'string', name: 'servicesNote', label: 'Prices: note' },

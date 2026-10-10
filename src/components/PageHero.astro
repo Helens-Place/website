@@ -72,6 +72,10 @@ const accent: Record<string, string> = {
     display: inline-block;
     max-width: 58ch;
   }
+  /* The one place text keeps a reading measure: the rest of the page runs full
+     width, but the hero stays a compact heading, line and button. */
+  .hero__text p { max-width: var(--measure); }
+  .hero__text .lede { max-width: 60ch; }
   .hero__ctas { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
   .hero__media :global(.photo) { box-shadow: var(--shadow); }
 

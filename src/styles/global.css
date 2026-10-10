@@ -133,7 +133,9 @@ h2 { font-size: clamp(1.65rem, 3.2vw, 2.4rem); }
 h3 { font-size: clamp(1.2rem, 2vw, 1.45rem); }
 h4 { font-size: 1.08rem; }
 
-p, li { max-width: var(--measure); }
+/* Body text runs the full width of its container. Only the hero keeps a
+   reading measure, set in PageHero, so the opening of each page stays compact. */
+p, li { max-width: none; }
 p { margin: 0 0 1.15rem; }
 
 a { color: var(--purple-deep); text-underline-offset: .18em; text-decoration-thickness: .08em; }
@@ -171,7 +173,7 @@ img { max-width: 100%; height: auto; display: block; }
 .section--pink { background: var(--pink-tint); }
 .section--paper { background: var(--paper); }
 .stack > * + * { margin-top: 1rem; }
-.lede { font-size: 1.15rem; color: var(--ink-soft); max-width: 60ch; }
+.lede { font-size: 1.15rem; color: var(--ink-soft); }
 .eyebrow {
   font-size: .88rem;
   font-weight: 600;
@@ -181,7 +183,7 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 0 0 .9rem;
   max-width: none;
 }
-.section-head { max-width: 62ch; margin-bottom: 2.75rem; }
+.section-head { margin-bottom: 2.75rem; }
 
 /* --- Buttons ------------------------------------------------------------ */
 .btn {

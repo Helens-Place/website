@@ -4,11 +4,8 @@ import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 
-/* `wide` lets a page with no images use the full width of the wrap. Lists like
-   publications read fine at that width; running prose such as the legal pages
-   keeps the narrower measure. */
-interface Props { slug: string; schema?: object[]; wide?: boolean }
-const { slug, schema, wide = false } = Astro.props;
+interface Props { slug: string; schema?: object[] }
+const { slug, schema } = Astro.props;
 
 const page = await getEntry('pages', slug);
 const p = page!.data;
@@ -26,7 +23,7 @@ const { Content } = await render(page!);
   />
   <section class="section">
     <div class="wrap">
-      <div class:list={['prose', { 'prose--wide': wide }]}>
+      <div class="prose">
         <Content />
         {p.links && (
           <ul class="prose__links">
@@ -39,10 +36,6 @@ const { Content } = await render(page!);
 </BaseLayout>
 
 <style>
-  .prose { max-width: 70ch; }
-  .prose--wide { max-width: none; }
-  .prose--wide :global(p),
-  .prose--wide :global(li) { max-width: none; }
   .prose :global(blockquote) {
     margin: 0 0 1.5rem;
     padding: 1.2rem 1.5rem;

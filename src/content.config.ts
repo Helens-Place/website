@@ -47,6 +47,8 @@ const pages = defineCollection({
     primaryCta: link.optional(),
     secondaryCta: link.optional(),
     trustLine: z.string().optional(),
+    overviewHeading: z.string().optional(),
+    overview: z.string().optional(),
 
     /* Optional blocks, only the pages that use them declare them */
     authority: z.array(z.string()).optional(),
