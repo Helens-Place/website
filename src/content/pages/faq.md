@@ -125,7 +125,7 @@ faqs:
     answer: 'Get in touch with the details of the case and the timescale, and I will tell you whether it is within my expertise and whether I have the availability. Fees depend on the work involved and are agreed in writing, along with the terms of the instruction, before I begin.'
   - category: About me
     question: What qualifications do you have to carry out assessments?
-    answer: 'I hold AMBDA, Associate Member of the British Dyslexia Association, which is the specialist assessment qualification recognised across the UK. I also hold AMBDA Dyscalculia (23/AMD05008) and an Assessment Practising Certificate (23/APC05078), which is required for exam access arrangement assessments. My broader qualifications include a PhD from the University of Bath, an MRes in Social Policy, an MA in Education, and a PgCert in Dyslexia and SpLD with AMBDA from Bath Spa University.'
+    answer: 'I hold AMBDA, Associate Member of the British Dyslexia Association, which is the specialist assessment qualification recognised across the UK. I also hold AMBDA Dyscalculia (23/AMD05008) and an Assessment Practising Certificate (26/APC05086), which is required for exam access arrangement assessments. My broader qualifications include a PhD from the University of Bath, an MRes in Social Policy, an MA in Education, and a PgCert in Dyslexia and SpLD with AMBDA from Bath Spa University.'
   - category: About me
     question: Are you dyslexic yourself?
     answer: 'Yes. I am dyslexic myself, so I bring genuine personal experience to the work alongside the academic and professional expertise. I know how much the right support and the right relationships matter to a young dyslexic person, because I have lived it.'
