@@ -35,9 +35,9 @@ A test tells me what a young person can do on a Tuesday morning in a quiet room.
 
 You lose most of that through a screen. A camera flattens a child into a small square, and you cannot see the jiggling feet, the held breath, or the quiet decision to give up that a child will hide if they possibly can. My work has consistently found that good support for dyslexic learners runs on relationships and on people who actually notice what is going on, from my research on [teachers' agency and the relationships around dyslexia support (Ross, 2017)](https://doi.org/10.1111/1467-8578.12174) to a [case study on building a safe space for vulnerable young people (Ross, 2019)](https://doi.org/10.1111/1467-9604.12246), where the whole point was that support works best when it is proactive rather than patched on after the fact. It is hard to be proactive about something you never saw.
 
-## One young person a day, and as long as it takes
+## One assessment a day, and as long as it takes
 
-I set aside four to five hours for an assessment, and I only ever see one young person in a day. There is nobody in the waiting room after them, so we are never watching the clock.
+I set aside four to five hours for an assessment, and I usually only work with person in a day. There is nobody in the waiting room after them, so we aren't watching the clock.
 
 The actual contact time varies. If we are looking at numeracy as well as literacy it runs longer, and a fair bit of the day is breaks, biscuits and talking rather than testing. That is deliberate. It is an intense process for a young person, and I chunk everything down. I will not put two or three reading tasks back to back, because doing that when reading is the very thing you find hard is miserable and it tells me very little. For a younger child I will often split the work across two shorter sessions rather than push them through in one sitting. If someone needs to stop and tell me about their dog for ten minutes, that is fine. Quite often that is when I learn the most useful thing all day. There is more on the shape of the day in [what to expect](/what-to-expect).
 
@@ -57,9 +57,9 @@ I also write it so that a human being can actually read it. A report is no use t
 
 ## Why there is usually a wait
 
-I will be honest about this. I am generally booked around three months ahead. I know that is hard to hear when you are worried about your child now and you would happily have it sorted yesterday.
+I will be honest about this. I am generally booked around two to three months ahead. I know that is hard to hear when you are worried about your child now and you would happily have it sorted yesterday.
 
-That wait is simply what everything above adds up to. One family a day, taking the time it takes, means I get through fewer people than somewhere running several in a day. I am genuinely sorry when that is hard, and I know how long a term feels when you are watching your child struggle through it. But the only way to shorten the list would be to be quicker with your child, and that is the one thing I will not do. If the timing is difficult, book a [free 20-minute call](/contact) anyway. Often I can point you to something useful in the meantime, and it means you are ready to go the moment a date comes up.
+That wait is simply what everything above adds up to. One assessment a day at home, taking the time it takes, means I get through fewer people than somewhere running several in a day. I am genuinely sorry when that is hard, and I know how long a term feels when you are watching your child struggle through it. But the only way to shorten the list would be to be quicker with your child, and that is the one thing I will not do. If the timing is difficult, book a [free 20-minute call](/contact) anyway. Often I can point you to something useful in the meantime, and it means you are ready to go the moment a date comes up.
 
 ***
 
@@ -68,11 +68,11 @@ That wait is simply what everything above adds up to. One family a day, taking t
 **Do you offer online dyslexia assessments?**
 No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, whether they are anxious, tired, or simply finding the reading difficult. A screen hides most of that. I know that means waiting longer, and I am sorry for it, but I would rather give you something you can rely on.
 
-**Why do you only see one young person a day?**
-Because an assessment should take as long as it needs, and that is impossible if someone else is booked in behind. One family a day means we can take proper breaks, follow something up when it turns out to matter, and never rush a tired child.
+**Why do you only see person a day at home?**
+Because an assessment should take as long as it needs, and that can be very difficult if someone else is booked in behind. One assesmsent a day means we can take proper breaks, follow something up when it turns out to matter, and not rush a tired child.
 
 **How long will I wait for an appointment?**
-I am usually booked around three months ahead. That is the honest cost of not rushing and only assessing one young person a day. Book a free call and I will tell you where things stand and what I would suggest in the meantime.
+I am usually booked around two-three months ahead. That is the honest cost of not rushing and only assessing one young person a day. Book a free call and I will tell you where things stand and what I would suggest in the meantime.
 
 **Does a parent need to be there?**
 Yes, for part of it at least. Your account of the history and of daily life at home is a real part of the picture, and I will want to talk it through with you as well as working with your child.
