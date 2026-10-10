@@ -96,6 +96,13 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   Scholars.
   [Available online](https://ncis.org/scholarly-cookbook/)
 
+## Reports
+
+- Ross, H. (2026) *School & Beyond: Supporting Dyslexic & Neurodivergent Girls'
+  Next Moves*. London: Churchill Fellowship.
+  [Available online](https://www.churchillfellowship.org/ideas-experts/ideas-library/supporting-dyslexic-and-neurodivergent-girls-next-moves/)
+  and [about the Fellowship](/churchill-fellowship)
+
 ## Doctoral thesis
 
 - Ross, H. (2017) *Where do I fit it? Exploring how dyslexic young people
@@ -105,6 +112,18 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
 
 ## Invited and guest publications
 
+- Ross, H. in Akinde, F. (2026) *Exploring intersectionality in schools: Voices
+  on race and SEND for advocacy and change*. Abingdon: Routledge.
+  [Available online](https://www.taylorfrancis.com/books/mono/10.4324/9781003614951/exploring-intersectionality-schools-frances-akinde)
+- Ross, H. in Durrant, G. (ed.) (2026) *Questions on SEND: Developing inclusive
+  practice as an early career teacher*. Abingdon: Routledge.
+  [DOI](https://doi.org/10.4324/9781003571414)
+- Ross, H. (2026) 'Reflections on a Churchill Fellowship: Perspectives on the
+  (Lack of) Choices We Afford Our Children and Young People', *NeuroConverse*,
+  3 (1). [Available online](https://neuroconverse.org/index.php/journal/issue/view/3)
+- Ross, H. (2026) 'Dyslexia and Tech in Your Class', *Assistive Tech Superstore
+  Blog*, 9 April, updated 1 June 2026.
+  [Available online](https://atsuperstore.com/blog/dyslexia-and-tech-in-your-class)
 - Ross, H. (2023, March) 'No Woman is an Island', *From the Council to the
   Commons Chamber*, 3: 25.
 - Ross, H. (2023, February) 'Integrating dyslexia support into mainstream

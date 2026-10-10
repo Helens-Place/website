@@ -97,6 +97,9 @@ as the development of independence.
 
 I've also worked on climate change education through the You and CO2 project
 ([Environmental Education Research, 2023](https://doi.org/10.1080/13504622.2023.2216410)),
+contributed to books on
+[SEND for early career teachers](https://doi.org/10.4324/9781003571414) and on
+[race and SEND](https://www.taylorfrancis.com/books/mono/10.4324/9781003614951/exploring-intersectionality-schools-frances-akinde),
 and co-edited [a cookbook for independent scholars](https://ncis.org/scholarly-cookbook/),
 which included my own contribution on the cream tea culture wars. My book,
 [Literacy Learning Journeys: An Educator's Guide to Dyslexia, Ages 0-18](/book),

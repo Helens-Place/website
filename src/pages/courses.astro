@@ -15,11 +15,14 @@ const guides = (await getCollection('guides', ({ data }) => !data.draft))
 
 /* Longer form material that is not a guide, and the research behind it. This is
    where papers and book extracts will slot in as they are added. */
+/* Counted rather than typed, so it stays right as articles are added. */
+const articleCount = (await getCollection('articles', ({ data }) => !data.draft)).length;
+
 const alsoHere = [
   {
     href: '/articles',
     title: 'Articles',
-    body: 'Nineteen longer pieces on dyslexia, assessment, wellbeing, teaching and technology, each grounded in published research with the sources linked.',
+    body: `${articleCount} longer pieces on dyslexia, assessment, wellbeing, teaching and technology, each grounded in published research with the sources linked.`,
   },
   {
     href: '/dyslexia-toolkit',

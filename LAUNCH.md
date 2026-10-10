@@ -20,6 +20,13 @@ out, and none of them announce themselves.
       site will never be indexed either, which is the single most expensive
       mistake available here. The block is commented and marked in the file.
 
+- [ ] **Fill in and remove the review note at the top of
+      `src/content/pages/privacy.md`.** The policy was rewritten in October
+      2026. It has three visible placeholders in square brackets: the ICO
+      registration number, the email provider, and two retention periods.
+      Search the file for `[` before launch. A placeholder left in a privacy
+      policy is a compliance problem, not just an untidy page.
+
 - [ ] **Remove the review note from the top of `src/content/pages/terms.md`.**
       It is visible to anyone reading the page and says the cancellation terms
       are unconfirmed proposals.
@@ -116,8 +123,8 @@ Content written or rewritten on her behalf, published in her name.
       the APPG report and her Churchill report before it went on. Two things
       from the draft were left out because nothing could be found to support
       them: chapters "on SEND for early career teachers and on race and SEND".
-      If they exist, send the references and they go on /publications and
-      back into the summary. The draft also gave the book's title as
+      Andrew has since supplied the references (Durrant, 2026, and Akinde,
+      2026), so both are now on /publications and back in the summary. The draft also gave the book's title as
       "Dyslexia Across the Ages"; the page uses Routledge's title.
 
 - [ ] **Seven publications still have no link.** Nothing could be found
