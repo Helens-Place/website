@@ -28,8 +28,8 @@ services:
     price: '[price: Full diagnostic assessment]'
     note: 'Includes dyscalculia where needed, your full report within two weeks, and a conversation about the findings. [price: Booking deposit] secures the booking.'
   - name: Dyscalculia assessment
-    price: included
-    note: 'Part of the full diagnostic assessment, so you only pay once'
+    price: £450
+    note: 'Part of the full diagnostic assessment if needed, so you only pay once'
     href: /assessments/dyscalculia
   - name: Exam access arrangements
     price: '[price: Exam access arrangements]'
