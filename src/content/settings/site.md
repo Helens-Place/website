@@ -10,7 +10,7 @@ prices:
   - name: Full diagnostic assessment
     price: £450
   - name: Full diagnostic assessment for adults
-    price: from £450
+    price: £450
   - name: Booking deposit
     price: £150
   - name: Exam access arrangements
