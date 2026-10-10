@@ -378,6 +378,21 @@ them. What can catch a school out is Cloudflare's own security set too high.
       Lightspeed). Each has a free lookup. helensplace.co.uk is not a new
       domain, so it should already be categorised; ask for Education or
       Reference wherever it is not.
+- [ ] **Certificate: choose Google Trust Services.** The usual school
+      HTTPS trouble with free certificates is Let's Encrypt. Its chain has
+      changed more than once, and filters that inspect encrypted traffic often
+      carry an old list of trusted authorities, so they reject the site or show
+      teachers a warning. Cloudflare's free certificate can come from Google
+      Trust Services instead, whose chain also leads back to a long-established
+      GlobalSign root that old filters still trust. Set it under SSL/TLS, Edge
+      Certificates, Universal SSL, Certificate Authority, before connecting the
+      domain.
+- [ ] **Minimum TLS version 1.2, not 1.3.** Some older school proxies cannot
+      speak 1.3. 1.2 is still secure.
+- [ ] **Leave HSTS off at launch.** It is a good setting, but it removes the
+      option to click past a certificate warning, so if a school filter does
+      object, its teachers are locked out entirely rather than warned. Turn it
+      on later, once schools have been using the site without complaint.
 - [ ] **Test from a real school.** Once live, ask a SENCo Helen knows to open
       the site, the contact form and the Schools Guide download from their
       school network.
