@@ -42,7 +42,7 @@ faqs:
 
 We don't talk enough about what dyslexia actually costs the families living with it. Not the tidy version, the real one: the money, yes, but also the worry, the exhaustion, and the slow erosion of a child's confidence when the right support doesn't come.
 
-I know these costs well, because I led the analysis of the data behind the [All-Party Parliamentary Group's *Human Cost of Dyslexia* report (Ross and Hicks, 2019)](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia). More than 1,300 families told us how it really is, in over 2,500 comments in their own words. This article sets out what they told us, and why it matters.
+I know these costs well, because I led the analysis of the data behind the [All-Party Parliamentary Group's *Human Cost of Dyslexia* report (Ross and Hicks, 2019)](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf). More than 1,300 families told us how it really is, in over 2,500 comments in their own words. This article sets out what they told us, and why it matters.
 
 ## The financial cost
 
@@ -100,7 +100,7 @@ Get clarity on your child's needs, keep their confidence and your relationship s
 
 ## References and further reading
 
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 - Ross, H. (2019) *Are we supporting all of our children? The cost of dyslexia to families*, **University of Bath IPR Blog**. [Read the blog](https://blogs.bath.ac.uk/iprblog/2019/04/24/are-we-supporting-all-of-our-children-the-cost-of-dyslexia-to-families/)
 - Ross, H. (2019) *Supporting a child with dyslexia: how parents/carers engage with school-based support for their children*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
 - Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. https://doi.org/10.5772/intechopen.93948

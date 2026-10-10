@@ -109,11 +109,30 @@ Content written or rewritten on her behalf, published in her name.
       her practice; and the expert witness answers say fees and terms are
       agreed in writing before work begins, matching the terms page.
 
+- [ ] **The new /research page.** Her plain-English research summary, from a
+      Claude chat draft. Every figure and quote was checked against the papers,
+      the APPG report and her Churchill report before it went on. Two things
+      from the draft were left out because nothing could be found to support
+      them: chapters "on SEND for early career teachers and on race and SEND".
+      If they exist, send the references and they go on /publications and
+      back into the summary. The draft also gave the book's title as
+      "Dyslexia Across the Ages"; the page uses Routledge's title.
+
+- [ ] **Seven publications still have no link.** Nothing could be found
+      online for them: the PATOSS Bulletin article (2024), "No Woman is an
+      Island" (2023), the BDA Contact magazine piece on Swindon (2022), the two
+      BDA parents' guide and handbook chapters (2021), and the UKEdChat and
+      QuickFIRE conference papers (2021). If Helen has copies she is happy to
+      share, they could be uploaded to the site and linked.
+
 - [ ] **Two papers added to /publications.** Found on her ORCID record but
       missing from the site: the 2025 Education 3-13 paper with Malone and
       Wood, the 2023 Climate Capability Scale paper in Sustainability, and the
       2025 Child and Adolescent Mental Health commentary with Kucirkova and
-      others, which the EdTech article cites but the list did not have.
+      others, which the EdTech article cites but the list did not have, the
+      2025 Pastoral Care in Education paper with Wood and Malone, and her PhD
+      thesis. The parents paper in the British Journal of Special Education
+      is now dated 2019, as the journal has it, rather than 2018.
       Worth checking there are no others she has published that ORCID does
       not know about either.
 

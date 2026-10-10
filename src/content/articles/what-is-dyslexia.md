@@ -99,7 +99,7 @@ None of this needs a heroic budget. It needs knowing what to do, being allowed t
 
 ## Where that leaves us
 
-Dyslexia is a real, lifelong, recognisable difference in how a person handles written language. It's common, it has nothing to do with how clever you are, and it responds well to the right support. In my experience, what does the damage is rarely the dyslexia itself. It's how often it goes unnoticed, and how much of the fallout lands on families, which is something I documented in the [*Human Cost of Dyslexia* report (Ross and Hicks, 2019)](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia).
+Dyslexia is a real, lifelong, recognisable difference in how a person handles written language. It's common, it has nothing to do with how clever you are, and it responds well to the right support. In my experience, what does the damage is rarely the dyslexia itself. It's how often it goes unnoticed, and how much of the fallout lands on families, which is something I documented in the [*Human Cost of Dyslexia* report (Ross and Hicks, 2019)](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf).
 
 Understanding what dyslexia really is, is where that starts to change.
 
@@ -130,7 +130,7 @@ The research below is by Dr Helen Ross and is publicly accessible; several paper
 - Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. https://doi.org/10.5772/intechopen.93948
 - Ross, H. (2020) *Review 2: The support systems for individuals with SpLDs*, **Council for Science and Technology**. [Read the review](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/926052/specific-learning-difficulties-spld-cst-report.pdf)
 - Ross, H. (2019) *Supporting a child with dyslexia*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 - Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. https://doi.org/10.1111/1467-8578.12174
 
 See the [full list of publications](/publications).

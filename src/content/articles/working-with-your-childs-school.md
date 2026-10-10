@@ -40,7 +40,7 @@ faqs:
       get in touch to talk it through.
 ---
 
-For a lot of parents, talking to school about dyslexia feels adversarial before anyone has even sat down. The research bears that out. In the [*Human Cost of Dyslexia* survey (Ross and Hicks, 2019)](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia), which I analysed, 74 per cent of parents felt anxious in their dealings with school, 55 per cent felt unable to communicate effectively, and 82 per cent said they sometimes felt angry with it.
+For a lot of parents, talking to school about dyslexia feels adversarial before anyone has even sat down. The research bears that out. In the [*Human Cost of Dyslexia* survey (Ross and Hicks, 2019)](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf), which I analysed, 74 per cent of parents felt anxious in their dealings with school, 55 per cent felt unable to communicate effectively, and 82 per cent said they sometimes felt angry with it.
 
 I've been a teacher, a SENCo, a researcher and a parent, so I've stood on more than one side of that table. This article is about how to make those conversations work, and how to keep them from curdling into the "battle" so many families describe.
 
@@ -102,7 +102,7 @@ Stay calm, keep a written record, and lean on the fact that your views are meant
 
 ## References and further reading
 
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 - Ross, H. (2019) *Supporting a child with dyslexia: how parents/carers engage with school-based support for their children*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
 - Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. https://doi.org/10.1111/1467-8578.12174
 - Ross, H. (2021) *Working with your child's school*, invited chapter in the British Dyslexia Association **Guide to Dyslexia for Parents**. See the [full list of publications](/publications).

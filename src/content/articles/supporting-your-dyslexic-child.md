@@ -47,7 +47,7 @@ If that's how it feels for you right now, I want to start by saying something pl
 
 Most conversations about dyslexia focus on the child's reading. Far fewer focus on what it does to a family, and that's the part I've spent years researching.
 
-In the [*Human Cost of Dyslexia* survey (Ross and Hicks, 2019)](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia), which I analysed for the All-Party Parliamentary Group, more than 1,300 families told us how it really was. Ninety-five per cent worried about what the future held for their child. Seventy-seven per cent felt exhausted by dealing with their child's dyslexia. Many described guilt: worrying about what others thought, or wishing their child didn't have to carry this at all. Some spoke of the strain on the whole household, with siblings noticing that one child seemed to need so much more time and money, and relationships stretched thin as a result.
+In the [*Human Cost of Dyslexia* survey (Ross and Hicks, 2019)](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf), which I analysed for the All-Party Parliamentary Group, more than 1,300 families told us how it really was. Ninety-five per cent worried about what the future held for their child. Seventy-seven per cent felt exhausted by dealing with their child's dyslexia. Many described guilt: worrying about what others thought, or wishing their child didn't have to carry this at all. Some spoke of the strain on the whole household, with siblings noticing that one child seemed to need so much more time and money, and relationships stretched thin as a result.
 
 I share those numbers not to add to the worry, but to say clearly: if you feel stretched, you are in very good company, and the reasons are structural, not personal. The strain comes from a system that too often leaves families to carry what schools and services should be sharing.
 
@@ -102,7 +102,7 @@ Often it isn't, at least not to that degree. Your relationship and your child's 
 - Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. https://doi.org/10.5772/intechopen.93948
 - Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. https://doi.org/10.16993/sjdr.782
 - Ross, H. (2019) *Supporting a child with dyslexia: how parents/carers engage with school-based support for their children*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 
 See the [full list of publications](/publications).
 

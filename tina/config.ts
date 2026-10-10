@@ -741,7 +741,7 @@ const legal: Collection = {
   label: 'Policy and reference pages',
   path: 'src/content/pages',
   format: 'md',
-  match: { include: '{privacy,safeguarding,terms,publications}' },
+  match: { include: '{privacy,safeguarding,terms,publications,research}' },
   ui: { allowedActions: { create: false, delete: false } },
   fields: [
     ...seoFields,

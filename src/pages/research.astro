@@ -1,0 +1,24 @@
+---
+import { getEntry } from 'astro:content';
+import ProsePage from '../components/ProsePage.astro';
+import { SITE, IDS, breadcrumbs } from '../lib/schema';
+
+const page = await getEntry('pages', 'research');
+
+/* An AboutPage about Helen, so search engines and AI assistants read this as
+   her own account of her research rather than a page about the topic. */
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: page!.data.title,
+    description: page!.data.description,
+    url: `${SITE}/research`,
+    about: { '@id': IDS.person },
+    author: { '@id': IDS.person },
+  },
+  breadcrumbs([{ name: 'My research', path: '/research' }]),
+];
+---
+
+<ProsePage slug="research" schema={schema} />

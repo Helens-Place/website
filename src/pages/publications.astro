@@ -5,7 +5,21 @@ import { SITE, IDS, breadcrumbs } from '../lib/schema';
 import { scholarlyArticles } from '../lib/publications';
 
 const page = await getEntry('pages', 'publications');
-const works = scholarlyArticles(page!.body ?? '');
+const THESIS_URL = 'https://purehost.bath.ac.uk/ws/portalfiles/portal/187945030/ROSS_Helen_Full_PhD_Thesis.pdf';
+const works = [
+  ...scholarlyArticles(page!.body ?? ''),
+  ...((page!.body ?? '').includes(THESIS_URL)
+    ? [{
+        '@type': 'Thesis',
+        name: 'Where do I fit it? Exploring how dyslexic young people experience social interactions in a mainstream secondary school',
+        author: { '@id': IDS.person },
+        datePublished: '2017',
+        inSupportOf: 'PhD',
+        sourceOrganization: { '@type': 'CollegeOrUniversity', name: 'University of Bath' },
+        url: THESIS_URL,
+      }]
+    : []),
+];
 
 const schema = [
   {
@@ -21,4 +35,4 @@ const schema = [
 ];
 ---
 
-<ProsePage slug="publications" schema={schema} />
+<ProsePage slug="publications" schema={schema} wide />

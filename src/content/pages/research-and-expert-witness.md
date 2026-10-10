@@ -60,6 +60,13 @@ relatedIntro: >-
   If you are deciding whether to instruct me, this is the material to judge me
   on.
 related:
+  - tag: Research
+    title: My research, in plain English
+    body: >-
+      What I've studied and what I found, from dyslexia support in mainstream
+      schools to wellbeing, assistive technology and neurodivergent girls
+      beyond school.
+    href: /research
   - tag: Publications
     title: Peer-reviewed publications
     body: >-

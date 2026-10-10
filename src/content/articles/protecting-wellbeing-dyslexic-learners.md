@@ -77,7 +77,7 @@ Independence and dignity are wellbeing outcomes in their own right.
 
 I've written a good deal about how often parents experience supporting their child as a "battle", in my chapter [*"It's a Battle!"* (Ross, 2021)](https://doi.org/10.5772/intechopen.93948) and in my study of [how parents engage with school-based support (Ross, 2019)](https://doi.org/10.1111/1467-8578.12254). A family locked in conflict with a school is a stressed family, and that stress becomes part of the child's world.
 
-Schools can take a lot of the heat out of this early, and cheaply. Meet parents at the first sign of concern. Be honest about what the school can and can't do. Treat families as partners rather than problems to be managed. When families and young people feel included, they lean in rather than pulling away. A lot of the "cost" of dyslexia I documented in the [APPG *Human Cost of Dyslexia* report (Ross and Hicks, 2019)](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia) is emotional, and a good relationship with school is one of the few things that reliably brings it down.
+Schools can take a lot of the heat out of this early, and cheaply. Meet parents at the first sign of concern. Be honest about what the school can and can't do. Treat families as partners rather than problems to be managed. When families and young people feel included, they lean in rather than pulling away. A lot of the "cost" of dyslexia I documented in the [APPG *Human Cost of Dyslexia* report (Ross and Hicks, 2019)](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf) is emotional, and a good relationship with school is one of the few things that reliably brings it down.
 
 ## 6. Don't forget the adults
 
@@ -124,7 +124,7 @@ The research below is by Dr Helen Ross and is publicly accessible. Wider works c
 - Ross, H. (2019) *A case study: developing a safe space for vulnerable young people at school*, **Support for Learning**, 34(2), 162-178. https://doi.org/10.1111/1467-9604.12246
 - Ross, H. (2019) *Supporting a child with dyslexia: how parents/carers engage with school-based support for their children*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
 - Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. https://doi.org/10.5772/intechopen.93948
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG). [Read the report](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 - Ross, H. (2026) *School & Beyond: Supporting Dyslexic and Neurodivergent Girls' Next Moves*, **Churchill Fellowship**. [Read the report](https://www.churchillfellowship.org/ideas-experts/ideas-library/supporting-dyslexic-and-neurodivergent-girls-next-moves/)
 
 See the [full list of publications](/publications).

@@ -14,10 +14,16 @@ intro: >-
   House of Commons.
 ---
 
+For a plain-English tour of what these papers found, see [my research](/research).
 My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
 
 ## Peer-reviewed publications
 
+- Wood, P., Ross, H. and Malone, E. (2025) 'Meeting the well-being needs of
+  children with literacy difficulties: a whole school appreciation of adaptive
+  teaching strategies that prioritise the individual', *Pastoral Care in
+  Education*, pp. 1-19.
+  [DOI](https://doi.org/10.1080/02643944.2025.2574440)
 - Ross, H., Malone, E. and Wood, P. (2025) 'Teachers' views on the
   implementation of adaptive literacy and well-being strategies: a case study',
   *Education 3-13*, pp. 1-16.
@@ -42,12 +48,12 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   [DOI](https://doi.org/10.3390/su151511933)
 - Ross, H. (2023) 'Educating Post COVID-19: Moving on From Pandemic Pedagogy',
   *The Independent Scholar*, 9 pp. 5-22.
-  [Available online](https://www.ncis.org/sites/default/files/TIS%20Vol.9%20FINAL.pdf)
+  [Available online](https://www.ncis.org/the-independent-scholar/tis)
 - Ross, H. (2022) 'The Butter-Cream-Jam Conundrum: A History of Culture Wars in
   Southwest England' in Ross, H., Haste, A. and Baines L. (eds) *Global Cuisines
   by Independent Scholars: A Learned Cookbook*. Vermont: National Coalition of
   Independent Scholars, pp. 54-57.
-  [Available online](https://www.ncis.org/sites/default/files/NCIS%20COOKBOOK_Dec2022.pdf)
+  [Available online](https://ncis.org/scholarly-cookbook/)
 - Ross, Helen (2021) 'Between Home and School: Exploring Parents' Experiences of
   Educating in a Pandemic' in *Parenting: Challenges of Child Rearing in a
   Changing Society*, S. Ali Samadi (ed).
@@ -70,13 +76,15 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   [Available online](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/926052/specific-learning-difficulties-spld-cst-report.pdf)
 - Ross, H. (2019) 'A case study: developing a safe space for vulnerable young
   people at school', *Support for Learning*, 34 (2) pp. 162-178.
-- Ross, H. (2018) 'Supporting a child with dyslexia: how parents and carers
+  [DOI](https://doi.org/10.1111/1467-9604.12246)
+- Ross, H. (2019) 'Supporting a child with dyslexia: how parents and carers
   engage with school-based support for their children', *British Journal of
-  Special Education*.
+  Special Education*, 46 (2) pp. 136-156.
   [DOI](https://doi.org/10.1111/1467-8578.12254)
 - Ross, H. (2017) 'An exploration of teachers' agency and social relationships
   within dyslexia-support provision in an English secondary school', *British
   Journal of Special Education*, 44 (2) pp. 186-202.
+  [DOI](https://doi.org/10.1111/1467-8578.12174)
 
 ## Books
 
@@ -86,7 +94,14 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
 - Ross, H., Haste, A. and Baines L. (eds) (2022) *Global Cuisines by Independent
   Scholars: A Learned Cookbook*. Vermont: National Coalition of Independent
   Scholars.
-  [Available online](https://www.ncis.org/sites/default/files/NCIS%20COOKBOOK_Dec2022.pdf)
+  [Available online](https://ncis.org/scholarly-cookbook/)
+
+## Doctoral thesis
+
+- Ross, H. (2017) *Where do I fit it? Exploring how dyslexic young people
+  experience social interactions in a mainstream secondary school*. PhD thesis,
+  Department of Social and Policy Sciences, University of Bath.
+  [Available online](https://purehost.bath.ac.uk/ws/portalfiles/portal/187945030/ROSS_Helen_Full_PhD_Thesis.pdf)
 
 ## Invited and guest publications
 
@@ -94,9 +109,10 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   Commons Chamber*, 3: 25.
 - Ross, H. (2023, February) 'Integrating dyslexia support into mainstream
   teaching', *TeachIt CPD*.
-  [Available online](https://www.teachit.co.uk/cpd/special-educational-needs/integrating-dyslexia-supportmainstream-teaching)
+  [Available online](https://www.teachit.co.uk/cpd/special-educational-needs/integrating-dyslexia-support-mainstream-teaching)
 - Ross, H. (2022, November) 'Dyslexia: from the Inside and Out', *Dystinct
   Magazine*, 12: 41-56.
+  [Available online](https://on.dystinct.org/dyslexia-from-the-inside-and-out-helen-ross/)
 - Ross, H. (2022, October) 'A grand day out: Shifting a narrative in Swindon',
   *British Dyslexia Association Contact Magazine*, pp. 24-25.
 - Ross, H. (2022) 'Towards independence: blazing your trail as a freelance
@@ -104,8 +120,10 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   [Available online](https://www.timeshighereducation.com/campus/towards-independence-blazing-your-trail-freelance-researcher)
 - Ross, H. (2022) 'Helen Ross' in Women in Academia Support Network,
   *ResearcHer*. Bingley: Emerald Publishing, pp. 101-104.
+  [DOI](https://doi.org/10.1108/978-1-80382-731-520221023)
 - Ross, H. (2021) 'Speaking and writing quietly into the abyss: SEND and
   inclusion training for teachers', *SEN Magazine*, 114: 32-33.
+  [Available online](https://senmagazine.co.uk/content/careers/15034/speaking-and-writing-quietly-into-the-abyss-send-and-inclusion-training-for-teachers/)
 - Ross, H. (2021) 'Working with your child's school', invited chapter in British
   Dyslexia Association, *Guide to Dyslexia for Parents*.
 - Ross, H. (2021) 'From A to B and all the way to Z, but what do you do when
@@ -130,6 +148,7 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   the work: Teachers' and Parents' experiences of remote learning'. A
   presentation to the All-Party Parliamentary Group on Dyslexia and Specific
   Learning Difficulties. London, 4 March.
+  [Available online](https://www.bdadyslexia.org.uk/news/the-all-party-parliamentary-group-appg-1)
 - Ross, H. (2021) 'Mind the Gap: Bridging the gap between teaching practice and
   parental expectations for children with Specific Learning Difficulties'.
   Conference paper, UKEdChat 2021 Online Conference, 3 April.
@@ -139,6 +158,7 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
 - Ross, H. (2021) 'Where do we slot in? Teaching migration in an English
   secondary school'. Invited talk, The Royal Society of Edinburgh Research
   Workshops, 25 February.
+  [Available online](https://scilt.org.uk/Events/EventDetails/tabid/1306/articleType/ArticleView/articleId/14098/The-Royal-Society-of-Edinburgh-Research-Workshops--How-to-Talk-About-Migrations.aspx)
 - Ross, H. (2021) 'Book Review: Young people's development and the great
   recession: Uncertain transitions and precarious futures, Ingrid Schoon and
   John Bynner', *Social Policy and Administration*.
@@ -152,13 +172,13 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   Psychological Impact of Poorly Supported Dyslexia*. A report from the
   All-Party Parliamentary Group for Dyslexia and other SpLDs, April 2019.
   London, pp. 14-24.
-  [Available online](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+  [Available online](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 - Ross, H. (2019) 'The Dyslexia Challenge', *SEN Magazine*.
-  [Available online](https://senmagazine.co.uk/home/articles/senarticles-2/the-dyslexia-challenge)
+  [Available online](https://senmagazine.co.uk/content/specific-needs/dyslexia-spld/7832/the-dyslexia-challenge/)
 - Ross, H. (2019) 'I'm not hiding, you just can't see me: understanding how
   schools help learners with hidden learning needs', Chartered College of
   Teaching.
-  [Available online](https://my.chartered.college/2019/05/im-not-hiding-you-just-cant-see-me-understanding-how-schools-help-learners-with-hidden-learning-needs/)
+  [Available online](https://my.chartered.college/research-hub/im-not-hiding-you-just-cant-see-me-understanding-how-schools-help-learners-with-hidden-learning-needs/)
 - Ross, H. (2019) 'How can education be inclusive when we're not sure what
   inclusion is?', *UKEd Magazine*, 15 May, p. 12.
   [Available online](https://ukedchat.com/asp-products/ukedmagazine-issue-55/)
@@ -176,10 +196,10 @@ My ORCID iD is [0000-0002-3827-9954](https://orcid.org/0000-0002-3827-9954).
   [Available online](https://issuu.com/thelittlethingsmagazine/docs/littlethings_issue07_issuu)
 - Ross, H. (2018) 'How do we view young people with hidden disabilities in
   educational discourse?', Chartered College of Teaching.
-  [Available online](https://chartered.college/hidden-disabilities-educational-discourse)
+  [Available online](https://my.chartered.college/research-hub/are-students-with-hidden-disabilities-having-their-voices-heard-in-education-policy/)
 - Ross, H. (2017) 'Am I a Good Teacher?: How Teachers Construct Themselves',
   Chartered College of Teaching.
-  [Available online](https://chartered.college/good-teacher-teachers-abilities-professional-status)
+  [Available online](https://my.chartered.college/research-hub/am-i-a-good-teacher-the-importance-of-a-positive-sense-of-self/)
 - Ross, H. (2016) 'Dyslexia in the Classroom: Accessing Support'. Poster,
   University of Bath Faculty of Health and Social Sciences Postgraduate Research
   Showcase, 12 April.

@@ -97,7 +97,7 @@ Look for patterns rather than proof: a capable child who tires quickly, avoids r
 
 - Ross, H. *I'm not hiding, you just can't see me: understanding how schools help learners with hidden learning needs*, **Chartered College of Teaching (Research Hub)**. [Read the review](https://my.chartered.college/research-hub/im-not-hiding-you-just-cant-see-me-understanding-how-schools-help-learners-with-hidden-learning-needs/)
 - Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. https://doi.org/10.16993/sjdr.782
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://www.bdadyslexia.org.uk/news/all-party-parliamentary-group-for-dyslexia-and-other-splds-releases-first-of-its-kind-report-looking-at-the-human-cost-of-dyslexia)
+- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
 
 See the [full list of publications](/publications).
 

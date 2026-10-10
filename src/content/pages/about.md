@@ -42,6 +42,8 @@ links:
     href: 'https://www.linkedin.com/in/helenlouiseross/'
   - label: Full publications list
     href: /publications
+  - label: My research, in plain English
+    href: /research
 ---
 
 ## My story
