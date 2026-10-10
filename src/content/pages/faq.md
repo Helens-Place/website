@@ -51,6 +51,27 @@ faqs:
       written so that you and their teachers can both act on it. Full
       assessments are [price: Full diagnostic assessment], including VAT.
   - category: Assessments
+    question: How do I get my child tested for dyslexia?
+    answer: >-
+      You can book a private assessment directly. You do not need a referral
+      from school or from your GP. Some schools use a screening test, which can
+      show that something is worth looking into, but a screener cannot give a
+      diagnosis. A dyslexia diagnosis comes from a full diagnostic assessment,
+      carried out by a specialist assessor with an Assessment Practising
+      Certificate or by an educational psychologist. If you are not sure your
+      child needs one yet, a free 20-minute call is a good place to start.
+  - category: Assessments
+    question: Do I need an educational psychologist, or is a specialist assessor enough?
+    answer: >-
+      For dyslexia and dyscalculia, a specialist assessor is enough. A
+      specialist assessor with a current Assessment Practising Certificate and
+      an educational psychologist can both diagnose dyslexia, and reports from
+      either are accepted by schools, for exam access arrangements and for
+      Disabled Students' Allowance. An educational psychologist can also look
+      more widely, for example at emotional wellbeing or a broader learning
+      difficulty. If anything in the assessment suggests your child needs that
+      wider look, I will tell you plainly.
+  - category: Assessments
     question: How much does a dyslexia assessment cost?
     answer: >-
       All prices include VAT. A full diagnostic assessment is [price: Full diagnostic assessment] for children and young people, and [price: Full diagnostic assessment for adults] for adults. That
@@ -256,8 +277,10 @@ faqs:
   - category: About me
     question: Where are you based, and what area do you cover?
     answer: >-
-      I am based in Trowbridge, Wiltshire, and assessments take place in person
-      there, or sometimes at a child's school or home. I also work online with
+      I am based in Trowbridge, Wiltshire, within about half an hour of Bath,
+      Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham
+      and Chippenham. Assessments take place in person there, or sometimes at a
+      child's school or home. I also work online with
       families across the UK for tutoring and family support. For school CPD
       visits I work within the South West and surrounding regions. Do get in
       touch to discuss.

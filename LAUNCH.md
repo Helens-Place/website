@@ -81,6 +81,19 @@ Content written or rewritten on her behalf, published in her name.
       cases. Worth her read, because it now gives EHCP help a headline where
       before it was buried in other answers.
 
+- [ ] **Search-phrase additions, October 2026.** Added because families search
+      in these words and the site never used them:
+      - two new FAQs, "How do I get my child tested for dyslexia?" and "Do I
+        need an educational psychologist, or is a specialist assessor enough?"
+        The second says reports from either are accepted by schools, for exam
+        access arrangements and for DSA. That is the general position, but
+        Helen should confirm she is happy saying it.
+      - JCQ and Form 8 named on the exam access page.
+      - SASC named on the DSA page.
+      - Corsham and Chippenham added to the "within about half an hour" towns
+        and to the structured data. Both are roughly 20 to 30 minutes by road.
+        Take them out if she would rather not draw from there.
+
 - [ ] **"Private" in the /assessments title.** Added because it is how families
       search. Worth checking she is comfortable with the word.
 

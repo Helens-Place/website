@@ -115,7 +115,7 @@ export const business = {
     addressCountry: 'GB',
   },
   areaServed: [
-    ...['Trowbridge', 'Bradford on Avon', 'Westbury', 'Melksham', 'Warminster', 'Frome', 'Devizes', 'Bath']
+    ...['Trowbridge', 'Bradford on Avon', 'Westbury', 'Melksham', 'Warminster', 'Frome', 'Devizes', 'Bath', 'Corsham', 'Chippenham']
       .map((name) => ({ '@type': 'City', name })),
     { '@type': 'AdministrativeArea', name: 'Wiltshire' },
     { '@type': 'AdministrativeArea', name: 'South West England' },

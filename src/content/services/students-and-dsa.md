@@ -23,7 +23,8 @@ faqs:
     answer: >-
       My reports are written by an assessor with a current Assessment
       Practising Certificate, which is the qualification DSA asks for, and they
-      follow the format the assessment standards require. Your funding body
+      follow the SpLD Assessment Standards Committee (SASC) guidelines that DSA
+      reports have to meet. Your funding body
       makes the final decision on your application.
   - question: "Is Disabled Students' Allowance means tested?"
     answer: >-
@@ -54,7 +55,7 @@ A lot of students who would qualify never apply, often because nobody told them 
 
 ## What you need to apply
 
-To apply on the grounds of dyslexia or dyscalculia, you need a diagnostic assessment report from a suitably qualified assessor. My reports are written by an assessor with a current Assessment Practising Certificate, which is the standard DSA asks for, and they follow the format the assessment standards require.
+To apply on the grounds of dyslexia or dyscalculia, you need a diagnostic assessment report from a suitably qualified assessor. My reports are written by an assessor with a current Assessment Practising Certificate, which is the standard DSA asks for, and they follow the SpLD Assessment Standards Committee (SASC) guidelines that DSA reports have to meet.
 
 You then apply to your student finance body. If you are eligible, you are invited to a separate meeting called a needs assessment, where someone works out with you what support would actually help with your course. That is a different thing from the diagnostic assessment I carry out, which is about establishing whether you have a specific learning difficulty in the first place.
 
@@ -70,7 +71,7 @@ Some of the most capable people I meet spent years quietly covering a difficulty
 
 ## What the day looks like
 
-The assessment happens in person, in Trowbridge, which is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham and Devizes. As with every assessment I do, I only see one person in a day. I set aside four to five hours. We look at reading, writing and spelling, and at underlying skills such as working memory and processing speed, with breaks whenever you want them.
+The assessment happens in person, in Trowbridge, which is within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. As with every assessment I do, I only see one person in a day. I set aside four to five hours. We look at reading, writing and spelling, and at underlying skills such as working memory and processing speed, with breaks whenever you want them.
 
 I also want your own account of what studying is like for you: what takes longest, what you avoid, and what you have worked out for yourself along the way. That is part of the picture, and it often tells me as much as any test.
 

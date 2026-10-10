@@ -21,7 +21,7 @@ order: 2
 faqs:
   - question: "Do I need the school's agreement before an access arrangements assessment?"
     answer: >-
-      In practice, yes. Under the exam boards' rules the school or college has
+      In practice, yes. Under the JCQ rules the exam boards share, the school or college has
       to agree to the assessor before the assessment takes place, and a report
       arranged privately without their involvement can be turned down. Talk to
       the school's SENCo first. I am always happy to speak to them directly.
@@ -56,7 +56,7 @@ The rules for all of them are set by the Joint Council for Qualifications, which
 
 ## Talk to the school first
 
-If you read only one part of this page, make it this one. Under the exam boards' rules, your child's school or college has to agree to the assessor before the assessment happens. A report arranged privately, without the school's involvement, can be turned down, and that is a miserable and expensive thing to discover halfway through Year 11.
+If you read only one part of this page, make it this one. Under the exam boards' rules, set by the Joint Council for Qualifications (JCQ), your child's school or college has to agree to the assessor before the assessment happens. A report arranged privately, without the school's involvement, can be turned down, and that is a miserable and expensive thing to discover halfway through Year 11.
 
 So the first step is always a conversation with the school's SENCo. Ask whether they will accept an assessment from an external assessor, and what they need from it. I am always happy to talk to the school myself, and I would much rather do that at the start than have your child sit an assessment the school cannot use.
 
@@ -72,8 +72,8 @@ It is worth being clear about what it does not do. An access arrangements assess
 
 Teenagers often arrive expecting another test they might fail, usually in the subject they already find hardest. I explain what we are doing and why, I take breaks whenever they need them, and I make sure they understand that the whole point is to let the exam measure what they actually know. For a lot of young people, hearing that said plainly is a relief in itself.
 
-As with everything I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham and Devizes. I only see one young person in a day, so nobody is rushed.
+As with everything I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. I only see one young person in a day, so nobody is rushed.
 
 ## Afterwards
 
-I record the results in the form the exam boards require and share them with the school, which then applies for the arrangements. I am happy to talk both you and the school through what the scores mean and which arrangements the evidence supports.
+I record the results on JCQ Form 8, the form the exam boards require, and share them with the school, which then applies for the arrangements. I am happy to talk both you and the school through what the scores mean and which arrangements the evidence supports.
