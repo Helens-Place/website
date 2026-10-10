@@ -322,49 +322,109 @@ Netlify.
 `_headers` files, so adding them while Netlify is still serving the review copy
 would leave two sets of rules fighting.
 
-### In the Cloudflare dashboard (Andrew)
+### What the DNS looked like, 10 October 2026
 
-No connector available to Claude can create a Pages project, so these are
-clicks.
+Checked before the move, because it changes the order of everything.
 
-- [ ] **Create the Pages project.** Workers & Pages, Create, Pages, Connect to
-      Git, `Helens-Place/website`. Production branch `main`, build command
-      `npm run tina:build`, output directory `dist`.
-- [ ] **Environment variables**, for both Production and Preview:
-      `NODE_VERSION` = `22.12.0`, `TINA_CLIENT_ID`, `TINA_TOKEN`. The same
-      values as in Netlify. Scope them to Preview too, or branch builds fail
-      with "Missing clientId", as they did on Netlify.
-- [ ] **Build watch paths.** Exclude `README.md`, `scripts/*`, `.claude/*` and
-      `.gitignore`. This replaces the `ignore` rule in `netlify.toml`, so a
-      commit that only changes notes does not trigger a build.
-- [ ] **Where the domain's DNS lives.** If helensplace.co.uk's DNS can move to
-      Cloudflare, connecting the domain is a couple of clicks. Cloudflare's
-      import copies existing records across, but check the Google Search
-      Console TXT record (section 4) and any email records (MX, SPF, DKIM)
-      arrived before switching nameservers, or verification and Helen's email
-      both break.
+- **Nameservers:** Just Host Me (`dns1`-`dns4.justhostme.net`).
+- **Website:** the apex A record is `51.195.234.92`, the old WordPress site.
+- **Helen's email is on that same server.** The MX record points at
+  `helensplace.co.uk` itself, and `mail`, `webmail`, `www` and others are
+  CNAMEs to the apex. So pointing the apex at Cloudflare would take her email
+  with it. Mail must get its own A record first.
+- **SPF** `v=spf1 ip4:51.195.234.92 +a +mx +ip4:54.36.160.184 +ip4:54.36.160.53 ~all`,
+  a **DKIM** key at `default._domainkey`, and **DMARC** `v=DMARC1; p=none;`.
+- **No Google Search Console TXT record yet** (section 4 not done).
+- **Keep the Just Host Me account.** It hosts Helen's email. Cancelling it
+  when the old website goes would cancel her mailbox too.
 
-### In the repo (Claude)
+### In Helen's Cloudflare account (Andrew)
 
-- [ ] **Branch name for Tina.** `tina/config.ts` reads the branch from
-      Netlify's `HEAD`. Add Cloudflare's `CF_PAGES_BRANCH`, or every preview
-      build edits `main` in TinaCloud.
-- [ ] **Redirects.** Move the 18 redirects from `netlify.toml` into
-      `public/_redirects`, one line each: `/helen/ /about 301`.
-- [ ] **Headers.** Move the header rules into `public/_headers`, including
-      the `X-Robots-Tag: noindex, nofollow` block, which still has to come off
-      at go-live.
-- [ ] **Contact form.** The one real piece of work. It uses Netlify Forms,
-      which Cloudflare has no equivalent of. Replace it with a Pages Function
-      that checks the submission with Cloudflare Turnstile (free spam
-      protection) and emails it to Helen, keeping the same fields, the
-      honeypot and the `/thank-you` redirect. Then send a real test enquiry
-      from the preview address and confirm it reaches Helen's inbox. A form
-      that silently drops enquiries is the worst failure this site could have.
-- [ ] **Remove `netlify.toml`** once the Cloudflare build is confirmed, so
-      there is one source of truth.
-- [ ] **Update the privacy policy.** It names the host and how contact form
-      submissions are processed. Both change.
+Use Helen's account, not Andrew's, so the site is hers.
+
+- [ ] **Turnstile widget.** Turnstile, Add widget, name "Helen's Place
+      contact form", hostnames `helensplace.co.uk` and `pages.dev` (so
+      previews work), mode Managed. Keep the **site key** and **secret key**.
+- [ ] **Pages project.** Workers & Pages, Create, Pages, Connect to Git,
+      `Helens-Place/website`. Production branch `main`, framework preset
+      none, build command `npm run tina:build`, output directory `dist`.
+- [ ] **Variables**, for Production and Preview alike:
+      `NODE_VERSION` = `22.12.0`; `TINA_CLIENT_ID` and `TINA_TOKEN` (as in
+      Netlify); `PUBLIC_TURNSTILE_SITE_KEY` (the site key);
+      `CONTACT_FROM` = `Helen's Place website <enquiries@send.helensplace.co.uk>`.
+      As **secrets** (encrypted): `TURNSTILE_SECRET_KEY` and `RESEND_API_KEY`.
+      Variables only reach a build made after they were added, so retry the
+      deployment once they are in.
+- [ ] **Build watch paths.** Exclude `README.md`, `LAUNCH.md`, `scripts/*`,
+      `.claude/*` and `.gitignore`, replacing the Netlify `ignore` rule.
+- [ ] **TinaCloud site URL.** In TinaCloud, project configuration, add the
+      `*.pages.dev` address (and later `https://helensplace.co.uk`), or
+      Helen's login to `/admin` will be refused there.
+
+### Resend, in Helen's name (Andrew)
+
+- [ ] Sign up at resend.com with Helen's email. Add the domain
+      **`send.helensplace.co.uk`**, a subdomain, so nothing about the apex
+      or Helen's existing mail changes. Resend lists a few DNS records (an MX
+      and TXT for bounces and SPF on the subdomain, and a DKIM TXT). Add them
+      wherever the DNS lives at the time, then press Verify in Resend.
+- [ ] Create an API key with sending access only, and paste it into the Pages
+      project as the `RESEND_API_KEY` secret.
+
+### In the repo (done 10 October 2026)
+
+- [x] `functions/api/contact.js`: checks the honeypot, the fields and
+      Turnstile, emails Helen through Resend with Reply-To set to the sender,
+      and on any failure shows the visitor their message to copy with Helen's
+      email and phone. Every path was tested with the network stubbed.
+- [x] The form posts to `/api/contact`; Turnstile shows only when
+      `PUBLIC_TURNSTILE_SITE_KEY` is set, in interaction-only mode.
+- [x] `public/_redirects` (the 18 old WordPress redirects, each with and
+      without its trailing slash) and `public/_headers` (including the
+      noindex block, marked REMOVE AT GO-LIVE).
+- [x] Pages are built as `about.html` so Cloudflare serves `/about` without
+      a trailing-slash redirect, and canonical URLs now match the site's links
+      and the sitemap (they had been `/about/`).
+- [x] `tina/config.ts` reads `CF_PAGES_BRANCH`.
+- [x] Privacy policy names Cloudflare, Turnstile, Resend and Just Host Me.
+- [ ] Remove `netlify.toml` once the Cloudflare build is confirmed.
+- [ ] Note: the contact form no longer works on Netlify deploys. Netlify is
+      not serving the real domain, so nothing live is affected.
+
+### Testing on the preview address, before any DNS change
+
+- [ ] The `content` branch preview builds and loads.
+- [ ] `/helen/`, `/privacy-policy` and `/blog/anything` redirect correctly.
+- [ ] `/about` loads without redirecting to `/about/`.
+- [ ] Response headers include `X-Robots-Tag: noindex, nofollow` (still
+      wanted, until go-live).
+- [ ] `/admin` opens and Helen can sign in and save a word.
+- [ ] **A real enquiry** from the contact form arrives in Helen's inbox, and
+      pressing Reply addresses the sender. Then one from a phone.
+
+### Moving the DNS and the domain (go-live, Andrew)
+
+Order matters, because of Helen's email.
+
+1. **Add the site to Helen's Cloudflare account** (Add a domain, Free plan).
+   Let it import the existing records, then **check them against the list
+   above** before going further.
+2. **Fix mail in the Cloudflare DNS before switching nameservers:**
+   `mail` becomes an **A record** to `51.195.234.92` (not a CNAME), the MX
+   points to `mail.helensplace.co.uk`, and `webmail`, `cpanel`,
+   `autodiscover` and `ftp` become A records to `51.195.234.92`. All of
+   these **DNS only** (grey cloud). Keep SPF, DKIM and DMARC exactly as they
+   are. Add the Resend records and the Google Search Console TXT record.
+3. **Change the nameservers** at the registrar to the two Cloudflare gives.
+   Wait for Cloudflare to say the site is active.
+4. **Send Helen a test email from outside** and have her reply, to prove mail
+   still works, before touching the website records.
+5. **Certificate settings** (from the section below): Google Trust Services,
+   minimum TLS 1.2, HSTS off, Bot Fight Mode off.
+6. **Connect the domain** to the Pages project (Custom domains:
+   `helensplace.co.uk` and `www.helensplace.co.uk`). This replaces the apex
+   and www records with ones pointing at Pages.
+7. Then the rest of the go-live order in section 5.
 
 ### The analytics page in the admin area (option 2)
 

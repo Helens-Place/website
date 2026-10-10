@@ -1,7 +1,11 @@
 ---
 /**
- * Netlify Forms. The static HTML is detected at deploy time, so submissions
- * arrive in the Netlify dashboard with no backend to maintain.
+ * Posts to the Cloudflare Pages Function at /api/contact
+ * (functions/api/contact.js), which checks Turnstile and emails Helen through
+ * Resend. It works without JavaScript; only the Turnstile check needs it.
+ *
+ * Turnstile appears only when PUBLIC_TURNSTILE_SITE_KEY is set at build time,
+ * and in "interaction-only" mode most visitors never see it.
  *
  * Accessibility notes:
  * - The honeypot is hidden from assistive technology as well as from sight.
@@ -12,17 +16,10 @@
  * - Required fields rely on the native `required` attribute, which assistive
  *   technology announces. The asterisk is decorative and hidden from it.
  */
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
-<form
-  name="contact"
-  method="POST"
-  action="/thank-you"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  class="form"
->
-  <input type="hidden" name="form-name" value="contact" />
+<form name="contact" method="POST" action="/api/contact" class="form">
 
   <p class="form__hp" aria-hidden="true">
     <label for="bot-field">Leave this field empty if you are human:</label>
@@ -86,6 +83,13 @@
     </p>
     <textarea id="message" name="message" rows="6" required aria-describedby="message-hint"></textarea>
   </div>
+
+  {turnstileKey && (
+    <>
+      <div class="cf-turnstile" data-sitekey={turnstileKey} data-appearance="interaction-only"></div>
+      <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    </>
+  )}
 
   <button type="submit" class="btn btn--primary">Send message</button>
   <p class="form__note">I reply within 48 hours.</p>

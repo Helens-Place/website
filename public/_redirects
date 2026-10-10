@@ -1,0 +1,34 @@
+# Old WordPress addresses, moved from netlify.toml. Cloudflare Pages reads this
+# file. Each old address is listed with and without its trailing slash, so
+# links in either form land in the right place.
+/guides /courses 301
+/helen /about 301
+/helen/ /about 301
+/support/dyslexia-support /assessments 301
+/support/dyslexia-support/ /assessments 301
+/support/the-elevator-series /elevator-series 301
+/support/the-elevator-series/ /elevator-series 301
+/working-together/research /research-and-expert-witness 301
+/working-together/research/ /research-and-expert-witness 301
+/working-together/speaker-and-corporate /speaking 301
+/working-together/speaker-and-corporate/ /speaking 301
+/literacy-learning-journeys /book 301
+/literacy-learning-journeys/ /book 301
+/books-publications-and-blog /book 301
+/books-publications-and-blog/ /book 301
+/publications-and-media /publications 301
+/publications-and-media/ /publications 301
+/privacy-policy /privacy 301
+/privacy-policy/ /privacy 301
+/safeguarding-policy /safeguarding 301
+/safeguarding-policy/ /safeguarding 301
+/ts-and-cs /terms 301
+/ts-and-cs/ /terms 301
+/feed /articles 301
+/feed/ /articles 301
+/comments/feed /articles 301
+/comments/feed/ /articles 301
+/blog /articles 301
+/blog/* /articles 301
+/support/* /assessments 301
+/working-together/* /schools 301

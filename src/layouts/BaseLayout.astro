@@ -20,7 +20,14 @@ interface Props {
 const { title, description, image = 'helen-hero.jpg', schema = [] } = Astro.props;
 const site = await getEntry('settings', 'site');
 const s = site!.data;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE);
+/* One form of every address: no .html, no index, no trailing slash, matching
+   the site's own links and the sitemap. The build writes about.html, which
+   Cloudflare Pages serves at /about, and Astro.url carries the .html. */
+const cleanPath = Astro.url.pathname
+  .replace(/\.html$/, '')
+  .replace(/\/index$/, '/')
+  .replace(/(.)\/$/, '$1');
+const canonical = new URL(cleanPath, Astro.site ?? SITE);
 const fullTitle = title === s.siteName ? title : `${title} | ${s.siteName}`;
 const ogImage = new URL(`/images/${image.replace(/^\/?images\//, '')}`, SITE).href;
 

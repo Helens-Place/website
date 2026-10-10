@@ -5,7 +5,7 @@ import { getEntry } from 'astro:content';
 
 const site = await getEntry('settings', 'site');
 const s = site!.data;
-const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+const current = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '/';
 const hasLogo = fs.existsSync(path.join(process.cwd(), 'public', 'images', 'logo.png'));
 ---
 

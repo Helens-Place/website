@@ -15,12 +15,13 @@ import { defineConfig, type Collection } from 'tinacms';
 
 const branch =
   process.env.TINA_BRANCH ||
-  process.env.HEAD ||               // Netlify sets this to the deploy branch
+  process.env.CF_PAGES_BRANCH ||    // Cloudflare Pages sets this to the deploy branch
+  process.env.HEAD ||               // Netlify did, before the move
   'main';
 
 /* TinaCloud credentials. Tina's own docs use different variable names across
    framework examples, so accept the common spellings rather than fail a deploy
-   over a prefix. Both are set in the Netlify dashboard, not in the repo. */
+   over a prefix. Both are set in the Cloudflare Pages project, not in the repo. */
 const clientId =
   process.env.TINA_CLIENT_ID ||
   process.env.TINA_PUBLIC_CLIENT_ID ||

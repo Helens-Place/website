@@ -1,0 +1,18 @@
+# Response headers, moved from netlify.toml. Cloudflare Pages reads this file.
+
+# REMOVE AT GO-LIVE. Keeps the preview addresses out of search engines. Left
+# in once helensplace.co.uk points here, it keeps the real site out of Google
+# too. See LAUNCH.md.
+/*
+  X-Robots-Tag: noindex, nofollow
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=604800

@@ -15,5 +15,6 @@ export default defineConfig({
         !page.includes('/terms'),
     }),
   ],
-  build: { format: 'directory' },
+  build: { format: 'file' },
+  trailingSlash: 'never',
 });

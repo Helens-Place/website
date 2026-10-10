@@ -13,13 +13,14 @@ intro: >-
 
 > **Note for review, to be removed before the site goes live.** This policy
 > has been rewritten to match what the new site and the practice actually do.
-> Three things need Helen's confirmation: her ICO registration number, which
-> email provider she uses, and the retention periods marked below.
+> Two things need Helen's confirmation: her ICO registration number and the
+> retention periods marked below.
 
 ## The short version
 
-- This website sets no cookies, shows no adverts and does not track you from
-  site to site, which is why there is no cookie banner.
+- This website shows no adverts, does not track you from site to site, and
+  sets no cookies beyond the spam check on the contact form, which is why
+  there is no cookie banner.
 - If you get in touch, I use what you send me to reply, and nothing else.
 - If you book an assessment, I collect information about the person being
   assessed that is sensitive, including information about their health and
@@ -64,14 +65,17 @@ can improve them.
 
 ### Hosting
 
-The site is hosted by Netlify. Like any web host, its servers briefly record
-technical details of each request, such as your IP address, browser and the
-page asked for, to deliver the page, keep the site secure and fix faults. I do
-not use these records to identify anyone.
+The site is hosted by Cloudflare. Like any web host, its servers briefly
+record technical details of each request, such as your IP address, browser and
+the page asked for, to deliver the page, keep the site secure and fix faults. I
+do not use these records to identify anyone.
 
 ### Cookies and your reading settings
 
-This website sets no cookies.
+This website sets no cookies of its own. The one exception is the spam check
+on the contact form, Cloudflare Turnstile, which may store what it needs to
+tell people from robots. That is strictly necessary to keep the form working,
+so it does not need consent.
 
 The reading comfort buttons at the top of each page (larger text, more spacing
 and the lilac tint) remember your choice by storing it in your own browser. It
@@ -90,9 +94,13 @@ their own privacy policies apply once you are there.
 ## When you contact me
 
 The contact form asks for your name, email address, what your enquiry is about
-and your message, and optionally your phone number and organisation. Netlify
-receives the form and passes it to me by email. If you email or phone me
-instead, I receive the same kind of information directly.
+and your message, and optionally your phone number and organisation. When you
+send it, Cloudflare runs a quick check, called Turnstile, that the message is
+from a person rather than a spam robot, and then Resend delivers your message
+to me by email. Turnstile only looks at what it needs to tell a person from a
+robot, uses it for nothing else, and Cloudflare cannot identify you from it.
+If you email or phone me instead, I receive the same kind
+of information directly.
 
 I use it to reply to you and, if you decide to go ahead, to arrange the work.
 My lawful basis is taking the steps you have asked for before we agree any
@@ -184,9 +192,10 @@ court or tribunal.
 I use a small number of trusted services, which only process information on my
 instructions:
 
-- **Netlify, Inc.** hosts this website and receives contact form submissions.
-- **Cloudflare, Inc.** provides the website analytics described above.
-- **My email provider** [to be confirmed] stores the emails I send and receive.
+- **Cloudflare, Inc.** hosts this website, provides the analytics described
+  above, and runs the spam check on the contact form.
+- **Resend** delivers contact form messages to my inbox.
+- **Just Host Me** hosts my email, so it stores the emails I send and receive.
 - **Vimeo** delivers the Elevator Series videos when you play one.
 
 Some of these are United States companies, so information may be processed
@@ -242,5 +251,5 @@ affect any use made before your written withdrawal is received.
 
 ## Changes to this policy
 
-I will update this page if anything changes, for example if the site moves to
-a different host. This policy was last updated in October 2026.
+I will update this page if anything changes, for example if I change one of
+the services listed above. This policy was last updated in October 2026.

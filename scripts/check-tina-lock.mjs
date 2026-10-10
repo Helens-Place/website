@@ -40,7 +40,16 @@ if (dirty(CONFIG) && !dirty(LOCK)) {
   fail(`${CONFIG} has uncommitted changes but ${LOCK} does not, so the lock is out of date.`);
 }
 
-if (!dirty(CONFIG) && !dirty(LOCK) && stamp(CONFIG) > stamp(LOCK)) {
+/* A config change that does not touch the schema, such as which environment
+   variable names the branch, regenerates an identical lock, so there is nothing
+   to commit and the dates alone would fail forever. A commit that ran
+   `npx tinacms dev` and found the lock unchanged says so with a trailer:
+       Tina-Lock: unchanged
+   That is a claim someone checked, not a way round the check. */
+const lastConfigCommit = git(['log', '-1', '--format=%B', '--', CONFIG]);
+const declaredUnchanged = /^Tina-Lock: unchanged$/m.test(lastConfigCommit);
+
+if (!dirty(CONFIG) && !dirty(LOCK) && stamp(CONFIG) > stamp(LOCK) && !declaredUnchanged) {
   const c = git(['log', '-1', '--format=%h %s', '--', CONFIG]);
   const l = git(['log', '-1', '--format=%h %s', '--', LOCK]);
   fail(
