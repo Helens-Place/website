@@ -13,6 +13,8 @@ intro: >-
   living it. My work is qualitative at heart, though I'll happily run the
   numbers when a question needs them. This is a plain-English tour of what I've
   studied and what I found.
+image: helen-book-laptop.jpg
+imageAlt: Dr Helen Ross laughing at her laptop, holding her book Literacy Learning Journeys
 links:
   - label: Every paper, with links to the originals
     href: /publications

@@ -748,6 +748,8 @@ const legal: Collection = {
     { type: 'string', name: 'eyebrow', label: 'Small label above the heading' },
     { type: 'string', name: 'heading', label: 'Main heading', required: true },
     { type: 'string', name: 'intro', label: 'Introduction', ui: { component: 'textarea' } },
+    { type: 'image', name: 'image', label: 'Photo (optional)' },
+    { type: 'string', name: 'imageAlt', label: 'Photo description for screen readers' },
     {
       type: 'object',
       name: 'links',

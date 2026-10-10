@@ -16,7 +16,14 @@ const { Content } = await render(page!);
 ---
 
 <BaseLayout title={p.title} description={p.description} schema={schema}>
-  <PageHero eyebrow={p.eyebrow} heading={p.heading} intro={p.intro} audience={p.audience} />
+  <PageHero
+    eyebrow={p.eyebrow}
+    heading={p.heading}
+    intro={p.intro}
+    image={p.image}
+    imageAlt={p.imageAlt}
+    audience={p.audience}
+  />
   <section class="section">
     <div class="wrap">
       <div class:list={['prose', { 'prose--wide': wide }]}>

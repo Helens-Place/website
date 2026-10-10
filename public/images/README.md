@@ -9,7 +9,7 @@ for the web and converts the logo to a transparent PNG.
 | `logo.png`               | The Helen's Place wordmark, brand purple on transparency           | Header                      |
 | `helen-hero.jpg`         | At the desk, head resting on hand, bookshelf behind                | Homepage hero               |
 | `helen-portrait.jpg`     | Seated portrait, blue cardigan, book on lap                        | About                       |
-| `helen-book-laptop.jpg`  | Holding the open book, laughing at the laptop                      | The book                    |
+| `helen-book-laptop.jpg`  | Holding the open book, laughing at the laptop                      | My research                 |
 | `helen-dog-sofa.jpg`     | On the sofa with the labrador                                      | Assessments                 |
 | `helen-laptop-step.jpg`  | On the decking step with the laptop                                | Schools and training        |
 | `helen-desk-working.jpg` | At the desk typing, wearing glasses                                | Research and expert witness |
