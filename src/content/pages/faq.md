@@ -13,7 +13,7 @@ faqs:
     question: Do you offer online dyslexia assessments?
     answer: 'No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, whether they are anxious, tired, or simply finding the reading difficult. A camera flattens all of that. I know that means waiting longer, and I am sorry for it, but I would rather give you something where I see the whole individual. Tutoring and family support sessions can be online, but a diagnostic assessment is always face to face with me.'
   - category: Assessments
-    question: Why do you only assess one young person a day?
+    question: Why do you only assess one young person a day from home?
     answer: 'Because an assessment should take as long as it needs, and that is impossible if someone else is booked in behind. Seeing one family a day means we can take proper breaks, follow something up when it turns out to matter, and never rush a tired child.'
   - category: Assessments
     question: How long will I wait for an appointment?
