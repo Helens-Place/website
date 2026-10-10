@@ -1,14 +1,9 @@
 ---
 title: Privacy policy
-description: >-
-  How Helen's Place collects, uses and protects your personal data, including
-  cookies, analytics and your rights under UK data protection law.
+description: 'How Helen''s Place collects, uses and protects your personal data, including cookies, analytics and your rights under UK data protection law.'
 eyebrow: Legal
 heading: Privacy policy
-intro: >-
-  I am committed to ensuring that your privacy is protected, and I will use any
-  information you provide when using this website in accordance with this
-  privacy policy.
+intro: 'I am committed to ensuring that your privacy is protected, and I will use any information you provide when using this website in accordance with this privacy policy.'
 ---
 
 This privacy policy explains what information I collect, how I protect any
@@ -42,17 +37,17 @@ Personal information may be collected from you in various ways, for example:
 I use this information to understand your needs and provide you with a better
 service, and in particular for the following reasons:
 
-- To supply to you services purchased via the website, and to process your
+* To supply to you services purchased via the website, and to process your
   payments.
-- For statistical purposes and analysis for management purposes, in order to
+* For statistical purposes and analysis for management purposes, in order to
   administer the website or improve my products and services.
-- Internal record keeping and administrative purposes, and to inform you about
+* Internal record keeping and administrative purposes, and to inform you about
   events, services or products, or other related information that I think would
   be of interest to you, as explained above.
-- To communicate marketing messages, newsletters and details of my business by
+* To communicate marketing messages, newsletters and details of my business by
   post or email or similar technology. You can tell me at any time if you no
   longer require marketing communications.
-- From time to time, I may also use your information to contact you for market
+* From time to time, I may also use your information to contact you for market
   research purposes, or to customise the website according to your interests.
 
 Your information will not be disclosed to any third party unless you have given
@@ -175,33 +170,29 @@ like to get in touch with any queries or comments, please email
 You may request details of personal information which I hold about you under the
 Data Protection Act 2018. If you would like a copy of the information held about
 you, or if you have any questions relating to this privacy policy or how I use
-the personal information I have about you, please write to: Helen Ross, 34
-Southwood Road, Trowbridge, BA14 7BZ.
+the personal information I have about you, please write to: Helen Ross on [helen@helensplace.co.uk](mailto:helen@helensplace.co.uk)
 
 To find out more about your rights under the UK GDPR, visit the
 [Information Commissioner's Office](https://ico.org.uk/for-the-public/).
 
 ## Data protection statement, video submissions
 
-I am collecting video submissions for use in the launch of Literacy Learning
-Journeys: An Educator's Guide to Dyslexia, Ages 0-18. By submitting a video, you
-agree to the following:
+I may collect video submissions for use in books and articles at various points. By submitting a video, you agree to the following:
 
-- **Purpose.** Your video will be used solely for the promotion of Literacy
-  Learning Journeys: An Educator's Guide to Dyslexia, Ages 0-18, and may be
+* **Purpose.** Your video will be used solely for the promotion of the publication mentioned in the promotional material that you are responding to, and may be
   combined with other submissions to create a longer piece responding to the
   prompt questions.
-- **Use and editing.** Individual videos will not be altered, so no content will
+* **Use and editing.** Individual videos will not be altered, so no content will
   be added or removed, though they may be compiled into a larger video alongside
   other submissions.
-- **Privacy.** You are not required to provide your full name in the video.
-- **Data security and retention.** Videos will be stored securely and retained
+* **Privacy.** You are not required to provide your full name in the video.
+* **Data security and retention.** Videos will be stored securely and retained
   only for as long as necessary, in line with the Data Protection Act 2018 and
   UK data protection regulations.
-- **Sharing and distribution.** Videos may be shared on social media platforms
+* **Sharing and distribution.** Videos may be shared on social media platforms
   but will not be sold or passed on to third parties.
-- **Editorial discretion.** I reserve the right not to use any submitted videos.
-- **Legal compliance and consent.** By submitting a video, you confirm that you
+* **Editorial discretion.** I reserve the right not to use any submitted videos.
+* **Legal compliance and consent.** By submitting a video, you confirm that you
   have the right to share its content and consent to its use as outlined above.
 
 If you have any questions or wish to withdraw your consent, please contact me at
