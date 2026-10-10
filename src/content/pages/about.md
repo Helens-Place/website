@@ -1,9 +1,6 @@
 ---
 title: About Dr Helen Ross
-description: >-
-  Dr Helen Ross: dyslexia and dyscalculia specialist assessor, published
-  researcher and former BDA Trustee, dyslexic herself, based in Trowbridge,
-  Wiltshire.
+description: 'Dr Helen Ross: dyslexia and dyscalculia specialist assessor, published researcher and former BDA Trustee, dyslexic herself, based in Trowbridge, Wiltshire.'
 eyebrow: About
 heading: About me
 intro: 'I''ve advised government, published internationally and written a book (the second one is on the way!). I am equally at ease working with families to put nervous 10-year-olds at ease. '
@@ -13,11 +10,11 @@ primaryCta:
   label: Book a free 20-minute call
   href: /contact
 credentialGroups:
-  - heading: Assessor status
+  - heading: Assessor details
     items:
       - 'AMBDA (Associate Member of the British Dyslexia Association), membership 20/AMB04046'
       - AMBDA Dyscalculia 23/AMD05008
-      - Assessment Practising Certificate 23/APC05078
+      - Assessment Practising Certificate 26/APC05086
   - heading: Roles
     items:
       - 'Churchill Fellow 2025, supported by The Mercers'' Company'
@@ -45,7 +42,7 @@ links:
     href: 'https://www.linkedin.com/in/helenlouiseross/'
   - label: Full publications list
     href: /publications
-  - label: My research, in plain English
+  - label: 'My research, in plain English'
     href: /research
 ---
 
@@ -74,6 +71,6 @@ advocating to make the world a more inclusive place for dyslexic people.
 
 I'm dyslexic myself, so I don't just understand dyslexia academically. I live
 it. I know what it is to be the child in the room working twice as hard for half
-the credit, and I offer the inclusive, friendly support I wish I'd had. 
+the credit, and I offer the inclusive, friendly support I wish I'd had.
 
 I have recently been diagnosed with ADHD, which means I really do understand what it is like to be neurodivergent in a mainstream classroom!
