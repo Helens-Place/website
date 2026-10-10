@@ -7,7 +7,7 @@ heading: 'Dyscalculia assessments, from an assessor who taught maths'
 intro: 'Assessing dyscalculia needs its own specialist qualification, separate from the one for dyslexia, and a good many assessors do not hold it. I do. I also spent years teaching maths before I ever assessed anyone, so I know what a child who is struggling with number looks like from the front of a classroom.'
 price: '[price: Full diagnostic assessment]'
 priceNote: 'Dyslexia and dyscalculia in one assessment, so you only pay once'
-credentials: 'AMBDA Dyscalculia, 26/AMD05086 · AMBDA, 20/AMB04046 · Assessment Practising Certificate, 23/APC05078'
+credentials: 'AMBDA Dyscalculia, 23/AMD05008 · AMBDA, 20/AMB04046 · Assessment Practising Certificate, 26/APC05086'
 serviceType: Dyscalculia diagnostic assessment
 audienceType: Parents and families
 order: 1
@@ -44,7 +44,7 @@ I look at how your child understands and works with number. That means their sen
 
 Maths is often the subject a child has the most painful history with, so I go gently. I never put a child in front of a page of sums and leave them to it. We talk, we take breaks whenever they are needed, and I make sure they understand that nothing we do is a test they can pass or fail.
 
-As with every assessment I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. If Surrey is easier for you, I also assess at [Moon Hall Assessment Centre](https://www.mhacuk.com/directory/dr-helen-ross-specialist-dyslexia-and-dyscalculia-assessor) in Reigate. I only see one young person in a day.
+As with every assessment I do, it happens in person, usually at my garden office in Trowbridge, within about half an hour of Bath, Bradford on Avon, Frome, Westbury, Warminster, Melksham, Devizes, Corsham and Chippenham. Plenty of people come much further, from the Midlands, London, the Home Counties and the South East, and from abroad. I only see one young person in a day.
 
 ## One assessment, not two
 
