@@ -1,48 +1,22 @@
 ---
-title: "What is dyslexia, really? A specialist's plain-English guide"
-description: >-
-  Dr Helen Ross, a qualified diagnostic assessor and published dyslexia
-  researcher, explains what dyslexia actually is, how it's identified, and
-  what genuinely helps.
-heading: "What is dyslexia, really?"
-summary: >-
-  This is the question I get asked more than any other. Parents ask it,
-  teachers ask it, and a good number of adults ask it about themselves,
-  sometimes after wondering for thirty years.
-theme: "t1"
-themeLabel: "Understanding dyslexia"
-audience: "families"
+title: 'What is dyslexia, really? A specialist''s plain-English guide'
+description: 'Dr Helen Ross, a qualified diagnostic assessor and published dyslexia researcher, explains what dyslexia actually is, how it''s identified, and what genuinely helps.'
+heading: 'What is dyslexia, really?'
+summary: 'This is the question I get asked more than any other. Parents ask it, teachers ask it, and a good number of adults ask it about themselves, sometimes after wondering for thirty years.'
+theme: t1
+themeLabel: Understanding dyslexia
+audience: families
 order: 1
-keyword: "what is dyslexia"
+keyword: what is dyslexia
 faqs:
-  - question: "Is dyslexia a disability?"
-    answer: >-
-      Legally, in the UK, dyslexia can count as a disability under the Equality
-      Act 2010 where it has a substantial and long-term effect on everyday
-      activities. Plenty of dyslexic people don't think of themselves as
-      disabled, and that's fine too. What matters in practice is that reasonable
-      adjustments should be made, in education and at work.
-  - question: "At what age can a child be assessed for dyslexia?"
-    answer: >-
-      Signs can be spotted early, and early support should never wait for a
-      formal diagnosis. Full diagnostic assessments become more reliable once a
-      child has had enough teaching of reading behind them, often from around
-      age seven, though I assess older children, teenagers and adults all the
-      time, including students applying for Disabled Students' Allowance.
-  - question: "Do we need a diagnosis to get support?"
-    answer: >-
-      In principle, no. Good teaching supports the difficulty whether or not
-      there's a formal label. In reality, a diagnostic assessment often opens
-      the door to the right support, to exam access arrangements, and to a clear
-      plan, which is why so many families go for one.
-  - question: "Is dyslexia genetic?"
-    answer: >-
-      It does tend to run in families, and research keeps identifying genes and
-      genetic variants linked to it, work I talked about when I [commented for
-      *The Guardian* in
-      2022](https://www.theguardian.com/society/2022/oct/20/host-of-genes-and-genetic-variants-linked-to-dyslexia-identified).
-      If one person in a family is dyslexic, it's well worth keeping a
-      thoughtful eye on their siblings.
+  - question: Is dyslexia a disability?
+    answer: 'Legally, in the UK, dyslexia can count as a disability under the Equality Act 2010 where it has a substantial and long-term effect on everyday activities. Plenty of dyslexic people don''t think of themselves as disabled, and that''s fine too. What matters in practice is that reasonable adjustments should be made, in education and at work.'
+  - question: At what age can a child be assessed for dyslexia?
+    answer: 'Signs can be spotted early, and early support should never wait for a formal diagnosis. Full diagnostic assessments become more reliable once a child has had enough teaching of reading behind them, often from around age seven, though I assess older children, teenagers and adults all the time, including students applying for Disabled Students'' Allowance.'
+  - question: Do we need a diagnosis to get support?
+    answer: 'In principle, no. Good teaching supports the difficulty whether or not there''s a formal label. In reality, a diagnostic assessment often opens the door to the right support, to exam access arrangements, and to a clear plan, which is why so many families go for one.'
+  - question: Is dyslexia genetic?
+    answer: 'It does tend to run in families, and research keeps identifying genes and genetic variants linked to it, work I talked about when I [commented for *The Guardian* in 2022](https://www.theguardian.com/society/2022/oct/20/host-of-genes-and-genetic-variants-linked-to-dyslexia-identified). If one person in a family is dyslexic, it''s well worth keeping a thoughtful eye on their siblings.'
 ---
 
 This is the question I get asked more than any other. Parents ask it, teachers ask it, and a good number of adults ask it about themselves, sometimes after wondering for thirty years. It sounds like it should have a tidy answer. It really doesn't, and getting it right matters, because the way we define dyslexia decides who gets help and who slips quietly through.
@@ -53,7 +27,9 @@ So here is how I'd explain it, as someone who assesses for dyslexia, researches 
 
 Dyslexia is a specific learning difficulty, or SpLD, that mostly affects the skills involved in reading and spelling accurately and fluently. It belongs to a wider family of specific learning difficulties that includes dyscalculia and developmental coordination difficulties, and it very often turns up alongside them rather than on its own.
 
-The [British Dyslexia Association](https://www.bdadyslexia.org.uk) has a solid, testable definition, and that word "testable" is doing a lot of work. Dyslexia gets argued about a great deal, as I've written in my chapter [*"It's a Battle!"* (Ross, 2021)](https://doi.org/10.5772/intechopen.93948), but a good definition gives us characteristics we can actually assess. It stops dyslexia being a vague word we reach for whenever a child struggles, and turns it into a recognisable pattern. Usually that pattern involves difficulty with phonological awareness (hearing and playing with the sounds in words), verbal memory, and processing speed. Reading and spelling are where it tends to show up first. But because so much of school runs on those skills, its reach goes well beyond the literacy lesson.
+The most recent definition for dyslexia was published in 2025 following a Delphi study commissioned by SASC. You can read it here on the [British Dyslexia Association](https://www.bdadyslexia.org.uk/dyslexia/about-dyslexia/what-is-dyslexia) website. Phonological skills, working memory and processing are implicated and it often is spotted when children find reading, writing or spelling difficult. 
+
+Dyslexia gets argued about a great deal, as I've written in my chapter [*"It's a Battle!"* (Ross, 2021)](https://doi.org/10.5772/intechopen.93948), but a good definition gives us characteristics we can actually assess. It stops dyslexia being a vague word we reach for whenever a child struggles, and turns it into a recognisable pattern. Usually that pattern involves difficulty with phonological awareness (hearing and playing with the sounds in words), verbal memory, and processing speed. Reading and spelling are where it tends to show up first. But because so much of school runs on those skills, its reach goes well beyond the literacy lesson.
 
 Roughly one in ten people is dyslexic. In my [research on assistive technology (Ross, 2024)](https://doi.org/10.1111/1467-9604.12474) I set out the wider picture: NHS figures put dyslexia at around 10 per cent of the population, and the Department for Education recorded about 11 per cent of pupils in England as having a specific learning difficulty in January 2022. Put plainly, most teachers have several dyslexic learners in every class, whether or not anyone has ever spotted them.
 
@@ -103,7 +79,7 @@ Dyslexia is a real, lifelong, recognisable difference in how a person handles wr
 
 Understanding what dyslexia really is, is where that starts to change.
 
----
+***
 
 ## Questions people often ask
 
@@ -119,21 +95,20 @@ In principle, no. Good teaching supports the difficulty whether or not there's a
 **Is dyslexia genetic?**
 It does tend to run in families, and research keeps identifying genes and genetic variants linked to it, work I talked about when I [commented for *The Guardian* in 2022](https://www.theguardian.com/society/2022/oct/20/host-of-genes-and-genetic-variants-linked-to-dyslexia-identified). If one person in a family is dyslexic, it's well worth keeping a thoughtful eye on their siblings.
 
----
+***
 
 ## References and further reading
 
 The research below is by Dr Helen Ross and is publicly accessible; several papers are open access.
 
-- Ross, H. (2024) *Impact of OrCam Learn on reading comprehension*, **Support for Learning**, 39(3), 95-103. https://doi.org/10.1111/1467-9604.12474
-- Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. https://doi.org/10.16993/sjdr.782
-- Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. https://doi.org/10.5772/intechopen.93948
-- Ross, H. (2020) *Review 2: The support systems for individuals with SpLDs*, **Council for Science and Technology**. [Read the review](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/926052/specific-learning-difficulties-spld-cst-report.pdf)
-- Ross, H. (2019) *Supporting a child with dyslexia*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
-- Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
-- Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. https://doi.org/10.1111/1467-8578.12174
+* Ross, H. (2024) *Impact of OrCam Learn on reading comprehension*, **Support for Learning**, 39(3), 95-103. [https://doi.org/10.1111/1467-9604.12474](https://doi.org/10.1111/1467-9604.12474)
+* Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. [https://doi.org/10.16993/sjdr.782](https://doi.org/10.16993/sjdr.782)
+* Ross, H. (2021) *"It's a Battle!": Parenting and Supporting a Child with Dyslexia*, in **Dyslexia**. [https://doi.org/10.5772/intechopen.93948](https://doi.org/10.5772/intechopen.93948)
+* Ross, H. (2020) *Review 2: The support systems for individuals with SpLDs*, **Council for Science and Technology**. [Read the review](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/926052/specific-learning-difficulties-spld-cst-report.pdf)
+* Ross, H. (2019) *Supporting a child with dyslexia*, **British Journal of Special Education**, 46(2), 136-157. [https://doi.org/10.1111/1467-8578.12254](https://doi.org/10.1111/1467-8578.12254)
+* Ross, H. and Hicks, J. (2019) *Managing Dyslexia as a Family*, in **The Human Cost of Dyslexia** (APPG for Dyslexia and other SpLDs). [Read the report](https://cdn.bdadyslexia.org.uk/uploads/documents/About/APPG/Final-APPG-for-Human-cost-of-dyslexia-appg-report.pdf)
+* Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. [https://doi.org/10.1111/1467-8578.12174](https://doi.org/10.1111/1467-8578.12174)
 
 See the [full list of publications](/publications).
 
 <p class="author-note">Dr Helen Ross is a dyslexia and SEND specialist based in Trowbridge, Wiltshire. She holds a PhD from the University of Bath, is a qualified diagnostic assessor (AMBDA) with a current Assessment Practising Certificate, a 2025 Churchill Fellow, and the author of Literacy Learning Journeys: Dyslexia Across the Ages, 0-18 (Speechmark/Routledge). Her research on dyslexia, families and inclusion has appeared in journals including the British Journal of Special Education and Support for Learning, and she has given evidence to the House of Commons and reviewed for the Council for Science and Technology. She works with families, schools and organisations across the UK and internationally. <a href="/contact">Book a free 20-minute call</a>.</p>
-
