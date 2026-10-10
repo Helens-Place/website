@@ -1,10 +1,7 @@
 ---
 audience: families
 title: 'Booking a dyslexia assessment with me: how it works'
-description: >-
-  How booking an assessment with Dr Helen Ross works: the free call, the
-  [price: Booking deposit] deposit, the day itself in Trowbridge, and your
-  report within two weeks.
+description: 'How booking an assessment with Dr Helen Ross works: the free call, the [price: Booking deposit] deposit, the day itself in Trowbridge, and your report within two weeks.'
 eyebrow: Parents and families
 heading: Booking an assessment with me
 intro: 'Most people ring wanting to know the same things. How long it takes, what their child will actually be asked to do, and what they are left with at the end. Underneath that there is usually a quieter worry about whether their child will find the day hard. Here is the whole process, plainly, including that part.'
@@ -54,13 +51,15 @@ An assessment is not just a reading test. Across the day we look at:
 * **Writing skills**, including writing speed
 * **Comprehension of spoken text**, which is a different skill from reading
 * **Speaking skills,** meaning how you express ideas and use language to communicate
-* **Memory skills, **so we know how you best remember things, whether spoken, visually or hands-on** **
+* \*\*Memory skills, **so we know how you best remember things, whether spoken, visually or hands-on** \*\*
 * **Problem solving**, both worded and visual reasoning may be looked at to understand how you connet ideas
 * **Processing**, how quickly and easily you can recall or make sense of spoken, written or pictorial information
 * **Phonological processing**, how you process sound. This is the one that
   matters most, because sound processing is the thing that makes dyslexia what
   it is
-* **Maths calculation**, where numeracy is part of what we are looking at
+* **Maths calculation**, where numeracy is part of what we are looking at, we look at quick fire maths fact knowledge and longer calculations
+* **Maths Reasoning,** where we explored worded and pictorial problems and link them to mathematical processes
+* **Magnitude recognition**, which is linking sizes and values to numbers or quantities
 
 Taken together, your profile across all of those areas is what informs whether
 you are dyslexic. No single test decides it.
@@ -84,7 +83,7 @@ about how that applies to your situation, I am happy to talk it through.
 I do not split dyscalculia and dyslexia assessments, because the two often
 co-occur. Looking at literacy and numeracy together gives a truer picture of how
 a person actually learns, rather than answering one question and leaving another
-open. It also means that individuals do not have to go through two separate assessments and pay twice. 
+open. It also means that individuals do not have to go through two separate assessments and pay twice.
 
 This is also why the length of the assessment varies. If we are looking at
 numeracy as well as literacy, it takes longer.
