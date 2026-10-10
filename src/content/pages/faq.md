@@ -86,7 +86,7 @@ faqs:
     answer: 'Yes. All tuition and support happens in a safe, respectful and inclusive space. All workers at Helen''s Place have undergone Enhanced DBS checks and safeguarding and child protection training before working with young people, and I work within Wiltshire safeguarding procedures. You can read the full safeguarding policy on this site.'
   - category: The process
     question: How does payment work?
-    answer: 'Lessons are paid for in advance or at the time of the lesson, and I can accept cash, cheque, cards or BACS. Invoices for other work are payable within 14 days. All prices include VAT. Full details are in the terms and conditions, and I will confirm the arrangements with you when you book.'
+    answer: 'Lessons and assessments are paid for in advance or at the time of the session, and I can accept cash, cards or BACS. Invoices for other work are payable within 14 days. All prices include VAT. Full details are in the terms and conditions, and I will confirm the arrangements with you when you book.'
   - category: Schools and CPD
     question: What CPD training can you deliver to our school?
     answer: 'I offer specialist half-day INSET sessions on dyslexia, dyscalculia, and supporting learners with ADD and ADHD in mainstream classrooms. I can also develop bespoke packages including SEND consultancy, tailored training and specific guidance for your setting. Half-day INSET is [price: Half-day INSET], and I reply within 48 hours.'
