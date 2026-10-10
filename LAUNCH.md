@@ -393,6 +393,10 @@ them. What can catch a school out is Cloudflare's own security set too high.
       option to click past a certificate warning, so if a school filter does
       object, its teachers are locked out entirely rather than warned. Turn it
       on later, once schools have been using the site without complaint.
+- [ ] **Run the SSL Labs test** at ssllabs.com/ssltest on helensplace.co.uk
+      once it is connected. Expect an A, and no "Chain issues". An incomplete
+      chain is the classic cause of a site that works at home but fails behind
+      a school filter even when the address has been allowed.
 - [ ] **Test from a real school.** Once live, ask a SENCo Helen knows to open
       the site, the contact form and the Schools Guide download from their
       school network.
