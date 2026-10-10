@@ -1,48 +1,24 @@
 ---
-title: "Why I assess in person, and only one young person a day"
-description: >-
-  Dr Helen Ross explains why she does dyslexia assessments in person, sees only
-  one young person a day, and lets each assessment take as long as it needs.
-heading: "Why I assess in person, and only ever one young person a day"
-summary: >-
-  By the time a family rings me they have usually been worrying for a long
-  while. Here is what a day with me actually looks like, why it happens in
-  person, and why it takes the time it does.
-theme: "t1"
-themeLabel: "Understanding dyslexia"
-audience: "families"
+title: 'Why I assess in person, and only one young person a day'
+description: 'Dr Helen Ross explains why she does dyslexia assessments in person, sees only one young person a day at home, and lets each assessment take as long as it needs.'
+heading: 'Why I assess in person, and one assessment a day at home'
+summary: 'By the time a family rings me they have usually been worrying for a long while. Here is what a day with me actually looks like, why it happens in person, and why it takes the time it does.'
+theme: t1
+themeLabel: Understanding dyslexia
+audience: families
 order: 3
-keyword: "online dyslexia assessment"
+keyword: online dyslexia assessment
 faqs:
-  - question: "Do you offer online dyslexia assessments?"
-    answer: >-
-      No. I assess in person, because so much of what I need to see happens in
-      the room: how a young person reacts when a task gets hard, their body
-      language, whether they are anxious, tired, or simply finding the reading
-      difficult. A screen hides most of that. I know that means waiting longer,
-      and I am sorry for it, but I would rather give you something you can rely
-      on.
-  - question: "Why do you only see one young person a day?"
-    answer: >-
-      Because an assessment should take as long as it needs, and that is
-      impossible if someone else is booked in behind. One family a day means we
-      can take proper breaks, follow something up when it turns out to matter,
-      and never rush a tired child.
-  - question: "How long will I wait for an appointment?"
-    answer: >-
-      I am usually booked around three months ahead. That is the honest cost of
-      not rushing and only assessing one young person a day. Book a free call
-      and I will tell you where things stand and what I would suggest in the
-      meantime.
-  - question: "Does a parent need to be there?"
-    answer: >-
-      Yes, for part of it at least. Your account of the history and of daily
-      life at home is a real part of the picture, and I will want to talk it
-      through with you as well as working with your child.
-  - question: "Can the assessment be split over more than one day?"
-    answer: >-
-      Yes, especially for younger children. Some do far better in two shorter
-      sessions than one long one, and we will do whatever suits your child best.
+  - question: Do you offer online dyslexia assessments?
+    answer: 'No. I assess in person, because so much of what I need to see happens in the room: how a young person reacts when a task gets hard, their body language, whether they are anxious, tired, or simply finding the reading difficult. A screen hides most of that. I know that means waiting longer, and I am sorry for it, but I would rather give you something you can rely on.'
+  - question: Why do you only see one young person a day?
+    answer: 'Because an assessment should take as long as it needs, and that is impossible if someone else is booked in behind. One family a day means we can take proper breaks, follow something up when it turns out to matter, and never rush a tired child.'
+  - question: How long will I wait for an appointment?
+    answer: I am usually booked around three months ahead. That is the honest cost of not rushing and only assessing one young person a day. Book a free call and I will tell you where things stand and what I would suggest in the meantime.
+  - question: Does a parent need to be there?
+    answer: 'Yes, for part of it at least. Your account of the history and of daily life at home is a real part of the picture, and I will want to talk it through with you as well as working with your child.'
+  - question: Can the assessment be split over more than one day?
+    answer: 'Yes, especially for younger children. Some do far better in two shorter sessions than one long one, and we will do whatever suits your child best.'
 ---
 
 By the time a family rings me, they have usually been worrying for a long while. Often years. They have done their homework too, and somewhere along the way they have been quoted for an online assessment that is quicker, and sometimes cheaper, and they want to know why I do not work that way.
@@ -85,7 +61,7 @@ I will be honest about this. I am generally booked around three months ahead. I 
 
 That wait is simply what everything above adds up to. One family a day, taking the time it takes, means I get through fewer people than somewhere running several in a day. I am genuinely sorry when that is hard, and I know how long a term feels when you are watching your child struggle through it. But the only way to shorten the list would be to be quicker with your child, and that is the one thing I will not do. If the timing is difficult, book a [free 20-minute call](/contact) anyway. Often I can point you to something useful in the meantime, and it means you are ready to go the moment a date comes up.
 
----
+***
 
 ## Questions people often ask
 
@@ -104,14 +80,14 @@ Yes, for part of it at least. Your account of the history and of daily life at h
 **Can the assessment be split over more than one day?**
 Yes, especially for younger children. Some do far better in two shorter sessions than one long one, and we will do whatever suits your child best.
 
----
+***
 
 ## References and further reading
 
-- Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. https://doi.org/10.16993/sjdr.782
-- Ross, H. (2019) *Supporting a child with dyslexia: how parents and carers engage with school-based support*, **British Journal of Special Education**, 46(2), 136-157. https://doi.org/10.1111/1467-8578.12254
-- Ross, H. (2019) *A case study: developing a safe space for vulnerable young people at school*, **Support for Learning**, 34(2). https://doi.org/10.1111/1467-9604.12246
-- Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. https://doi.org/10.1111/1467-8578.12174
+* Ross, H. (2021) *'I'm Dyslexic but What Does That Even Mean?'*, **Scandinavian Journal of Disability Research**, 23(1), 284-294. [https://doi.org/10.16993/sjdr.782](https://doi.org/10.16993/sjdr.782)
+* Ross, H. (2019) *Supporting a child with dyslexia: how parents and carers engage with school-based support*, **British Journal of Special Education**, 46(2), 136-157. [https://doi.org/10.1111/1467-8578.12254](https://doi.org/10.1111/1467-8578.12254)
+* Ross, H. (2019) *A case study: developing a safe space for vulnerable young people at school*, **Support for Learning**, 34(2). [https://doi.org/10.1111/1467-9604.12246](https://doi.org/10.1111/1467-9604.12246)
+* Ross, H. (2017) *An exploration of teachers' agency and social relationships within dyslexia-support provision in an English secondary school*, **British Journal of Special Education**, 44(2), 186-202. [https://doi.org/10.1111/1467-8578.12174](https://doi.org/10.1111/1467-8578.12174)
 
 See the [full list of publications](/publications).
 
