@@ -25,6 +25,15 @@ type Data = {
   countries: Row[];
   devices: Row[];
   errors: Record<string, string>;
+  aiReferrals?: { visits: number; views: number; assistants: Row[] };
+};
+type Crawler = { name: string; company: string; why: string; requests: number };
+type AiData = {
+  days: number;
+  total: number;
+  crawlers: Crawler[];
+  pages: { key: string; requests: number }[];
+  errors: Record<string, string>;
 };
 
 const C = {
@@ -148,6 +157,31 @@ export function AnalyticsScreen() {
     };
   }, [days, who]);
 
+  /* AI services reading the site come from a separate request, so a problem
+     there (such as a missing permission) never blanks the rest. */
+  const [ai, setAi] = useState<AiData | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      setAiError(null);
+      try {
+        const auth = cms?.api?.tina?.authProvider;
+        const token = auth?.getAccessToken ? await auth.getAccessToken() : null;
+        if (!token) throw new Error('Only on the live site.');
+        const res = await fetch(`/api/analytics/ai?days=${days}`, { headers: { Authorization: `Bearer ${token}` } });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || `Could not be loaded (${res.status}).`);
+        if (!cancelled) setAi(body);
+      } catch (err: any) {
+        if (!cancelled) setAiError(err?.message || String(err));
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [days]);
+
   const pill = (active: boolean) => ({
     padding: '7px 14px',
     borderRadius: 999,
@@ -256,6 +290,74 @@ export function AnalyticsScreen() {
             </Card>
             <Card title="Devices">
               <Ranked rows={data.devices} label={(k) => DEVICE[k] || k || 'Unknown'} empty="Nothing recorded yet." error={data.errors.devices} />
+            </Card>
+          </div>
+
+          <h2 style={{ margin: '10px 0 0', fontSize: 22, fontWeight: 800, color: C.deep }}>AI assistants</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
+            <Card title="Visitors sent by AI answers">
+              <p style={{ margin: '0 0 10px', color: C.soft, fontSize: 14 }}>
+                People who clicked a link to the site in an answer from ChatGPT, Perplexity, Gemini, Copilot or similar.
+                Google's own AI Overviews are counted with Google, because they cannot be told apart.
+              </p>
+              {data.aiReferrals && data.aiReferrals.visits > 0 ? (
+                <>
+                  <p style={{ margin: '0 0 10px', fontSize: 15 }}>
+                    <strong style={{ fontSize: 26, fontVariantNumeric: 'tabular-nums' }}>{fmt(data.aiReferrals.visits)}</strong> visits,{' '}
+                    {fmt(data.aiReferrals.views)} pages read
+                  </p>
+                  <Ranked rows={data.aiReferrals.assistants.map((a) => ({ ...a, views: a.visits }))} empty="" />
+                </>
+              ) : (
+                <p style={{ margin: 0, color: C.soft }}>No visits from AI answers in this period yet.</p>
+              )}
+            </Card>
+
+            <Card title="AI services reading the site">
+              <p style={{ margin: '0 0 10px', color: C.soft, fontSize: 14 }}>
+                AI services fetching pages, to answer someone's question, to build their search, or to learn from.
+                They do not run the counting script, so they appear only here.
+                {ai && ai.days < days ? ` Showing the last ${ai.days} days, the most Cloudflare keeps.` : ''}
+              </p>
+              {aiError ? (
+                <p style={{ margin: 0, color: C.pink }}>Could not load this: {aiError}</p>
+              ) : !ai ? (
+                <p style={{ margin: 0, color: C.soft }}>Loading...</p>
+              ) : ai.errors.crawlers ? (
+                <p style={{ margin: 0, color: C.pink }}>Could not load this: {ai.errors.crawlers}</p>
+              ) : ai.crawlers.length === 0 ? (
+                <p style={{ margin: 0, color: C.soft }}>No AI services recorded in this period.</p>
+              ) : (
+                <>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+                    <thead>
+                      <tr style={{ textAlign: 'left', color: C.soft }}>
+                        <th style={{ padding: '4px 6px', fontWeight: 600 }}>Service</th>
+                        <th style={{ padding: '4px 6px', fontWeight: 600 }}>Doing what</th>
+                        <th style={{ padding: '4px 6px', fontWeight: 600, textAlign: 'right' }}>Pages fetched</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ai.crawlers.map((c) => (
+                        <tr key={`${c.name}|${c.why}`} style={{ borderTop: `1px solid ${C.line}` }}>
+                          <td style={{ padding: '6px' }}>
+                            <strong style={{ color: C.deep }}>{c.name}</strong>
+                            <span style={{ display: 'block', fontSize: 12, color: C.soft }}>{c.company}</span>
+                          </td>
+                          <td style={{ padding: '6px' }}>{c.why}</td>
+                          <td style={{ padding: '6px', textAlign: 'right', fontVariantNumeric: 'tabular-nums' }}>{fmt(c.requests)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  {ai.pages.length > 0 && (
+                    <>
+                      <h3 style={{ margin: '16px 0 8px', fontSize: 15, color: C.deep }}>The pages they read most</h3>
+                      <Ranked rows={ai.pages.map((p) => ({ key: p.key, views: p.requests, visits: 0 }))} link empty="" />
+                    </>
+                  )}
+                </>
+              )}
             </Card>
           </div>
 

@@ -153,10 +153,10 @@ async function runDaily(env, opts) {
   throw lastError;
 }
 
-export async function handleAnalytics(request, env) {
+/* Returns a refusal if the request is not from someone signed in to this
+   site's TinaCMS, or null to carry on. Shared by both analytics endpoints. */
+async function refuse(request, env) {
   if (request.method !== 'GET') return json({ error: 'Method not allowed' }, 405);
-
-  // 1. Signed in to TinaCMS?
   const token = (request.headers.get('Authorization') || '').replace(/^Bearer\s+/i, '').trim();
   if (!token) return json({ error: 'Please sign in to TinaCMS to see the analytics.' }, 401);
   if (!env.TINA_CLIENT_ID) return json({ error: 'TINA_CLIENT_ID is not set on the Worker.' }, 500);
@@ -167,6 +167,36 @@ export async function handleAnalytics(request, env) {
     return json({ error: 'TinaCloud could not be reached to confirm your sign-in. Try again in a minute.' }, 502);
   }
   if (!ok) return json({ error: 'Your TinaCMS sign-in could not be confirmed. Sign out of the editor and back in.' }, 401);
+  return null;
+}
+
+// Whole seconds: the API's Time type is written like 2026-10-11T16:00:00Z.
+const iso = (d) => d.toISOString().replace(/\.\d{3}Z$/, 'Z');
+
+/* Referrers that are AI assistants, so visits from AI answers can be counted.
+   Google's AI Overviews arrive as google.com and cannot be told apart. */
+const AI_REFERRERS = [
+  [/(^|\.)(chatgpt\.com|chat\.openai\.com|openai\.com)$/i, 'ChatGPT'],
+  [/(^|\.)perplexity\.ai$/i, 'Perplexity'],
+  [/(^|\.)claude\.ai$/i, 'Claude'],
+  [/(^|\.)(gemini|bard)\.google\.com$/i, 'Gemini'],
+  [/(^|\.)copilot\.microsoft\.com$/i, 'Microsoft Copilot'],
+  [/(^|\.)meta\.ai$/i, 'Meta AI'],
+  [/(^|\.)deepseek\.com$/i, 'DeepSeek'],
+  [/(^|\.)grok\.com$/i, 'Grok'],
+  [/(^|\.)mistral\.ai$/i, 'Mistral'],
+  [/(^|\.)you\.com$/i, 'You.com'],
+  [/(^|\.)poe\.com$/i, 'Poe'],
+  [/(^|\.)phind\.com$/i, 'Phind'],
+];
+const aiName = (host) => AI_REFERRERS.find(([re]) => re.test(host || ''))?.[1] ?? null;
+
+export async function handleAnalytics(request, env) {
+  if (new URL(request.url).pathname === '/api/analytics/ai') return handleAiCrawlers(request, env);
+
+  // 1. Signed in to TinaCMS?
+  const refusal = await refuse(request, env);
+  if (refusal) return refusal;
 
   // 2. Configured?
   const missing = ['CF_ANALYTICS_TOKEN', 'CF_ACCOUNT_ID', 'CF_SITE_TAG'].filter((k) => !env[k]);
@@ -180,8 +210,6 @@ export async function handleAnalytics(request, env) {
   const days = ALLOWED_DAYS.includes(asked) ? asked : 30;
   const untilDate = new Date();
   const sinceDate = new Date(untilDate.getTime() - days * 86400000);
-  // Whole seconds: the API's Time type is written like 2026-10-11T16:00:00Z.
-  const iso = (d) => d.toISOString().replace(/\.\d{3}Z$/, 'Z');
   const range = { since: iso(sinceDate), until: iso(untilDate) };
 
   // 4. People, bots, or everyone? Every panel is filtered the same way.
@@ -199,7 +227,8 @@ export async function handleAnalytics(request, env) {
     split: bot?.canGroup ? runPanel(env, { ...range, dimension: bot.name, limit: 5 }) : Promise.resolve([]),
     daily: runDaily(env, scoped),
     pages: runPanel(env, { ...scoped, dimension: 'requestPath', limit: 15, orderBy: 'count_DESC' }),
-    referrers: runPanel(env, { ...scoped, dimension: 'refererHost', limit: 20, orderBy: 'count_DESC' }),
+    // A long list, so the AI assistants can be picked out before trimming.
+    referrers: runPanel(env, { ...scoped, dimension: 'refererHost', limit: 100, orderBy: 'count_DESC' }),
     countries: runPanel(env, { ...scoped, dimension: 'countryName', limit: 10, orderBy: 'count_DESC' }),
     devices: runPanel(env, { ...scoped, dimension: 'deviceType', limit: 5, orderBy: 'count_DESC' }),
   };
@@ -219,6 +248,23 @@ export async function handleAnalytics(request, env) {
   // itself, which is not where visitors came from.
   // No referrer at all means a typed address, a bookmark, or an app such as
   // email that does not pass one on.
+  // Visits that came from an AI assistant's answer, by assistant.
+  const byAssistant = new Map();
+  for (const row of out.referrers) {
+    const name = aiName(row.key);
+    if (!name) continue;
+    const t = byAssistant.get(name) || { key: name, views: 0, visits: 0 };
+    t.views += row.views;
+    t.visits += row.visits;
+    byAssistant.set(name, t);
+  }
+  const assistants = [...byAssistant.values()].sort((a, b) => b.visits - a.visits);
+  out.aiReferrals = {
+    visits: assistants.reduce((n, a) => n + a.visits, 0),
+    views: assistants.reduce((n, a) => n + a.views, 0),
+    assistants,
+  };
+
   out.referrers = out.referrers
     .filter((r) => !/(^|\.)helensplace\.co\.uk$|workers\.dev$/i.test(r.key || ''))
     .map((r) => (r.key ? r : { ...r, key: 'Typed in, bookmarks or apps' }))
@@ -232,5 +278,112 @@ export async function handleAnalytics(request, env) {
     ? { people: sum(out.split.filter((r) => !isBot(r.key))), bots: sum(out.split.filter((r) => isBot(r.key))) }
     : null;
 
+  return json(out);
+}
+
+/* ---------- AI services reading the site --------------------------------- */
+
+/* AI crawlers, recognised by the name they announce in their user agent, which
+   is what AI Crawl Control does on the free plan. Order matters: the first
+   match wins. The last column is what the visit was for. */
+const AI_CRAWLERS = [
+  ['ChatGPT-User', 'ChatGPT', 'OpenAI', 'answering'],
+  ['OAI-SearchBot', 'ChatGPT search', 'OpenAI', 'search'],
+  ['GPTBot', 'GPTBot', 'OpenAI', 'training'],
+  ['Claude-User', 'Claude', 'Anthropic', 'answering'],
+  ['Claude-SearchBot', 'Claude search', 'Anthropic', 'search'],
+  ['ClaudeBot', 'ClaudeBot', 'Anthropic', 'training'],
+  ['anthropic-ai', 'Anthropic', 'Anthropic', 'training'],
+  ['Perplexity-User', 'Perplexity', 'Perplexity', 'answering'],
+  ['PerplexityBot', 'Perplexity search', 'Perplexity', 'search'],
+  ['meta-externalfetcher', 'Meta AI', 'Meta', 'answering'],
+  ['meta-externalagent', 'Meta AI', 'Meta', 'training'],
+  ['MistralAI-User', 'Mistral Le Chat', 'Mistral', 'answering'],
+  ['DuckAssistBot', 'DuckDuckGo AI', 'DuckDuckGo', 'answering'],
+  ['Google-CloudVertexBot', 'Google Vertex AI', 'Google', 'answering'],
+  ['GoogleOther', 'Google (AI and research)', 'Google', 'training'],
+  ['Applebot', 'Applebot', 'Apple', 'search'],
+  ['Amazonbot', 'Amazonbot', 'Amazon', 'training'],
+  ['Bytespider', 'Bytespider', 'ByteDance', 'training'],
+  ['CCBot', 'Common Crawl', 'Common Crawl', 'training'],
+  ['cohere-ai', 'Cohere', 'Cohere', 'training'],
+  ['YouBot', 'You.com', 'You.com', 'search'],
+];
+const WHY = {
+  answering: 'Answering a question someone asked',
+  search: 'Indexing for AI search',
+  training: 'Collecting for AI training',
+};
+// The free plan keeps 31 days of request data and allows 30 days per query.
+const CRAWLER_MAX_DAYS = 30;
+
+function crawlerQuery(zone, since, until, dimension, limit) {
+  const like = AI_CRAWLERS.map(([ua]) => `{ userAgent_like: "%${ua}%" }`).join(', ');
+  return `{ viewer { zones(filter: { zoneTag: "${zone}" }) {
+    rows: httpRequestsAdaptiveGroups(
+      filter: { AND: [{ datetime_geq: "${since}", datetime_leq: "${until}" }, { requestSource: "eyeball" }, { OR: [${like}] }] }
+      limit: ${limit}, orderBy: [count_DESC]
+    ) { count avg { sampleInterval } dimensions { key: ${dimension} } }
+  } } }`;
+}
+
+async function runCrawlerPanel(env, since, until, dimension, limit) {
+  const data = await graphql(env, crawlerQuery(env.CF_ZONE_ID, since, until, dimension, limit));
+  return (data?.viewer?.zones?.[0]?.rows ?? []).map((r) => ({
+    key: r.dimensions?.key ?? '',
+    requests: Math.round((r.count ?? 0) * (r.avg?.sampleInterval || 1)),
+  }));
+}
+
+async function handleAiCrawlers(request, env) {
+  const refusal = await refuse(request, env);
+  if (refusal) return refusal;
+  if (!env.CF_ANALYTICS_TOKEN || !env.CF_ZONE_ID) {
+    return json({ error: 'Not set up yet: CF_ZONE_ID is missing on the Worker.' }, 500);
+  }
+  if (!/^[a-f0-9]{32}$/i.test(env.CF_ZONE_ID)) {
+    return json({ error: 'CF_ZONE_ID does not look right: it should be 32 letters and numbers.' }, 500);
+  }
+
+  const asked = Number(new URL(request.url).searchParams.get('days'));
+  const days = Math.min(ALLOWED_DAYS.includes(asked) ? asked : 30, CRAWLER_MAX_DAYS);
+  const until = new Date();
+  const since = new Date(until.getTime() - days * 86400000);
+
+  const [agents, paths] = await Promise.allSettled([
+    runCrawlerPanel(env, iso(since), iso(until), 'userAgent', 200),
+    runCrawlerPanel(env, iso(since), iso(until), 'clientRequestPath', 40),
+  ]);
+  const out = { days, errors: {} };
+
+  if (agents.status === 'fulfilled') {
+    const byCrawler = new Map();
+    for (const row of agents.value) {
+      const match = AI_CRAWLERS.find(([ua]) => row.key.toLowerCase().includes(ua.toLowerCase()));
+      if (!match) continue;
+      const [, name, company, why] = match;
+      const id = `${name}|${why}`;
+      const t = byCrawler.get(id) || { name, company, why: WHY[why], requests: 0 };
+      t.requests += row.requests;
+      byCrawler.set(id, t);
+    }
+    out.crawlers = [...byCrawler.values()].sort((a, b) => b.requests - a.requests);
+    out.total = out.crawlers.reduce((n, c) => n + c.requests, 0);
+  } else {
+    out.crawlers = [];
+    out.total = 0;
+    out.errors.crawlers = String(agents.reason?.message || agents.reason);
+    console.error('analytics: AI crawlers failed:', out.errors.crawlers);
+  }
+
+  if (paths.status === 'fulfilled') {
+    // Pages only: leave out the stylesheets, scripts and photos pages load.
+    out.pages = paths.value
+      .filter((p) => !/^\/(_astro|images|admin)\//.test(p.key) && !/\.(css|js|png|jpe?g|webp|svg|ico|woff2?)$/i.test(p.key))
+      .slice(0, 10);
+  } else {
+    out.pages = [];
+    out.errors.pages = String(paths.reason?.message || paths.reason);
+  }
   return json(out);
 }

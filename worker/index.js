@@ -18,7 +18,7 @@ export default {
       return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, POST' } });
     }
 
-    if (pathname === '/api/analytics') return handleAnalytics(request, env);
+    if (pathname === '/api/analytics' || pathname === '/api/analytics/ai') return handleAnalytics(request, env);
 
     // Anything else under /api/ is not a page. Let the asset handler answer,
     // which gives the site's own 404 page.
