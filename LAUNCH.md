@@ -475,24 +475,29 @@ off. Helen's email was tested and works, and the old site still loads.
    replaces the apex and www records with ones pointing at the Worker.
 7. Then the rest of the go-live order in section 5.
 
-### The analytics page in the admin area (option 2)
+### The analytics page in the admin area
 
-Helen gets an Analytics page inside the editing screen she already uses, next
-to her pages and Site settings, rather than a separate Cloudflare login.
+Built 11 October 2026. An **Analytics** screen in the TinaCMS sidebar
+(`tina/analytics-screen.tsx`, registered through `cmsCallback` in
+`tina/config.ts`) shows visits, page views, a daily chart, most read pages,
+where visitors came from, countries and devices, for 7, 30 or 90 days.
 
-- [ ] **A custom screen in TinaCMS** (Tina's screen plugin, registered in
-      `tina/config.ts`) showing the last 30 days: visitors and page views,
-      top pages, where visitors came from, and devices.
-- [ ] **A Pages Function at `/api/analytics`** that fetches those figures
-      from Cloudflare's GraphQL Analytics API. It holds a read-only API token,
-      stored as a Cloudflare secret. The token must never reach the browser.
-- [ ] **Lock it with Cloudflare Access.** Tina's login protects Tina's own
-      content API, not code we add, so `/api/analytics` needs its own lock.
-      An Access policy allowing only Helen's (and Andrew's) email, with a
-      one-time code sent to that address and a session of about a month, so
-      it is not a daily chore. Free for this many users.
-- [ ] **Check it locked.** Open `/api/analytics` in a private window and
-      confirm it asks for the code rather than returning figures.
+- The lock is the TinaCMS sign-in itself, not Cloudflare Access (Andrew's
+  choice). The screen sends the token the admin already holds to
+  `/api/analytics` (`worker/analytics.js`), which asks TinaCloud whether it
+  belongs to a user of this project (the admin's own `currentUser` check)
+  before answering. This also guards the workers.dev address.
+- Figures come from Cloudflare Web Analytics through the GraphQL Analytics
+  API (`rumPageloadEventsAdaptiveGroups`). The API token is a Worker secret.
+- [ ] **Web Analytics site in Helen's account.** Analytics & Logs > Web
+      Analytics > Add a site, `helensplace.co.uk`, with the **JavaScript
+      snippet** (not automatic setup, which could double count). Put the
+      snippet's token in Site settings > Analytics token, and its site tag in
+      `CF_SITE_TAG` in `wrangler.jsonc`.
+- [ ] **Account API token** (Manage Account > Account API Tokens), custom,
+      permission **Account > Account Analytics > Read**, saved as the Worker
+      secret `CF_ANALYTICS_TOKEN`. Account-owned, so it does not depend on
+      Andrew's membership.
 
 ### Keeping it reachable from school networks
 

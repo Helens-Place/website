@@ -11,7 +11,8 @@
 //
 // Plain settings live here rather than in the dashboard, because a deploy
 // replaces dashboard variables with these. Secrets (RESEND_API_KEY,
-// TURNSTILE_SECRET_KEY) are set in the dashboard under Variables and secrets.
+// TURNSTILE_SECRET_KEY, CF_ANALYTICS_TOKEN) are set in the dashboard under
+// Variables and secrets.
 // Build variables (TINA_CLIENT_ID, TINA_TOKEN, NODE_VERSION,
 // PUBLIC_TURNSTILE_SITE_KEY) are set under Settings > Build, and are not
 // available at runtime.
@@ -32,7 +33,13 @@
   },
   "vars": {
     "CONTACT_FROM": "Helen's Place website <enquiries@helensplace.co.uk>",
-    "CONTACT_TO": "helen@helensplace.co.uk"
+    "CONTACT_TO": "helen@helensplace.co.uk",
+    // For the Analytics screen (worker/analytics.js). None of these is secret:
+    // the client id is in the admin's own code, and the account and site tags
+    // are useless without CF_ANALYTICS_TOKEN, which is a dashboard secret.
+    "TINA_CLIENT_ID": "69261f1d-ef54-4694-beb5-5b5238b23663",
+    "CF_ACCOUNT_ID": "0842f4617e488b5b222262eee443b8e4",
+    "CF_SITE_TAG": ""
   },
   "observability": { "enabled": true }
 }

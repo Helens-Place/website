@@ -1,0 +1,243 @@
+/**
+ * The Analytics screen in the TinaCMS admin sidebar.
+ *
+ * It asks /api/analytics (worker/analytics.js) for the figures, sending the
+ * TinaCMS sign-in the admin already holds. The Worker confirms that sign-in
+ * with TinaCloud before answering, so being signed in to the editor is the
+ * whole of the lock. Nothing extra for Helen to remember.
+ *
+ * Styling is inline, in the site's own colours, because the admin's styles are
+ * TinaCMS's and nothing from the site's stylesheet reaches this screen.
+ */
+import React, { useEffect, useState } from 'react';
+import { useCMS } from 'tinacms';
+
+type Row = { key: string | null; views: number; visits: number };
+type Data = {
+  days: number;
+  totals: { views: number; visits: number };
+  daily: Row[];
+  pages: Row[];
+  referrers: Row[];
+  countries: Row[];
+  devices: Row[];
+  errors: Record<string, string>;
+};
+
+const C = {
+  purple: '#7030A0',
+  deep: '#4E1F72',
+  tint: '#EEE1F2',
+  ink: '#2A1B3D',
+  soft: '#5B4B6E',
+  line: '#E4D8EC',
+  paper: '#FFFFFF',
+  pink: '#972B73',
+};
+const fmt = (n: number) => n.toLocaleString('en-GB');
+const DEVICE: Record<string, string> = { desktop: 'Computer', mobile: 'Phone', tablet: 'Tablet' };
+/* 2026-10-03 as 3 Oct. Anything that is not a plain date is shown as it is. */
+const day = (k: string | null) => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(k || '');
+  return m ? new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : k || '';
+};
+
+function Card({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section style={{ background: C.paper, border: `1px solid ${C.line}`, borderRadius: 12, padding: '18px 20px' }}>
+      <h2 style={{ margin: '0 0 12px', fontSize: 17, fontWeight: 700, color: C.deep }}>{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+/* A ranked list with a bar behind each row, scaled to the largest. */
+function Ranked({ rows, label, link, empty, error }: { rows: Row[]; label?: (k: string) => string; link?: boolean; empty: string; error?: string }) {
+  // For page rows the key is a path: link to it, but show the home page by name.
+  if (error) return <p style={{ color: C.pink, margin: 0 }}>Could not load this: {error}</p>;
+  if (!rows.length) return <p style={{ color: C.soft, margin: 0 }}>{empty}</p>;
+  const max = Math.max(...rows.map((r) => r.views), 1);
+  return (
+    <ol style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gap: 6 }}>
+      {rows.map((r, i) => {
+        const text = label ? label(r.key ?? '') : r.key ?? '';
+        const shown = link && text === '/' ? 'Home page' : text;
+        return (
+          <li key={i} style={{ position: 'relative', borderRadius: 6, overflow: 'hidden' }}>
+            <span aria-hidden="true" style={{ position: 'absolute', inset: 0, width: `${(r.views / max) * 100}%`, background: C.tint }} />
+            <span style={{ position: 'relative', display: 'flex', justifyContent: 'space-between', gap: 12, padding: '6px 10px', fontSize: 14 }}>
+              <span style={{ overflowWrap: 'anywhere', color: C.ink }}>
+                {link ? (
+                  <a href={text} target="_blank" rel="noopener" style={{ color: C.deep }}>{shown}</a>
+                ) : (
+                  text
+                )}
+              </span>
+              <span style={{ color: C.soft, whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>{fmt(r.views)}</span>
+            </span>
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+/* Page views per day as simple bars. */
+function Daily({ rows, error }: { rows: Row[]; error?: string }) {
+  if (error) return <p style={{ color: C.pink, margin: 0 }}>Could not load this: {error}</p>;
+  if (!rows.length) return <p style={{ color: C.soft, margin: 0 }}>No visits recorded in this period yet.</p>;
+  const max = Math.max(...rows.map((r) => r.views), 1);
+  const w = 100 / rows.length;
+  return (
+    <figure style={{ margin: 0 }}>
+      <svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Page views per day" style={{ width: '100%', height: 140, display: 'block' }}>
+        {rows.map((r, i) => {
+          const h = (r.views / max) * 38;
+          return (
+            <rect key={i} x={i * w + w * 0.15} y={40 - h} width={w * 0.7} height={h} fill={C.purple}>
+              <title>{`${day(r.key)}: ${fmt(r.views)} page views`}</title>
+            </rect>
+          );
+        })}
+      </svg>
+      <figcaption style={{ display: 'flex', justifyContent: 'space-between', color: C.soft, fontSize: 12, marginTop: 4 }}>
+        <span>{day(rows[0].key)}</span>
+        <span>busiest day: {fmt(max)} page views</span>
+        <span>{day(rows[rows.length - 1].key)}</span>
+      </figcaption>
+    </figure>
+  );
+}
+
+export function AnalyticsScreen() {
+  const cms = useCMS() as any;
+  const [days, setDays] = useState(30);
+  const [data, setData] = useState<Data | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const auth = cms?.api?.tina?.authProvider;
+        const token = auth?.getAccessToken ? await auth.getAccessToken() : null;
+        if (!token) {
+          throw new Error('The analytics only show on the live site, when you are signed in to the editor there.');
+        }
+        const res = await fetch(`/api/analytics?days=${days}`, { headers: { Authorization: `Bearer ${token}` } });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || `The analytics could not be loaded (${res.status}).`);
+        if (!cancelled) setData(body);
+      } catch (err: any) {
+        if (!cancelled) setError(err?.message || String(err));
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [days]);
+
+  const button = (n: number) => (
+    <button
+      key={n}
+      type="button"
+      onClick={() => setDays(n)}
+      aria-pressed={days === n}
+      style={{
+        padding: '7px 14px',
+        borderRadius: 999,
+        border: `2px solid ${C.purple}`,
+        background: days === n ? C.purple : C.paper,
+        color: days === n ? C.paper : C.deep,
+        fontWeight: 600,
+        cursor: 'pointer',
+      }}
+    >
+      Last {n} days
+    </button>
+  );
+
+  return (
+    <div style={{ padding: '28px 32px', maxWidth: 1100, color: C.ink, overflowY: 'auto', height: '100%', boxSizing: 'border-box' }}>
+      <h1 style={{ margin: '0 0 6px', fontSize: 28, fontWeight: 800, color: C.deep }}>Website analytics</h1>
+      <p style={{ margin: '0 0 18px', color: C.soft, maxWidth: '70ch' }}>
+        How many people visited helensplace.co.uk, which pages they read, and how they found it.
+      </p>
+      <div role="group" aria-label="Period" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
+        {[7, 30, 90].map(button)}
+      </div>
+
+      {loading && <p style={{ color: C.soft }}>Loading the figures...</p>}
+      {error && !loading && (
+        <p role="alert" style={{ background: '#FBEAF3', border: `1px solid ${C.pink}`, color: C.ink, padding: '12px 14px', borderRadius: 8 }}>
+          {error}
+        </p>
+      )}
+
+      {data && !loading && !error && (
+        <div style={{ display: 'grid', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
+            {[
+              ['Visits', data.totals.visits, 'Each time someone comes to the site'],
+              ['Page views', data.totals.views, 'Every page opened, across all visits'],
+            ].map(([label, n, note]) => (
+              <section key={label as string} style={{ background: C.tint, borderRadius: 12, padding: '16px 20px' }}>
+                <p style={{ margin: 0, fontWeight: 600, color: C.deep }}>{label}</p>
+                <p style={{ margin: '4px 0', fontSize: 34, fontWeight: 800, fontVariantNumeric: 'tabular-nums' }}>{fmt(n as number)}</p>
+                <p style={{ margin: 0, fontSize: 13, color: C.soft }}>{note}</p>
+              </section>
+            ))}
+          </div>
+
+          <Card title="Page views per day">
+            <Daily rows={data.daily} error={data.errors.daily} />
+          </Card>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
+            <Card title="Most read pages">
+              <Ranked rows={data.pages} link empty="No pages read in this period yet." error={data.errors.pages} />
+            </Card>
+            <Card title="Where visitors came from">
+              <Ranked rows={data.referrers} empty="No outside visits recorded in this period yet." error={data.errors.referrers} />
+            </Card>
+            <Card title="Countries">
+              <Ranked rows={data.countries} empty="Nothing recorded yet." error={data.errors.countries} />
+            </Card>
+            <Card title="Devices">
+              <Ranked rows={data.devices} label={(k) => DEVICE[k] || k || 'Unknown'} empty="Nothing recorded yet." error={data.errors.devices} />
+            </Card>
+          </div>
+
+          <p style={{ color: C.soft, fontSize: 13, maxWidth: '75ch', margin: '4px 0 0' }}>
+            Counted by Cloudflare Web Analytics, which uses no cookies and does not track anyone between sites.
+            Visitors who block it, including some school networks, are not counted, so treat these as a guide
+            rather than an exact tally.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ChartIcon(props: any) {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true" {...props}>
+      <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+/* Registered in tina/config.ts through cmsCallback. */
+export const analyticsScreen = {
+  __type: 'screen' as const,
+  name: 'Analytics',
+  Component: AnalyticsScreen,
+  Icon: ChartIcon,
+  layout: 'fullscreen' as const,
+  navCategory: 'Site' as const,
+};

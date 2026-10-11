@@ -1,4 +1,5 @@
 import { defineConfig, type Collection } from 'tinacms';
+import { analyticsScreen } from './analytics-screen';
 
 /**
  * TinaCMS content model for helensplace.co.uk.
@@ -950,6 +951,11 @@ export default defineConfig({
   branch,
   clientId,
   token,
+  /* Adds the Analytics screen to the admin sidebar. See analytics-screen.tsx. */
+  cmsCallback: (cms) => {
+    cms.plugins.add(analyticsScreen);
+    return cms;
+  },
   build: {
     outputFolder: 'admin',
     publicFolder: 'public',
