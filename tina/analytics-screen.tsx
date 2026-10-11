@@ -15,6 +15,9 @@ import { useCMS } from 'tinacms';
 type Row = { key: string | null; views: number; visits: number };
 type Data = {
   days: number;
+  who: 'people' | 'bots' | 'all';
+  botsAvailable: boolean;
+  split: { people: { views: number; visits: number }; bots: { views: number; visits: number } } | null;
   totals: { views: number; visits: number };
   daily: Row[];
   pages: Row[];
@@ -112,6 +115,9 @@ function Daily({ rows, error }: { rows: Row[]; error?: string }) {
 export function AnalyticsScreen() {
   const cms = useCMS() as any;
   const [days, setDays] = useState(30);
+  // Real people by default: bots and crawlers are rarely what Helen wants to
+  // know about, but she can switch to them, or to everyone.
+  const [who, setWho] = useState<'people' | 'bots' | 'all'>('people');
   const [data, setData] = useState<Data | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -127,7 +133,7 @@ export function AnalyticsScreen() {
         if (!token) {
           throw new Error('The analytics only show on the live site, when you are signed in to the editor there.');
         }
-        const res = await fetch(`/api/analytics?days=${days}`, { headers: { Authorization: `Bearer ${token}` } });
+        const res = await fetch(`/api/analytics?days=${days}&who=${who}`, { headers: { Authorization: `Bearer ${token}` } });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(body.error || `The analytics could not be loaded (${res.status}).`);
         if (!cancelled) setData(body);
@@ -140,25 +146,26 @@ export function AnalyticsScreen() {
     return () => {
       cancelled = true;
     };
-  }, [days]);
+  }, [days, who]);
 
+  const pill = (active: boolean) => ({
+    padding: '7px 14px',
+    borderRadius: 999,
+    border: `2px solid ${C.purple}`,
+    background: active ? C.purple : C.paper,
+    color: active ? C.paper : C.deep,
+    fontWeight: 600,
+    cursor: 'pointer',
+  });
   const button = (n: number) => (
-    <button
-      key={n}
-      type="button"
-      onClick={() => setDays(n)}
-      aria-pressed={days === n}
-      style={{
-        padding: '7px 14px',
-        borderRadius: 999,
-        border: `2px solid ${C.purple}`,
-        background: days === n ? C.purple : C.paper,
-        color: days === n ? C.paper : C.deep,
-        fontWeight: 600,
-        cursor: 'pointer',
-      }}
-    >
+    <button key={n} type="button" onClick={() => setDays(n)} aria-pressed={days === n} style={pill(days === n)}>
       Last {n} days
+    </button>
+  );
+  const WHO = { people: 'Real people', bots: 'Bots', all: 'Everyone' } as const;
+  const whoButton = (w: 'people' | 'bots' | 'all') => (
+    <button key={w} type="button" onClick={() => setWho(w)} aria-pressed={who === w} style={pill(who === w)}>
+      {WHO[w]}
     </button>
   );
 
@@ -168,8 +175,15 @@ export function AnalyticsScreen() {
       <p style={{ margin: '0 0 18px', color: C.soft, maxWidth: '70ch' }}>
         How many people visited helensplace.co.uk, which pages they read, and how they found it.
       </p>
-      <div role="group" aria-label="Period" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
-        {[7, 30, 90].map(button)}
+      <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', marginBottom: 20 }}>
+        <div role="group" aria-label="Period" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          {[7, 30, 90].map(button)}
+        </div>
+        {data?.botsAvailable !== false && (
+          <div role="group" aria-label="Who to count" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            {(['people', 'bots', 'all'] as const).map(whoButton)}
+          </div>
+        )}
       </div>
 
       {loading && <p style={{ color: C.soft }}>Loading the figures...</p>}
@@ -183,7 +197,7 @@ export function AnalyticsScreen() {
         <div style={{ display: 'grid', gap: 16 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
             {[
-              ['Visits', data.totals.visits, 'Each time someone comes to the site'],
+              ['Visits', data.totals.visits, data.who === 'bots' ? 'Each time a bot came to the site' : 'Each time someone comes to the site'],
               ['Page views', data.totals.views, 'Every page opened, across all visits'],
             ].map(([label, n, note]) => (
               <section key={label as string} style={{ background: C.tint, borderRadius: 12, padding: '16px 20px' }}>
@@ -193,6 +207,38 @@ export function AnalyticsScreen() {
               </section>
             ))}
           </div>
+
+          {data.split && (
+            <Card title="Real people and bots">
+              <p style={{ margin: '0 0 10px', color: C.soft, fontSize: 14 }}>
+                Bots are automated visitors, such as search engines reading the site and other programs. This shows
+                both. The rest of the page shows whichever you pick with the buttons above.
+              </p>
+              {(() => {
+                const total = data.split!.people.views + data.split!.bots.views || 1;
+                const share = Math.round((data.split!.people.views / total) * 100);
+                return (
+                  <>
+                    <div aria-hidden="true" style={{ display: 'flex', height: 14, borderRadius: 7, overflow: 'hidden', background: C.line }}>
+                      <span style={{ width: `${share}%`, background: C.purple }} />
+                    </div>
+                    <p style={{ margin: '10px 0 0', fontSize: 15 }}>
+                      <strong>Real people:</strong> {fmt(data.split!.people.visits)} visits, {fmt(data.split!.people.views)} page views
+                      <span style={{ color: C.soft }}> ({share}%)</span>
+                      <br />
+                      <strong>Bots:</strong> {fmt(data.split!.bots.views)} page views
+                      <span style={{ color: C.soft }}> ({100 - share}%)</span>
+                    </p>
+                  </>
+                );
+              })()}
+            </Card>
+          )}
+          {!data.botsAvailable && (
+            <p style={{ margin: 0, color: C.soft, fontSize: 13 }}>
+              Cloudflare is not saying which visits are bots at the moment, so these figures include everyone.
+            </p>
+          )}
 
           <Card title="Page views per day">
             <Daily rows={data.daily} error={data.errors.daily} />

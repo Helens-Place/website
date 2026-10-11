@@ -41,8 +41,9 @@ async function signedIn(token, clientId) {
 /* One query for one panel. Values are interpolated rather than passed as
    variables so the query does not depend on the schema's input type names;
    every value is checked or generated here, never taken from the request. */
-function panelQuery({ accountId, siteTag, since, until, dimension, limit, orderBy }) {
-  const filter = `{ AND: [{ datetime_geq: "${since}", datetime_leq: "${until}" }, { siteTag: "${siteTag}" }] }`;
+function panelQuery({ accountId, siteTag, since, until, dimension, limit, orderBy, extraFilter }) {
+  const extra = extraFilter ? `, ${extraFilter}` : '';
+  const filter = `{ AND: [{ datetime_geq: "${since}", datetime_leq: "${until}" }, { siteTag: "${siteTag}" }${extra}] }`;
   const dims = dimension ? `dimensions { key: ${dimension} }` : '';
   const order = orderBy ? `, orderBy: [${orderBy}]` : '';
   return `{ viewer { accounts(filter: { accountTag: "${accountId}" }) {
@@ -53,6 +54,66 @@ function panelQuery({ accountId, siteTag, since, until, dimension, limit, orderB
       ${dims}
     }
   } } }`;
+}
+
+async function graphql(env, query) {
+  const res = await fetch(GRAPHQL, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.CF_ANALYTICS_TOKEN}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query }),
+  });
+  const body = await res.json().catch(() => ({}));
+  if (!res.ok || body.errors?.length) {
+    throw new Error(body.errors?.map((e) => e.message).join('; ') || `Cloudflare returned ${res.status}`);
+  }
+  return body.data;
+}
+
+/* Which field marks a page load as a bot? Cloudflare's dashboard can exclude
+   bots, but the field's name is not documented, so ask the API itself: walk
+   the schema from the query root to this dataset and look for a field called
+   bot (or the nearest match) in its filter and its dimensions. Kept for an
+   hour per Worker instance so the lookup does not run on every request. */
+let botFieldCache = { at: 0, value: undefined };
+const named = (t) => (t?.name ? t : t?.ofType ? named(t.ofType) : null);
+async function typeFields(env, name) {
+  const q = `{ __type(name: "${name}") { fields { name type { name kind ofType { name kind ofType { name kind } } }
+    args { name type { name kind ofType { name kind ofType { name kind } } } } }
+    inputFields { name type { name kind ofType { name kind ofType { name kind } } } } } }`;
+  return (await graphql(env, q)).__type || {};
+}
+async function findBotField(env) {
+  if (Date.now() - botFieldCache.at < 3600000) return botFieldCache.value;
+  let value = null;
+  try {
+    const root = (await graphql(env, '{ __schema { queryType { name } } }')).__schema.queryType.name;
+    const field = async (typeName, fieldName) => (await typeFields(env, typeName)).fields?.find((f) => f.name === fieldName);
+    const viewer = named((await field(root, 'viewer'))?.type)?.name;
+    const account = named((await field(viewer, 'accounts'))?.type)?.name;
+    const dataset = await field(account, 'rumPageloadEventsAdaptiveGroups');
+    const filterType = named(dataset?.args?.find((a) => a.name === 'filter')?.type)?.name;
+    const groupType = named(dataset?.type)?.name;
+    const dimsType = named((await field(groupType, 'dimensions'))?.type)?.name;
+    const filterFields = (await typeFields(env, filterType)).inputFields || [];
+    const dimFields = (await typeFields(env, dimsType)).fields || [];
+    const pick = (list) => list.find((f) => /^bot$/i.test(f.name)) || list.find((f) => /^is_?bot$/i.test(f.name));
+    const inFilter = pick(filterFields);
+    if (inFilter) {
+      const t = named(inFilter.type);
+      value = {
+        name: inFilter.name,
+        // How "yes, a bot" is written depends on the field's type.
+        yes: t?.name === 'Boolean' ? 'true' : t?.name === 'String' ? '"1"' : '1',
+        no: t?.name === 'Boolean' ? 'false' : t?.name === 'String' ? '"0"' : '0',
+        canGroup: dimFields.some((f) => f.name === inFilter.name),
+      };
+    }
+  } catch (err) {
+    console.error('analytics: bot field lookup failed:', String(err?.message || err));
+  }
+  // A failed lookup is retried after five minutes rather than an hour.
+  botFieldCache = { at: value === null ? Date.now() - 3300000 : Date.now(), value };
+  return value;
 }
 
 async function runPanel(env, opts) {
@@ -123,18 +184,28 @@ export async function handleAnalytics(request, env) {
   const iso = (d) => d.toISOString().replace(/\.\d{3}Z$/, 'Z');
   const range = { since: iso(sinceDate), until: iso(untilDate) };
 
-  // 4. Fetch each panel separately, so one failing does not blank the rest.
+  // 4. People, bots, or everyone? Every panel is filtered the same way.
+  const askedWho = new URL(request.url).searchParams.get('who');
+  const who = ['people', 'bots', 'all'].includes(askedWho) ? askedWho : 'people';
+  const bot = await findBotField(env);
+  const whoFilter = !bot || who === 'all' ? '' : `{ ${bot.name}: ${who === 'bots' ? bot.yes : bot.no} }`;
+  const scoped = { ...range, extraFilter: whoFilter };
+
+  // 5. Fetch each panel separately, so one failing does not blank the rest.
+  // "split" is always over everyone, so the screen can show people and bots
+  // side by side whichever view is chosen.
   const panels = {
-    totals: runPanel(env, { ...range, limit: 1 }),
-    daily: runDaily(env, range),
-    pages: runPanel(env, { ...range, dimension: 'requestPath', limit: 15, orderBy: 'count_DESC' }),
-    referrers: runPanel(env, { ...range, dimension: 'refererHost', limit: 20, orderBy: 'count_DESC' }),
-    countries: runPanel(env, { ...range, dimension: 'countryName', limit: 10, orderBy: 'count_DESC' }),
-    devices: runPanel(env, { ...range, dimension: 'deviceType', limit: 5, orderBy: 'count_DESC' }),
+    totals: runPanel(env, { ...scoped, limit: 1 }),
+    split: bot?.canGroup ? runPanel(env, { ...range, dimension: bot.name, limit: 5 }) : Promise.resolve([]),
+    daily: runDaily(env, scoped),
+    pages: runPanel(env, { ...scoped, dimension: 'requestPath', limit: 15, orderBy: 'count_DESC' }),
+    referrers: runPanel(env, { ...scoped, dimension: 'refererHost', limit: 20, orderBy: 'count_DESC' }),
+    countries: runPanel(env, { ...scoped, dimension: 'countryName', limit: 10, orderBy: 'count_DESC' }),
+    devices: runPanel(env, { ...scoped, dimension: 'deviceType', limit: 5, orderBy: 'count_DESC' }),
   };
   const names = Object.keys(panels);
   const settled = await Promise.allSettled(Object.values(panels));
-  const out = { days, range, errors: {} };
+  const out = { days, range, who: bot ? who : 'all', botsAvailable: !!bot, errors: {} };
   settled.forEach((r, i) => {
     if (r.status === 'fulfilled') out[names[i]] = r.value;
     else {
@@ -153,6 +224,13 @@ export async function handleAnalytics(request, env) {
     .map((r) => (r.key ? r : { ...r, key: 'Typed in, bookmarks or apps' }))
     .slice(0, 10);
   out.totals = out.totals[0] ?? { views: 0, visits: 0 };
+
+  // People and bots for the whole period, whichever view is shown.
+  const isBot = (k) => k === 1 || k === true || k === '1' || k === 'true';
+  const sum = (rows) => rows.reduce((a, r) => ({ views: a.views + r.views, visits: a.visits + r.visits }), { views: 0, visits: 0 });
+  out.split = out.split.length
+    ? { people: sum(out.split.filter((r) => !isBot(r.key))), bots: sum(out.split.filter((r) => isBot(r.key))) }
+    : null;
 
   return json(out);
 }
