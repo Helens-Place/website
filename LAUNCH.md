@@ -411,6 +411,13 @@ Use Helen's account, not Andrew's, so the site is hers.
 
 Order matters, because of Helen's email.
 
+**Steps 1 to 4 done, 11 October 2026.** The zone is in Helen's Cloudflare
+account (nameservers `ariadne.ns.cloudflare.com` and
+`hayes.ns.cloudflare.com`, set at IONOS, the registrar). All 33 records were
+imported DNS only, with `mail` as A and AAAA records and the MX pointing at
+it; the export was checked line by line against the intended file. DNSSEC was
+off. Helen's email was tested and works, and the old site still loads.
+
 1. **Add the site to Helen's Cloudflare account** (Add a domain, Free plan).
    Let it import the existing records, then **check them against the list
    above** before going further.
