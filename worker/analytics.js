@@ -287,11 +287,12 @@ export async function handleAnalytics(request, env) {
     countries: runPanel(env, { ...scoped, dimension: 'countryName', limit: 10, orderBy: 'count_DESC' }),
     devices: runPanel(env, { ...scoped, dimension: 'deviceType', limit: 5, orderBy: 'count_DESC' }),
     // Real people only, whichever view is chosen: bots do not send the ping.
-    places: runPlaces(env, days),
+    // Not asked for until the dataset is bound in wrangler.jsonc.
+    places: env.HITS ? runPlaces(env, days) : Promise.resolve([]),
   };
   const names = Object.keys(panels);
   const settled = await Promise.allSettled(Object.values(panels));
-  const out = { days, range, who: bot ? who : 'all', botsAvailable: !!bot, botsError: bot ? null : botFieldError, errors: {} };
+  const out = { days, range, who: bot ? who : 'all', botsAvailable: !!bot, botsError: bot ? null : botFieldError, placesReady: !!env.HITS, errors: {} };
   settled.forEach((r, i) => {
     if (r.status === 'fulfilled') out[names[i]] = r.value;
     else {

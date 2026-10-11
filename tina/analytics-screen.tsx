@@ -28,6 +28,7 @@ type Data = {
   countries: Row[];
   devices: Row[];
   places?: Place[];
+  placesReady?: boolean;
   errors: Record<string, string>;
   aiReferrals?: { visits: number; views: number; assistants: Row[] };
 };
@@ -342,11 +343,15 @@ export function AnalyticsScreen() {
                 Pages read from each town, as Cloudflare estimates it from the connection. Real people only, counted from
                 11 October 2026. Phones often show up at the network's nearest hub, such as Bristol or London.
               </p>
-              <Ranked
-                rows={(data.places ?? []).map((p) => ({ key: placeName(p), views: p.views, visits: 0 }))}
-                empty="Nothing counted yet. It fills up as people read the site."
-                error={data.errors.places}
-              />
+              {data.placesReady === false ? (
+                <p style={{ margin: 0, color: C.soft }}>Not switched on yet. Andrew is setting this up.</p>
+              ) : (
+                <Ranked
+                  rows={(data.places ?? []).map((p) => ({ key: placeName(p), views: p.views, visits: 0 }))}
+                  empty="Nothing counted yet. It fills up as people read the site."
+                  error={data.errors.places}
+                />
+              )}
             </Card>
             <Card title="Devices">
               <Ranked rows={data.devices} label={(k) => DEVICE[k] || k || 'Unknown'} empty="Nothing recorded yet." error={data.errors.devices} />
