@@ -489,12 +489,10 @@ where visitors came from, countries and devices, for 7, 30 or 90 days.
   before answering. This also guards the workers.dev address.
 - Figures come from Cloudflare Web Analytics through the GraphQL Analytics
   API (`rumPageloadEventsAdaptiveGroups`). The API token is a Worker secret.
-- [ ] **Web Analytics site in Helen's account.** Analytics & Logs > Web
-      Analytics > Add a site, `helensplace.co.uk`, with the **JavaScript
-      snippet** (not automatic setup, which could double count). Put the
-      snippet's token in Site settings > Analytics token, and its site tag in
-      `CF_SITE_TAG` in `wrangler.jsonc`.
-- [ ] **Account API token** (Manage Account > Account API Tokens), custom,
+- [x] **Web Analytics site in Helen's account.** It always was: the site
+      tag is `aed3229d66ae4a1680c63c8fd185f913` (now `CF_SITE_TAG`) and the
+      beacon token `89f2d89a…` in Site settings is that site's.
+- [x] **Account API token** (Manage Account > Account API Tokens), custom,
       permission **Account > Account Analytics > Read**, saved as the Worker
       secret `CF_ANALYTICS_TOKEN`. Account-owned, so it does not depend on
       Andrew's membership.

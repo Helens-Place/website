@@ -39,7 +39,7 @@
     // are useless without CF_ANALYTICS_TOKEN, which is a dashboard secret.
     "TINA_CLIENT_ID": "69261f1d-ef54-4694-beb5-5b5238b23663",
     "CF_ACCOUNT_ID": "0842f4617e488b5b222262eee443b8e4",
-    "CF_SITE_TAG": ""
+    "CF_SITE_TAG": "aed3229d66ae4a1680c63c8fd185f913"
   },
   "observability": { "enabled": true }
 }
