@@ -540,6 +540,35 @@ them. What can catch a school out is Cloudflare's own security set too high.
       undercounted. The site still works. The Elevator Series videos come from
       Vimeo, which some schools block wherever the site is hosted.
 
+## Live, 11 October 2026
+
+helensplace.co.uk now serves the new site from the Cloudflare Worker.
+
+- [x] The apex A, AAAA and www CNAME records were deleted and helensplace.co.uk
+      added as the Worker's custom domain. Mail records untouched; MX still
+      points at mail.helensplace.co.uk, an A record to the old server.
+- [x] www is a proxied CNAME to the apex with a Redirect Rule ("Redirect from
+      WWW to root", 301, query string preserved). Adding www as a second
+      custom domain asked to onboard a zone, and one canonical host is better
+      for search anyway.
+- [x] Always Use HTTPS on; every http address 301s to https. HSTS left
+      **off** on purpose until schools have used the site for a few weeks.
+- [x] Minimum TLS 1.2. Checked: TLS 1.2 and 1.3 negotiate.
+- [x] Certificate: Cloudflare is serving its Universal certificate from
+      **Google Trust Services** (WE1), chain WE1, GTS Root R4, cross-signed by
+      **GlobalSign Root CA** (1998), so old school filters should trust it. The
+      Worker's custom-domain certificate, seen briefly, was Let's Encrypt (YE2,
+      Root YE, ISRG Root X2). Cloudflare picks on the free plan and can change
+      it at renewal (the current one expires 9 January 2027), so check again
+      if a school reports a warning.
+- [x] noindex removed; sitemap (50 URLs), robots.txt, llms.txt, canonical and
+      og:url all on the real domain; structured data valid; analytics beacon
+      present. SSL Labs stalled on its IPv6 endpoint; the chain and TLS
+      versions were checked directly with OpenSSL instead.
+- [ ] Add `https://helensplace.co.uk` to TinaCloud's site URLs.
+- [ ] One test enquiry from https://helensplace.co.uk/contact.
+- [ ] Test from a real school network (see "Keeping it reachable" above).
+
 ## 5. Go-live order
 
 The sequence matters.
