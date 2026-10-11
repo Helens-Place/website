@@ -45,8 +45,8 @@ out, and none of them announce themselves.
 
 - [x] **Wind up the `content` branch workflow.** Done 11 October 2026:
       `content` was merged into `main` and deleted, Netlify was unlinked, and
-      all work now happens on `main`, uploaded to Cloudflare as unpublished
-      versions and published from Deployments. The steps below are kept for
+      all work now happens on `main`, published by Cloudflare as soon as it is
+      built. The steps below are kept for
       the record.
 - [x] **(Original plan.)** Set up so Helen could review
       the whole site while production deploys were paused. Once she is done:
@@ -360,24 +360,22 @@ as legacy. The repo's `wrangler.jsonc` describes it.
 - [ ] **The Worker**, connected to `Helens-Place/website` and named
       `website` (the name in `wrangler.jsonc` must match). Under
       **Settings > Build**: production branch `main`, build command
-      `npm run tina:build`, deploy command
-      **`npx wrangler versions upload --preview-alias preview`**, and builds for
-      non-production branches **off**. Everything happens on `main`: each push
-      uploads a version without publishing it, the newest is always at
-      `https://preview-website.helenlouiseross.workers.dev`, and it goes live
-      from **Deployments > Promote deployment**.
+      `npm run tina:build`, deploy command **`npx wrangler deploy`**, and builds
+      for non-production branches **off**. Everything happens on `main` and is
+      published as soon as it is built, so a CMS save is live in about three
+      minutes. **Deployments > Rollback** restores an earlier version if a
+      change goes wrong. (A preview-then-publish step was tried and dropped on
+      11 October 2026 because it would slow Helen's edits down.)
 - [ ] **Build variables** (Settings > Build > Build variables and secrets):
       `NODE_VERSION` = `22.12.0`, `TINA_CLIENT_ID`, `TINA_TOKEN` and
       `PUBLIC_TURNSTILE_SITE_KEY`. These are only seen by the build.
 - [ ] **Runtime secrets** (Settings > Variables and secrets, Production):
-      `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY`. Uploaded versions use the
-      production settings, so once is enough. Plain variables
+      `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY`. Plain variables
       (`CONTACT_FROM`, `CONTACT_TO`) are in `wrangler.jsonc`; an upload would
       overwrite any set in the dashboard.
 - [ ] **Build watch paths.** Exclude `README.md`, `LAUNCH.md`, `scripts/*`,
       `.claude/*` and `.gitignore`.
 - [ ] **TinaCloud site URL.** In TinaCloud, project configuration, add
-      `https://preview-website.helenlouiseross.workers.dev`,
       `https://website.helenlouiseross.workers.dev` and later
       `https://helensplace.co.uk`, or Helen's login to `/admin` will be refused
       there.
@@ -430,9 +428,9 @@ records from the failed subdomain (`send.send`, `rsend.send`,
 - [ ] Note: the contact form no longer works on Netlify deploys. Netlify is
       not serving the real domain, so nothing live is affected.
 
-### Testing on the latest version, before the domain is connected
+### Testing on workers.dev, before the domain is connected
 
-- [ ] `https://preview-website.helenlouiseross.workers.dev` loads the new site.
+- [ ] `https://website.helenlouiseross.workers.dev` loads the new site.
 - [ ] `/helen/`, `/privacy-policy` and `/blog/anything` redirect correctly.
 - [ ] `/about` loads without redirecting to `/about/`.
 - [ ] Response headers include `X-Robots-Tag: noindex, nofollow` (still
