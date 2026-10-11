@@ -41,7 +41,7 @@
     "CF_ACCOUNT_ID": "0842f4617e488b5b222262eee443b8e4",
     "CF_SITE_TAG": "aed3229d66ae4a1680c63c8fd185f913",
     // The helensplace.co.uk zone, for the AI crawler panel.
-    "CF_ZONE_ID": ""
+    "CF_ZONE_ID": "04f253d8d98928641fba51baa0607447"
   },
   "observability": { "enabled": true }
 }
