@@ -2,12 +2,11 @@
 # Each path may appear only once: Workers applies a single block per path, so a
 # second /* block silently replaces the first. Comments must sit outside blocks.
 #
-# REMOVE THE X-Robots-Tag LINE AT GO-LIVE. It keeps the preview addresses out
-# of search engines. Left in once helensplace.co.uk points here, it keeps the
-# real site out of Google too. See LAUNCH.md.
+# The X-Robots-Tag: noindex line that kept the review copies out of search
+# engines was removed at go-live, 11 October 2026. Do not put it back: it
+# would take the real site out of Google.
 
 /*
-  X-Robots-Tag: noindex, nofollow
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

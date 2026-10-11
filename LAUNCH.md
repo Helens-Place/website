@@ -13,7 +13,7 @@ Last updated: 9 October 2026.
 These were put in deliberately to make review possible. They all have to come
 out, and none of them announce themselves.
 
-- [ ] **Remove the `X-Robots-Tag` block from `netlify.toml`** (from
+- [x] **Remove the `X-Robots-Tag` block from `netlify.toml`** (from
       `public/_headers` once the site has moved to Cloudflare). It currently
       sends `noindex, nofollow` for every page. It exists so the review copy on
       the netlify.app address never reaches Google. Leave it in and the real
@@ -424,7 +424,7 @@ records from the failed subdomain (`send.send`, `rsend.send`,
       been `/about/`).
 - [x] `tina/config.ts` reads `WORKERS_CI_BRANCH`.
 - [x] Privacy policy names Cloudflare, Turnstile, Resend and Just Host Me.
-- [ ] Remove `netlify.toml` once the Cloudflare build is confirmed.
+- [x] Remove `netlify.toml` once the Cloudflare build is confirmed. Done at go-live.
 - [ ] Note: the contact form no longer works on Netlify deploys. Netlify is
       not serving the real domain, so nothing live is affected.
 
@@ -554,7 +554,8 @@ The sequence matters.
 7. Remove the review note from the terms page.
 8. Add the meta tag verification codes, if using them as a backup. The DNS
    verification in section 4 should already be done by this point.
-9. Remove the `X-Robots-Tag` block, from `public/_headers` by then.
+9. Remove the `X-Robots-Tag` block, from `public/_headers` by then. Done 11
+   October 2026.
 10. Point the domain at the Cloudflare Worker.
 11. Wind up the branch workflow, section 1, and the Netlify site.
 
