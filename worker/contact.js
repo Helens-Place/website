@@ -16,8 +16,7 @@
  * never claims success it did not have.
  *
  * Settings:
- *   RESEND_API_KEY        secret, set in the dashboard for Production and
- *                         again for Previews Base
+ *   RESEND_API_KEY        secret, set in the dashboard (Variables and secrets)
  *   TURNSTILE_SECRET_KEY  secret, likewise
  *   CONTACT_FROM          in wrangler.jsonc
  *   CONTACT_TO            optional, in wrangler.jsonc, defaults to Helen below

@@ -1,20 +1,30 @@
 // Cloudflare Workers configuration for helensplace.co.uk.
 //
-// The site is static: `npm run tina:build` writes it to dist/, and Workers
-// Builds then runs `npx wrangler deploy` (the main branch) or
-// `npx wrangler preview` (any other branch). The small script in worker/ only
-// handles the contact form.
+// How changes go live. Everything happens on the main branch:
+//  1. A push to main (including every save in TinaCMS) runs `npm run tina:build`
+//     and then `npx wrangler versions upload --preview-alias preview`.
+//  2. That uploads a new version WITHOUT publishing it. The newest one is always
+//     at https://preview-website.helenlouiseross.workers.dev to check.
+//  3. To publish, in the Worker: Deployments > Promote deployment, and pick it.
 //
-// Plain settings live here rather than in the dashboard, because a deploy
+// The site is static: the build writes it to dist/. The small script in worker/
+// only handles the contact form.
+//
+// Plain settings live here rather than in the dashboard, because an upload
 // replaces dashboard variables with these. Secrets (RESEND_API_KEY,
-// TURNSTILE_SECRET_KEY) are set in the dashboard, once for Production and once
-// for Previews Base, since Previews do not inherit production settings. Build
-// variables (TINA_CLIENT_ID, TINA_TOKEN, NODE_VERSION, PUBLIC_TURNSTILE_SITE_KEY)
-// are set under Settings > Build, and are not available at runtime.
+// TURNSTILE_SECRET_KEY) are set in the dashboard under Variables and secrets.
+// Build variables (TINA_CLIENT_ID, TINA_TOKEN, NODE_VERSION,
+// PUBLIC_TURNSTILE_SITE_KEY) are set under Settings > Build, and are not
+// available at runtime.
 {
   "name": "website",
   "compatibility_date": "2026-10-11",
   "main": "./worker/index.js",
+  "workers_dev": true,
+  // Version URLs: each uploaded version gets its own link, and the alias
+  // "latest" points at the newest. They are public, so the site's noindex
+  // header and canonical tags keep them out of search results.
+  "preview_urls": true,
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
@@ -26,12 +36,6 @@
   "vars": {
     "CONTACT_FROM": "Helen's Place website <enquiries@helensplace.co.uk>",
     "CONTACT_TO": "helen@helensplace.co.uk"
-  },
-  "previews": {
-    "vars": {
-      "CONTACT_FROM": "Helen's Place website <enquiries@helensplace.co.uk>",
-      "CONTACT_TO": "helen@helensplace.co.uk"
-    }
   },
   "observability": { "enabled": true }
 }
