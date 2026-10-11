@@ -18,7 +18,7 @@
  * Settings, in the Pages project under Settings > Variables and Secrets:
  *   RESEND_API_KEY        secret, from Resend
  *   TURNSTILE_SECRET_KEY  secret, from Turnstile
- *   CONTACT_FROM          e.g. Helen's Place website <enquiries@send.helensplace.co.uk>
+ *   CONTACT_FROM          e.g. Helen's Place website <enquiries@helensplace.co.uk>
  *   CONTACT_TO            optional, defaults to Helen's address below
  */
 

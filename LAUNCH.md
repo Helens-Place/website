@@ -356,7 +356,7 @@ Use Helen's account, not Andrew's, so the site is hers.
 - [ ] **Variables**, for Production and Preview alike:
       `NODE_VERSION` = `22.12.0`; `TINA_CLIENT_ID` and `TINA_TOKEN` (as in
       Netlify); `PUBLIC_TURNSTILE_SITE_KEY` (the site key);
-      `CONTACT_FROM` = `Helen's Place website <enquiries@send.helensplace.co.uk>`.
+      `CONTACT_FROM` = `Helen's Place website <enquiries@helensplace.co.uk>`.
       As **secrets** (encrypted): `TURNSTILE_SECRET_KEY` and `RESEND_API_KEY`.
       Variables only reach a build made after they were added, so retry the
       deployment once they are in.
@@ -367,6 +367,16 @@ Use Helen's account, not Andrew's, so the site is hers.
       Helen's login to `/admin` will be refused there.
 
 ### Resend, in Helen's name (Andrew)
+
+**Done 11 October 2026, with a change of plan.** The subdomain
+`send.helensplace.co.uk` would not verify, so Resend uses the main domain
+`helensplace.co.uk`, which verified. Its records sit on `send`, `rsend` and
+`resend._domainkey`, so Helen's MX, SPF and existing DKIM key are untouched,
+and mail passes DMARC through Resend's DKIM signature. `CONTACT_FROM` is
+therefore `Helen's Place website <enquiries@helensplace.co.uk>`. Leftover
+records from the failed subdomain (`send.send`, `rsend.send`,
+`resend._domainkey.send`) can be deleted; the three above must stay.
+
 
 - [ ] Sign up at resend.com with Helen's email. Add the domain
       **`send.helensplace.co.uk`**, a subdomain, so nothing about the apex
