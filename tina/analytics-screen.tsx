@@ -157,7 +157,8 @@ function Daily({ rows, error, metric, colour }: { rows: Row[]; error?: string; m
 
 export function AnalyticsScreen() {
   const cms = useCMS() as any;
-  const [days, setDays] = useState(30);
+  // The last 7 days by default: the most exact figures (older ones are sampled).
+  const [days, setDays] = useState(7);
   // Real people by default: bots and crawlers are rarely what Helen wants to
   // know about, but she can switch to them, or to everyone.
   const [who, setWho] = useState<'people' | 'bots' | 'all'>('people');
