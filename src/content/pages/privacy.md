@@ -47,8 +47,13 @@ counts: which pages were viewed, which site or search sent someone here, and a
 broad breakdown by country, browser and device type. I cannot identify an
 individual visitor from it.
 
+The website also keeps its own simple count of which pages are read from which
+town. Cloudflare estimates the town from your connection, and only the page and
+the town name are recorded: no IP address, no postcode and nothing about your
+device. These counts are deleted after three months.
+
 Your IP address is used momentarily to work out roughly where a visit came from
-and to filter out automated traffic. It is not stored against your visit and it
+(at most, the town) and to filter out automated traffic. It is not stored against your visit and it
 is not available to me. You can read exactly what Cloudflare collects in
 [its Web Analytics documentation](https://developers.cloudflare.com/web-analytics/).
 

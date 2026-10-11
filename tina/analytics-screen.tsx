@@ -27,9 +27,11 @@ type Data = {
   referrers: Row[];
   countries: Row[];
   devices: Row[];
+  places?: Place[];
   errors: Record<string, string>;
   aiReferrals?: { visits: number; views: number; assistants: Row[] };
 };
+type Place = { city: string; region: string; country: string; views: number };
 type Crawler = { name: string; company: string; why: string; requests: number };
 type AiData = {
   days: number;
@@ -50,6 +52,19 @@ const C = {
   pink: '#972B73',
 };
 const fmt = (n: number) => n.toLocaleString('en-GB');
+/* Trowbridge, England for the UK; Lyon, France elsewhere. */
+const countryName = (code: string) => {
+  try {
+    return new Intl.DisplayNames(['en-GB'], { type: 'region' }).of(code) || code;
+  } catch {
+    return code;
+  }
+};
+const placeName = (p: Place) => {
+  const town = p.city || 'Town not known';
+  if (!p.country) return town;
+  return p.country === 'GB' ? [town, p.region].filter(Boolean).join(', ') : `${town}, ${countryName(p.country)}`;
+};
 const DEVICE: Record<string, string> = { desktop: 'Computer', mobile: 'Phone', tablet: 'Tablet' };
 /* 2026-10-03 as 3 Oct. Anything that is not a plain date is shown as it is. */
 const day = (k: string | null) => {
@@ -321,6 +336,17 @@ export function AnalyticsScreen() {
             </Card>
             <Card title="Countries">
               <Ranked rows={data.countries} empty="Nothing recorded yet." error={data.errors.countries} />
+            </Card>
+            <Card title="Towns">
+              <p style={{ margin: '0 0 10px', color: C.soft, fontSize: 14 }}>
+                Pages read from each town, as Cloudflare estimates it from the connection. Real people only, counted from
+                11 October 2026. Phones often show up at the network's nearest hub, such as Bristol or London.
+              </p>
+              <Ranked
+                rows={(data.places ?? []).map((p) => ({ key: placeName(p), views: p.views, visits: 0 }))}
+                empty="Nothing counted yet. It fills up as people read the site."
+                error={data.errors.places}
+              />
             </Card>
             <Card title="Devices">
               <Ranked rows={data.devices} label={(k) => DEVICE[k] || k || 'Unknown'} empty="Nothing recorded yet." error={data.errors.devices} />

@@ -2,11 +2,13 @@
  * The Worker in front of the site. Almost everything is the static build in
  * dist/, served by Cloudflare's asset handling, which also applies
  * public/_redirects and public/_headers. The Worker only runs first for
- * /api/* (see run_worker_first in wrangler.jsonc): the contact form, and the
- * figures for the Analytics screen in the TinaCMS admin.
+ * /api/* (see run_worker_first in wrangler.jsonc): the contact form, the
+ * figures for the Analytics screen in the TinaCMS admin, and the page-read
+ * ping behind its Towns panel.
  */
 import { onRequestGet, onRequestPost } from './contact.js';
 import { handleAnalytics } from './analytics.js';
+import { handleHit } from './hits.js';
 
 export default {
   async fetch(request, env) {
@@ -19,6 +21,7 @@ export default {
     }
 
     if (pathname === '/api/analytics' || pathname === '/api/analytics/ai') return handleAnalytics(request, env);
+    if (pathname === '/api/hit') return handleHit(request, env);
 
     // Anything else under /api/ is not a page. Let the asset handler answer,
     // which gives the site's own 404 page.

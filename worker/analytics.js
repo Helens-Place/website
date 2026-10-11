@@ -183,6 +183,31 @@ async function runDaily(env, opts) {
   throw lastError;
 }
 
+/* Page reads by town, from the site's own count in Workers Analytics Engine
+   (worker/hits.js), read through its SQL API with the same token. Empty until
+   the first page read has been recorded, when the table does not exist yet. */
+async function runPlaces(env, days) {
+  const sql = `SELECT blob1 AS city, blob2 AS region, blob3 AS country, SUM(_sample_interval) AS views
+    FROM helensplace_hits
+    WHERE timestamp > NOW() - INTERVAL '${days}' DAY
+    GROUP BY city, region, country
+    ORDER BY views DESC
+    LIMIT 15
+    FORMAT JSON`;
+  const res = await fetch(`https://api.cloudflare.com/client/v4/accounts/${env.CF_ACCOUNT_ID}/analytics_engine/sql`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${env.CF_ANALYTICS_TOKEN}` },
+    body: sql,
+  });
+  const text = await res.text();
+  if (!res.ok) {
+    if (/does not exist|unknown table|not found/i.test(text)) return [];
+    throw new Error(text.slice(0, 200) || `Cloudflare returned ${res.status}`);
+  }
+  const rows = JSON.parse(text).data ?? [];
+  return rows.map((r) => ({ city: r.city || '', region: r.region || '', country: r.country || '', views: Math.round(Number(r.views) || 0) }));
+}
+
 /* Returns a refusal if the request is not from someone signed in to this
    site's TinaCMS, or null to carry on. Shared by both analytics endpoints. */
 async function refuse(request, env) {
@@ -261,6 +286,8 @@ export async function handleAnalytics(request, env) {
     referrers: runPanel(env, { ...scoped, dimension: 'refererHost', limit: 100, orderBy: 'count_DESC' }),
     countries: runPanel(env, { ...scoped, dimension: 'countryName', limit: 10, orderBy: 'count_DESC' }),
     devices: runPanel(env, { ...scoped, dimension: 'deviceType', limit: 5, orderBy: 'count_DESC' }),
+    // Real people only, whichever view is chosen: bots do not send the ping.
+    places: runPlaces(env, days),
   };
   const names = Object.keys(panels);
   const settled = await Promise.allSettled(Object.values(panels));

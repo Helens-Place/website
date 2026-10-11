@@ -33,6 +33,21 @@ const enabled = provider !== 'none' && token.trim().length > 0;
   />
 )}
 
+{/*
+  The site's own count of page reads by town (worker/hits.js), because Web
+  Analytics only goes down to country. Sends the page's path and nothing else;
+  the Worker adds Cloudflare's estimate of the town.
+*/}
+{enabled && provider === 'cloudflare' && (
+  <script is:inline>
+    try {
+      navigator.sendBeacon('/api/hit', location.pathname);
+    } catch (e) {
+      /* Not counted, which is fine. */
+    }
+  </script>
+)}
+
 {enabled && provider === 'plausible' && (
   <script defer data-domain={token} src="https://plausible.io/js/script.js" />
 )}

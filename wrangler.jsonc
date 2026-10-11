@@ -43,5 +43,8 @@
     // The helensplace.co.uk zone, for the AI crawler panel.
     "CF_ZONE_ID": "04f253d8d98928641fba51baa0607447"
   },
+  // Page reads by town, for the Analytics screen (worker/hits.js). Created
+  // on the first write; rows are kept for three months.
+  "analytics_engine_datasets": [{ "binding": "HITS", "dataset": "helensplace_hits" }],
   "observability": { "enabled": true }
 }
