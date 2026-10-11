@@ -565,9 +565,10 @@ helensplace.co.uk now serves the new site from the Cloudflare Worker.
       og:url all on the real domain; structured data valid; analytics beacon
       present. SSL Labs stalled on its IPv6 endpoint; the chain and TLS
       versions were checked directly with OpenSSL instead.
-- [ ] Add `https://helensplace.co.uk` to TinaCloud's site URLs.
-- [ ] One test enquiry from https://helensplace.co.uk/contact.
+- [x] Add `https://helensplace.co.uk` to TinaCloud's site URLs.
+- [x] One test enquiry from https://helensplace.co.uk/contact.
 - [ ] Test from a real school network (see "Keeping it reachable" above).
+      Deferred: to be done with a school Helen works with.
 
 ## 5. Go-live order
 
