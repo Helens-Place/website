@@ -430,14 +430,17 @@ records from the failed subdomain (`send.send`, `rsend.send`,
 
 ### Testing on workers.dev, before the domain is connected
 
-- [ ] `https://website.helenlouiseross.workers.dev` loads the new site.
-- [ ] `/helen/`, `/privacy-policy` and `/blog/anything` redirect correctly.
-- [ ] `/about` loads without redirecting to `/about/`.
-- [ ] Response headers include `X-Robots-Tag: noindex, nofollow` (still
+Checked from outside on 11 October 2026 unless noted.
+
+- [x] `https://website.helenlouiseross.workers.dev` loads the new site.
+- [x] `/helen/`, `/privacy-policy` and `/blog/anything` redirect correctly.
+- [x] `/about` loads without redirecting to `/about/`.
+- [x] Response headers include `X-Robots-Tag: noindex, nofollow` (still
       wanted, until go-live).
 - [ ] `/admin` opens and Helen can sign in and save a word.
-- [ ] **A real enquiry** from the contact form arrives in Helen's inbox, and
-      pressing Reply addresses the sender. Then one from a phone.
+- [x] **A real enquiry** from the contact form works, 11 October 2026, after
+      the Turnstile widget's hostnames and keys were corrected. Still worth
+      checking that pressing Reply addresses the sender, and one from a phone.
 
 ### Moving the DNS and the domain (go-live, Andrew)
 
