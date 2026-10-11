@@ -5,7 +5,7 @@ description: 'How booking an assessment with Dr Helen Ross works: the free call,
 eyebrow: Parents and families
 heading: Booking an assessment with me
 intro: 'Most people ring wanting to know the same things. How long it takes, what their child will actually be asked to do, and what they are left with at the end. Underneath that there is usually a quieter worry about whether their child will find the day hard. Here is the whole process, plainly, including that part.'
-image: /images/__staging/content/__filehelen-dog-sofa.jpg
+image: helen-dog-sofa.jpg
 imageAlt: Dr Helen Ross laughing with her dog at home
 primaryCta:
   label: Book a free 20-minute call

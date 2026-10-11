@@ -5,7 +5,7 @@ description: 'Independent dyslexia and SEND research, EdTech evaluation, evidenc
 eyebrow: 'Business, research and legal'
 heading: 'Research, consultancy and expert witness work you can stand behind'
 intro: 'I''m a published qualitative researcher specialising in dyslexia, SEND and inclusive education. My work has reached peer-reviewed journals, the Council for Science and Technology, and an All-Party Parliamentary Group at the House of Commons. I work with charities, technology companies, local authorities and policymakers in the UK and internationally with companies such as OrCam and Lili for Life, and they bring me in when the evidence has to be right and the findings have to make sense to non-specialists.'
-image: /images/__staging/content/__filehelen-desk-working.jpg
+image: helen-desk-working.jpg
 imageAlt: Dr Helen Ross working at her desk
 primaryCta:
   label: Discuss a project

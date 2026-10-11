@@ -8,7 +8,7 @@ description: 'Private dyslexia and dyscalculia assessments for children and adul
 eyebrow: Parents and families
 heading: 'Dyslexia and dyscalculia assessments in Trowbridge, in person'
 intro: 'If you are worried about your child''s reading, spelling, writing or maths, a proper diagnostic assessment, what many people call a dyslexia test, answers the question clearly and tells you what to do next.'
-image: /images/__staging/content/__filehelen-dog-sofa.jpg
+image: helen-dog-sofa.jpg
 imageAlt: Dr Helen Ross laughing with her dog at home
 trustLine: AMBDA and AMBDA Dyscalculia qualified · Assessment Practising Certificate (APC) · Chair of the Wiltshire Dyslexia Association · reports accepted for exam access arrangements and DSA.
 overviewHeading: 'Qualified, in person, and never rushed'

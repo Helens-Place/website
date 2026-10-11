@@ -4,7 +4,7 @@ description: 'Dr Helen Ross: dyslexia and dyscalculia specialist assessor, publi
 eyebrow: About
 heading: About me
 intro: 'I''ve advised government, published internationally and written a book (the second one is on the way!). I am equally at ease working with families to put nervous 10-year-olds at ease. '
-image: /images/__staging/content/__filehelen-portrait.jpg
+image: helen-portrait.jpg
 imageAlt: Portrait of Dr Helen Ross holding her book
 primaryCta:
   label: Book a free 20-minute call
