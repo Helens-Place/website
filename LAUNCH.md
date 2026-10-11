@@ -345,26 +345,33 @@ Checked before the move, because it changes the order of everything.
 
 ### In Helen's Cloudflare account (Andrew)
 
-Use Helen's account, not Andrew's, so the site is hers.
+Use Helen's account, not Andrew's, so the site is hers. The site runs as a
+**Worker** (Workers Builds), not a Pages project: Cloudflare now treats Pages
+as legacy. The repo's `wrangler.jsonc` describes it.
 
 - [ ] **Turnstile widget.** Turnstile, Add widget, name "Helen's Place
-      contact form", hostnames `helensplace.co.uk` and `pages.dev` (so
+      contact form", hostnames `helensplace.co.uk` and `workers.dev` (so
       previews work), mode Managed. Keep the **site key** and **secret key**.
-- [ ] **Pages project.** Workers & Pages, Create, Pages, Connect to Git,
-      `Helens-Place/website`. Production branch `main`, framework preset
-      none, build command `npm run tina:build`, output directory `dist`.
-- [ ] **Variables**, for Production and Preview alike:
-      `NODE_VERSION` = `22.12.0`; `TINA_CLIENT_ID` and `TINA_TOKEN` (as in
-      Netlify); `PUBLIC_TURNSTILE_SITE_KEY` (the site key);
-      `CONTACT_FROM` = `Helen's Place website <enquiries@helensplace.co.uk>`.
-      As **secrets** (encrypted): `TURNSTILE_SECRET_KEY` and `RESEND_API_KEY`.
-      Variables only reach a build made after they were added, so retry the
-      deployment once they are in.
+- [ ] **The Worker**, connected to `Helens-Place/website` and named
+      `website` (the name in `wrangler.jsonc` must match). Under
+      **Settings > Build**: build command `npm run tina:build`, deploy command
+      `npx wrangler deploy`, preview command `npx wrangler preview`, preview
+      builds on for non-production branches.
+- [ ] **Build variables** (Settings > Build > Build variables and secrets):
+      `NODE_VERSION` = `22.12.0`, `TINA_CLIENT_ID`, `TINA_TOKEN` and
+      `PUBLIC_TURNSTILE_SITE_KEY`. These are only seen by the build.
+- [ ] **Runtime secrets** (Settings > Variables and secrets): `RESEND_API_KEY`
+      and `TURNSTILE_SECRET_KEY`, once with the **Production** toggle and again
+      with **Previews Base**. Previews do not inherit production settings, and
+      secrets cannot be imported, so they are typed twice. Plain variables
+      (`CONTACT_FROM`, `CONTACT_TO`) are in `wrangler.jsonc`; a deploy would
+      overwrite any set in the dashboard.
 - [ ] **Build watch paths.** Exclude `README.md`, `LAUNCH.md`, `scripts/*`,
-      `.claude/*` and `.gitignore`, replacing the Netlify `ignore` rule.
+      `.claude/*` and `.gitignore`.
 - [ ] **TinaCloud site URL.** In TinaCloud, project configuration, add the
-      `*.pages.dev` address (and later `https://helensplace.co.uk`), or
-      Helen's login to `/admin` will be refused there.
+      Preview URL for the `content` branch (a `workers.dev` address) and
+      later `https://helensplace.co.uk`, or Helen's login to `/admin` will be
+      refused there.
 
 ### Resend, in Helen's name (Andrew)
 
@@ -386,27 +393,35 @@ records from the failed subdomain (`send.send`, `rsend.send`,
 - [ ] Create an API key with sending access only, and paste it into the Pages
       project as the `RESEND_API_KEY` secret.
 
-### In the repo (done 10 October 2026)
+### In the repo (done 10 to 11 October 2026)
 
-- [x] `functions/api/contact.js`: checks the honeypot, the fields and
-      Turnstile, emails Helen through Resend with Reply-To set to the sender,
-      and on any failure shows the visitor their message to copy with Helen's
-      email and phone. Every path was tested with the network stubbed.
+- [x] `wrangler.jsonc`: static assets from `dist`, `about.html` served at
+      `/about`, the site's own 404 page, and the Worker run first only for
+      `/api/*`. Plain variables for production and Previews.
+- [x] `worker/index.js` hands `/api/contact` to `worker/contact.js` and
+      everything else to the static site. `worker/contact.js` checks the
+      honeypot, the fields and Turnstile, emails Helen through Resend with
+      Reply-To set to the sender, and on any failure shows the visitor their
+      message to copy with Helen's email and phone. Every path was tested with
+      the network stubbed.
 - [x] The form posts to `/api/contact`; Turnstile shows only when
       `PUBLIC_TURNSTILE_SITE_KEY` is set, in interaction-only mode.
 - [x] `public/_redirects` (the 18 old WordPress redirects, each with and
-      without its trailing slash) and `public/_headers` (including the
-      noindex block, marked REMOVE AT GO-LIVE).
-- [x] Pages are built as `about.html` so Cloudflare serves `/about` without
-      a trailing-slash redirect, and canonical URLs now match the site's links
-      and the sitemap (they had been `/about/`).
-- [x] `tina/config.ts` reads `CF_PAGES_BRANCH`.
+      without its trailing slash) and `public/_headers`. Workers applies one
+      block per path, so all the site-wide headers, including the noindex
+      line marked for removal at go-live, share a single `/*` block.
+- [x] All of the above tested locally with `wrangler dev`: pages,
+      trailing-slash and `.html` redirects, the old WordPress redirects, the
+      404 page, the headers, and the form's honeypot and error paths.
+- [x] Canonical URLs now match the site's links and the sitemap (they had
+      been `/about/`).
+- [x] `tina/config.ts` reads `WORKERS_CI_BRANCH`.
 - [x] Privacy policy names Cloudflare, Turnstile, Resend and Just Host Me.
 - [ ] Remove `netlify.toml` once the Cloudflare build is confirmed.
 - [ ] Note: the contact form no longer works on Netlify deploys. Netlify is
       not serving the real domain, so nothing live is affected.
 
-### Testing on the preview address, before any DNS change
+### Testing on the Preview URL, before the domain is connected
 
 - [ ] The `content` branch preview builds and loads.
 - [ ] `/helen/`, `/privacy-policy` and `/blog/anything` redirect correctly.
@@ -444,9 +459,9 @@ off. Helen's email was tested and works, and the old site still loads.
    still works, before touching the website records.
 5. **Certificate settings** (from the section below): Google Trust Services,
    minimum TLS 1.2, HSTS off, Bot Fight Mode off.
-6. **Connect the domain** to the Pages project (Custom domains:
-   `helensplace.co.uk` and `www.helensplace.co.uk`). This replaces the apex
-   and www records with ones pointing at Pages.
+6. **Connect the domain** to the Worker (Settings > Domains & Routes > Add >
+   Custom domain: `helensplace.co.uk` and `www.helensplace.co.uk`). This
+   replaces the apex and www records with ones pointing at the Worker.
 7. Then the rest of the go-live order in section 5.
 
 ### The analytics page in the admin area (option 2)
@@ -520,14 +535,14 @@ The sequence matters.
 2. Merge `content` into `main`.
 3. Run `npm run tidy:images` and commit the result.
 4. Confirm section 2 sign-offs are done.
-5. Move to Cloudflare, the section above: the Pages project, the repo
+5. Move to Cloudflare, the section above: the Worker, the repo
    changes, and the contact form, tested with a real enquiry.
 6. Add the analytics page and check it is locked.
 7. Remove the review note from the terms page.
 8. Add the meta tag verification codes, if using them as a backup. The DNS
    verification in section 4 should already be done by this point.
 9. Remove the `X-Robots-Tag` block, from `public/_headers` by then.
-10. Point the domain at the Cloudflare Pages project.
+10. Point the domain at the Cloudflare Worker.
 11. Wind up the branch workflow, section 1, and the Netlify site.
 
 ## 6. Once it is live

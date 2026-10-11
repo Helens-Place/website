@@ -1,7 +1,7 @@
 ---
 /**
- * Posts to the Cloudflare Pages Function at /api/contact
- * (functions/api/contact.js), which checks Turnstile and emails Helen through
+ * Posts to /api/contact, handled by the Cloudflare Worker in
+ * worker/contact.js, which checks Turnstile and emails Helen through
  * Resend. It works without JavaScript; only the Turnstile check needs it.
  *
  * Turnstile appears only when PUBLIC_TURNSTILE_SITE_KEY is set at build time,

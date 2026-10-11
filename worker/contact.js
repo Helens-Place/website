@@ -1,6 +1,6 @@
 /**
- * The contact form's backend: a Cloudflare Pages Function at /api/contact.
- * It replaced Netlify Forms when the site moved to Cloudflare.
+ * The contact form's backend, served at /api/contact by the Worker in
+ * worker/index.js. It replaced Netlify Forms when the site moved to Cloudflare.
  *
  * What it does, in order:
  *  1. A filled-in honeypot means a bot. Pretend it worked and send nothing.
@@ -15,11 +15,12 @@
  * that silently drops an enquiry is the worst thing this site could do, so it
  * never claims success it did not have.
  *
- * Settings, in the Pages project under Settings > Variables and Secrets:
- *   RESEND_API_KEY        secret, from Resend
- *   TURNSTILE_SECRET_KEY  secret, from Turnstile
- *   CONTACT_FROM          e.g. Helen's Place website <enquiries@helensplace.co.uk>
- *   CONTACT_TO            optional, defaults to Helen's address below
+ * Settings:
+ *   RESEND_API_KEY        secret, set in the dashboard for Production and
+ *                         again for Previews Base
+ *   TURNSTILE_SECRET_KEY  secret, likewise
+ *   CONTACT_FROM          in wrangler.jsonc
+ *   CONTACT_TO            optional, in wrangler.jsonc, defaults to Helen below
  */
 
 /* These mirror Site settings. The function cannot read the site's content

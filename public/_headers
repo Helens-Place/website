@@ -1,12 +1,13 @@
-# Response headers, moved from netlify.toml. Cloudflare Pages reads this file.
+# Response headers, moved from netlify.toml. Cloudflare reads this file.
+# Each path may appear only once: Workers applies a single block per path, so a
+# second /* block silently replaces the first. Comments must sit outside blocks.
+#
+# REMOVE THE X-Robots-Tag LINE AT GO-LIVE. It keeps the preview addresses out
+# of search engines. Left in once helensplace.co.uk points here, it keeps the
+# real site out of Google too. See LAUNCH.md.
 
-# REMOVE AT GO-LIVE. Keeps the preview addresses out of search engines. Left
-# in once helensplace.co.uk points here, it keeps the real site out of Google
-# too. See LAUNCH.md.
 /*
   X-Robots-Tag: noindex, nofollow
-
-/*
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
