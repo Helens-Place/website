@@ -329,7 +329,10 @@ would leave two sets of rules fighting.
 Checked before the move, because it changes the order of everything.
 
 - **Nameservers:** Just Host Me (`dns1`-`dns4.justhostme.net`).
-- **Website:** the apex A record is `51.195.234.92`, the old WordPress site.
+- **Website:** the apex A record is `51.195.234.92`, and AAAA
+  `2001:41d0:802:5c00::`, the old WordPress site.
+- **Also present:** SRV `_autodiscover._tcp` → `cpanelemaildiscovery.cpanel.net`
+  (port 443), which helps mail apps set themselves up. Keep it.
 - **Helen's email is on that same server.** The MX record points at
   `helensplace.co.uk` itself, and `mail`, `webmail`, `www` and others are
   CNAMEs to the apex. So pointing the apex at Cloudflare would take her email
@@ -412,7 +415,8 @@ Order matters, because of Helen's email.
    Let it import the existing records, then **check them against the list
    above** before going further.
 2. **Fix mail in the Cloudflare DNS before switching nameservers:**
-   `mail` becomes an **A record** to `51.195.234.92` (not a CNAME), the MX
+   `mail` becomes an **A record** to `51.195.234.92` plus an **AAAA** to
+   `2001:41d0:802:5c00::` (not a CNAME), the MX
    points to `mail.helensplace.co.uk`, and `webmail`, `cpanel`,
    `autodiscover` and `ftp` become A records to `51.195.234.92`. All of
    these **DNS only** (grey cloud). Keep SPF, DKIM and DMARC exactly as they
