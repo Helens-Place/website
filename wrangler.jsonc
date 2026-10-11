@@ -43,11 +43,11 @@
     // The helensplace.co.uk zone, for the AI crawler panel.
     "CF_ZONE_ID": "04f253d8d98928641fba51baa0607447"
   },
-  // Page reads by town, for the Analytics screen (worker/hits.js), go in an
-  // Analytics Engine dataset. Not bound yet: the first deploy with it failed,
-  // most likely because Analytics Engine has to be switched on once in the
-  // account first. When it is, restore this line:
-  //   "analytics_engine_datasets": [{ "binding": "HITS", "dataset": "helensplace_hits" }],
-  // Without it the ping is accepted and dropped, and the Towns panel is empty.
+  // Page reads by town, for the Analytics screen (worker/hits.js). Analytics
+  // Engine had to be switched on in the account first (done 11 October 2026);
+  // the dataset is created on the first write and keeps rows for three months.
+  // Without this line the ping is accepted and dropped, and the Towns panel
+  // says it is not switched on.
+  "analytics_engine_datasets": [{ "binding": "HITS", "dataset": "helensplace_hits" }],
   "observability": { "enabled": true }
 }
