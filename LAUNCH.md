@@ -467,8 +467,9 @@ off. Helen's email was tested and works, and the old site still loads.
    Wait for Cloudflare to say the site is active.
 4. **Send Helen a test email from outside** and have her reply, to prove mail
    still works, before touching the website records.
-5. **Certificate settings** (from the section below): Google Trust Services,
-   minimum TLS 1.2, HSTS off, Bot Fight Mode off.
+5. **Certificate settings** (from the section below): minimum TLS 1.2 and
+   HSTS off on SSL/TLS > Edge Certificates, Bot Fight Mode off. Leave the
+   encryption mode on Automatic: a Worker has no origin server.
 6. **Connect the domain** to the Worker (Settings > Domains & Routes > Add >
    Custom domain: `helensplace.co.uk` and `www.helensplace.co.uk`). This
    replaces the apex and www records with ones pointing at the Worker.
@@ -510,15 +511,17 @@ them. What can catch a school out is Cloudflare's own security set too high.
       Lightspeed). Each has a free lookup. helensplace.co.uk is not a new
       domain, so it should already be categorised; ask for Education or
       Reference wherever it is not.
-- [ ] **Certificate: choose Google Trust Services.** The usual school
-      HTTPS trouble with free certificates is Let's Encrypt. Its chain has
-      changed more than once, and filters that inspect encrypted traffic often
-      carry an old list of trusted authorities, so they reject the site or show
-      teachers a warning. Cloudflare's free certificate can come from Google
-      Trust Services instead, whose chain also leads back to a long-established
-      GlobalSign root that old filters still trust. Set it under SSL/TLS, Edge
-      Certificates, Universal SSL, Certificate Authority, before connecting the
-      domain.
+- [ ] **Certificate authority: Cloudflare chooses it on the free plan.** An
+      earlier version of this plan said to pick Google Trust Services. That
+      was wrong: choosing the authority needs the Advanced Certificate Manager
+      add-on (about $10 a month), and the certificate Cloudflare issues when
+      the domain is connected to the Worker uses its default settings. Launch
+      on the free certificate. Cloudflare always sends the full chain, which
+      was the main fault on nextstepsready.org.uk, and uses only established
+      authorities. Note which authority the Edge Certificates page shows. If a
+      school filter does reject the site, buy the add-on and switch to Google
+      Trust Services, whose chain also leads to a long-established GlobalSign
+      root.
 - [ ] **Minimum TLS version 1.2, not 1.3.** Some older school proxies cannot
       speak 1.3. 1.2 is still secure.
 - [ ] **Leave HSTS off at launch.** It is a good setting, but it removes the
