@@ -24,26 +24,36 @@ const token = site!.data.analyticsToken ?? '';
 const enabled = provider !== 'none' && token.trim().length > 0;
 ---
 
-{enabled && provider === 'cloudflare' && (
-  <script
-    is:inline
-    type="module"
-    src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon={`{"token": "${token}"}`}
-  />
-)}
-
 {/*
-  The site's own count of page reads by town (worker/hits.js), because Web
-  Analytics only goes down to country. Sends the page's path and nothing else;
-  the Worker adds Cloudflare's estimate of the town.
+  Cloudflare Web Analytics, plus the site's own count of page reads by town
+  (worker/hits.js), because Web Analytics only goes down to country. The ping
+  sends the page's path and nothing else; the Worker adds Cloudflare's estimate
+  of the town.
+
+  Neither runs in a browser that has opened the TinaCMS editor
+  (tina/dont-count-me.ts), so Helen checking her own edits is not counted as a
+  visitor. Both are loaded from this script rather than a plain tag so that
+  check can come first.
 */}
 {enabled && provider === 'cloudflare' && (
-  <script is:inline>
+  <script is:inline define:vars={{ token }}>
+    var mine = false;
     try {
-      navigator.sendBeacon('/api/hit', location.pathname);
+      mine = localStorage.getItem('hp-dont-count') === '1';
     } catch (e) {
-      /* Not counted, which is fine. */
+      /* Storage refused, as in some private windows: count the visit. */
+    }
+    if (!mine) {
+      var s = document.createElement('script');
+      s.defer = true;
+      s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      s.setAttribute('data-cf-beacon', JSON.stringify({ token: token }));
+      document.head.appendChild(s);
+      try {
+        navigator.sendBeacon('/api/hit', location.pathname);
+      } catch (e) {
+        /* Not counted, which is fine. */
+      }
     }
   </script>
 )}

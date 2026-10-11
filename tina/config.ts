@@ -3,6 +3,7 @@ import { analyticsScreen } from './analytics-screen';
 import { putSiteSectionFirst } from './sidebar-order';
 import { welcomeScreen } from './welcome-screen';
 import { useWelcomeAsHome } from './admin-home';
+import { dontCountThisBrowser } from './dont-count-me';
 
 /**
  * TinaCMS content model for helensplace.co.uk.
@@ -973,6 +974,7 @@ export default defineConfig({
     cms.plugins.add(analyticsScreen);
     putSiteSectionFirst();
     useWelcomeAsHome();
+    dontCountThisBrowser();
     return cms;
   },
   build: {
