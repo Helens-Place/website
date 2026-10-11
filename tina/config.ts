@@ -1,5 +1,8 @@
 import { defineConfig, type Collection } from 'tinacms';
 import { analyticsScreen } from './analytics-screen';
+import { putSiteSectionFirst } from './sidebar-order';
+import { welcomeScreen } from './welcome-screen';
+import { useWelcomeAsHome } from './admin-home';
 
 /**
  * TinaCMS content model for helensplace.co.uk.
@@ -142,7 +145,8 @@ const settings: Collection = {
   path: 'src/content/settings',
   format: 'md',
   match: { include: 'site' },
-  ui: { allowedActions: { create: false, delete: false } },
+  /* global puts it in the sidebar's Site section rather than the page list. */
+  ui: { global: true, allowedActions: { create: false, delete: false } },
   fields: [
     { type: 'string', name: 'siteName', label: 'Site name', required: true },
     { type: 'string', name: 'tagline', label: 'Tagline', required: true },
@@ -250,7 +254,7 @@ const settings: Collection = {
   ],
 };
 
-const home = singlePage('home', 'Home page', 'home', [
+const home = singlePage('home', '/ (home page)', 'home', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   ctaField('secondaryCta', 'Secondary button'),
@@ -350,7 +354,7 @@ const home = singlePage('home', 'Home page', 'home', [
   finalCtaField,
 ]);
 
-const assessments = singlePage('assessments', 'Assessments page', 'assessments', [
+const assessments = singlePage('assessments', '/assessments', 'assessments', [
   ...heroFields,
   { type: 'string', name: 'trustLine', label: 'Trust line', ui: { component: 'textarea' } },
   { type: 'string', name: 'overviewHeading', label: 'Section after the hero: heading' },
@@ -416,7 +420,7 @@ const titledListField = (name: string, label: string) => ({
   ],
 });
 
-const schools = singlePage('schools', 'Schools and training page', 'schools', [
+const schools = singlePage('schools', '/schools', 'schools', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   { type: 'string', name: 'sessionsHeading', label: 'Sessions: heading' },
@@ -430,7 +434,7 @@ const schools = singlePage('schools', 'Schools and training page', 'schools', [
 
 const research = singlePage(
   'research',
-  'Research and expert witness page',
+  '/research-and-expert-witness',
   'research-and-expert-witness',
   [
     ...heroFields,
@@ -465,7 +469,7 @@ const research = singlePage(
   ],
 );
 
-const courses = singlePage('courses', 'Courses and guides page', 'courses', [
+const courses = singlePage('courses', '/courses', 'courses', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   { type: 'string', name: 'guidesHeading', label: 'Guides section: heading' },
@@ -491,14 +495,14 @@ const courses = singlePage('courses', 'Courses and guides page', 'courses', [
   },
 ]);
 
-const speaking = singlePage('speaking', 'Speaking page', 'speaking', [
+const speaking = singlePage('speaking', '/speaking', 'speaking', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   ...relatedFields,
   finalCtaField,
 ]);
 
-const about = singlePage('about', 'About page', 'about', [
+const about = singlePage('about', '/about', 'about', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   {
@@ -531,7 +535,7 @@ const about = singlePage('about', 'About page', 'about', [
   },
 ]);
 
-const book = singlePage('book', 'The book page', 'book', [
+const book = singlePage('book', '/book', 'book', [
   ...heroFields,
   ctaField('primaryCta', 'Buy button'),
   { type: 'string', name: 'sessionsHeading', label: 'Inside the book: heading' },
@@ -540,7 +544,7 @@ const book = singlePage('book', 'The book page', 'book', [
   { type: 'string', name: 'whyBody', label: 'Closing section: body', ui: { component: 'textarea' } },
 ]);
 
-const contact = singlePage('contact', 'Contact page', 'contact', [
+const contact = singlePage('contact', '/contact', 'contact', [
   ...heroFields,
   {
     type: 'object',
@@ -568,7 +572,7 @@ const contact = singlePage('contact', 'Contact page', 'contact', [
 
 const whatToExpect = singlePage(
   'whatToExpect',
-  'What to expect page',
+  '/what-to-expect',
   'what-to-expect',
   [
     ...heroFields,
@@ -602,7 +606,7 @@ const whatToExpect = singlePage(
   ],
 );
 
-const faq = singlePage('faq', 'Questions and answers page', 'faq', [
+const faq = singlePage('faq', '/faq', 'faq', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   {
@@ -627,7 +631,7 @@ const faq = singlePage('faq', 'Questions and answers page', 'faq', [
 
 const churchill = singlePage(
   'churchill',
-  'Churchill Fellowship page',
+  '/churchill-fellowship',
   'churchill-fellowship',
   [
     ...heroFields,
@@ -656,7 +660,7 @@ const churchill = singlePage(
 
 const elevatorSeries = singlePage(
   'elevatorSeries',
-  'Elevator Series page',
+  '/elevator-series',
   'elevator-series',
   [
     ...heroFields,
@@ -691,7 +695,7 @@ const elevatorSeries = singlePage(
 
 const dyslexiaToolkit = singlePage(
   'dyslexiaToolkit',
-  'Schools Guide to Dyslexia page',
+  '/dyslexia-toolkit',
   'dyslexia-toolkit',
   [
     ...heroFields,
@@ -708,7 +712,7 @@ const dyslexiaToolkit = singlePage(
 
 const podcasts = singlePage(
   'podcasts',
-  'Podcasts and interviews page',
+  '/podcasts-and-interviews',
   'podcasts-and-interviews',
   [
     ...heroFields,
@@ -746,12 +750,14 @@ const podcasts = singlePage(
   ],
 );
 
-const legal: Collection = {
-  name: 'legal',
-  label: 'Policy and reference pages',
+/* Simple pages: a heading, an introduction and a body. One collection each, so
+   each is listed under its own address in the sidebar. */
+const prosePage = (name: string, file: string): Collection => ({
+  name,
+  label: `/${file}`,
   path: 'src/content/pages',
   format: 'md',
-  match: { include: '{privacy,safeguarding,terms,publications,research}' },
+  match: { include: file },
   ui: { allowedActions: { create: false, delete: false } },
   fields: [
     ...seoFields,
@@ -773,11 +779,17 @@ const legal: Collection = {
     },
     { type: 'rich-text', name: 'body', label: 'Page content', isBody: true },
   ],
-};
+});
+
+const privacy = prosePage('privacy', 'privacy');
+const publications = prosePage('publications', 'publications');
+const researchPage = prosePage('researchPage', 'research');
+const safeguarding = prosePage('safeguarding', 'safeguarding');
+const terms = prosePage('terms', 'terms');
 
 const guides: Collection = {
   name: 'guides',
-  label: 'Guides',
+  label: '/guides/… (each guide)',
   path: 'src/content/guides',
   format: 'md',
   fields: [
@@ -832,7 +844,7 @@ const guides: Collection = {
   ],
 };
 
-const articlesHub = singlePage('articlesHub', 'Articles hub page', 'articles', [
+const articlesHub = singlePage('articlesHub', '/articles', 'articles', [
   ...heroFields,
   ctaField('primaryCta', 'Primary button'),
   finalCtaField,
@@ -842,7 +854,7 @@ const articlesHub = singlePage('articlesHub', 'Articles hub page', 'articles', [
    and mentoring pages when Helen adds them, distinguished by category. */
 const services: Collection = {
   name: 'services',
-  label: 'Assessment pages',
+  label: '/assessments/… (each assessment page)',
   path: 'src/content/services',
   format: 'md',
   fields: [
@@ -889,7 +901,7 @@ const services: Collection = {
 
 const articles: Collection = {
   name: 'articles',
-  label: 'Articles',
+  label: '/articles/… (each article)',
   path: 'src/content/articles',
   format: 'md',
   fields: [
@@ -951,9 +963,16 @@ export default defineConfig({
   branch,
   clientId,
   token,
-  /* Adds the Analytics screen to the admin sidebar. See analytics-screen.tsx. */
+  /* Admin extras: a Welcome screen in place of TinaCMS's dashboard
+     (welcome-screen.tsx, admin-home.ts), the Analytics screen
+     (analytics-screen.tsx), and the sidebar's Site section shown first
+     (sidebar-order.ts). Each falls back to TinaCMS's default if TinaCMS
+     changes underneath it. */
   cmsCallback: (cms) => {
+    cms.plugins.add(welcomeScreen);
     cms.plugins.add(analyticsScreen);
+    putSiteSectionFirst();
+    useWelcomeAsHome();
     return cms;
   },
   build: {
@@ -967,6 +986,8 @@ export default defineConfig({
     },
   },
   schema: {
+    /* Listed in the sidebar alphabetically by label, which is each page's
+       address, so a new collection lands in the right place on its own. */
     collections: [
       home,
       assessments,
@@ -987,8 +1008,12 @@ export default defineConfig({
       about,
       book,
       contact,
-      legal,
+      privacy,
+      publications,
+      researchPage,
+      safeguarding,
+      terms,
       settings,
-    ],
+    ].sort((a, b) => (a.label ?? a.name).localeCompare(b.label ?? b.name)),
   },
 });
