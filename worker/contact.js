@@ -68,16 +68,22 @@ function problemPage(reason, fields, status = 400) {
   return new Response(body, { status, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
 }
 
-async function turnstilePasses(token, secret, ip) {
-  if (!token) return false;
+/* Returns why the check failed, or null if it passed. The reason goes to the
+   Worker's logs (Observability > Logs), so a failure can be diagnosed:
+   "no token" means the widget never ran on the page (often a hostname missing
+   from the Turnstile widget, or the visitor sent the form before it finished);
+   error codes such as invalid-input-secret come from Cloudflare. */
+async function turnstileFailure(token, secret, ip) {
+  if (!token) return 'no token';
   const form = new FormData();
   form.append('secret', secret);
   form.append('response', token);
   if (ip) form.append('remoteip', ip);
   const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: form });
-  if (!res.ok) return false;
+  if (!res.ok) return `siteverify HTTP ${res.status}`;
   const data = await res.json();
-  return data.success === true;
+  if (data.success === true) return null;
+  return `rejected: ${(data['error-codes'] || []).join(', ') || 'no reason given'} (hostname ${data.hostname || 'unknown'})`;
 }
 
 export async function onRequestPost({ request, env }) {
@@ -114,13 +120,14 @@ export async function onRequestPost({ request, env }) {
 
   // 3. Turnstile, when configured.
   if (env.TURNSTILE_SECRET_KEY) {
-    let ok = false;
+    let failure;
     try {
-      ok = await turnstilePasses(get('cf-turnstile-response'), env.TURNSTILE_SECRET_KEY, request.headers.get('CF-Connecting-IP'));
-    } catch {
-      ok = false;
+      failure = await turnstileFailure(get('cf-turnstile-response'), env.TURNSTILE_SECRET_KEY, request.headers.get('CF-Connecting-IP'));
+    } catch (err) {
+      failure = `siteverify request failed: ${err}`;
     }
-    if (!ok) {
+    if (failure) {
+      console.error('contact: Turnstile check failed:', failure);
       return problemPage(
         'The website could not confirm the message came from a person. This sometimes happens on school or work networks that block the check.',
         fields,

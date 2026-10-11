@@ -88,6 +88,37 @@ const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     <>
       <div class="cf-turnstile" data-sitekey={turnstileKey} data-appearance="interaction-only"></div>
       <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+      {/* Turnstile runs invisibly and takes a moment to produce its token. If
+          someone presses Send before it has, wait up to eight seconds for it,
+          then send regardless, so a blocked check never stops the form: the
+          server then shows the "please email me" page rather than losing it. */}
+      <script is:inline>
+        (function () {
+          var form = document.querySelector('form[action="/api/contact"]');
+          if (!form) return;
+          form.addEventListener('submit', function (e) {
+            var token = form.querySelector('[name="cf-turnstile-response"]');
+            if (token && token.value) return;
+            e.preventDefault();
+            if (form.dataset.waiting) return;
+            form.dataset.waiting = '1';
+            var button = form.querySelector('button[type="submit"]');
+            var label = button.textContent;
+            button.textContent = 'Checking, one moment';
+            button.disabled = true;
+            var started = Date.now();
+            (function poll() {
+              var t = form.querySelector('[name="cf-turnstile-response"]');
+              if ((t && t.value) || Date.now() - started > 8000) {
+                HTMLFormElement.prototype.submit.call(form);
+                button.textContent = label;
+                return;
+              }
+              setTimeout(poll, 250);
+            })();
+          });
+        })();
+      </script>
     </>
   )}
 
