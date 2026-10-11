@@ -17,6 +17,9 @@ type Data = {
   days: number;
   who: 'people' | 'bots' | 'all';
   botsAvailable: boolean;
+  botsError?: string | null;
+  range: { since: string; until: string };
+  sampleInterval?: number;
   split: { people: { views: number; visits: number }; bots: { views: number; visits: number } } | null;
   totals: { views: number; visits: number };
   daily: Row[];
@@ -94,27 +97,42 @@ function Ranked({ rows, label, link, empty, error }: { rows: Row[]; label?: (k: 
   );
 }
 
-/* Page views per day as simple bars. */
-function Daily({ rows, error }: { rows: Row[]; error?: string }) {
+/* Every day in the period, with the days nobody came shown as nothing rather
+   than left out, so the bars line up with the calendar. */
+function everyDay(rows: Row[], range: { since: string; until: string }): Row[] {
+  const byDay = new Map(rows.map((r) => [(r.key || '').slice(0, 10), r]));
+  const out: Row[] = [];
+  const end = range.until.slice(0, 10);
+  for (let d = new Date(range.since.slice(0, 10) + 'T00:00:00Z'); ; d = new Date(d.getTime() + 86400000)) {
+    const key = d.toISOString().slice(0, 10);
+    out.push(byDay.get(key) ?? { key, views: 0, visits: 0 });
+    if (key >= end || out.length > 120) break;
+  }
+  return out;
+}
+
+/* Visits or page views per day as simple bars. */
+function Daily({ rows, error, metric, colour }: { rows: Row[]; error?: string; metric: 'visits' | 'views'; colour: string }) {
+  const noun = metric === 'visits' ? 'visits' : 'page views';
   if (error) return <p style={{ color: C.pink, margin: 0 }}>Could not load this: {error}</p>;
-  if (!rows.length) return <p style={{ color: C.soft, margin: 0 }}>No visits recorded in this period yet.</p>;
-  const max = Math.max(...rows.map((r) => r.views), 1);
+  if (!rows.some((r) => r[metric] > 0)) return <p style={{ color: C.soft, margin: 0 }}>No {noun} recorded in this period yet.</p>;
+  const max = Math.max(...rows.map((r) => r[metric]), 1);
   const w = 100 / rows.length;
   return (
     <figure style={{ margin: 0 }}>
-      <svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label="Page views per day" style={{ width: '100%', height: 140, display: 'block' }}>
+      <svg viewBox="0 0 100 40" preserveAspectRatio="none" role="img" aria-label={`${noun} per day`} style={{ width: '100%', height: 140, display: 'block' }}>
         {rows.map((r, i) => {
-          const h = (r.views / max) * 38;
+          const h = (r[metric] / max) * 38;
           return (
-            <rect key={i} x={i * w + w * 0.15} y={40 - h} width={w * 0.7} height={h} fill={C.purple}>
-              <title>{`${day(r.key)}: ${fmt(r.views)} page views`}</title>
+            <rect key={i} x={i * w + w * 0.15} y={40 - h} width={w * 0.7} height={h} fill={colour}>
+              <title>{`${day(r.key)}: ${fmt(r[metric])} ${noun}`}</title>
             </rect>
           );
         })}
       </svg>
       <figcaption style={{ display: 'flex', justifyContent: 'space-between', color: C.soft, fontSize: 12, marginTop: 4 }}>
         <span>{day(rows[0].key)}</span>
-        <span>busiest day: {fmt(max)} page views</span>
+        <span>busiest day: {fmt(max)} {noun}</span>
         <span>{day(rows[rows.length - 1].key)}</span>
       </figcaption>
     </figure>
@@ -213,11 +231,9 @@ export function AnalyticsScreen() {
         <div role="group" aria-label="Period" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {[7, 30, 90].map(button)}
         </div>
-        {data?.botsAvailable !== false && (
-          <div role="group" aria-label="Who to count" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {(['people', 'bots', 'all'] as const).map(whoButton)}
-          </div>
-        )}
+        <div role="group" aria-label="Who to count" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          {(['people', 'bots', 'all'] as const).map(whoButton)}
+        </div>
       </div>
 
       {loading && <p style={{ color: C.soft }}>Loading the figures...</p>}
@@ -271,12 +287,30 @@ export function AnalyticsScreen() {
           {!data.botsAvailable && (
             <p style={{ margin: 0, color: C.soft, fontSize: 13 }}>
               Cloudflare is not saying which visits are bots at the moment, so these figures include everyone.
+              {data.botsError ? ` (Cloudflare said: ${data.botsError})` : ''}
+            </p>
+          )}
+          {(data.sampleInterval ?? 1) > 1.5 && (
+            <p style={{ margin: 0, color: C.soft, fontSize: 13, maxWidth: '75ch' }}>
+              These are estimates, which is why they are round numbers. Cloudflare keeps every page load for a week,
+              then about one in {Math.round(data.sampleInterval!)}, and multiplies back up. The last 7 days are the
+              most exact.
             </p>
           )}
 
-          <Card title="Page views per day">
-            <Daily rows={data.daily} error={data.errors.daily} />
-          </Card>
+          {(() => {
+            const days = everyDay(data.daily, data.range);
+            return (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
+                <Card title="Visits per day">
+                  <Daily rows={days} metric="visits" colour={C.pink} error={data.errors.daily} />
+                </Card>
+                <Card title="Page views per day">
+                  <Daily rows={days} metric="views" colour={C.purple} error={data.errors.daily} />
+                </Card>
+              </div>
+            );
+          })()}
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 16 }}>
             <Card title="Most read pages">

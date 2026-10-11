@@ -82,9 +82,36 @@ async function typeFields(env, name) {
     inputFields { name type { name kind ofType { name kind ofType { name kind } } } } } }`;
   return (await graphql(env, q)).__type || {};
 }
+/* Cloudflare's own dashboard filters on a number field called bot (0 or 1).
+   Try that first with a one-row query; null if the API refuses it. */
+async function probeBot(env) {
+  const now = new Date();
+  const range = { since: iso(new Date(now.getTime() - 86400000)), until: iso(now) };
+  const base = { accountId: env.CF_ACCOUNT_ID, siteTag: env.CF_SITE_TAG, ...range, limit: 1 };
+  try {
+    await graphql(env, panelQuery({ ...base, extraFilter: '{ bot: 0 }' }));
+  } catch (err) {
+    botFieldError = String(err?.message || err);
+    return null;
+  }
+  let canGroup = true;
+  try {
+    await graphql(env, panelQuery({ ...base, dimension: 'bot' }));
+  } catch {
+    canGroup = false;
+  }
+  return { name: 'bot', yes: '1', no: '0', canGroup };
+}
+
+let botFieldError = null;
 async function findBotField(env) {
   if (Date.now() - botFieldCache.at < 3600000) return botFieldCache.value;
-  let value = null;
+  botFieldError = null;
+  let value = await probeBot(env);
+  if (value) {
+    botFieldCache = { at: Date.now(), value };
+    return value;
+  }
   try {
     const root = (await graphql(env, '{ __schema { queryType { name } } }')).__schema.queryType.name;
     const field = async (typeName, fieldName) => (await typeFields(env, typeName)).fields?.find((f) => f.name === fieldName);
@@ -109,8 +136,9 @@ async function findBotField(env) {
       };
     }
   } catch (err) {
-    console.error('analytics: bot field lookup failed:', String(err?.message || err));
+    botFieldError = String(err?.message || err);
   }
+  if (!value) console.error('analytics: bot field lookup failed:', botFieldError || 'no bot field in the schema');
   // A failed lookup is retried after five minutes rather than an hour.
   botFieldCache = { at: value === null ? Date.now() - 3300000 : Date.now(), value };
   return value;
@@ -127,14 +155,16 @@ async function runPanel(env, opts) {
     throw new Error(body.errors?.map((e) => e.message).join('; ') || `Cloudflare returned ${res.status}`);
   }
   const rows = body.data?.viewer?.accounts?.[0]?.rows ?? [];
-  // Web Analytics samples busy sites; sampleInterval scales a sample back up.
-  // On a site this size it is 1, so the figures are exact.
+  // Web Analytics keeps every page load for 7 days, then about one in ten;
+  // sampleInterval says how many each kept one stands for. The figures are
+  // scaled back up, which is why older periods come out as round numbers.
   return rows.map((r) => {
     const scale = r.avg?.sampleInterval || 1;
     return {
       key: r.dimensions?.key ?? null,
       views: Math.round((r.count ?? 0) * scale),
       visits: Math.round((r.sum?.visits ?? 0) * scale),
+      scale,
     };
   });
 }
@@ -234,7 +264,7 @@ export async function handleAnalytics(request, env) {
   };
   const names = Object.keys(panels);
   const settled = await Promise.allSettled(Object.values(panels));
-  const out = { days, range, who: bot ? who : 'all', botsAvailable: !!bot, errors: {} };
+  const out = { days, range, who: bot ? who : 'all', botsAvailable: !!bot, botsError: bot ? null : botFieldError, errors: {} };
   settled.forEach((r, i) => {
     if (r.status === 'fulfilled') out[names[i]] = r.value;
     else {
@@ -270,6 +300,8 @@ export async function handleAnalytics(request, env) {
     .map((r) => (r.key ? r : { ...r, key: 'Typed in, bookmarks or apps' }))
     .slice(0, 10);
   out.totals = out.totals[0] ?? { views: 0, visits: 0 };
+  // The heaviest sampling behind the headline figures: 1 means exact.
+  out.sampleInterval = Math.max(1, out.totals.scale || 1, ...out.daily.map((r) => r.scale || 1));
 
   // People and bots for the whole period, whichever view is shown.
   const isBot = (k) => k === 1 || k === true || k === '1' || k === 'true';
@@ -338,9 +370,8 @@ async function runCrawlerPanel(env, since, until, dimension, limit) {
 async function handleAiCrawlers(request, env) {
   const refusal = await refuse(request, env);
   if (refusal) return refusal;
-  if (!env.CF_ANALYTICS_TOKEN || !env.CF_ZONE_ID) {
-    return json({ error: 'Not set up yet: CF_ZONE_ID is missing on the Worker.' }, 500);
-  }
+  const missing = ['CF_ANALYTICS_TOKEN', 'CF_ZONE_ID'].filter((k) => !env[k]);
+  if (missing.length) return json({ error: `Not set up yet: ${missing.join(', ')} missing on the Worker.` }, 500);
   if (!/^[a-f0-9]{32}$/i.test(env.CF_ZONE_ID)) {
     return json({ error: 'CF_ZONE_ID does not look right: it should be 32 letters and numbers.' }, 500);
   }
